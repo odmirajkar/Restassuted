@@ -1,39 +1,53 @@
 {
   "file_name": "MySqlIntegrationTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
-  "file_summary": "This Java class, `MySqlIntegrationTests`, is an integration test suite for the Spring PetClinic application. It leverages Spring Boot's testing capabilities, specifically `@SpringBootTest` with `WebEnvironment.RANDOM_PORT`, to spin up the application for testing. The primary purpose is to verify the application's interaction with a MySQL database. It uses Testcontainers (`@Testcontainers` and `@Container`) to provision a transient MySQL database instance for each test run, ensuring a clean and isolated testing environment. The `@ServiceConnection` annotation automatically configures the Spring application to connect to this containerized database. The tests include verifying database access through the `VetRepository` (e.g., `testFindAll()` which also implicitly tests caching) and testing an application REST endpoint (`/owners/1`) using `RestTemplate` to ensure the web layer and underlying data retrieval work correctly. The class is configured with the 'mysql' active profile and is disabled for native image and AOT modes.",
+  "file_path": "org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+  "file_summary": "This Java class, `MySqlIntegrationTests`, serves as an integration test for the Spring PetClinic application, specifically designed to validate its interaction with a MySQL database. It leverages Spring Boot's testing capabilities (`@SpringBootTest`) to start the entire application context on a random port and utilizes Testcontainers (`@Testcontainers`) to provision a dedicated MySQL database instance dynamically. The `@ServiceConnection` annotation integrates the Testcontainers-managed database with Spring's connection pool, ensuring a seamless and isolated testing environment. The tests verify core functionalities, such as retrieving veterinary data from the database using `VetRepository` and accessing web endpoints like `/owners/1` to ensure the application correctly handles HTTP requests and interacts with the underlying database. The class is configured to activate the 'mysql' Spring profile and is disabled in native image and AOT modes, indicating its primary use as a standard JVM integration test.",
   "attributes": [
     {
       "name": "container",
-      "type": "MySQLContainer<?>",
-      "membership": "static public"
+      "type": "org.testcontainers.containers.MySQLContainer<?>",
+      "membership_type": "static"
     },
     {
       "name": "port",
       "type": "int",
-      "membership": "instance public"
+      "membership_type": "instance"
     },
     {
       "name": "vets",
-      "type": "VetRepository",
-      "membership": "instance private"
+      "type": "org.springframework.samples.petclinic.vet.VetRepository",
+      "membership_type": "instance"
     },
     {
       "name": "builder",
-      "type": "RestTemplateBuilder",
-      "membership": "instance private"
+      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
+      "membership_type": "instance"
     }
   ],
   "functions": [
-    {
-      "name": "testFindAll",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testOwnerDetails",
-      "return_type": "void",
-      "parameters": []
-    }
+    "testFindAll()",
+    "testOwnerDetails()"
+  ],
+  "dependent_class_list": [
+    "org.assertj.core.api.Assertions",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.test.context.SpringBootTest",
+    "org.springframework.boot.test.context.SpringBootTest.WebEnvironment",
+    "org.springframework.boot.test.web.server.LocalServerPort",
+    "org.springframework.boot.testcontainers.service.connection.ServiceConnection",
+    "org.springframework.boot.web.client.RestTemplateBuilder",
+    "org.springframework.http.HttpStatus",
+    "org.springframework.http.RequestEntity",
+    "org.springframework.http.ResponseEntity",
+    "org.springframework.samples.petclinic.vet.VetRepository",
+    "org.springframework.test.context.ActiveProfiles",
+    "org.springframework.test.context.aot.DisabledInAotMode",
+    "org.springframework.web.client.RestTemplate",
+    "org.testcontainers.containers.MySQLContainer",
+    "org.testcontainers.junit.jupiter.Container",
+    "org.testcontainers.junit.jupiter.Testcontainers",
+    "org.testcontainers.utility.DockerImageName"
   ]
 }
