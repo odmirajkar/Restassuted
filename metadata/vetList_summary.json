@@ -1,7 +1,52 @@
 {
   "file_name": "vets.html",
   "file_path": "",
-  "file_summary": "This HTML file serves as a Thymeleaf template designed to display a comprehensive list of veterinarians within a web application. It integrates with a common layout fragment (`fragments/layout :: layout`) to ensure consistent page structure. The primary purpose of this page is to present each veterinarian's full name (first and last) along with their associated medical specialties. If a veterinarian does not have any specialties assigned, the template gracefully handles this by displaying a 'none' indicator. Furthermore, the file incorporates robust pagination functionality, allowing users to navigate through potentially large lists of veterinarians. It dynamically generates navigation links for individual pages, as well as 'first,' 'previous,' 'next,' and 'last' page options, all based on the `currentPage` and `totalPages` variables passed to the template. This ensures a user-friendly experience for viewing veterinarian data.",
-  "attributes": [],
+  "file_summary": "This Thymeleaf HTML template, likely named `vets.html`, serves as the front-end view for displaying a comprehensive list of veterinarians within an application, typically a pet clinic management system. It integrates with a common layout fragment (`fragments/layout :: layout`) for consistent page structure. The core of the page is a visually organized table that presents each veterinarian's full name, concatenating their first and last names. Crucially, it lists their associated medical specialties; if a veterinarian has no specialties assigned, the template gracefully indicates \"none\". Beyond static display, the page incorporates robust pagination functionality. This allows users to navigate efficiently through a potentially large dataset of veterinarians by providing direct links to specific pages and intuitive controls for moving to the first, previous, next, and last pages. The use of Thymeleaf's message expressions (`#{...}`) ensures that textual elements like headings, column names, and pagination labels are internationalized, supporting multiple languages. The template dynamically renders content based on model attributes passed from the server, making it a flexible and user-friendly interface for viewing veterinary staff information.",
+  "attributes": [
+    {
+      "name": "listVets",
+      "data_type": "Collection<Vet>"
+    },
+    {
+      "name": "vet",
+      "data_type": "Vet"
+    },
+    {
+      "name": "vet.firstName",
+      "data_type": "String"
+    },
+    {
+      "name": "vet.lastName",
+      "data_type": "String"
+    },
+    {
+      "name": "vet.specialties",
+      "data_type": "Collection<Specialty>"
+    },
+    {
+      "name": "vet.nrOfSpecialties",
+      "data_type": "Integer"
+    },
+    {
+      "name": "specialty",
+      "data_type": "Specialty"
+    },
+    {
+      "name": "specialty.name",
+      "data_type": "String"
+    },
+    {
+      "name": "totalPages",
+      "data_type": "Integer"
+    },
+    {
+      "name": "currentPage",
+      "data_type": "Integer"
+    },
+    {
+      "name": "i",
+      "data_type": "Integer"
+    }
+  ],
   "functions": []
 }
