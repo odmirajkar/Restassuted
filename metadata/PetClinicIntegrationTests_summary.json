@@ -1,41 +1,43 @@
 {
   "file_name": "PetClinicIntegrationTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
-  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as an integration test suite for the Spring PetClinic application. It leverages Spring Boot's `@SpringBootTest` annotation to start the entire application context, including the web environment, on a random port (`WebEnvironment.RANDOM_PORT`), allowing for testing of the deployed application's behavior. The class injects a `VetRepository` and a `RestTemplateBuilder` to facilitate testing of both data access and web endpoints. It contains two test methods: `testFindAll()` verifies the functionality of fetching all vets, implicitly demonstrating caching behavior. `testOwnerDetails()` uses a `RestTemplate` to make an HTTP GET request to the `/owners/1` endpoint, asserting that the response status is `OK`, thereby testing the application's REST API and its underlying data retrieval for owner details. Additionally, a `main` method is included, enabling the `PetClinicApplication` to be run directly from this class, which is a common pattern in Spring Boot examples for quick execution.",
+  "file_path": "org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as a foundational integration test for the Spring PetClinic application. It utilizes Spring Boot's `@SpringBootTest` annotation to launch the entire application context on a random available port, simulating a real deployment. The primary purpose of this class is to verify the end-to-end functionality of the PetClinic application, including its data access layer and web controllers. It contains test methods that interact with the `VetRepository` to ensure data retrieval works as expected (including caching behavior) and uses a `RestTemplate` to make HTTP requests to the application's web endpoints, such as `/owners/1`, to validate that specific pages are accessible and return the expected HTTP status. Additionally, it includes a `main` method, allowing it to be run as a standalone Spring Boot application for quick manual testing or demonstration.",
   "attributes": [
     {
       "name": "port",
       "type": "int",
-      "membership": "instance public"
+      "membership_type": "instance"
     },
     {
       "name": "vets",
-      "type": "VetRepository",
-      "membership": "instance private"
+      "type": "org.springframework.samples.petclinic.vet.VetRepository",
+      "membership_type": "instance"
     },
     {
       "name": "builder",
-      "type": "RestTemplateBuilder",
-      "membership": "instance private"
+      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
+      "membership_type": "instance"
     }
   ],
   "functions": [
-    {
-      "name": "testFindAll",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testOwnerDetails",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "main",
-      "return_type": "void",
-      "parameters": [
-        "String[] args"
-      ]
-    }
+    "testFindAll()",
+    "testOwnerDetails()",
+    "main(String[] args)"
+  ],
+  "dependent_class_list": [
+    "org.assertj.core.api.Assertions",
+    "org.junit.jupiter.api.Test",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.SpringApplication",
+    "org.springframework.boot.test.context.SpringBootTest",
+    "org.springframework.boot.test.context.SpringBootTest.WebEnvironment",
+    "org.springframework.boot.test.web.server.LocalServerPort",
+    "org.springframework.boot.web.client.RestTemplateBuilder",
+    "org.springframework.http.HttpStatus",
+    "org.springframework.http.RequestEntity",
+    "org.springframework.http.ResponseEntity",
+    "org.springframework.samples.petclinic.vet.VetRepository",
+    "org.springframework.web.client.RestTemplate",
+    "org.springframework.samples.petclinic.PetClinicApplication"
   ]
 }
