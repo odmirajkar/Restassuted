@@ -1,7 +1,7 @@
 {
-  "file_name": "schema.sql",
-  "file_path": "N/A",
-  "file_summary": "This SQL script defines the database schema for a pet clinic application. It creates seven tables with appropriate columns, primary keys, and foreign key relationships to manage data related to veterinarians, their specialties, pet owners, pets, pet types, and pet visits. The schema ensures data integrity and establishes clear relationships between different entities, such as linking pets to their owners and types, and visits to specific pets. Indexes are also defined on relevant columns to improve query performance. This script is typically used to initialize or reset the database structure for the application.",
+  "file_name": "petclinic_schema.sql",
+  "file_path": "database/schema/petclinic_schema.sql",
+  "file_summary": "This SQL DDL script defines the relational database schema for a pet clinic management system. It establishes seven core tables: `vets` to store veterinarian information, `specialties` for different medical areas, and a `vet_specialties` join table to link vets to their specializations. `types` enumerates various pet kinds, while `owners` records owner details. The `pets` table holds individual pet information, referencing both pet `types` and their `owners`. Finally, `visits` logs each pet's medical appointments. The script includes primary keys, foreign key constraints to maintain referential integrity, and several `CREATE INDEX` statements to optimize query performance on frequently accessed columns like last names, names, and foreign keys, ensuring efficient data retrieval and management within the application.",
   "attributes": [],
   "functions": []
 }
