@@ -1,0 +1,23 @@
+{
+  "file_name": "vets.html",
+  "file_path": "src/main/resources/templates/vets.html",
+  "file_summary": "This HTML file, rendered using Thymeleaf, is responsible for displaying a list of veterinarians along with their specialties. It includes a table that iterates through a collection of 'Vet' objects, showing each veterinarian's full name and their associated specialties. If a vet has no specialties, it explicitly states 'none'. The file also implements basic pagination, allowing users to navigate through multiple pages of veterinarians if the total number of vets exceeds a single page. Navigation controls for first, previous, next, and last pages are provided, indicating the current page within the total available pages. The layout of this page is inherited from a common 'layout' fragment, ensuring a consistent user interface.",
+  "attributes": [
+    {
+      "name": "listVets",
+      "data_type": "List<Vet>",
+      "membership_type": "Thymeleaf Model Attribute"
+    },
+    {
+      "name": "totalPages",
+      "data_type": "int",
+      "membership_type": "Thymeleaf Model Attribute"
+    },
+    {
+      "name": "currentPage",
+      "data_type": "int",
+      "membership_type": "Thymeleaf Model Attribute"
+    }
+  ],
+  "functions": []
+}
