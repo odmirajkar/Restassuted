@@ -1,7 +1,57 @@
 {
-  "file_name": "petclinic-manifests.yaml",
-  "file_path": "",
-  "file_summary": "This Kubernetes YAML file defines the necessary infrastructure for deploying and exposing a 'petclinic' application. It consists of two main parts: a Kubernetes Service and a Kubernetes Deployment. The Service, named 'petclinic' and of type 'NodePort', exposes the application externally on port 80, routing traffic to the container's port 8080, making the application accessible from outside the cluster. The Deployment, also named 'petclinic', is responsible for managing a single replica of the `dsyer/petclinic` Docker image. It configures environment variables, notably `SPRING_PROFILES_ACTIVE` to 'postgres' for database connectivity and `SERVICE_BINDING_ROOT` for service binding. Health checks are implemented via HTTP liveness and readiness probes targeting `/livez` and `/readyz` endpoints. Crucially, the deployment mounts a projected volume from a Kubernetes secret named 'demo-db' into the container at `/bindings/secret`, which is typically used for securely injecting database credentials following the Service Binding Specification. This setup ensures the PetClinic application is deployed, properly configured to connect to its database, is discoverable, and its health is continuously monitored.",
-  "attributes": [],
-  "functions": []
+  "file_name": "petclinic.css",
+  "file_path": "N/A",
+  "file_summary": "This CSS file integrates and extends Bootstrap v5.3.6, serving as the core stylesheet for a web application, likely a 'petclinic' system based on the comments. It meticulously defines a comprehensive set of CSS custom properties for global styling, encompassing a broad color palette, typography settings, border styles, and shadow effects. The stylesheet supports both light and dark themes, dynamically adjusting color schemes based on the `data-bs-theme` attribute. Beyond these foundational variables, it provides extensive default and utility styles for standard HTML elements (body, headings, lists, tables, forms) and a wide array of Bootstrap components. This includes responsive grid layouts (containers, rows, columns), flexible box utilities, spacing, sizing, display, position, and visibility controls. Furthermore, it supplies styling for interactive UI elements such as buttons, various navigation types (tabs, pills, navbars), cards, alerts, progress bars, list groups, toasts, modals, tooltips, popovers, and carousels. The file also incorporates custom application-specific styles, overriding or complementing Bootstrap's defaults to achieve a unique visual identity, including specific adjustments for custom fonts, table headers, splash screens, and error pages, along with several defined animations.",
+  "attributes": [
+    {
+      "name": "Color System Variables",
+      "data_type": "Color/RGB Color",
+      "membership_type": "Global CSS variable, adjusted per theme",
+      "examples": ["--bs-blue", "--bs-primary", "--bs-primary-rgb", "--bs-primary-text-emphasis", "--bs-dark-bg-subtle"]
+    },
+    {
+      "name": "Typography Variables",
+      "data_type": "String/Length/Number/Color",
+      "membership_type": "Global CSS variable",
+      "examples": ["--bs-font-sans-serif", "--bs-body-font-size", "--bs-body-line-height", "--bs-heading-color", "--bs-link-hover-color"]
+    },
+    {
+      "name": "Border & Shadow Variables",
+      "data_type": "Length/String/Color/Shadow",
+      "membership_type": "Global CSS variable",
+      "examples": ["--bs-border-width", "--bs-border-color", "--bs-border-radius", "--bs-box-shadow-sm"]
+    },
+    {
+      "name": "Component Styling Variables",
+      "data_type": "Varies (Length, Color, Image URL, Opacity, Transition, Shadow)",
+      "membership_type": "Scoped CSS variable for specific components",
+      "examples": ["--bs-btn-padding-x", "--bs-form-select-bg-img", "--bs-navbar-toggler-icon-bg", "--bs-card-spacer-y", "--bs-modal-width"]
+    },
+    {
+      "name": "Layout & Responsive Variables",
+      "data_type": "Length",
+      "membership_type": "Global CSS variable",
+      "examples": ["--bs-breakpoint-sm", "--bs-gutter-x"]
+    },
+    {
+      "name": "Utility & State Specific Variables",
+      "data_type": "Varies (Length, Color, Opacity, Percentage)",
+      "membership_type": "Global CSS variable",
+      "examples": ["--bs-focus-ring-color", "--bs-form-valid-color", "--bs-bg-opacity", "--bs-aspect-ratio"]
+    },
+    {
+      "name": "Custom Font Definitions",
+      "data_type": "Font File (EOT, WOFF, TTF, SVG)",
+      "membership_type": "Defined via @font-face rule",
+      "examples": ["varela_roundregular", "montserratregular"]
+    }
+  ],
+  "functions": [
+    "progress-bar-stripes (CSS @keyframes rule)",
+    "spinner-border (CSS @keyframes rule)",
+    "spinner-grow (CSS @keyframes rule)",
+    "placeholder-glow (CSS @keyframes rule)",
+    "placeholder-wave (CSS @keyframes rule)",
+    "spinner (Custom CSS @keyframes rule)"
+  ]
 }
