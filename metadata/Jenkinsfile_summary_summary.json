@@ -1,0 +1,4 @@
+
+My purpose is to **read raw Java code** and then **generate a JSON summary** that extracts its attributes (Java fields with types like `private String name;`) and functions (Java methods with return types and parameters like `public void doSomething(int count);`).
+
+The JSON you've provided is essentially an *example* of the output, but for a `Jenkinsfile` (which uses Groovy for its DSL, not Java for class definitions). I cannot process an already-formatted JSON, nor can I apply the Java-specific `attributes` and `functions` requirements to a non-Java file.
