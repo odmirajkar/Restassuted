@@ -1,12 +1,12 @@
 {
   "file_name": "CrashControllerTests.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashControllerTests.java",
-  "file_summary": "This Java test class, `CrashControllerTests`, is designed to verify the error-handling functionality of the `CrashController`. Its primary purpose is to ensure that the `triggerException()` method within the `CrashController` correctly throws a `RuntimeException` with a specific expected message. This helps in testing the application's behavior when an unexpected error occurs, providing a controlled environment to confirm that the exception mechanism works as intended. It utilizes JUnit 5 for testing and AssertJ for fluent assertion syntax.",
+  "file_summary": "This Java file contains a JUnit 5 test class named `CrashControllerTests`, which is designed to test the functionality of the `CrashController`. The primary purpose of this test is to verify that the `triggerException()` method within the `CrashController` correctly throws a `RuntimeException`. It specifically asserts that the thrown exception's message contains a predefined string, ensuring that the controller behaves as expected when an exception is deliberately triggered to showcase error handling. This test uses AssertJ for fluent assertion syntax.",
   "attributes": [
     {
       "name": "testee",
-      "data_type": "CrashController",
-      "membership_type": "instance variable (final)"
+      "type": "CrashController",
+      "membership": "instance, final"
     }
   ],
   "functions": [
@@ -14,7 +14,8 @@
       "name": "testTriggerException",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@Test"]
+      "annotations": ["@Test"],
+      "purpose": "Tests that the `triggerException()` method of `CrashController` throws a `RuntimeException` with a specific message."
     }
   ]
 }
