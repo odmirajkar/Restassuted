@@ -1,20 +1,20 @@
 {
   "file_name": "MysqlTestApplication.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/MysqlTestApplication.java",
-  "file_summary": "This Java class, `MysqlTestApplication`, serves as a Spring `@Configuration` for the PetClinic application, specifically designed to facilitate testing or local development with a MySQL database using Testcontainers. Its primary function is to define a `@Bean` method named `container()` which provides a `MySQLContainer` instance. This container is configured with `@ServiceConnection` and activated only when the 'mysql' Spring profile is active, allowing Spring Boot to automatically connect to this ephemeral MySQL database instance. The class also includes a `main` method, enabling it to be run as a standalone Spring Boot application. This `main` method explicitly launches the `PetClinicApplication` with the 'mysql' profile activated and disables Spring Docker Compose integration, ensuring the Testcontainers-managed MySQL instance is used.",
+  "file_path": "org/springframework/samples/petclinic/MysqlTestApplication.java",
+  "file_summary": "This Java class, `MysqlTestApplication`, serves as a specialized Spring Boot application configuration primarily for testing the PetClinic application against a MySQL database using Testcontainers. It defines a `@Configuration` class that provides a `MySQLContainer` bean. This bean, annotated with `@ServiceConnection` and `@Profile(\"mysql\")`, ensures that a MySQL database container (using `mysql:9.2` Docker image) is automatically started and connected when the 'mysql' profile is active, making it ideal for integration tests. The class also includes a `main` method, allowing it to be run as a standalone Spring Boot application. This `main` method specifically launches the `PetClinicApplication` while activating the 'mysql' profile and disabling Docker Compose, facilitating a quick setup for testing with a containerized MySQL instance.",
   "attributes": [],
   "functions": [
-    {
-      "name": "container",
-      "return_type": "MySQLContainer<?>",
-      "parameters": []
-    },
-    {
-      "name": "main",
-      "return_type": "void",
-      "parameters": [
-        "String[] args"
-      ]
-    }
+    "container()",
+    "main(String[] args)"
+  ],
+  "dependent_class_list": [
+    "org.springframework.boot.SpringApplication",
+    "org.springframework.boot.testcontainers.service.connection.ServiceConnection",
+    "org.springframework.context.annotation.Bean",
+    "org.springframework.context.annotation.Configuration",
+    "org.springframework.context.annotation.Profile",
+    "org.testcontainers.containers.MySQLContainer",
+    "org.testcontainers.utility.DockerImageName",
+    "org.springframework.samples.petclinic.PetClinicApplication"
   ]
 }
