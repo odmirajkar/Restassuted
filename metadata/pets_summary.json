@@ -1,7 +1,15 @@
+
+To generate the summary, I need the actual text content of the file (e.g., the Java code, a configuration file, a text document, etc.).
+
+Please provide the content of the file as plain text.
+
+Since I cannot process the image as a file, here's a basic JSON indicating the issue:
+
+```json
 {
-  "file_name": "image_file",
-  "file_path": "unknown",
-  "file_summary": "The provided input is an image file, not a code file. It appears to be a picture of a small dog and a kitten sitting together. Therefore, it cannot be summarized as source code.",
+  "file_name": "unknown_file",
+  "file_path": "unknown_path",
+  "file_summary": "The provided content was an image, not a text-based file. I need the actual text content of the file (e.g., Java code, configuration file, etc.) to generate a summary. Please paste the file contents as text.",
   "attributes": [],
   "functions": []
 }
