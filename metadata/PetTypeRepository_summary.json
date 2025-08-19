@@ -1,13 +1,19 @@
 {
   "file_name": "PetTypeRepository.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetTypeRepository.java",
-  "file_summary": "The `PetTypeRepository` interface serves as the data access layer for `PetType` domain objects within the Spring PetClinic application. It extends Spring Data JPA's `JpaRepository`, automatically providing standard CRUD (Create, Read, Update, Delete) operations for `PetType` entities, which are identified by their `Integer` ID.\n\nIn addition to the methods inherited from `JpaRepository`, this interface defines one custom query method:\n- `findPetTypes()`: This method is annotated with a JPA `@Query` to retrieve all `PetType` entities from the data store, ordered alphabetically by their `name`. This ensures that pet types are consistently presented in a sorted manner. This repository effectively abstracts the database interactions required to manage and retrieve different categories of pets.",
+  "file_summary": "The `PetTypeRepository` interface defines the data access operations for `PetType` domain objects within the Spring PetClinic application. As a Spring Data JPA repository, it extends `JpaRepository<PetType, Integer>`, inheriting standard CRUD (Create, Read, Update, Delete) methods for `PetType` entities, where `Integer` is the type of their primary key. This interface specifically provides a custom query method, `findPetTypes()`, which is annotated with `@Query`. This annotation specifies a JPQL (Java Persistence Query Language) query to retrieve all `PetType` entities from the data store, ensuring they are ordered alphabetically by their `name`. This repository centralizes and abstracts the persistence logic for pet types, allowing other parts of the application to interact with pet type data without needing to know the underlying database details.",
   "attributes": [],
   "functions": [
-    {
-      "name": "findPetTypes",
-      "return_type": "List<PetType>",
-      "parameters": []
-    }
+    "findPetTypes(): List<PetType>"
+  ],
+  "dependent_class_list": [
+    "java.util.List",
+    "java.util.Optional",
+    "jakarta.annotation.Nonnull",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.data.jpa.repository.JpaRepository",
+    "org.springframework.data.jpa.repository.Query",
+    "PetType"
   ]
 }
