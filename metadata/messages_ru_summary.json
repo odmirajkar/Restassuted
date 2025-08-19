@@ -1,0 +1,7 @@
+{
+  "file_name": "messages_ru.properties",
+  "file_path": "src/main/resources/messages_ru.properties",
+  "file_summary": "This file serves as a localization resource, providing Russian translations for various labels, messages, and UI elements used within the Spring PetClinic application. It contains key-value pairs where the key is typically an English identifier and the value is its corresponding Russian translation. The entries cover common application messages like 'welcome', 'required', 'not found', form submission statuses, validation messages for dates and telephone numbers, and labels for entities such as 'owner', 'vet', 'pet', along with their attributes like 'firstName', 'lastName', 'address', 'city', 'telephone', 'birthDate', 'type', 'specialties', 'description', and 'date'. It also includes UI navigation labels such as 'home', 'addOwner', 'findOwner', 'editPet', 'addVisit', 'previousVisits', and pagination controls.",
+  "attributes": [],
+  "functions": []
+}
