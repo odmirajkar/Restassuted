@@ -1,0 +1,7 @@
+{
+  "file_name": "data.sql",
+  "file_path": "Not provided",
+  "file_summary": "This SQL script contains a series of `INSERT` statements designed to populate a relational database with sample data for a pet clinic or veterinary application. It initializes several tables, including 'vets' (veterinarians), 'specialties' (medical specialties), 'vet_specialties' (linking vets to their specialties), 'types' (of pets), 'owners' (pet owners), 'pets' (individual pets with details like name, birth date, type, and owner), and 'visits' (records of pet visits, including date and description). The script provides a foundational dataset for testing or demonstrating an application that manages veterinary clinic information.",
+  "attributes": [],
+  "functions": []
+}
