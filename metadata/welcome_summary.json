@@ -1,7 +1,5 @@
 {
-  "file_name": "home.html",
-  "file_path": "N/A",
-  "file_summary": "This HTML file acts as a view template, specifically for a home or landing page, within a web application that leverages Thymeleaf for server-side rendering. It incorporates a common layout structure defined in `fragments/layout.html`, ensuring a consistent user interface across the application. The page dynamically displays a welcome message, likely localized through a message bundle using the `th:text=\"#{welcome}\"` attribute, supporting internationalization. Additionally, it embeds an image, `pets.png`, which is referenced using Thymeleaf's URL syntax to ensure correct path resolution. The overall purpose of this file is to present the main content of the application's homepage, integrating seamlessly with a broader templating system for a cohesive user experience.",
-  "attributes": [],
-  "functions": []
+  "file_name": "welcome.html",
+  "file_path": "unknown",
+  "file_summary": "This HTML file is a Thymeleaf template, designed to serve as a welcome or home page for a web application. It integrates with a common layout ('fragments/layout') to maintain a consistent look and feel across the site. The page dynamically displays a localized welcome message, indicated by `th:text=\"#{welcome}\"`, and includes a responsive image (`pets.png`) sourced from the application's static resources. Its primary purpose is to provide a user-friendly landing page with a greeting and a visual element."
 }
