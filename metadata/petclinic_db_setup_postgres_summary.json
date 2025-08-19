@@ -1,7 +1,7 @@
 {
-  "file_name": "PostgreSQL_Setup_Instructions.md",
-  "file_path": "docs/PostgreSQL_Setup_Instructions.md",
-  "file_summary": "This document outlines the necessary steps to configure and run the Spring PetClinic sample application using a PostgreSQL database. It provides a quick guide for developers to set up the database environment and activate the correct Spring profile. The instructions primarily focus on two main actions: first, utilizing Docker Compose to initiate the PostgreSQL database container, which ensures the database system is up and running and owned by the 'postgres' user. Second, it guides the user on how to launch the Spring PetClinic application by activating the 'postgres' Spring profile. An example command using Maven (`mvn spring-boot:run -Dspring-boot.run.profiles=postgres`) is provided to illustrate how to set this system property and connect the application to the Dockerized PostgreSQL instance. This document serves as a basic operational guide for integrating the application with a PostgreSQL backend.",
+  "file_name": "PostgreSQL_Configuration_Instructions.txt",
+  "file_path": "docs/PostgreSQL_Configuration_Instructions.txt",
+  "file_summary": "This document provides step-by-step instructions for configuring and running the Spring PetClinic sample application with a PostgreSQL database. It outlines two primary steps required to get the application working with a PostgreSQL backend. The first step involves starting the PostgreSQL database container using `docker-compose up`, assuming a `docker-compose.yml` file is present in the project's root directory. The second step instructs the user on how to run the Spring Boot application itself, specifically by activating the 'postgres' Spring profile. This can be achieved, for instance, by passing `-Dspring-boot.run.profiles=postgres` to the `mvn spring-boot:run` command. The overall purpose of this file is to guide developers in setting up their local environment to use PostgreSQL as the persistent data store for the Spring PetClinic application, ensuring a quick and smooth setup process for development or testing.",
   "attributes": [],
   "functions": []
 }
