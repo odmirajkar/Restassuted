@@ -1,0 +1,118 @@
+{
+  "file_name": "PetController.java",
+  "file_path": "org/springframework/samples/petclinic/owner/PetController.java",
+  "file_summary": "The `PetController` class is a Spring MVC controller responsible for handling web requests related to pet management within the Spring PetClinic application. It provides functionalities for creating new pets for an owner, updating existing pet details, and populating necessary data (like pet types and owner information) for forms. The controller interacts with `OwnerRepository` and `PetTypeRepository` for data persistence. It utilizes Spring's `@ModelAttribute` for pre-populating model data, `@InitBinder` for customizing data binding and applying validation, and `@GetMapping`/`@PostMapping` annotations to map HTTP requests to specific handler methods for displaying and processing pet creation and update forms. The class ensures data integrity by performing validation, including checking for duplicate pet names and valid birth dates, before saving changes.",
+  "attributes": [
+    {
+      "name": "VIEWS_PETS_CREATE_OR_UPDATE_FORM",
+      "type": "String",
+      "membership": "private static final"
+    },
+    {
+      "name": "owners",
+      "type": "OwnerRepository",
+      "membership": "private final"
+    },
+    {
+      "name": "types",
+      "type": "PetTypeRepository",
+      "membership": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "PetController",
+      "return_type": "void",
+      "parameters": [
+        "OwnerRepository owners",
+        "PetTypeRepository types"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "populatePetTypes",
+      "return_type": "Collection<PetType>",
+      "parameters": [],
+      "membership": "public"
+    },
+    {
+      "name": "findOwner",
+      "return_type": "Owner",
+      "parameters": [
+        "int ownerId"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "findPet",
+      "return_type": "Pet",
+      "parameters": [
+        "int ownerId",
+        "Integer petId"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "initOwnerBinder",
+      "return_type": "void",
+      "parameters": [
+        "WebDataBinder dataBinder"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "initPetBinder",
+      "return_type": "void",
+      "parameters": [
+        "WebDataBinder dataBinder"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "initCreationForm",
+      "return_type": "String",
+      "parameters": [
+        "Owner owner",
+        "ModelMap model"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "processCreationForm",
+      "return_type": "String",
+      "parameters": [
+        "Owner owner",
+        "Pet pet",
+        "BindingResult result",
+        "RedirectAttributes redirectAttributes"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "initUpdateForm",
+      "return_type": "String",
+      "parameters": [],
+      "membership": "public"
+    },
+    {
+      "name": "processUpdateForm",
+      "return_type": "String",
+      "parameters": [
+        "Owner owner",
+        "Pet pet",
+        "BindingResult result",
+        "RedirectAttributes redirectAttributes"
+      ],
+      "membership": "public"
+    },
+    {
+      "name": "updatePetDetails",
+      "return_type": "void",
+      "parameters": [
+        "Owner owner",
+        "Pet pet"
+      ],
+      "membership": "private"
+    }
+  ]
+}
