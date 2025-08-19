@@ -1,0 +1,7 @@
+{
+  "file_name": "package-info.java",
+  "file_path": "org/springframework/samples/petclinic/model/package-info.java",
+  "file_summary": "This `package-info.java` file provides package-level documentation and metadata for the `org.springframework.samples.petclinic.model` package within the Spring PetClinic application. Its primary purpose is to explain the role of the classes contained within this specific package, which are described as 'utilities used by the domain'. Beyond documentation, this file also includes standard Apache 2.0 licensing information, ensuring that the copyright and usage terms are clearly defined at the package level. As a special type of Java source file, it does not define any classes, interfaces, attributes, or methods directly, but rather serves as a descriptor for the package itself.",
+  "attributes": [],
+  "functions": []
+}
