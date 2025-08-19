@@ -1,7 +1,8 @@
 {
-  "file_name": "PostgreSQL_Configuration_Instructions.txt",
-  "file_path": "docs/PostgreSQL_Configuration_Instructions.txt",
-  "file_summary": "This document provides step-by-step instructions for configuring and running the Spring PetClinic sample application with a PostgreSQL database. It outlines two primary steps required to get the application working with a PostgreSQL backend. The first step involves starting the PostgreSQL database container using `docker-compose up`, assuming a `docker-compose.yml` file is present in the project's root directory. The second step instructs the user on how to run the Spring Boot application itself, specifically by activating the 'postgres' Spring profile. This can be achieved, for instance, by passing `-Dspring-boot.run.profiles=postgres` to the `mvn spring-boot:run` command. The overall purpose of this file is to guide developers in setting up their local environment to use PostgreSQL as the persistent data store for the Spring PetClinic application, ensuring a quick and smooth setup process for development or testing.",
+  "file_name": "postgres_setup_instructions.txt",
+  "file_path": "N/A",
+  "file_summary": "This file provides setup instructions for configuring the Spring PetClinic sample application to use PostgreSQL as its database. It outlines two main steps: first, it instructs the user to start the PostgreSQL database container using `docker-compose up` from the project's root directory. Second, it explains how to activate the 'postgres' Spring profile when running the application, typically by setting the `spring.profiles.active` property. An example command using `mvn spring-boot:run -Dspring-boot.run.profiles=postgres` is provided to illustrate how to launch the application with the specified profile, thereby connecting it to the PostgreSQL database.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
