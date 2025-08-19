@@ -1,36 +1,34 @@
 {
   "file_name": "OwnerRepository.java",
   "file_path": "org/springframework/samples/petclinic/owner/OwnerRepository.java",
-  "file_summary": "This Java interface, `OwnerRepository`, serves as a Spring Data JPA repository for managing `Owner` domain objects within the PetClinic application. It extends `JpaRepository<Owner, Integer>`, inheriting standard CRUD (Create, Read, Update, Delete) operations and pagination capabilities for `Owner` entities, which are identified by an `Integer` primary key. The interface adheres to Spring Data naming conventions for query methods, allowing the framework to automatically implement common data access patterns. Beyond the standard operations, it defines custom query methods to retrieve owners: `findByLastNameStartingWith` for searching owners whose last names begin with a specified string, and `findById` (overriding the default `JpaRepository` method to ensure nullability annotations) for retrieving a single owner by their unique identifier, returning an `Optional` to handle cases where the owner might not be found.",
+  "file_summary": "This file defines the `OwnerRepository` interface, which is a Spring Data JPA repository responsible for managing `Owner` domain objects. It extends `JpaRepository<Owner, Integer>`, providing standard CRUD (Create, Read, Update, Delete) operations for `Owner` entities, using `Integer` as the primary key type. The interface includes custom query methods beyond the basic CRUD operations. Specifically, it allows retrieving owners whose last name starts with a given string, supporting pagination, and provides a method to find an owner by their ID, returning an `Optional<Owner>` for robust null handling. This repository abstracts the data access layer for owners within the Pet Clinic application, adhering to Spring Data naming conventions for easy extension and integration.",
   "attributes": [],
   "functions": [
     {
       "name": "findByLastNameStartingWith",
-      "return_type": "org.springframework.data.domain.Page<org.springframework.samples.petclinic.owner.Owner>",
       "parameters": [
         {
           "name": "lastName",
-          "type": "java.lang.String"
+          "type": "String"
         },
         {
           "name": "pageable",
-          "type": "org.springframework.data.domain.Pageable"
+          "type": "Pageable"
         }
       ],
-      "access_modifier": "public",
-      "membership_type": "interface"
+      "return_type": "Page<Owner>",
+      "membership": "public"
     },
     {
       "name": "findById",
-      "return_type": "java.util.Optional<org.springframework.samples.petclinic.owner.Owner>",
       "parameters": [
         {
           "name": "id",
-          "type": "java.lang.Integer"
+          "type": "@Nonnull Integer"
         }
       ],
-      "access_modifier": "public",
-      "membership_type": "interface"
+      "return_type": "Optional<Owner>",
+      "membership": "public"
     }
   ]
 }
