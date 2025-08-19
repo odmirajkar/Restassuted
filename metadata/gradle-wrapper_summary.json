@@ -1,7 +1,48 @@
 {
-  "file_name": "Unknown",
+  "file_name": "gradle-wrapper.properties",
   "file_path": "Unknown",
-  "file_summary": "This file is empty. No content was provided, so its purpose, attributes, or functions cannot be determined. It contains no code or data, suggesting it might be a placeholder, an uninitialized file, or its content was not included in the request.",
-  "attributes": [],
+  "file_summary": "This file is a configuration file for the Gradle Wrapper. Its primary purpose is to define how Gradle projects retrieve and use specific versions of the Gradle build tool. It specifies the base directory for Gradle distributions (`distributionBase` and `zipStoreBase`), the relative path within that base (`distributionPath` and `zipStorePath`), and most importantly, the exact URL (`distributionUrl`) from which the Gradle distribution (version 8.14.3-all.zip in this case) should be downloaded. It also includes a SHA256 checksum (`distributionSha256Sum`) to verify the integrity of the downloaded distribution, a network timeout value (`networkTimeout`), and a flag to validate the distribution URL (`validateDistributionUrl`). This ensures consistent builds across different developer environments without requiring manual Gradle installation.",
+  "attributes": [
+    {
+      "name": "distributionBase",
+      "type": "String",
+      "membership_type": "Property"
+    },
+    {
+      "name": "distributionPath",
+      "type": "String",
+      "membership_type": "Property"
+    },
+    {
+      "name": "distributionSha256Sum",
+      "type": "String",
+      "membership_type": "Property"
+    },
+    {
+      "name": "distributionUrl",
+      "type": "String",
+      "membership_type": "Property"
+    },
+    {
+      "name": "networkTimeout",
+      "type": "Integer",
+      "membership_type": "Property"
+    },
+    {
+      "name": "validateDistributionUrl",
+      "type": "Boolean",
+      "membership_type": "Property"
+    },
+    {
+      "name": "zipStoreBase",
+      "type": "String",
+      "membership_type": "Property"
+    },
+    {
+      "name": "zipStorePath",
+      "type": "String",
+      "membership_type": "Property"
+    }
+  ],
   "functions": []
 }
