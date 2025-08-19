@@ -1,15 +1,7 @@
 {
   "file_name": "deploy-and-test-cluster.yml",
-  "file_path": "Not specified in prompt",
-  "file_summary": "This is a GitHub Actions workflow designed to automate the deployment and testing of a Kubernetes cluster. It is configured to trigger on `push` and `pull_request` events targeting the `main` branch, specifically when changes are made within the `k8s/` directory. The workflow executes a single job, `deploy-and-test-cluster`, which runs on an `ubuntu-latest` environment. It performs several steps: checking out the repository, creating a local Kubernetes cluster using `kind`, deploying applications defined in the `k8s/` directory using `kubectl`, and finally, waiting for specific application pods (`demo-db` and `petclinic`) to become ready, ensuring successful deployment and basic health.",
-  "attributes": [
-    {"name": "on", "data_type": "object", "membership_type": "N/A"},
-    {"name": "jobs", "data_type": "object", "membership_type": "N/A"}
-  ],
-  "functions": [
-    "Check out the repository",
-    "Create k8s Kind Cluster",
-    "Deploy application",
-    "Wait for Pods to be ready"
-  ]
+  "file_path": ".github/workflows/deploy-and-test-cluster.yml",
+  "file_summary": "This file defines a GitHub Actions workflow named 'Deploy and Test Cluster'. Its primary purpose is to automate the deployment and basic testing of a Kubernetes-based application whenever changes are pushed or a pull request is made to the 'main' branch, specifically within the 'k8s/' directory. The workflow runs on an Ubuntu environment and performs several key steps: first, it checks out the repository content. Next, it provisions a temporary Kubernetes Kind cluster. Following cluster creation, it proceeds to deploy the application by applying all Kubernetes manifests found in the 'k8s/' directory. Finally, it includes a crucial step to wait until the 'demo-db' and 'petclinic' pods are in a ready state, ensuring that the deployed application components are fully operational before the workflow concludes. This automation streamlines the CI/CD process for Kubernetes deployments.",
+  "attributes": [],
+  "functions": []
 }
