@@ -1,15 +1,18 @@
 {
   "file_name": "WelcomeController.java",
-  "file_path": "org/springframework/samples/petclinic/system/WelcomeController.java",
-  "file_summary": "This Java class, `WelcomeController`, is a Spring `@Controller` component within the PetClinic application. Its sole responsibility is to handle the application's root URL. Specifically, it defines a `@GetMapping(\"/\")` annotation, meaning that when a user accesses the base URL of the application, the `welcome()` method is invoked. This method simply returns the string \"welcome\", which Spring MVC then resolves to a corresponding view (e.g., a Thymeleaf or JSP template named `welcome.html` or `welcome.jsp`). This class serves as the entry point for the web application, directing users to the initial welcome page, which typically provides an overview or starting point for navigating the PetClinic features.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+  "file_summary": "This Java class, `WelcomeController`, is a simple Spring MVC controller within the PetClinic application. Annotated with `@Controller`, it is designed to handle web requests and render views. Its primary function is to serve as the application's entry point or home page.\n\nThe `welcome()` method is mapped to the root URL (`/`) using the `@GetMapping` annotation. When a user navigates to the application's base URL, this method is invoked, and it simply returns the string \"welcome\". This string is then resolved by Spring MVC's view resolver mechanism to display the corresponding `welcome` view (e.g., `welcome.html` or `welcome.jsp`), effectively presenting the initial landing page of the PetClinic application.",
   "attributes": [],
   "functions": [
     {
       "name": "welcome",
-      "visibility": "public",
       "return_type": "String",
       "parameters": [],
-      "purpose": "Handles GET requests to the root URL ('/') and returns the logical view name 'welcome', which Spring MVC resolves to display the application's welcome page."
+      "membership_type": "public"
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.stereotype.Controller",
+    "org.springframework.web.bind.annotation.GetMapping"
   ]
 }
