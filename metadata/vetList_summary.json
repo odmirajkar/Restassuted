@@ -1,58 +1,7 @@
 {
   "file_name": "vets.html",
-  "file_path": "src/main/resources/templates/vets.html",
-  "file_summary": "This `vets.html` file serves as a Thymeleaf template for a web page that displays a paginated list of veterinarians. It leverages a common `layout` fragment for consistent page structure and styling. The primary purpose is to present veterinarian data, including their full name and a list of their specialties, within a structured HTML table. The content is dynamically rendered using Thymeleaf expressions, iterating over a `listVets` object which is expected to be provided by the server-side model. For each veterinarian, their `firstName` and `lastName` are combined, and their `specialties` are displayed; if a vet has no specialties, a localized 'none' message appears. The template also implements pagination controls, showing the total number of pages (`totalPages`), the `currentPage`, and navigation links (first, previous, next, last page) to browse through the vet list. This design ensures user-friendly navigation for large datasets and supports internationalization through message externalization (`#{...}`) for elements like page titles, table headers, and navigation labels.",
-  "attributes": [
-    {
-      "name": "listVets",
-      "data_type": "Collection<Vet>",
-      "membership_type": "Model Attribute"
-    },
-    {
-      "name": "vet",
-      "data_type": "Vet",
-      "membership_type": "Iteration Variable (from listVets)"
-    },
-    {
-      "name": "vet.firstName",
-      "data_type": "String",
-      "membership_type": "Property of Vet object"
-    },
-    {
-      "name": "vet.lastName",
-      "data_type": "String",
-      "membership_type": "Property of Vet object"
-    },
-    {
-      "name": "vet.specialties",
-      "data_type": "Collection<Specialty>",
-      "membership_type": "Property of Vet object"
-    },
-    {
-      "name": "specialty.name",
-      "data_type": "String",
-      "membership_type": "Property of Specialty object (from vet.specialties)"
-    },
-    {
-      "name": "vet.nrOfSpecialties",
-      "data_type": "Integer",
-      "membership_type": "Property of Vet object"
-    },
-    {
-      "name": "totalPages",
-      "data_type": "Integer",
-      "membership_type": "Model Attribute"
-    },
-    {
-      "name": "currentPage",
-      "data_type": "Integer",
-      "membership_type": "Model Attribute"
-    },
-    {
-      "name": "i",
-      "data_type": "Integer",
-      "membership_type": "Loop Variable (for pagination numbers)"
-    }
-  ],
+  "file_path": "",
+  "file_summary": "This HTML file serves as a Thymeleaf template designed to display a comprehensive list of veterinarians within a web application. It integrates with a common layout fragment (`fragments/layout :: layout`) to ensure consistent page structure. The primary purpose of this page is to present each veterinarian's full name (first and last) along with their associated medical specialties. If a veterinarian does not have any specialties assigned, the template gracefully handles this by displaying a 'none' indicator. Furthermore, the file incorporates robust pagination functionality, allowing users to navigate through potentially large lists of veterinarians. It dynamically generates navigation links for individual pages, as well as 'first,' 'previous,' 'next,' and 'last' page options, all based on the `currentPage` and `totalPages` variables passed to the template. This ensures a user-friendly experience for viewing veterinarian data.",
+  "attributes": [],
   "functions": []
 }
