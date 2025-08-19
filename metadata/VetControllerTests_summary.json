@@ -1,49 +1,49 @@
 {
   "file_name": "VetControllerTests.java",
   "file_path": "org/springframework/samples/petclinic/vet/VetControllerTests.java",
-  "file_summary": "This Java class, `VetControllerTests`, serves as a comprehensive integration test for the `VetController` within the Spring PetClinic application. It leverages Spring Boot's `@WebMvcTest` to provide a focused slice of the application context, specifically for testing the web layer without loading the entire application. The tests utilize `MockMvc` to simulate HTTP requests to the `VetController` and assert the expected outcomes, including HTTP status, view names, model attributes, and JSON content. The `VetRepository` dependency of the controller is mocked using `@MockitoBean`, allowing for controlled data provisioning and verification of repository interactions. Helper methods are provided to create sample `Vet` objects, and a `@BeforeEach` setup method configures the mock `VetRepository` to return predefined data. The class contains test cases for both HTML-based vet list display and JSON-based REST API responses, ensuring the controller handles different request formats correctly.",
+  "file_summary": "This Java class, `VetControllerTests`, is a unit test for the `VetController` in the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer, specifically the MVC endpoints handled by `VetController`. The class mocks the `VetRepository` using `@MockitoBean` to control its behavior during tests. It sets up mock data for veterinarians (James and Helen) and configures the `VetRepository` mock to return this data when `findAll()` methods are called. The tests verify two main functionalities: displaying the list of vets in an HTML view (checked via `/vets.html?page=1` endpoint) and providing the list of vets as a JSON REST endpoint (checked via `/vets` endpoint with `application/json` acceptance). It ensures correct HTTP status, model attributes, view names, and JSON content.",
   "attributes": [
     {
       "name": "mockMvc",
-      "type": "MockMvc",
-      "membership_type": "private @Autowired"
+      "data_type": "MockMvc",
+      "membership_type": "private"
     },
     {
       "name": "vets",
-      "type": "VetRepository",
-      "membership_type": "private @MockitoBean"
+      "data_type": "VetRepository",
+      "membership_type": "private"
     }
   ],
   "functions": [
     {
       "name": "james",
       "return_type": "Vet",
-      "parameters": []
+      "parameters": [],
+      "membership_type": "private"
     },
     {
       "name": "helen",
       "return_type": "Vet",
-      "parameters": []
+      "parameters": [],
+      "membership_type": "private"
     },
     {
       "name": "setup",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@BeforeEach"]
+      "membership_type": "private"
     },
     {
       "name": "testShowVetListHtml",
       "return_type": "void",
       "parameters": [],
-      "throws": ["Exception"],
-      "annotations": ["@Test"]
+      "membership_type": "private"
     },
     {
       "name": "testShowResourcesVetList",
       "return_type": "void",
       "parameters": [],
-      "throws": ["Exception"],
-      "annotations": ["@Test"]
+      "membership_type": "private"
     }
   ]
 }
