@@ -1,0 +1,7 @@
+{
+  "file_name": "MySQL_Configuration_Instructions.txt",
+  "file_path": "N/A",
+  "file_summary": "This document provides comprehensive instructions for configuring and running the Spring PetClinic sample application with a MySQL database backend. It outlines three main steps: first, it advises on downloading and installing MySQL (e.g., MySQL Community Server) or using the provided `docker-compose.yml` for an automated setup. Second, it details the process of creating the necessary 'petclinic' database and user by executing the `db/mysql/user.sql` script, noting that this step is automated when using Docker Compose. Finally, it instructs users to activate the `mysql` Spring profile when running the application, typically by setting the `spring.profiles.active` property, for example, via `mvn spring-boot:run -Dspring-boot.run.profiles=mysql`. The document emphasizes that the 'petclinic' database must exist for the application to function correctly with the default JDBC URL configuration, a condition handled either by the Docker Compose setup or the `user.sql` script.",
+  "attributes": [],
+  "functions": []
+}
