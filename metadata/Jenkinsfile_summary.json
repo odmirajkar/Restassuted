@@ -1,38 +1,40 @@
 {
   "file_name": "Jenkinsfile",
-  "file_path": "N/A (Typically at the root of a Git repository)",
-  "file_summary": "This file defines a Jenkins Declarative Pipeline script, outlining a multi-stage continuous integration and delivery (CI/CD) process for a Java Maven project, although much of the core functionality is currently commented out. The pipeline initializes a global variable `pr_ID` (Pull Request ID). It defines a 'build' stage intended for compiling and packaging the project using Maven, followed by a 'test' stage which uses parallel execution for 'integration' and 'quality' checks (e.g., running `mvn clean verify` and `mvn sonar:sonar`). A 'mail' stage is included, featuring a timeout and a commented-out input step, suggesting a manual approval gate. Finally, a significant 'Merge Pull Request' stage is entirely commented out; this section outlines a sophisticated Git workflow for fetching, merging, tagging, and pushing a specific pull request using credentials. Despite the commented-out sections, the script demonstrates the structure for a comprehensive CI/CD pipeline, including parallel testing, quality gates, and automated deployment/merging strategies.",
+  "file_path": "/",
+  "file_summary": "This Jenkins Pipeline script defines a multi-stage Continuous Integration and Continuous Delivery (CI/CD) workflow. It outlines a sequence of operations including 'build', 'test', and 'mail' stages, with a significant 'Merge Pull Request' stage commented out. The 'build' stage is intended for compiling code (e.g., Java/Maven) and stashing artifacts, though its steps are currently inactive. The 'test' stage executes two sub-stages, 'integration' and 'quality', in parallel, designed for running automated tests and code quality analysis respectively, with their actual commands also commented out. The 'mail' stage introduces a manual approval gate, prompting a user for input with a 7-day timeout. A large commented-out section at the end details a sophisticated 'Merge Pull Request' stage, demonstrating how to fetch, merge, tag, and push changes from a specific pull request to a Git repository using credentials. The overall purpose of this script is to serve as a template or framework for an automated CI/CD process, encompassing code compilation, testing, quality checks, manual approval, and advanced Git integration for managing pull requests, even with many steps currently disabled.",
   "attributes": [
     {
       "name": "pr_ID",
       "data_type": "Integer",
-      "membership_type": "script-level variable"
+      "membership_type": "Global"
     }
   ],
   "functions": [
     {
       "name": "build",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "stage"
+      "description": "Orchestrates the build process of the project, typically involving compilation and packaging. (Currently commented out in the provided script)"
     },
     {
       "name": "test",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "stage"
+      "description": "Executes testing and quality analysis phases in parallel.",
+      "sub_stages": [
+        {
+          "name": "integration",
+          "description": "Runs integration tests for the application. (Currently commented out in the provided script)"
+        },
+        {
+          "name": "quality",
+          "description": "Performs code quality analysis (e.g., SonarQube). (Currently commented out in the provided script)"
+        }
+      ]
     },
     {
       "name": "mail",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "stage"
+      "description": "Implements a manual approval step, waiting for user input for up to 7 days before potentially proceeding."
     },
     {
       "name": "Merge Pull Request",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "stage (commented out)"
+      "description": "Handles the process of fetching a specific pull request, merging it into the main branch, tagging the commit, and pushing changes and tags to the remote repository. (This entire stage is commented out in the provided script)"
     }
   ]
 }
