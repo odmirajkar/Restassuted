@@ -1,54 +1,33 @@
 {
   "file_name": "Visit.java",
   "file_path": "org/springframework/samples/petclinic/owner/Visit.java",
-  "file_summary": "The `Visit` class is a core domain object in the Spring PetClinic application, representing a veterinary visit made by a pet. It is a JPA `@Entity` mapped to the `visits` table in the database and extends `BaseEntity`, inheriting an `id` property. This class captures essential details about a visit, specifically the date of the visit and a textual description of the visit.\n\nThe `date` attribute is a `LocalDate` and is formatted for display and parsing using `yyyy-MM-dd` pattern via `@DateTimeFormat`. The `description` attribute is a `String` that is marked with `@NotBlank`, indicating it cannot be empty or null. The class includes a default constructor that initializes the `date` to the current system date, simplifying the creation of new visit records. It also provides standard getter and setter methods for its properties, enabling data manipulation and retrieval.",
+  "file_summary": "The `Visit` class is a core domain object within the Spring PetClinic application, located in the `org.springframework.samples.petclinic.owner` package. It represents a single visit by a pet, capturing information about the date of the visit and a description of the visit's purpose or observations. Inheriting from `BaseEntity`, it automatically includes an `id` property for database identification. \n\nAnnotated with `@Entity` and `@Table(name = \"visits\")`, `Visit` is configured as a JPA (Java Persistence API) entity, enabling its persistence to a database table named 'visits'. The `date` attribute, storing the visit's date, is mapped to a column named `visit_date` and formatted as `yyyy-MM-dd` for display. The `description` attribute, a string detailing the visit, is marked with `@NotBlank` to ensure it's not empty. The class provides a default constructor that initializes the `date` to the current date and includes standard getter and setter methods for all its properties. This class is fundamental for tracking the historical health and care records of pets.",
   "attributes": [
     {
       "name": "date",
-      "type": "LocalDate",
+      "data_type": "LocalDate",
       "membership_type": "private"
     },
     {
       "name": "description",
-      "type": "String",
+      "data_type": "String",
       "membership_type": "private"
     }
   ],
   "functions": [
-    {
-      "name": "Visit",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "getDate",
-      "return_type": "LocalDate",
-      "parameters": []
-    },
-    {
-      "name": "setDate",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "date",
-          "type": "LocalDate"
-        }
-      ]
-    },
-    {
-      "name": "getDescription",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "setDescription",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "description",
-          "type": "String"
-        }
-      ]
-    }
+    "Visit()",
+    "getDate(): LocalDate",
+    "setDate(LocalDate date): void",
+    "getDescription(): String",
+    "setDescription(String description): void"
+  ],
+  "dependent_class_list": [
+    "java.time.LocalDate",
+    "org.springframework.format.annotation.DateTimeFormat",
+    "org.springframework.samples.petclinic.model.BaseEntity",
+    "jakarta.persistence.Column",
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.Table",
+    "jakarta.validation.constraints.NotBlank"
   ]
 }
