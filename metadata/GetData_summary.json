@@ -1,1 +1,28 @@
-LD“
+```json
+{
+  "file_name": "GetData.java",
+  "file_path": "src/test/java/getRequest/GetData.java",
+  "file_summary": "This `GetData` Java class serves as an API testing suite, leveraging TestNG and RestAssured to interact with the Ergast Formula 1 API. Its primary purpose is to demonstrate various aspects of making HTTP GET requests, validating responses, and performing data-driven assertions. The class includes tests to verify the API's operational status by checking the HTTP status code (e.g., 200 OK). It also showcases a more advanced scenario where data, such as a 'circuitId', is extracted from one API response and subsequently used as a path parameter in another request to retrieve more specific information. Furthermore, the class illustrates how to parameterize API tests using variables for elements like the 'season' and assert response body properties like the size of a list of circuits. Overall, `GetData` provides practical examples for performing robust and flexible API automation testing.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "testResponseergast",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "instance"
+    },
+    {
+      "name": "test_ScenarioRetrieveFirstCircuitFor2017SeasonAndGetCountry_ShouldBeAustralia",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "instance"
+    },
+    {
+      "name": "test_NumberOfCircuits_ShouldBe20_Parameterized",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "instance"
+    }
+  ]
+}
+```
