@@ -1,0 +1,7 @@
+{
+  "file_name": "addOrUpdatePetForm.html",
+  "file_path": "src/main/resources/templates/pets/addOrUpdatePetForm.html",
+  "file summary": "This Thymeleaf HTML template (`addOrUpdatePetForm.html`) provides a user interface for creating new pet entries or modifying details of an existing pet within a web application. It leverages Thymeleaf's features for dynamic content generation, including internationalization (`th:text`, `th:block`) and fragment inclusion (`th:replace`). The form displays the associated owner's full name and allows users to input or update the pet's name, birth date, and select its type from a predefined list. The submit button's label dynamically changes between 'Add Pet' and 'Update Pet' based on whether a new pet is being created (`pet['new']`). The template uses `inputField` and `selectField` fragments for consistent styling and validation. It is designed to be part of a larger web application, integrating with a common `layout` fragment to maintain overall site consistency.",
+  "attributes": [],
+  "functions": []
+}
