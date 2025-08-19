@@ -1,7 +1,7 @@
 {
   "file_name": "OwnerControllerTests.java",
   "file_path": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-  "file_summary": "This Java file, `OwnerControllerTests.java`, contains unit tests for the `OwnerController` class within the Spring PetClinic application. Utilizing Spring Boot's `@WebMvcTest` annotation, it focuses on testing the web layer, specifically the interactions with the `OwnerController`. The `OwnerRepository` dependency is mocked using `@MockitoBean` to isolate the web layer's behavior from actual database operations. The tests cover a comprehensive range of scenarios, including the initialization and processing of forms for creating and updating owner information, searching for owners by last name (both successful searches and cases where no owners are found), and displaying detailed owner profiles. A `setup` method ensures a consistent test environment by preparing mock data, such as a sample `Owner` object (\"George Franklin\") with an associated pet and visit. Each test method simulates HTTP requests using `MockMvc` and asserts on the expected HTTP status, model attributes, and view names to ensure the controller behaves as designed under various conditions, including form validation errors and ID mismatches during updates.",
+  "file_summary": "This Java class, `OwnerControllerTests`, is a comprehensive test suite for the `OwnerController` in the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer, specifically the interactions between HTTP requests and the controller. The tests employ `MockMvc` to simulate HTTP requests (GET and POST) and assert the expected outcomes, such as HTTP status codes, model attributes, and view names. It also uses `@MockitoBean` to mock the `OwnerRepository`, allowing for controlled testing of various scenarios without hitting a real database. The test cases cover a wide range of functionalities including initializing and processing forms for creating and updating owners, searching for owners by last name (both successful and no-results scenarios), and displaying individual owner details. The class includes setup methods to pre-configure mock data before each test and validates form submissions, error handling, and data redirection.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
@@ -11,89 +11,29 @@
     {
       "name": "mockMvc",
       "data_type": "MockMvc",
-      "membership_type": "private"
+      "membership_type": "private @Autowired"
     },
     {
       "name": "owners",
       "data_type": "OwnerRepository",
-      "membership_type": "private"
+      "membership_type": "private @MockitoBean"
     }
   ],
   "functions": [
-    {
-      "name": "george",
-      "return_type": "Owner",
-      "parameters": []
-    },
-    {
-      "name": "setup",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testInitCreationForm",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessCreationFormSuccess",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessCreationFormHasErrors",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testInitFindForm",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessFindFormSuccess",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessFindFormByLastName",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessFindFormNoOwnersFound",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testInitUpdateOwnerForm",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessUpdateOwnerFormSuccess",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessUpdateOwnerFormUnchangedSuccess",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessUpdateOwnerFormHasErrors",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testShowOwner",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testProcessUpdateOwnerFormWithIdMismatch",
-      "return_type": "void",
-      "parameters": []
-    }
+    "george()",
+    "setup()",
+    "testInitCreationForm()",
+    "testProcessCreationFormSuccess()",
+    "testProcessCreationFormHasErrors()",
+    "testInitFindForm()",
+    "testProcessFindFormSuccess()",
+    "testProcessFindFormByLastName()",
+    "testProcessFindFormNoOwnersFound()",
+    "testInitUpdateOwnerForm()",
+    "testProcessUpdateOwnerFormSuccess()",
+    "testProcessUpdateOwnerFormUnchangedSuccess()",
+    "testProcessUpdateOwnerFormHasErrors()",
+    "testShowOwner()",
+    "testProcessUpdateOwnerFormWithIdMismatch()"
   ]
 }
