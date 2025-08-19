@@ -1,43 +1,18 @@
 {
   "file_name": "Vet.java",
   "file_path": "org/springframework/samples/petclinic/vet/Vet.java",
-  "file_summary": "This file defines the `Vet` class, a core domain object in the Spring PetClinic application representing a veterinarian. It extends the `Person` class, inheriting basic personal attributes, and is marked as a JPA `@Entity` mapped to the \"vets\" database table. The `Vet` class establishes a many-to-many relationship with `Specialty` objects, indicating the areas of expertise a veterinarian possesses. It includes functionality to manage these specialties, such as retrieving them (sorted alphabetically), counting the number of specialties, and adding new ones. The class demonstrates JPA annotations for entity mapping and relationship configuration, including eager fetching for specialties, and JAXB annotation for XML marshalling.",
+  "file_summary": "The `Vet` class is a core domain object within the Spring PetClinic application, representing a veterinarian. It extends the `Person` class, inheriting basic personal details such as first and last names. This class is designed as a JPA entity, mapped to the 'vets' table in the database, enabling ORM capabilities for persistence.\n\nA key feature of the `Vet` class is its ability to associate with multiple `Specialty` objects, defining the areas of expertise for each veterinarian. This relationship is managed through a many-to-many mapping (`@ManyToMany`) to the `vet_specialties` join table. The class provides methods to access these specialties, retrieve their count, and add new specialties. Notably, the `getSpecialties()` method ensures that the list of specialties is returned in a sorted order by their name, enhancing data presentation. This design effectively models the real-world concept of a vet and their professional qualifications within the application.",
   "attributes": [
     {
       "name": "specialties",
-      "data_type": "Set<Specialty>",
-      "membership_type": "private instance variable"
+      "type": "Set<Specialty>",
+      "membership_type": "private instance"
     }
   ],
   "functions": [
-    {
-      "name": "getSpecialtiesInternal",
-      "return_type": "Set<Specialty>",
-      "parameters": [],
-      "membership_type": "protected"
-    },
-    {
-      "name": "getSpecialties",
-      "return_type": "List<Specialty>",
-      "parameters": [],
-      "membership_type": "public"
-    },
-    {
-      "name": "getNrOfSpecialties",
-      "return_type": "int",
-      "parameters": [],
-      "membership_type": "public"
-    },
-    {
-      "name": "addSpecialty",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "specialty",
-          "type": "Specialty"
-        }
-      ],
-      "membership_type": "public"
-    }
+    "getSpecialtiesInternal()",
+    "getSpecialties()",
+    "getNrOfSpecialties()",
+    "addSpecialty(Specialty specialty)"
   ]
 }
