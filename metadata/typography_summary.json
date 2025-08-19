@@ -1,5 +1,7 @@
 {
-  "file_name": "untitled.css",
-  "file_path": "N/A",
-  "file_summary": "This CSS file is responsible for defining the typography of a web application. It starts by declaring two custom web fonts, 'varela_roundregular' and 'montserratregular', using `@font-face` rules. For each font, it specifies multiple source URLs (EOT, WOFF, TTF, SVG) to ensure broad browser compatibility. After importing the fonts, the stylesheet applies global typographic styles to common HTML elements. It resets default margins and sets a base font-family ('varela_roundregular'), font-weight, and color for `body`, `h1`, `h2`, `h3`, `p`, and `input` elements. Subsequently, it overrides specific properties for headings (`h1`, `h2`, `h3`) and `strong` tags, applying 'montserratregular' for `h1`, `h2`, and `strong`, and defining distinct font sizes, line heights, and margins for a structured visual hierarchy. The `p` tag has commented-out font-size and line-height properties, suggesting they might be defined elsewhere or were previously considered."
+  "file_name": "styles.css",
+  "file_path": "path/to/styles.css",
+  "file_summary": "This CSS file is responsible for defining the foundational typography and font declarations for a web application. It starts by importing two custom font families, 'varela_roundregular' and 'montserratregular', using the `@font-face` rule. For each font, it specifies multiple source URLs with different formats (EOT, WOFF, TTF, SVG) to ensure broad browser compatibility. After font definitions, the file establishes a baseline styling for common HTML elements such as `body`, `h1`, `h2`, `h3`, `p`, and `input`, by resetting their margins to zero and setting a default font weight and color. Subsequently, it applies specific typographic styles to headlines (`h1`, `h2`, `h3`) and strong text, assigning the 'montserratregular' font for a distinctive look and 'varela_roundregular' as the primary font for body text. The file sets font sizes, line heights, and specific font weights for these elements, ensuring a consistent and aesthetically pleasing textual appearance across the website.",
+  "attributes": [],
+  "functions": []
 }
