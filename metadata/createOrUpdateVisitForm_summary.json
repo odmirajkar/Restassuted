@@ -1,7 +1,7 @@
 {
-  "file_name": "addEditVisit.html",
-  "file_path": "src/main/resources/templates/pets/addEditVisit.html",
-  "file_summary": "This Thymeleaf HTML template is designed to facilitate the addition of new visits for a specific pet, as well as to display a list of previous visits for that pet. It integrates with a Spring Boot application (likely Pet Clinic) to manage pet-related data. The page displays essential pet information such as name, birth date, type, and owner details. It provides a form where users can input the date and a description for a new visit. Additionally, it features a section that lists all previously recorded visits for the pet, showing their date and description, using Thymeleaf's conditional rendering and iteration capabilities. The template also uses internationalization keys (e.g., #{new}, #{pet}) indicating support for multiple languages.",
+  "file_name": "visitForm.html",
+  "file_path": "N/A",
+  "file_summary": "This HTML file is a Thymeleaf template (`visitForm.html`) designed for a web application, likely a Spring-based project, specifically to manage veterinary visits for pets. It extends a common layout (`fragments/layout`) for consistent styling and structure. The page serves two main purposes: displaying details of the current pet (name, birth date, type, and owner) and providing a form to add new visits or update existing visit information. The form allows users to input the visit's date and a description. Below the form, it also lists all previous visits for the displayed pet, showing their date and description. The dynamic title and button text depend on whether a new visit is being created. It leverages Thymeleaf for data binding (`th:object`, `th:value`, `th:text`) and includes reusable input field fragments, promoting a modular and maintainable front-end.",
   "attributes": [],
   "functions": []
 }
