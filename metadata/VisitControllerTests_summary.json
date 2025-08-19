@@ -1,33 +1,51 @@
 {
   "file_name": "VisitControllerTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
-  "file_summary": "This Java class, `VisitControllerTests`, provides integration tests for the `VisitController` in the Spring PetClinic application. It is configured with `@WebMvcTest` to focus on testing the web layer, allowing the simulation of HTTP requests to the controller without needing to start a full Spring application context. The tests utilize `MockMvc` to perform GET and POST requests to various endpoints related to pet visits. The `OwnerRepository` is mocked using `@MockitoBean` to control its behavior and isolate the controller logic from the database, ensuring predictable test outcomes. The `init()` method sets up a mock owner and pet for tests to use. This test suite covers the functionality of initializing the new visit form, successfully processing a new visit form submission (redirecting upon success), and handling form submissions that contain errors (staying on the form and displaying errors).",
+  "file_path": "org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+  "file_summary": "This file, `VisitControllerTests`, contains unit and integration tests for the `VisitController` in the Spring PetClinic application. The tests are configured using Spring Boot's `@WebMvcTest` annotation, which isolates the web layer and only loads components relevant to MVC tests, ensuring fast execution. It mocks the `OwnerRepository` using `@MockitoBean` to control the data flow and behavior of the underlying persistence layer, making the tests predictable and independent of actual database interactions. The class focuses on testing the functionality related to creating new visits for pets. It includes tests for initializing the 'new visit' form, successfully processing a new visit submission, and handling scenarios where form submission leads to validation errors. Each test method verifies the expected HTTP status codes, redirects, model attributes, and the view names returned by the controller, ensuring the web interface for managing visits functions correctly.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "data_type": "int",
-      "membership_type": "private static final"
+      "type": "int",
+      "membership": "private static final"
     },
     {
       "name": "TEST_PET_ID",
-      "data_type": "int",
-      "membership_type": "private static final"
+      "type": "int",
+      "membership": "private static final"
     },
     {
       "name": "mockMvc",
-      "data_type": "MockMvc",
-      "membership_type": "private @Autowired"
+      "type": "MockMvc",
+      "membership": "private"
     },
     {
       "name": "owners",
-      "data_type": "OwnerRepository",
-      "membership_type": "private @MockitoBean"
+      "type": "OwnerRepository",
+      "membership": "private"
     }
   ],
   "functions": [
-    "init()",
-    "testInitNewVisitForm()",
-    "testProcessNewVisitFormSuccess()",
-    "testProcessNewVisitFormHasErrors()"
+    "init",
+    "testInitNewVisitForm",
+    "testProcessNewVisitFormSuccess",
+    "testProcessNewVisitFormHasErrors"
+  ],
+  "dependent_class_list": [
+    "org.mockito.BDDMockito",
+    "org.springframework.test.web.servlet.request.MockMvcRequestBuilders",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers",
+    "org.junit.jupiter.api.BeforeEach",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest",
+    "org.springframework.test.context.aot.DisabledInAotMode",
+    "org.springframework.test.context.bean.override.mockito.MockitoBean",
+    "org.springframework.test.web.servlet.MockMvc",
+    "java.util.Optional",
+    "org.springframework.samples.petclinic.owner.VisitController",
+    "org.springframework.samples.petclinic.owner.OwnerRepository",
+    "org.springframework.samples.petclinic.owner.Owner",
+    "org.springframework.samples.petclinic.owner.Pet"
   ]
 }
