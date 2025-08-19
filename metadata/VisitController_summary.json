@@ -1,7 +1,7 @@
 {
   "file_name": "VisitController.java",
   "file_path": "org/springframework/samples/petclinic/owner/VisitController.java",
-  "file_summary": "The `VisitController` class is a Spring MVC controller in the PetClinic application, dedicated to handling web requests related to pet visits. It manages the creation of new visits for specific pets belonging to a particular owner. The controller uses `OwnerRepository` to fetch and save owner and pet data. Key functionalities include pre-loading necessary `Owner`, `Pet`, and `Visit` objects before each request via the `@ModelAttribute` method, which ensures data freshness and correct object association. It configures the `WebDataBinder` to prevent binding of the 'id' field for security and data integrity. The controller provides endpoints for displaying the visit creation form (`GET`) and processing its submission (`POST`), including server-side validation for the `Visit` object and persisting the changes.",
+  "file_summary": "The `VisitController` class is a Spring MVC `@Controller` responsible for handling web requests related to managing pet visits within the PetClinic application. It orchestrates the process of adding new visits to a pet associated with a specific owner.\n\nKey functionalities include:\n- **Data Binding Control**: It uses `@InitBinder` to prevent binding of the `id` field, enhancing security.\n- **Model Preparation**: The `@ModelAttribute(\"visit\") loadPetWithVisit` method is executed before relevant request handlers. It retrieves the `Owner` and `Pet` based on path variables (`ownerId` and `petId`), adds them to the model, and initializes a new `Visit` object, associating it with the pet. This ensures fresh data and proper `Pet` object context.\n- **Displaying Form**: The `initNewVisitForm` method handles GET requests to display the form for creating a new visit.\n- **Processing Form Submission**: The `processNewVisitForm` method handles POST requests, validates the submitted `Visit` data using `@Valid`. If validation passes, the new visit is added to the pet, and the `Owner` is saved through the `OwnerRepository`. If there are errors, the form is re-displayed. A success message is added as a flash attribute upon successful booking.\n\nThis controller ensures a smooth user experience for scheduling and recording pet visits.",
   "attributes": [
     {
       "name": "owners",
@@ -12,28 +12,27 @@
   "functions": [
     {
       "name": "VisitController",
+      "return_type": "void",
       "parameters": [
         {
           "name": "owners",
           "type": "OwnerRepository"
         }
-      ],
-      "return_type": "void (constructor)",
-      "access_modifier": "public"
+      ]
     },
     {
       "name": "setAllowedFields",
+      "return_type": "void",
       "parameters": [
         {
           "name": "dataBinder",
           "type": "WebDataBinder"
         }
-      ],
-      "return_type": "void",
-      "access_modifier": "public"
+      ]
     },
     {
       "name": "loadPetWithVisit",
+      "return_type": "Visit",
       "parameters": [
         {
           "name": "ownerId",
@@ -47,18 +46,16 @@
           "name": "model",
           "type": "Map<String, Object>"
         }
-      ],
-      "return_type": "Visit",
-      "access_modifier": "public"
+      ]
     },
     {
       "name": "initNewVisitForm",
-      "parameters": [],
       "return_type": "String",
-      "access_modifier": "public"
+      "parameters": []
     },
     {
       "name": "processNewVisitForm",
+      "return_type": "String",
       "parameters": [
         {
           "name": "owner",
@@ -80,9 +77,7 @@
           "name": "redirectAttributes",
           "type": "RedirectAttributes"
         }
-      ],
-      "return_type": "String",
-      "access_modifier": "public"
+      ]
     }
   ]
 }
