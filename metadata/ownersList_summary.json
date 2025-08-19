@@ -1,23 +1,14 @@
 {
   "file_name": "ownersList.html",
-  "file_path": "N/A (path not provided)",
-  "file summary": "This HTML document is a Thymeleaf template primarily designed to display a paginated list of owners within an application. It integrates with a common application layout (`fragments/layout`) and is specifically part of the 'owners' section, providing a table-based overview of registered owners.\n\nThe main content is an HTML `table` with the ID `owners`, which presents each owner's `name` (first and last), `address`, `city`, `telephone`, and a comma-separated list of their `pets`. The owner's name is rendered as a clickable link, allowing users to navigate to a detailed view of that specific owner (`/owners/__${owner.id}__`).\n\nA significant feature of this template is its pagination support. It conditionally displays pagination controls if there is more than one page of owners. These controls include links to individual page numbers, as well as navigation buttons (first, previous, next, last) which are styled with Font Awesome icons (implied by `fa` classes). The pagination logic relies on `currentPage` and `totalPages` variables passed to the template. All user-facing text, including table headers and navigation labels, is internationalized using Thymeleaf's `#{...}` syntax, ensuring multi-language support.",
-  "attributes": [
-    {
-      "name": "listOwners",
-      "data_type": "List<Owner>",
-      "membership_type": "Model Attribute (passed from controller)"
-    },
-    {
-      "name": "totalPages",
-      "data_type": "Integer",
-      "membership_type": "Model Attribute (passed from controller)"
-    },
-    {
-      "name": "currentPage",
-      "data_type": "Integer",
-      "membership_type": "Model Attribute (passed from controller)"
-    }
-  ],
-  "functions": []
+  "file_path": "N/A",
+  "file_summary": "This HTML file is a Thymeleaf template, commonly used in Spring applications like Spring PetClinic, designed to display a paginated list of all registered owners. It integrates with a shared layout fragment (`fragments/layout`) to maintain a consistent application-wide design, specifically for the 'owners' section. The core of the page is a table (`id=\"owners\"`) that lists key information for each owner, including their full name (which acts as a link to their detailed view), address, city, telephone number, and a comma-separated list of their pets. The data for the owners is iterated from a `listOwners` object provided by the server-side controller. A significant feature of this template is its robust pagination control, which dynamically generates links for navigating through pages of owner results. It displays the current page number, total pages, and provides 'first', 'previous', 'next', and 'last' page navigation buttons. All text labels and table headers are internationalized using Thymeleaf's message expressions (e.g., `#{owners}`, `#{name}`, `#{pages}`).",
+  "attributes": [],
+  "functions": [],
+  "dependent_class_list": [
+    "owner",
+    "fragments/layout",
+    "listOwners",
+    "totalPages",
+    "currentPage"
+  ]
 }
