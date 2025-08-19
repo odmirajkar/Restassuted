@@ -1,7 +1,116 @@
 {
-  "file_name": "gradlew.bat",
-  "file_path": "Not specified",
-  "file_summary": "This is a Windows batch script (`.bat`) designed to bootstrap and launch the Gradle build automation tool. Its primary purpose is to locate a Java Runtime Environment (JRE) or Java Development Kit (JDK) required by Gradle, first by checking the `JAVA_HOME` environment variable, and if not set, by searching the system's PATH. The script sets default JVM options, such as initial and maximum heap sizes (`-Xmx64m`, `-Xms64m`), which can be customized via `JAVA_OPTS` or `GRADLE_OPTS` environment variables. Once Java is successfully located, it constructs and executes the command to run the `gradle-wrapper.jar` file, which is responsible for downloading and running the specified Gradle version. The script efficiently handles command-line arguments passed to it, forwarding them to the Gradle application. It also includes robust error handling to inform the user if Java is not found or if `JAVA_HOME` is incorrectly configured, providing clear instructions for resolution. It manages script-local variables and sets appropriate exit codes.",
-  "attributes": [],
-  "functions": []
+  "file_name": "gradle",
+  "file_path": "N/A",
+  "file_summary": "This shell script serves as a POSIX-compliant startup script for Gradle. Its primary purpose is to locate the Gradle installation, determine the appropriate Java Runtime Environment (JRE), configure the necessary JVM options, and then execute the `gradle-wrapper.jar` file. The script robustly handles various operating systems, including Cygwin, MSYS, Darwin, and NonStop, by adjusting paths and commands accordingly. It resolves symbolic links to find the `APP_HOME` directory, checks for the presence of Java (either via `JAVA_HOME` or in the system PATH), and increases the maximum file descriptor limit for better performance. Furthermore, it aggregates JVM options from predefined `DEFAULT_JVM_OPTS`, environment variables like `JAVA_OPTS` and `GRADLE_OPTS`, and command-line arguments, carefully parsing them using `xargs` to avoid word-splitting issues. The script is designed to be highly compatible with POSIX shells, deliberately avoiding Bash/Ksh extensions like arrays, and is generated from a Groovy template within the Gradle project.",
+  "attributes": [
+    {
+      "name": "app_path",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "Used internally to resolve the script's path."
+    },
+    {
+      "name": "APP_HOME",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "The resolved home directory of the Gradle application."
+    },
+    {
+      "name": "APP_BASE_NAME",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "The base name of the startup script itself."
+    },
+    {
+      "name": "MAX_FD",
+      "type": "string/integer",
+      "membership_type": "local variable",
+      "description": "Target maximum number of file descriptors to set, 'maximum' by default."
+    },
+    {
+      "name": "cygwin",
+      "type": "boolean",
+      "membership_type": "local variable",
+      "description": "Flag indicating if the script is running on a Cygwin environment."
+    },
+    {
+      "name": "msys",
+      "type": "boolean",
+      "membership_type": "local variable",
+      "description": "Flag indicating if the script is running on an MSYS/MinGW environment."
+    },
+    {
+      "name": "darwin",
+      "type": "boolean",
+      "membership_type": "local variable",
+      "description": "Flag indicating if the script is running on a Darwin (macOS) environment."
+    },
+    {
+      "name": "nonstop",
+      "type": "boolean",
+      "membership_type": "local variable",
+      "description": "Flag indicating if the script is running on a NonStop environment."
+    },
+    {
+      "name": "CLASSPATH",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "The Java classpath for launching the Gradle wrapper JAR."
+    },
+    {
+      "name": "JAVACMD",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "The full path to the Java executable chosen to run Gradle."
+    },
+    {
+      "name": "DEFAULT_JVM_OPTS",
+      "type": "string",
+      "membership_type": "local variable",
+      "description": "Default JVM options applied by the script (e.g., -Xmx, -Xms)."
+    },
+    {
+      "name": "JAVA_HOME",
+      "type": "string",
+      "membership_type": "environment variable",
+      "description": "Environment variable specifying the path to a Java installation."
+    },
+    {
+      "name": "JAVA_OPTS",
+      "type": "string",
+      "membership_type": "environment variable",
+      "description": "Environment variable for additional JVM options."
+    },
+    {
+      "name": "GRADLE_OPTS",
+      "type": "string",
+      "membership_type": "environment variable",
+      "description": "Environment variable for Gradle-specific JVM options."
+    }
+  ],
+  "functions": [
+    {
+      "name": "warn",
+      "description": "Prints a warning message to standard error (stderr)."
+    },
+    {
+      "name": "die",
+      "description": "Prints an error message to standard error (stderr) and then exits the script with a non-zero status."
+    }
+  ],
+  "dependent_class_list": [
+    "java (JVM executable)",
+    "gradle-wrapper.jar (Main Gradle application JAR)",
+    "ls (list directory contents)",
+    "cd (change directory)",
+    "printf (format and print data)",
+    "uname (print system information)",
+    "command (check if a command exists)",
+    "ulimit (get/set resource limits)",
+    "cygpath (path conversion utility for Cygwin/MSYS, conditional)",
+    "xargs (build and execute command lines from standard input)",
+    "sed (stream editor for filtering and transforming text)",
+    "tr (translate or delete characters)",
+    "exec (replace the shell with a new command)"
+  ]
 }
