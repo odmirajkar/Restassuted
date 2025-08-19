@@ -1,0 +1,7 @@
+{
+  "file_name": "kubernetes-db-deployment.yaml",
+  "file_path": "N/A",
+  "file summary": "This Kubernetes YAML configuration defines the necessary components to deploy a PostgreSQL database named 'demo-db' within a Kubernetes cluster. It comprises three main resources: a Secret, a Service, and a Deployment. The `demo-db` Secret, typed as `servicebinding.io/postgresql`, securely stores sensitive database connection information such as the database name ('petclinic'), username ('user'), password ('pass'), host, and port. This allows applications to consume connection details without hardcoding them. The `demo-db` Service creates a stable internal network endpoint for the PostgreSQL database, enabling other applications within the cluster to connect to it via port 5432. Finally, the `demo-db` Deployment manages the actual PostgreSQL container instances. It uses the `postgres:17.5` Docker image and injects database credentials (username, password, and database name) into the container's environment variables by referencing the `demo-db` Secret. The Deployment also includes liveness, readiness, and startup probes to monitor the health and availability of the PostgreSQL instances, ensuring reliable database operations.",
+  "attributes": [],
+  "functions": []
+}
