@@ -1,7 +1,7 @@
 {
-  "file_name": "unknown_file",
-  "file_path": "unknown_path",
-  "file_summary": "The provided file content was empty. Therefore, no specific Java code, classes, functions, or attributes could be extracted or summarized. This summary indicates that no content was supplied for analysis.",
+  "file_name": "No content provided",
+  "file_path": "N/A",
+  "file_summary": "No file content was provided to summarize. Please provide the content of a file (e.g., Java source code, text file) for analysis.",
   "attributes": [],
   "functions": []
 }
