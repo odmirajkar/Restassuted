@@ -1,39 +1,62 @@
 {
   "file_name": "OwnerControllerTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-  "file_summary": "This Java class, `OwnerControllerTests`, is a comprehensive test suite for the `OwnerController` in the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer, specifically the interactions between HTTP requests and the controller. The tests employ `MockMvc` to simulate HTTP requests (GET and POST) and assert the expected outcomes, such as HTTP status codes, model attributes, and view names. It also uses `@MockitoBean` to mock the `OwnerRepository`, allowing for controlled testing of various scenarios without hitting a real database. The test cases cover a wide range of functionalities including initializing and processing forms for creating and updating owners, searching for owners by last name (both successful and no-results scenarios), and displaying individual owner details. The class includes setup methods to pre-configure mock data before each test and validates form submissions, error handling, and data redirection.",
+  "file_path": "org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+  "file_summary": "This file, `OwnerControllerTests`, contains unit and integration tests for the `OwnerController` within the Spring PetClinic application. Utilizing Spring Boot's `@WebMvcTest` annotation, it focuses on testing the web layer in isolation without loading the full application context. The class mocks the `OwnerRepository` using `@MockitoBean` to control data interactions, ensuring predictable test outcomes. It includes comprehensive tests for various functionalities related to owner management, such as initializing and processing forms for creating new owners, finding owners by last name (including handling no results), updating existing owner details, and displaying individual owner profiles. Each test verifies expected HTTP status codes, model attributes, and view names, ensuring the controller behaves correctly under different scenarios, including successful submissions and validation errors. The tests also cover edge cases like an owner ID mismatch during updates.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "data_type": "int",
-      "membership_type": "private static final"
+      "type": "int",
+      "membership": "private static final"
     },
     {
       "name": "mockMvc",
-      "data_type": "MockMvc",
-      "membership_type": "private @Autowired"
+      "type": "MockMvc",
+      "membership": "private"
     },
     {
       "name": "owners",
-      "data_type": "OwnerRepository",
-      "membership_type": "private @MockitoBean"
+      "type": "OwnerRepository",
+      "membership": "private"
     }
   ],
   "functions": [
-    "george()",
-    "setup()",
-    "testInitCreationForm()",
-    "testProcessCreationFormSuccess()",
-    "testProcessCreationFormHasErrors()",
-    "testInitFindForm()",
-    "testProcessFindFormSuccess()",
-    "testProcessFindFormByLastName()",
-    "testProcessFindFormNoOwnersFound()",
-    "testInitUpdateOwnerForm()",
-    "testProcessUpdateOwnerFormSuccess()",
-    "testProcessUpdateOwnerFormUnchangedSuccess()",
-    "testProcessUpdateOwnerFormHasErrors()",
-    "testShowOwner()",
-    "testProcessUpdateOwnerFormWithIdMismatch()"
+    "george",
+    "setup",
+    "testInitCreationForm",
+    "testProcessCreationFormSuccess",
+    "testProcessCreationFormHasErrors",
+    "testInitFindForm",
+    "testProcessFindFormSuccess",
+    "testProcessFindFormByLastName",
+    "testProcessFindFormNoOwnersFound",
+    "testInitUpdateOwnerForm",
+    "testProcessUpdateOwnerFormSuccess",
+    "testProcessUpdateOwnerFormUnchangedSuccess",
+    "testProcessUpdateOwnerFormHasErrors",
+    "testShowOwner",
+    "testProcessUpdateOwnerFormWithIdMismatch"
+  ],
+  "dependent_class_list": [
+    "org.junit.jupiter.api.BeforeEach",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.PageImpl",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.test.context.aot.DisabledInAotMode",
+    "org.springframework.test.context.bean.override.mockito.MockitoBean",
+    "org.springframework.test.web.servlet.MockMvc",
+    "org.springframework.test.web.servlet.request.MockMvcRequestBuilders",
+    "java.time.LocalDate",
+    "java.util.List",
+    "java.util.Optional",
+    "org.springframework.samples.petclinic.owner.OwnerController",
+    "org.springframework.samples.petclinic.owner.OwnerRepository",
+    "org.springframework.samples.petclinic.owner.Owner",
+    "org.springframework.samples.petclinic.owner.Pet",
+    "org.springframework.samples.petclinic.owner.PetType",
+    "org.springframework.samples.petclinic.owner.Visit"
   ]
 }
