@@ -1,18 +1,15 @@
 {
   "file_name": "WelcomeController.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
-  "file_summary": "This Java file defines the `WelcomeController` class, which is a core component in the Spring PetClinic application's system module. Annotated with `@Controller`, it serves as a Spring MVC controller responsible for handling web requests. Its primary purpose is to manage the application's home or welcome page. Specifically, it contains a single method, `welcome()`, that is mapped to the root URL (\"/\") using the `@GetMapping` annotation. When a user accesses the application's base URL, this controller will return the logical view name \"welcome\", which typically resolves to a Thymeleaf or JSP template displaying the application's entry page. This controller exemplifies a simple, direct mapping for a landing page in a Spring Boot application.",
+  "file_path": "org/springframework/samples/petclinic/system/WelcomeController.java",
+  "file_summary": "This Java class, `WelcomeController`, is a Spring `@Controller` component within the PetClinic application. Its sole responsibility is to handle the application's root URL. Specifically, it defines a `@GetMapping(\"/\")` annotation, meaning that when a user accesses the base URL of the application, the `welcome()` method is invoked. This method simply returns the string \"welcome\", which Spring MVC then resolves to a corresponding view (e.g., a Thymeleaf or JSP template named `welcome.html` or `welcome.jsp`). This class serves as the entry point for the web application, directing users to the initial welcome page, which typically provides an overview or starting point for navigating the PetClinic features.",
   "attributes": [],
   "functions": [
     {
       "name": "welcome",
-      "parameters": [],
+      "visibility": "public",
       "return_type": "String",
-      "access_modifier": "public",
-      "annotations": [
-        "@GetMapping(\"/@\")"
-      ],
-      "purpose": "Handles GET requests to the root URL (/) and returns the logical view name 'welcome'."
+      "parameters": [],
+      "purpose": "Handles GET requests to the root URL ('/') and returns the logical view name 'welcome', which Spring MVC resolves to display the application's welcome page."
     }
   ]
 }
