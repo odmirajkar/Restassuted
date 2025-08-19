@@ -1,7 +1,7 @@
 {
-  "file_name": "data.sql",
-  "file_path": "src/main/resources/db/data.sql",
-  "file_summary": "This SQL script serves as a data initialization file, designed to populate a relational database with sample records for a typical pet clinic application. It consists entirely of `INSERT INTO` statements that systematically add data across various tables within the database schema. Specifically, the script populates the `vets` table with veterinarian profiles, `specialties` with medical specializations, and `vet_specialties` to link vets to their respective areas of expertise. Furthermore, it defines different `types` of pets, registers `owners` with their contact details, and records `pets` with their names, birth dates, types, and associated owners. Finally, the `visits` table is populated with historical visit data for various pets, including the visit date and a description of the visit. This script is crucial for setting up a functional database environment, enabling immediate testing, development, or demonstration of the application without manual data entry. It provides a comprehensive set of interconnected sample data reflecting the core entities and relationships in a pet clinic domain.",
+  "file_name": "populate_data.sql",
+  "file_path": "sql/data/",
+  "file_summary": "This SQL script is designed to populate a database with initial sample data for a pet clinic application. It consists of multiple INSERT statements, meticulously adding records into various tables. Specifically, it populates the 'vets' table with veterinarian details, 'specialties' with medical specializations, 'vet_specialties' to link vets with their specializations, 'types' with different animal species, 'owners' with client information, 'pets' with animal profiles and their owners, and 'visits' with records of appointments and their descriptions. This script is essential for setting up a functional dataset, typically for development, testing, or demonstration purposes of a database-driven application.",
   "attributes": [],
   "functions": []
 }
