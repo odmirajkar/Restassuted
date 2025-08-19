@@ -1,0 +1,5 @@
+{
+  "file_name": "PostgreSQL_Configuration_Guide.txt",
+  "file_path": "docs/PostgreSQL_Configuration_Guide.txt",
+  "file_summary": "This document provides essential instructions for configuring and running the Spring PetClinic sample application using a PostgreSQL database, managed via Docker Compose. Its primary purpose is to guide developers through the setup process. The instructions are concise, outlining two key steps. First, users are directed to execute `docker-compose up` from the project's root directory. This command is responsible for initiating the PostgreSQL database container, preparing the necessary database environment. Second, the document details how to launch the Spring Boot application itself, emphasizing the activation of the `postgres` Spring profile. This activation ensures the application correctly connects to the running PostgreSQL instance. An example command using Maven (`mvn spring-boot:run -Dspring-boot.run.profiles=postgres`) is provided for clarity. In essence, this file acts as a quick setup guide, enabling developers to efficiently integrate and test the PetClinic application with a PostgreSQL backend using containerization."
+}
