@@ -1,18 +1,9 @@
 {
   "file_name": "PetType.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetType.java",
-  "file_summary": "The `PetType.java` file defines the `PetType` class, a core entity in the Spring PetClinic application responsible for categorizing different types of pets such as \"Cat\", \"Dog\", or \"Hamster\". This class extends `NamedEntity`, inheriting properties like an ID and a name. It is annotated with `@Entity` and `@Table(name = \"types\")`, marking it as a JPA entity that maps to the `types` table in the database. Its primary role is to provide a lookup for various pet species, ensuring data integrity and consistency within the application's pet management system. It doesn't contain any custom business logic but serves as a fundamental data structure for pet classification.",
+  "file_summary": "This Java class, `PetType.java`, located in the `org.springframework.samples.petclinic.owner` package, is a fundamental JPA entity within the Spring PetClinic application. Its primary purpose is to represent and categorize different types of pets, such as \"Cat\", \"Dog\", or \"Hamster\". Annotated with `@Entity` and `@Table(name = \"types\")`, it maps directly to the `types` table in the database. `PetType` extends `NamedEntity`, a base class from the `org.springframework.samples.petclinic.model` package that provides a common `name` property. This design allows `PetType` instances to store a descriptive name for each pet type without needing to declare additional fields. As a simple data carrier, it facilitates the organization and management of pet-related information by enabling clear classification based on species or breed type.",
   "attributes": [
-    {
-      "name": "id",
-      "data_type": "Integer",
-      "membership_type": "Inherited (from NamedEntity, likely via BaseEntity)"
-    },
-    {
-      "name": "name",
-      "data_type": "String",
-      "membership_type": "Inherited (from NamedEntity)"
-    }
+    "name: String (inherited from org.springframework.samples.petclinic.model.NamedEntity)"
   ],
   "functions": []
 }
