@@ -1,100 +1,45 @@
 {
   "file_name": "PetControllerTests.java",
   "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
-  "file_summary": "This Java file, `PetControllerTests.java`, contains unit and integration tests for the `PetController` within the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer, isolating the `PetController` and its associated components like `PetTypeFormatter`.\n\nThe class uses `MockMvc` to simulate HTTP requests and interactions, verifying the controller's behavior, view names, and model attributes. Key dependencies like `OwnerRepository` and `PetTypeRepository` are mocked using `@MockitoBean` to ensure a controlled testing environment without requiring a full database. The `setup` method initializes mock data for pet types and owners, including pets, before each test.\n\nTests cover various scenarios for creating and updating pets, including successful operations and detailed validation error cases such as blank names, duplicate names, missing pet types, and invalid birth dates. Nested test classes are employed to group related error scenarios for better organization. The tests also confirm the correct redirection or display of forms based on user input, ensuring the robustness of the pet management functionalities.",
+  "file_summary": "This Java class, `PetControllerTests`, is a comprehensive unit test suite for the `PetController` in the Spring PetClinic application. It utilizes Spring's `@WebMvcTest` to focus on the web layer, isolating the controller logic from the full application context. The tests simulate HTTP requests using `MockMvc` to verify the `PetController`'s behavior for creating and updating pet records. Key dependencies like `OwnerRepository` and `PetTypeRepository` are mocked using `MockitoBean` to control their responses. The test cases cover various scenarios, including successful form submissions, as well as handling validation errors such as blank names, duplicate pet names, missing pet types, and invalid birth dates. It ensures that the controller correctly renders views, manages model attributes, and redirects upon successful operations, adhering to the application's business rules and user interface expectations.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "type": "int",
-      "membership": "private static final"
+      "data_type": "int",
+      "membership_type": "private static final"
     },
     {
       "name": "TEST_PET_ID",
-      "type": "int",
-      "membership": "private static final"
+      "data_type": "int",
+      "membership_type": "private static final"
     },
     {
       "name": "mockMvc",
-      "type": "MockMvc",
-      "membership": "private"
+      "data_type": "MockMvc",
+      "membership_type": "private (Autowired)"
     },
     {
       "name": "owners",
-      "type": "OwnerRepository",
-      "membership": "private"
+      "data_type": "OwnerRepository",
+      "membership_type": "private (MockitoBean)"
     },
     {
       "name": "types",
-      "type": "PetTypeRepository",
-      "membership": "private"
+      "data_type": "PetTypeRepository",
+      "membership_type": "private (MockitoBean)"
     }
   ],
   "functions": [
-    {
-      "name": "setup",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testInitCreationForm",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessCreationFormSuccess",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessCreationFormWithBlankName",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessCreationFormWithDuplicateName",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessCreationFormWithMissingPetType",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessCreationFormWithInvalidBirthDate",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testInitUpdateForm",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessUpdateFormSuccess",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessUpdateFormWithInvalidBirthDate",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    },
-    {
-      "name": "testProcessUpdateFormWithBlankName",
-      "parameters": [],
-      "return_type": "void",
-      "visibility": "package-private"
-    }
+    "setup",
+    "testInitCreationForm",
+    "testProcessCreationFormSuccess",
+    "testProcessCreationFormWithBlankName",
+    "testProcessCreationFormWithDuplicateName",
+    "testProcessCreationFormWithMissingPetType",
+    "testProcessCreationFormWithInvalidBirthDate",
+    "testInitUpdateForm",
+    "testProcessUpdateFormSuccess",
+    "testProcessUpdateFormWithInvalidBirthDate",
+    "testProcessUpdateFormWithBlankName"
   ]
 }
