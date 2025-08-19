@@ -1,7 +1,40 @@
 {
-  "file_name": "petclinic.css",
-  "file_path": "src/main/resources/static/petclinic.css",
-  "file_summary": "This CSS file contains styling rules for a web application, likely a 'PetClinic' front-end, leveraging Bootstrap 5.3.6. It defines a comprehensive set of CSS custom properties (variables) for colors, typography, spacing, borders, shadows, and more, supporting both light and dark themes. Beyond Bootstrap's default styles, it includes custom rules for specific elements like tables, navigation bars, buttons, form elements, and layout containers, overriding or extending Bootstrap's appearance to match the application's design. It also defines font faces and specific styles for error pages, splash screens, and application-specific components, such as `.xd-container` and `.cluster-view`, aiming for a consistent visual identity.",
-  "attributes": [],
-  "functions": []
+  "file_name": "application.scss",
+  "file_path": "src/main/resources/static/css/application.scss",
+  "file_summary": "This SCSS (Sassy CSS) file is responsible for defining the core visual theme and styling of a web application, particularly by customizing the Bootstrap framework. It sets up a specific 'Spring' branded color palette with variables like $spring-green and $spring-brown, and then uses these colors to override Bootstrap's default styles for various UI components, including body background, text, links, and navigation bars. Beyond color customization, the file defines specific styling rules for tables, buttons, modals, form elements, and handling of Angular JS 'ng-cloak' directives. It also includes definitions for a spinner animation and general layout adjustments. The file imports other SCSS partials for typography, header, and responsive design, indicating a modular and organized approach to front-end development. Its main purpose is to establish a consistent and branded look and feel for the application.",
+  "attributes": [
+    "$icon-font-path: string",
+    "$spring-green: color",
+    "$spring-dark-green: color",
+    "$spring-brown: color",
+    "$spring-grey: color",
+    "$spring-light-grey: color",
+    "$body-bg: color reference",
+    "$text-color: color reference",
+    "$link-color: color reference",
+    "$link-hover-color: color reference",
+    "$navbar-default-link-color: color reference",
+    "$navbar-default-link-active-color: color reference",
+    "$navbar-default-link-hover-color: color reference",
+    "$navbar-default-link-hover-bg: color reference",
+    "$navbar-default-toggle-icon-bar-bg: color reference",
+    "$navbar-default-toggle-hover-bg: keyword",
+    "$navbar-default-link-active-bg: color reference",
+    "$border-radius-base: number",
+    "$border-radius-large: number",
+    "$border-radius-small: number",
+    "$nav-tabs-active-link-hover-color: color reference",
+    "$nav-tabs-active-link-hover-bg: color reference",
+    "$nav-tabs-active-link-hover-border-color: color reference",
+    "$nav-tabs-border-color: color reference",
+    "$pagination-active-bg: color reference",
+    "$pagination-active-border: color reference",
+    "$table-border-color: color reference"
+  ],
+  "functions": [
+    "import 'bootstrap'",
+    "import 'typography.scss'",
+    "import 'header.scss'",
+    "import 'responsive.scss'"
+  ]
 }
