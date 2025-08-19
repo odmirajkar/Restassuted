@@ -1,0 +1,39 @@
+{
+  "file_name": "VetRepository.java",
+  "file_path": "org/springframework/samples/petclinic/vet/VetRepository.java",
+  "file_summary": "This file defines the `VetRepository` interface, which acts as a data access layer for `Vet` domain objects within the Spring PetClinic application. It extends Spring Data's `Repository` interface, allowing for automatic query generation based on method names. The primary purpose of this repository is to retrieve veterinarian data. It includes two `findAll` methods: one that returns a `Collection` of all vets and another that returns a `Page` of vets, enabling paginated results. Both methods are marked as read-only transactions (`@Transactional(readOnly = true)`) and utilize Spring's caching mechanism (`@Cacheable(\"vets\")`) to improve performance by caching veterinarian data. This design adheres to Spring Data conventions for simplified data access.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "findAll",
+      "return_type": "Collection<Vet>",
+      "parameters": [],
+      "annotations": [
+        "@Transactional(readOnly = true)",
+        "@Cacheable(\"vets\")"
+      ],
+      "throws": [
+        "DataAccessException"
+      ],
+      "access_modifier": "public"
+    },
+    {
+      "name": "findAll",
+      "return_type": "Page<Vet>",
+      "parameters": [
+        {
+          "name": "pageable",
+          "type": "Pageable"
+        }
+      ],
+      "annotations": [
+        "@Transactional(readOnly = true)",
+        "@Cacheable(\"vets\")"
+      ],
+      "throws": [
+        "DataAccessException"
+      ],
+      "access_modifier": "public"
+    }
+  ]
+}
