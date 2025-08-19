@@ -1,40 +1,38 @@
 {
   "file_name": "PetValidator.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetValidator.java",
-  "file_summary": "This Java class, `PetValidator`, acts as a custom Spring `Validator` specifically designed for validating `Pet` objects within the PetClinic application. Its primary purpose is to ensure that essential fields of a `Pet` instance, such as its name, type (for new pets), and birth date, are present and valid before saving or processing. The class implements the `org.springframework.validation.Validator` interface, overriding its `validate` method to apply specific validation rules. It explicitly avoids using Bean Validation annotations, opting for programmatic validation logic written in Java. The `supports` method ensures that this validator is only applied to instances of the `Pet` class.",
+  "file_summary": "The `PetValidator` class implements Spring's `org.springframework.validation.Validator` interface, providing custom validation logic for `Pet` objects within the PetClinic application. This validator is designed to enforce specific rules for pet data that are simpler to define in Java code rather than using standard Bean Validation annotations.\n\nIts `validate` method checks the following:\n1.  **Name:** Ensures that the pet's name is not empty or consists only of whitespace.\n2.  **Type:** For new pets (i.e., `pet.isNew()` is true), it verifies that a `PetType` has been assigned.\n3.  **Birth Date:** Confirms that a birth date has been provided for the pet.\n\nIf any of these conditions are not met, it registers errors using the provided `Errors` object, typically indicating a 'required' field. The `supports` method declares that this validator is specifically for `Pet` instances or subclasses thereof. This class plays a crucial role in ensuring data integrity for pet entries before they are persisted or updated.",
   "attributes": [
     {
       "name": "REQUIRED",
-      "data_type": "String",
+      "type": "String",
       "membership_type": "private static final"
     }
   ],
   "functions": [
     {
       "name": "validate",
+      "return_type": "void",
       "parameters": [
         {
           "name": "obj",
-          "data_type": "Object"
+          "type": "Object"
         },
         {
           "name": "errors",
-          "data_type": "Errors"
+          "type": "Errors"
         }
-      ],
-      "return_type": "void",
-      "visibility": "public"
+      ]
     },
     {
       "name": "supports",
+      "return_type": "boolean",
       "parameters": [
         {
           "name": "clazz",
-          "data_type": "Class<?>"
+          "type": "Class<?>"
         }
-      ],
-      "return_type": "boolean",
-      "visibility": "public"
+      ]
     }
   ]
 }
