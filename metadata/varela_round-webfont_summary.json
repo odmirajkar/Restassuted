@@ -1,7 +1,9 @@
+
+```json
 {
   "file_name": "N/A",
   "file_path": "N/A",
-  "file_summary": "No file content was provided. Please provide the content of the Java file for summarization.",
+  "file_summary": "No content provided. Please provide the file content to generate a summary.",
   "attributes": [],
   "functions": []
 }
