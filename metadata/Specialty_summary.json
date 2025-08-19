@@ -1,7 +1,18 @@
 {
   "file_name": "Specialty.java",
   "file_path": "org/springframework/samples/petclinic/vet/Specialty.java",
-  "file_summary": "This Java class, `Specialty`, located within the `org.springframework.samples.petclinic.vet` package, serves as a JPA entity that models a veterinary specialty, such as 'dentistry'. It extends `NamedEntity`, indicating that it inherits common properties like an `id` and a `name` from its superclass. Annotated with `@Entity` and `@Table(name = \"specialties\")`, this class is configured to be persisted to the `specialties` table in a relational database. Its primary purpose is to categorize and represent specific areas of expertise that a veterinarian might possess within the PetClinic application. The class itself does not define any new attributes or methods, relying entirely on the `NamedEntity` base class for its core functionality and the JPA annotations for database mapping.",
-  "attributes": [],
+  "file_summary": "This Java class, `Specialty`, is a core component of the Spring PetClinic application, designed to represent specific areas of expertise for veterinarians, such as 'dentistry' or 'radiology'. It extends the `NamedEntity` class, inheriting common properties like an `id` and a `name`, which holds the description of the specialty. Annotated with `@Entity` and `@Table(name = \"specialties\")`, it signifies its role as a persistent entity in the database, mapping directly to a `specialties` table. Its primary purpose is to categorize and define the distinct services or focuses a `Vet` can have, enabling the system to manage and display veterinarian specializations effectively within the application.",
+  "attributes": [
+    {
+      "name": "id",
+      "type": "Integer",
+      "membership_type": "inherited (from BaseEntity via NamedEntity)"
+    },
+    {
+      "name": "name",
+      "type": "String",
+      "membership_type": "inherited (from NamedEntity)"
+    }
+  ],
   "functions": []
 }
