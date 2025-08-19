@@ -1,5 +1,19 @@
 {
   "file_name": "docker-compose.yml",
-  "file_path": "./docker-compose.yml",
-  "file summary": "This file is a snippet from a Docker Compose configuration, designed to define and set up two essential database services: MySQL and PostgreSQL. It orchestrates their deployment as containers, making them accessible to other services within a multi-container application, likely for a 'petclinic' application based on the environment variables. The MySQL service, leveraging version 9.2, maps port 3306, configures an empty root password for development convenience, sets up a 'petclinic' user and database, and mounts a local 'conf.d' directory for custom MySQL configurations. The PostgreSQL service, using version 17.5, maps port 5432 and similarly configures a 'petclinic' user and database. This setup ensures that the necessary database backends are readily available and pre-configured for an application, simplifying development and deployment workflows by encapsulating database dependencies within Docker containers."
+  "file_path": "Not specified in the input, typically project root.",
+  "file_summary": "This YAML file defines a Docker Compose configuration for two database services: MySQL and PostgreSQL. It's designed to set up a development environment, likely for an application like Spring PetClinic, given the database names and user credentials. The 'mysql' service uses the 'mysql:9.2' image, mapping port 3306 and configuring a root password (empty), an empty password for 'petclinic' user, and a 'petclinic' database. It also mounts a local 'conf.d' directory into the container for MySQL configurations. The 'postgres' service uses the 'postgres:17.5' image, mapping port 5432, and sets up a 'petclinic' user and database with 'petclinic' as the password. This configuration allows a Java application to easily connect to either a MySQL or PostgreSQL database running in isolated Docker containers.",
+  "attributes": [
+    "services: object (top-level service definitions)",
+    "services.mysql: object (MySQL service definition)",
+    "services.mysql.image: string (Docker image name)",
+    "services.mysql.ports: array of strings (port mappings)",
+    "services.mysql.environment: object (environment variables)",
+    "services.mysql.volumes: array of strings (volume mounts)",
+    "services.postgres: object (PostgreSQL service definition)",
+    "services.postgres.image: string (Docker image name)",
+    "services.postgres.ports: array of strings (port mappings)",
+    "services.postgres.environment: object (environment variables)"
+  ],
+  "functions": [],
+  "dependent_class_list": []
 }
