@@ -1,0 +1,93 @@
+{
+  "file_name": "VisitController.java",
+  "file_path": "org/springframework/samples/petclinic/owner/VisitController.java",
+  "file_summary": "The `VisitController` class is a Spring MVC controller responsible for handling web requests related to pet visits within the PetClinic application. It manages the creation and processing of new pet visits. The controller interacts with the `OwnerRepository` to retrieve owner and pet data. It uses `@ModelAttribute` to pre-load pet and visit objects before handling form submissions, ensuring data consistency. Key functionalities include displaying the form for new visits and processing the submitted visit data, saving it to the database, and redirecting the user.",
+  "attributes": [
+    {
+      "name": "owners",
+      "data_type": "OwnerRepository",
+      "membership_type": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "VisitController",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "owners",
+          "data_type": "OwnerRepository"
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "name": "setAllowedFields",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "dataBinder",
+          "data_type": "WebDataBinder"
+        }
+      ],
+      "annotations": ["@InitBinder"]
+    },
+    {
+      "name": "loadPetWithVisit",
+      "return_type": "Visit",
+      "parameters": [
+        {
+          "name": "ownerId",
+          "data_type": "int",
+          "annotations": ["@PathVariable(\"ownerId\")"]
+        },
+        {
+          "name": "petId",
+          "data_type": "int",
+          "annotations": ["@PathVariable(\"petId\")"]
+        },
+        {
+          "name": "model",
+          "data_type": "Map<String, Object>"
+        }
+      ],
+      "annotations": ["@ModelAttribute(\"visit\")"]
+    },
+    {
+      "name": "initNewVisitForm",
+      "return_type": "String",
+      "parameters": [],
+      "annotations": ["@GetMapping(\"/owners/{ownerId}/pets/{petId}/visits/new\")"]
+    },
+    {
+      "name": "processNewVisitForm",
+      "return_type": "String",
+      "parameters": [
+        {
+          "name": "owner",
+          "data_type": "Owner",
+          "annotations": ["@ModelAttribute"]
+        },
+        {
+          "name": "petId",
+          "data_type": "int",
+          "annotations": ["@PathVariable"]
+        },
+        {
+          "name": "visit",
+          "data_type": "Visit",
+          "annotations": ["@Valid"]
+        },
+        {
+          "name": "result",
+          "data_type": "BindingResult"
+        },
+        {
+          "name": "redirectAttributes",
+          "data_type": "RedirectAttributes"
+        }
+      ],
+      "annotations": ["@PostMapping(\"/owners/{ownerId}/pets/{petId}/visits/new\")"]
+    }
+  ]
+}
