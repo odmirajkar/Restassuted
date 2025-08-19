@@ -1,7 +1,7 @@
 {
-  "file_name": "messages.properties",
-  "file_path": "",
-  "file_summary": "This file serves as a localization or resource bundle, typically named `messages.properties` in Spring applications like PetClinic. It contains a comprehensive collection of key-value pairs, where each key represents a specific UI element or message, and its corresponding value is the display text. The entries cover a wide range of application components, including form field labels (e.g., `firstName`, `address`, `birthDate`), button and link texts (e.g., `addOwner`, `findOwner`, `editPet`), page titles (e.g., `owners`, `vets`, `petsAndVisits`), and various validation or error messages (e.g., `required`, `notFound`, `typeMismatch.date`, `telephone.invalid`, `duplicateFormSubmission`). Its primary purpose is to centralize all user-facing strings, facilitating easy modification, translation, and consistent text presentation across the entire application's user interface for entities such as Owners, Pets, Visits, and Veterinarians.",
+  "file_name": "resource_bundle.properties",
+  "file_path": "N/A",
+  "file_summary": "This file contains a collection of key-value pairs, typically used as a resource bundle or localization file in a Java application. It defines various UI labels, error messages, and field names. The content strongly suggests it's part of a 'PetClinic' application, providing text for user interface elements such as 'Welcome', 'Owners', 'Pets', 'Veterinarians', 'Add Owner', 'Find Owners', 'Edit Pet', and common validation messages like 'required', 'notFound', 'duplicate', and 'typeMismatch.date'. It helps in centralizing and managing textual content, often for internationalization (i18n) or simply for easy modification of display texts without changing source code.",
   "attributes": [],
   "functions": []
 }
