@@ -1,51 +1,41 @@
 {
   "file_name": "PetClinicIntegrationTests.java",
   "file_path": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
-  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as an integration test suite for the Spring PetClinic application. It leverages Spring Boot's testing capabilities by using `@SpringBootTest` to load the full application context on a random port, simulating a running application. The primary purpose is to verify the application's functionality from an end-to-end perspective. It contains tests that interact with the application's data layer, specifically testing the `VetRepository` for data retrieval and caching behavior. Additionally, it performs HTTP requests to verify the functionality of web endpoints, such as retrieving owner details, ensuring that the API returns the expected HTTP status. The class also includes a `main` method, which allows the PetClinic application to be launched directly from this test class for convenience, though typically integration tests don't include a main method for starting the application.",
+  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as an integration test suite for the Spring PetClinic application. It leverages Spring Boot's `@SpringBootTest` annotation to start the entire application context, including the web environment, on a random port (`WebEnvironment.RANDOM_PORT`), allowing for testing of the deployed application's behavior. The class injects a `VetRepository` and a `RestTemplateBuilder` to facilitate testing of both data access and web endpoints. It contains two test methods: `testFindAll()` verifies the functionality of fetching all vets, implicitly demonstrating caching behavior. `testOwnerDetails()` uses a `RestTemplate` to make an HTTP GET request to the `/owners/1` endpoint, asserting that the response status is `OK`, thereby testing the application's REST API and its underlying data retrieval for owner details. Additionally, a `main` method is included, enabling the `PetClinicApplication` to be run directly from this class, which is a common pattern in Spring Boot examples for quick execution.",
   "attributes": [
     {
       "name": "port",
       "type": "int",
-      "membership": "instance",
-      "visibility": "private"
+      "membership": "instance public"
     },
     {
       "name": "vets",
-      "type": "org.springframework.samples.petclinic.vet.VetRepository",
-      "membership": "instance",
-      "visibility": "private"
+      "type": "VetRepository",
+      "membership": "instance private"
     },
     {
       "name": "builder",
-      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
-      "membership": "instance",
-      "visibility": "private"
+      "type": "RestTemplateBuilder",
+      "membership": "instance private"
     }
   ],
   "functions": [
     {
       "name": "testFindAll",
       "return_type": "void",
-      "parameters": [],
-      "visibility": "default"
+      "parameters": []
     },
     {
       "name": "testOwnerDetails",
       "return_type": "void",
-      "parameters": [],
-      "visibility": "default"
+      "parameters": []
     },
     {
       "name": "main",
       "return_type": "void",
       "parameters": [
-        {
-          "name": "args",
-          "type": "java.lang.String[]"
-        }
-      ],
-      "visibility": "public",
-      "modifier": "static"
+        "String[] args"
+      ]
     }
   ]
 }
