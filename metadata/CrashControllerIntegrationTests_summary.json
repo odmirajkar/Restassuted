@@ -1,0 +1,29 @@
+{
+  "file_name": "CrashControllerIntegrationTests.java",
+  "file_path": "org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
+  "file_summary": "This Java file contains integration tests for the `CrashController` within the Spring PetClinic application. Its primary purpose is to verify how the application handles exceptions thrown by the `/oups` endpoint, ensuring that the correct error responses (both JSON and HTML) are returned. The tests use Spring Boot's `TestRestTemplate` to make HTTP requests to a randomly assigned local port. It asserts on the HTTP status code (expecting `500 INTERNAL_SERVER_ERROR`), and the content of the response body, checking for expected error messages and structure in both JSON and HTML formats. The test configuration excludes data source-related auto-configurations, indicating that these tests are focused solely on the error handling mechanism rather than database interaction. This helps ensure that user-friendly or API-compliant error pages are displayed instead of generic server errors.",
+  "attributes": [
+    {
+      "name": "port",
+      "data_type": "int",
+      "membership_type": "private"
+    },
+    {
+      "name": "rest",
+      "data_type": "org.springframework.boot.test.web.client.TestRestTemplate",
+      "membership_type": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "testTriggerExceptionJson",
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "name": "testTriggerExceptionHtml",
+      "return_type": "void",
+      "parameters": []
+    }
+  ]
+}
