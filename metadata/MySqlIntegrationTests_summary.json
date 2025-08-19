@@ -1,39 +1,39 @@
 {
   "file_name": "MySqlIntegrationTests.java",
-  "file_path": "org/springframework/samples/petclinic/MySqlIntegrationTests.java",
-  "file_summary": "This Java class, `MySqlIntegrationTests`, serves as an integration test for the Spring Pet Clinic application, specifically focusing on database interactions with MySQL and web endpoint testing. It leverages Spring Boot's testing capabilities, including `@SpringBootTest` to run the application on a random port, and `@ActiveProfiles(\"mysql\")` to activate the MySQL configuration. A key feature is the use of Testcontainers (`@Testcontainers` and `@Container`) to spin up a transient MySQL database instance for testing purposes, ensuring a clean and isolated environment for each test run. The class injects `VetRepository` to test data access operations (e.g., `findAll`) and `RestTemplateBuilder` to make HTTP requests to the running application (e.g., fetching owner details). It is designed to be disabled in native image and AOT modes. The tests verify database connectivity and the correct functioning of web endpoints.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
+  "file_summary": "This Java class, `MySqlIntegrationTests`, is an integration test suite for the Spring PetClinic application, designed to verify its functionality when backed by a MySQL database. It leverages Spring Boot's testing framework, specifically `@SpringBootTest`, to launch the application on a random port with the \"mysql\" profile activated. A core feature of this test is its use of Testcontainers to spin up a live MySQL database instance, managed by a `MySQLContainer` annotated with `@ServiceConnection` for automatic Spring Boot integration. The tests include `testFindAll()`, which asserts the `VetRepository`'s ability to retrieve data, potentially showcasing caching behavior. The `testOwnerDetails()` method performs an HTTP GET request to the application's `/owners/1` endpoint using a `RestTemplate`, verifying that the web layer successfully fetches owner details, implying proper database connectivity. The class is configured to be disabled in native image and AOT compilation modes, signifying its role in a full JVM-based integration test environment. This setup ensures comprehensive validation of the application's data access and web interaction layers against a real MySQL instance.",
   "attributes": [
     {
       "name": "container",
-      "type": "static MySQLContainer<?>",
-      "membership": "class"
+      "type": "MySQLContainer<?>",
+      "membership": "static private"
     },
     {
       "name": "port",
       "type": "int",
-      "membership": "instance"
+      "membership": "private"
     },
     {
       "name": "vets",
       "type": "VetRepository",
-      "membership": "instance"
+      "membership": "private"
     },
     {
       "name": "builder",
       "type": "RestTemplateBuilder",
-      "membership": "instance"
+      "membership": "private"
     }
   ],
   "functions": [
     {
       "name": "testFindAll",
-      "return_type": "void",
-      "parameters": []
+      "parameters": [],
+      "return_type": "void"
     },
     {
       "name": "testOwnerDetails",
-      "return_type": "void",
-      "parameters": []
+      "parameters": [],
+      "return_type": "void"
     }
   ]
 }
