@@ -1,71 +1,78 @@
 {
   "file_name": "PostgresIntegrationTests.java",
-  "file_path": "org/springframework/samples/petclinic/PostgresIntegrationTests.java",
-  "file_summary": "This Java file `PostgresIntegrationTests` is an integration test suite for the Spring PetClinic application. It is designed to verify the application's functionality when configured to use a PostgreSQL database, specifically integrating with Docker Compose. The test class leverages Spring Boot's `@SpringBootTest` annotation, running the application on a random port and enabling Docker Compose integration to manage the PostgreSQL service. It ensures that Docker is available before tests run and activates the `postgres` Spring profile.\n\nThe class includes a `main` method to demonstrate how the application can be launched independently with the `postgres` profile and Docker Compose. Test methods `testFindAll()` and `testOwnerDetails()` validate core functionalities: retrieving vet information (with caching implications) and fetching owner details via an HTTP endpoint. A nested static class `PropertiesLogger` is an `ApplicationListener` that logs all environment properties during application startup. This logger helps in debugging by providing a detailed overview of the configuration, including any overridden properties, which is particularly useful in complex testing environments involving external services like Docker Compose.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+  "file_summary": "This Java class, `PostgresIntegrationTests`, is an integration test suite for the Spring PetClinic application, specifically designed to verify its functionality with a PostgreSQL database. It utilizes Spring Boot's `@SpringBootTest` to launch the application on a random port and the 'postgres' active profile. The class configures Spring Docker Compose to manage a PostgreSQL container for the tests, ensuring a clean and isolated environment. It includes a `@BeforeAll` check to ensure Docker is available before running tests. The tests themselves cover data access via the `VetRepository` (`testFindAll()`, which also implicitly tests caching) and web endpoint interaction via `RestTemplate` (`testOwnerDetails()` for `/owners/1`). Additionally, it provides a `main` method to run the `PetClinicApplication` directly with the PostgreSQL profile and integrates a nested `PropertiesLogger` class, an `ApplicationListener` that logs all active environment properties during application startup, which is useful for debugging property resolution in complex environments.",
   "attributes": [
     {
       "name": "port",
       "type": "int",
-      "membership": "instance, @LocalServerPort"
+      "membership": "instance public"
     },
     {
       "name": "vets",
-      "type": "org.springframework.samples.petclinic.vet.VetRepository",
-      "membership": "private, @Autowired"
+      "type": "VetRepository",
+      "membership": "instance private"
     },
     {
       "name": "builder",
-      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
-      "membership": "private, @Autowired"
+      "type": "RestTemplateBuilder",
+      "membership": "instance private"
     },
     {
       "name": "PropertiesLogger.log",
-      "type": "org.apache.commons.logging.Log",
-      "membership": "private static final"
+      "type": "Log",
+      "membership": "static private"
     },
     {
       "name": "PropertiesLogger.environment",
-      "type": "org.springframework.core.env.ConfigurableEnvironment",
-      "membership": "private"
+      "type": "ConfigurableEnvironment",
+      "membership": "instance private"
     },
     {
       "name": "PropertiesLogger.isFirstRun",
       "type": "boolean",
-      "membership": "private"
+      "membership": "instance private"
     }
   ],
   "functions": [
     {
       "name": "available",
-      "signature": "static void available()",
-      "annotations": ["@BeforeAll"]
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "main",
-      "signature": "static void main(String[] args)"
+      "return_type": "void",
+      "parameters": [
+        "String[] args"
+      ]
     },
     {
       "name": "testFindAll",
-      "signature": "void testFindAll() throws Exception",
-      "annotations": ["@Test"]
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "testOwnerDetails",
-      "signature": "void testOwnerDetails()",
-      "annotations": ["@Test"]
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "PropertiesLogger.onApplicationEvent",
-      "signature": "void onApplicationEvent(ApplicationPreparedEvent event)",
-      "annotations": ["@Override"]
+      "return_type": "void",
+      "parameters": [
+        "ApplicationPreparedEvent event"
+      ]
     },
     {
       "name": "PropertiesLogger.printProperties",
-      "signature": "void printProperties()"
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "PropertiesLogger.findPropertiesPropertySources",
-      "signature": "private List<EnumerablePropertySource<?>> findPropertiesPropertySources()"
+      "return_type": "List<EnumerablePropertySource<?>>",
+      "parameters": []
     }
   ]
 }
