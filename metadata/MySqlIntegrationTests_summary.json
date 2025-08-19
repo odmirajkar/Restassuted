@@ -1,39 +1,39 @@
 {
   "file_name": "MySqlIntegrationTests.java",
   "file_path": "src/test/java/org/springframework/samples/petclinic/MySqlIntegrationTests.java",
-  "file_summary": "This Java class, `MySqlIntegrationTests`, is an integration test suite for the Spring PetClinic application, designed to verify its functionality when backed by a MySQL database. It leverages Spring Boot's testing framework, specifically `@SpringBootTest`, to launch the application on a random port with the \"mysql\" profile activated. A core feature of this test is its use of Testcontainers to spin up a live MySQL database instance, managed by a `MySQLContainer` annotated with `@ServiceConnection` for automatic Spring Boot integration. The tests include `testFindAll()`, which asserts the `VetRepository`'s ability to retrieve data, potentially showcasing caching behavior. The `testOwnerDetails()` method performs an HTTP GET request to the application's `/owners/1` endpoint using a `RestTemplate`, verifying that the web layer successfully fetches owner details, implying proper database connectivity. The class is configured to be disabled in native image and AOT compilation modes, signifying its role in a full JVM-based integration test environment. This setup ensures comprehensive validation of the application's data access and web interaction layers against a real MySQL instance.",
+  "file_summary": "This Java class, `MySqlIntegrationTests`, is an integration test suite for the Spring PetClinic application. It leverages Spring Boot's testing capabilities, specifically `@SpringBootTest` with `WebEnvironment.RANDOM_PORT`, to spin up the application for testing. The primary purpose is to verify the application's interaction with a MySQL database. It uses Testcontainers (`@Testcontainers` and `@Container`) to provision a transient MySQL database instance for each test run, ensuring a clean and isolated testing environment. The `@ServiceConnection` annotation automatically configures the Spring application to connect to this containerized database. The tests include verifying database access through the `VetRepository` (e.g., `testFindAll()` which also implicitly tests caching) and testing an application REST endpoint (`/owners/1`) using `RestTemplate` to ensure the web layer and underlying data retrieval work correctly. The class is configured with the 'mysql' active profile and is disabled for native image and AOT modes.",
   "attributes": [
     {
       "name": "container",
       "type": "MySQLContainer<?>",
-      "membership": "static private"
+      "membership": "static public"
     },
     {
       "name": "port",
       "type": "int",
-      "membership": "private"
+      "membership": "instance public"
     },
     {
       "name": "vets",
       "type": "VetRepository",
-      "membership": "private"
+      "membership": "instance private"
     },
     {
       "name": "builder",
       "type": "RestTemplateBuilder",
-      "membership": "private"
+      "membership": "instance private"
     }
   ],
   "functions": [
     {
       "name": "testFindAll",
-      "parameters": [],
-      "return_type": "void"
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "testOwnerDetails",
-      "parameters": [],
-      "return_type": "void"
+      "return_type": "void",
+      "parameters": []
     }
   ]
 }
