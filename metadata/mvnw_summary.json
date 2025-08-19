@@ -1,0 +1,39 @@
+{
+  "file_name": "mvnw",
+  "file_path": "Not provided in content (assumed to be a project's root or similar)",
+  "file_summary": "This is a shell script (Unix/Linux/macOS) designed to act as an Apache Maven Wrapper. Its primary purpose is to automatically download and install a specific version of Apache Maven or Apache Maven Daemon (MVND) if it's not already present in the user's local Maven wrapper distribution cache. This ensures that all developers on a project use the exact same Maven version for builds, improving consistency. The script reads the `distributionUrl` and optionally `distributionSha256Sum` from the `.mvn/wrapper/maven-wrapper.properties` file to determine which Maven distribution to fetch. It supports downloading via `wget`, `curl`, or a fallback Java downloader if a JDK is available and configured. It handles platform-specific paths for Cygwin/MinGW and performs checksum validation if a SHA-256 sum is provided. Once Maven is downloaded and extracted, it then executes the appropriate Maven command (`mvn` or `mvnd`) with the arguments passed to the wrapper script. It also defines helper functions for path conversion, string hashing, verbose output, error handling, and string trimming.",
+  "attributes": [
+    {"name": "JAVA_HOME", "type": "string", "membership_type": "environment"},
+    {"name": "MVNW_REPOURL", "type": "string", "membership_type": "environment"},
+    {"name": "MVNW_USERNAME", "type": "string", "membership_type": "environment"},
+    {"name": "MVNW_PASSWORD", "type": "string", "membership_type": "environment"},
+    {"name": "MVNW_VERBOSE", "type": "string", "membership_type": "environment"},
+    {"name": "JAVACMD", "type": "string", "membership_type": "internal"},
+    {"name": "JAVACCMD", "type": "string", "membership_type": "internal"},
+    {"name": "distributionUrl", "type": "string", "membership_type": "internal"},
+    {"name": "distributionSha256Sum", "type": "string", "membership_type": "internal"},
+    {"name": "MVN_CMD", "type": "string", "membership_type": "internal"},
+    {"name": "_MVNW_REPO_PATTERN", "type": "string", "membership_type": "internal"},
+    {"name": "distributionPlatform", "type": "string", "membership_type": "internal"},
+    {"name": "MAVEN_USER_HOME", "type": "string", "membership_type": "internal"},
+    {"name": "MAVEN_HOME", "type": "string", "membership_type": "internal"},
+    {"name": "TMP_DOWNLOAD_DIR", "type": "string", "membership_type": "internal"},
+    {"name": "__MVNW_QUIET_WGET", "type": "string", "membership_type": "internal"},
+    {"name": "__MVNW_QUIET_CURL", "type": "string", "membership_type": "internal"},
+    {"name": "__MVNW_QUIET_UNZIP", "type": "string", "membership_type": "internal"},
+    {"name": "__MVNW_QUIET_TAR", "type": "string", "membership_type": "internal"},
+    {"name": "javaSource", "type": "string", "membership_type": "internal"},
+    {"name": "targetZip", "type": "string", "membership_type": "internal"},
+    {"name": "distributionSha256Result", "type": "boolean", "membership_type": "internal"}
+  ],
+  "functions": [
+    "native_path",
+    "set_java_home",
+    "hash_string",
+    "verbose",
+    "die",
+    "trim",
+    "exec_maven",
+    "clean"
+  ]
+}
