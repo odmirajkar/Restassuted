@@ -1,7 +1,8 @@
 {
-  "file_name": "inputFormFragment.html",
-  "file_path": "src/main/resources/templates/fragments/inputFormFragment.html",
-  "file_summary": "This HTML file contains a reusable Thymeleaf fragment named 'input'. It is designed to render a generic form input field, dynamically adapting its appearance based on validation status. The fragment accepts three parameters: `label` for the input's label, `name` to bind the input to a model field using `th:field`, and `type` to specify the input type (currently supports 'text' and 'date').\n\nThe component dynamically applies CSS classes ('form-group', 'has-error') based on whether the bound field has validation errors, providing visual feedback to the user. It also includes conditional rendering of success/error icons and displays validation error messages using `th:errors` if the field is invalid. This makes it a highly modular and efficient way to create consistent form input elements across a Spring Boot application using Thymeleaf.",
+  "file_name": "input_form_fragment.html",
+  "file_path": "path/to/file/in/repository (not provided)",
+  "file_summary": "This HTML snippet defines a reusable Thymeleaf fragment named 'input'. Its primary purpose is to generate standard HTML form input fields (specifically text and date types) with built-in styling for Bootstrap 3 (form-group, col-sm-2, col-sm-10, form-control) and integrated Thymeleaf validation feedback. The fragment takes 'label', 'name', and 'type' as parameters. It dynamically sets up the label, input field (bound to a model attribute using 'th:field'), and provides visual cues for validation status (green checkmark for valid, red cross for invalid). If there are validation errors, it displays an error message using 'th:errors'. This fragment is designed to promote DRY (Don't Repeat Yourself) principles in web form development by centralizing the rendering logic for common input elements.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
