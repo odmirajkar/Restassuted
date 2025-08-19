@@ -1,51 +1,47 @@
 {
   "file_name": "I18nPropertiesSyncTest.java",
   "file_path": "org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
-  "file_summary": "This test class, `I18nPropertiesSyncTest`, is designed to enforce internationalization (I18n) best practices within the Spring PetClinic application. Its primary purpose is to identify and prevent two common I18n issues: the presence of hard-coded, non-internationalized strings in source files and discrepancies in translation property files. It includes a test to scan Java and HTML files for any literal text that should be externalized for translation, ensuring developers use proper I18n mechanisms like Thymeleaf's `th:text` or Spring's message resolution. Additionally, it verifies that all locale-specific `messages_XX.properties` files are in sync with the base `messages.properties` file. This ensures that every key present in the base file has a corresponding entry in all other language-specific property files, preventing partial or missing translations across different languages. This class contributes to maintaining a high standard of maintainability and localization support for the application.",
+  "file_summary": "This Java test class, `I18nPropertiesSyncTest`, is responsible for enforcing internationalization (i18n) best practices within the Spring PetClinic application. It performs two critical checks to ensure consistent and complete translation coverage. First, `checkNonInternationalizedStrings()` scans all `.java` and `.html` source files (excluding test files) to identify any hard-coded text literals within HTML that are not marked for internationalization (e.g., missing Thymeleaf `#{...}` expressions or `th:text` attributes). This prevents untranslated strings from appearing in the UI. Second, `checkI18nPropertyFilesAreInSync()` verifies that all locale-specific `messages_*.properties` translation files contain every key present in the base `messages.properties` file, ensuring that no strings are partially translated or missing across different languages. This comprehensive test suite helps maintain high quality and completeness for the application's internationalization.",
   "attributes": [
     {
       "name": "I18N_DIR",
-      "type": "String",
-      "membership": "private static final"
+      "data_type": "java.lang.String",
+      "membership_type": "private static final"
     },
     {
       "name": "BASE_NAME",
-      "type": "String",
-      "membership": "private static final"
+      "data_type": "java.lang.String",
+      "membership_type": "private static final"
     },
     {
       "name": "PROPERTIES",
-      "type": "String",
-      "membership": "public static final"
+      "data_type": "java.lang.String",
+      "membership_type": "public static final"
     },
     {
       "name": "HTML_TEXT_LITERAL",
-      "type": "Pattern",
-      "membership": "private static final"
+      "data_type": "java.util.regex.Pattern",
+      "membership_type": "private static final"
     },
     {
       "name": "BRACKET_ONLY",
-      "type": "Pattern",
-      "membership": "private static final"
+      "data_type": "java.util.regex.Pattern",
+      "membership_type": "private static final"
     },
     {
       "name": "HAS_TH_TEXT_ATTRIBUTE",
-      "type": "Pattern",
-      "membership": "private static final"
+      "data_type": "java.util.regex.Pattern",
+      "membership_type": "private static final"
     }
   ],
   "functions": [
     {
       "name": "checkNonInternationalizedStrings",
-      "return_type": "void",
-      "parameters": [],
-      "throws": ["IOException"]
+      "description": "Scans `.java` and `.html` files in `src/main` for hard-coded text literals. Specifically, for HTML files, it identifies text directly within tags that are not marked with Thymeleaf's internationalization expressions (`#{...}`) or attributes (`th:text`), failing the test if found."
     },
     {
       "name": "checkI18nPropertyFilesAreInSync",
-      "return_type": "void",
-      "parameters": [],
-      "throws": ["IOException"]
+      "description": "Verifies that all locale-specific `messages_*.properties` files contain every key defined in the base `messages.properties` file, ensuring complete translation coverage across all supported languages and preventing partial translations."
     }
   ]
 }
