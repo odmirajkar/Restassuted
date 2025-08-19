@@ -1,0 +1,17 @@
+{
+"file_name":"gradle-wrapper.properties",
+"file_path":"Not specified (typically project_root/gradle/wrapper/gradle-wrapper.properties)",
+"file summary":"This file is a configuration file for the Gradle Wrapper, a key component in Gradle-based projects. Its primary purpose is to ensure consistent build environments across different machines by defining the specific Gradle version to be used. The file specifies the `distributionUrl` from which the Gradle distribution (an `all.zip` file in this case) is downloaded, along with its `distributionSha256Sum` for integrity verification. It also configures the local storage locations for Gradle distributions and ZIP files using `distributionBase`, `distributionPath`, `zipStoreBase`, and `zipStorePath`. Additionally, it includes network-related settings like `networkTimeout` and a flag to `validateDistributionUrl`, helping manage the download process of the Gradle distribution. This setup guarantees that anyone building the project will automatically download and use the precise Gradle version specified, avoiding 'works on my machine' issues.",
+"attributes":[
+{"name":"distributionBase", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"distributionPath", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"distributionSha256Sum", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"distributionUrl", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"networkTimeout", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"validateDistributionUrl", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"zipStoreBase", "data_type":"String", "membership_type":"Configuration Property"},
+{"name":"zipStorePath", "data_type":"String", "membership_type":"Configuration Property"}
+],
+"functions":[],
+"dependent_class_list":[]
+}
