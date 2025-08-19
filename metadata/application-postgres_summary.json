@@ -1,38 +1,34 @@
 {
   "file_name": "application.properties",
-  "file_path": "Not specified",
-  "file_summary": "This configuration file sets up database connection properties for a Spring Boot application, specifically targeting PostgreSQL. It explicitly configures the `database` type to `postgres`. The `spring.datasource` properties define the JDBC URL, username, and password required to connect to the PostgreSQL database. These values are designed for flexibility, allowing default fallbacks (e.g., `jdbc:postgresql://localhost/petclinic` for URL, `petclinic` for username/password) while also supporting overrides via environment variables (`POSTGRES_URL`, `POSTGRES_USER`, `POSTGRES_PASS`). This approach allows for external management of sensitive connection details, enhancing security and portability across different environments. Additionally, the file specifies `spring.sql.init.mode=always`, which directs Spring to execute SQL initialization scripts every time the application starts. The configuration assumes these SQL scripts are idempotent, ensuring they can be safely run multiple times without causing issues. This setup is crucial for automating database schema creation and initial data loading in development, testing, and production environments using PostgreSQL.",
+  "file_path": "src/main/resources/application.properties",
+  "file_summary": "This configuration file, typically named `application.properties`, defines the database connection settings for a Spring Boot application. It is configured to connect to a PostgreSQL database using JDBC. Database connection parameters such as the URL, username, and password are set to retrieve their values from environment variables (`POSTGRES_URL`, `POSTGRES_USER`, `POSTGRES_PASS`), with default fallback values provided directly in the file for local development or testing purposes. Additionally, it configures Spring Boot to always initialize the SQL database schema upon application startup, implying that the SQL scripts are designed to be idempotent and safe for repeated execution.",
   "attributes": [
     {
       "name": "database",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Specifies the primary database type to be used, set to PostgreSQL."
+      "type": "String",
+      "value": "postgres"
     },
     {
       "name": "spring.datasource.url",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "The JDBC URL for connecting to the PostgreSQL database. Defaults to a local PostgreSQL instance but can be overridden by the POSTGRES_URL environment variable."
+      "type": "String",
+      "value": "${POSTGRES_URL:jdbc:postgresql://localhost/petclinic}"
     },
     {
       "name": "spring.datasource.username",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "The username for PostgreSQL database authentication. Defaults to 'petclinic' but can be overridden by the POSTGRES_USER environment variable."
+      "type": "String",
+      "value": "${POSTGRES_USER:petclinic}"
     },
     {
       "name": "spring.datasource.password",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "The password for PostgreSQL database authentication. Defaults to 'petclinic' but can be overridden by the POSTGRES_PASS environment variable."
+      "type": "String",
+      "value": "${POSTGRES_PASS:petclinic}"
     },
     {
       "name": "spring.sql.init.mode",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Defines when SQL initialization scripts should be executed. Set to 'always' indicating scripts run on every application startup, presumed safe due to idempotency."
+      "type": "String",
+      "value": "always"
     }
   ],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
