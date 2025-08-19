@@ -1,15 +1,15 @@
 {
   "file_name": "ownerDetails.html",
-  "file_path": "N/A (path not provided)",
-  "file summary": "This HTML document is a Thymeleaf template designed to display comprehensive details of a single owner and their associated pets and visits. It integrates with a common application layout (`fragments/layout`) to ensure consistent presentation and is specifically for the 'owners' section.\n\nThe page prominently features an 'Owner Information' section, presenting the owner's full name, address, city, and telephone number in a structured table. It also includes dynamic message display areas, showing `success` or `error` messages if they are passed to the template. These messages are automatically hidden after a few seconds by an embedded JavaScript function.\n\nKey navigation links are provided, allowing users to 'Edit Owner' details or 'Add New Pet' to the current owner. Following the owner's details, there's a dedicated 'Pets and Visits' section. This section iterates through each pet belonging to the owner, displaying their name, birth date, and type. For each pet, it further lists all recorded visits, showing the visit date and a description. Within this section, links are available to 'Edit Pet' details or 'Add Visit' for a specific pet. The template uses Thymeleaf's internationalization (`#{...}`) and date formatting capabilities (`#temporals.format`) for localized and properly formatted content.",
+  "file_path": "N/A",
+  "file_summary": "This HTML file is a Thymeleaf template, commonly used in Spring applications like Spring PetClinic, designed to display comprehensive details about a specific owner, along with information about all their registered pets and their respective visits. It utilizes a shared layout fragment (`fragments/layout`) to ensure a consistent application-wide design, specifically for the 'owners' section. The page prominently displays the owner's basic information (name, address, city, telephone) in a structured table. It also includes conditional display areas for success and error messages, which are set to automatically hide after 3 seconds using a simple JavaScript snippet. A significant part of the page is dedicated to listing each of the owner's pets. For each pet, its name, birth date, and type are shown. Nested within each pet's section is a table detailing all their recorded visits, including the visit date and description. The template provides various navigation links: to edit the current owner, add a new pet for the owner, edit an existing pet, and add a new visit for a specific pet. All text labels are internationalized using Thymeleaf's message expressions (e.g., `#{name}`, `#{address}`).",
   "attributes": [],
   "functions": [
-    {
-      "name": "hideMessages",
-      "type": "JavaScript Function",
-      "description": "Hides elements with the IDs 'success-message' and 'error-message' after a delay of 3000 milliseconds (3 seconds) by setting their display style to 'none'. This function is called automatically when the page loads.",
-      "parameters": [],
-      "return_type": "void"
-    }
+    "hideMessages()"
+  ],
+  "dependent_class_list": [
+    "owner",
+    "pet",
+    "visit",
+    "fragments/layout"
   ]
 }
