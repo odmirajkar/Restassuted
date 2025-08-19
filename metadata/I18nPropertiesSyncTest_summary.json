@@ -1,47 +1,65 @@
 {
   "file_name": "I18nPropertiesSyncTest.java",
   "file_path": "org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
-  "file_summary": "This Java test class, `I18nPropertiesSyncTest`, is responsible for enforcing internationalization (i18n) best practices within the Spring PetClinic application. It performs two critical checks to ensure consistent and complete translation coverage. First, `checkNonInternationalizedStrings()` scans all `.java` and `.html` source files (excluding test files) to identify any hard-coded text literals within HTML that are not marked for internationalization (e.g., missing Thymeleaf `#{...}` expressions or `th:text` attributes). This prevents untranslated strings from appearing in the UI. Second, `checkI18nPropertyFilesAreInSync()` verifies that all locale-specific `messages_*.properties` translation files contain every key present in the base `messages.properties` file, ensuring that no strings are partially translated or missing across different languages. This comprehensive test suite helps maintain high quality and completeness for the application's internationalization.",
+  "file_summary": "This Java file, `I18nPropertiesSyncTest.java`, contains JUnit tests designed to enforce proper internationalization (i18n) within the Spring PetClinic application. Its main goal is to prevent hard-coded strings in the user interface and ensure consistency across language translation files. The `checkNonInternationalizedStrings` test scans `.java` and `.html` files, identifying any plain text literals that are not properly marked for internationalization (e.g., using Thymeleaf's `th:text` or `#{...}` syntax). This helps ensure that all visible text can be translated. The `checkI18nPropertyFilesAreInSync` test verifies the integrity of `.properties` files used for translations. It compares the keys in the base `messages.properties` file against those in all other locale-specific message files. If any key present in the base file is missing from a translated file, the test fails, guaranteeing that all strings requiring translation have a corresponding entry in every supported language, thereby preventing incomplete translations.",
   "attributes": [
     {
       "name": "I18N_DIR",
-      "data_type": "java.lang.String",
-      "membership_type": "private static final"
+      "type": "java.lang.String",
+      "membership_type": "static final"
     },
     {
       "name": "BASE_NAME",
-      "data_type": "java.lang.String",
-      "membership_type": "private static final"
+      "type": "java.lang.String",
+      "membership_type": "static final"
     },
     {
       "name": "PROPERTIES",
-      "data_type": "java.lang.String",
-      "membership_type": "public static final"
+      "type": "java.lang.String",
+      "membership_type": "static final"
     },
     {
       "name": "HTML_TEXT_LITERAL",
-      "data_type": "java.util.regex.Pattern",
-      "membership_type": "private static final"
+      "type": "java.util.regex.Pattern",
+      "membership_type": "static final"
     },
     {
       "name": "BRACKET_ONLY",
-      "data_type": "java.util.regex.Pattern",
-      "membership_type": "private static final"
+      "type": "java.util.regex.Pattern",
+      "membership_type": "static final"
     },
     {
       "name": "HAS_TH_TEXT_ATTRIBUTE",
-      "data_type": "java.util.regex.Pattern",
-      "membership_type": "private static final"
+      "type": "java.util.regex.Pattern",
+      "membership_type": "static final"
     }
   ],
   "functions": [
     {
       "name": "checkNonInternationalizedStrings",
-      "description": "Scans `.java` and `.html` files in `src/main` for hard-coded text literals. Specifically, for HTML files, it identifies text directly within tags that are not marked with Thymeleaf's internationalization expressions (`#{...}`) or attributes (`th:text`), failing the test if found."
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "checkI18nPropertyFilesAreInSync",
-      "description": "Verifies that all locale-specific `messages_*.properties` files contain every key defined in the base `messages.properties` file, ensuring complete translation coverage across all supported languages and preventing partial translations."
+      "return_type": "void",
+      "parameters": []
     }
+  ],
+  "dependent_class_list": [
+    "org.junit.jupiter.api.Test",
+    "java.io.IOException",
+    "java.nio.file.Files",
+    "java.nio.file.Path",
+    "java.nio.file.Paths",
+    "java.util.HashMap",
+    "java.util.List",
+    "java.util.Map",
+    "java.util.Properties",
+    "java.util.Set",
+    "java.util.TreeSet",
+    "java.util.regex.Pattern",
+    "java.util.stream.Stream",
+    "org.junit.jupiter.api.Assertions"
   ]
 }
