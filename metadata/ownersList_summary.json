@@ -1,7 +1,23 @@
 {
   "file_name": "ownersList.html",
-  "file_path": "Not provided",
-  "file_summary": "This HTML file is a Thymeleaf template responsible for displaying a paginated list of pet owners. It utilizes a `fragments/layout` for consistent page structure and incorporates internationalization for text elements. The core of the page is an HTML table that lists owners with their names, addresses, cities, telephone numbers, and pets. Each owner's name is rendered as a hyperlink, leading to a detailed view for that specific owner. The template dynamically renders the list by iterating over a server-side `listOwners` collection. Crucially, the page includes comprehensive pagination controls, enabling users to navigate through pages of results. These controls display the current page number and provide links to the first, previous, next, and last pages, driven by `totalPages` and `currentPage` variables passed from the backend.",
-  "attributes": [],
+  "file_path": "N/A (path not provided)",
+  "file summary": "This HTML document is a Thymeleaf template primarily designed to display a paginated list of owners within an application. It integrates with a common application layout (`fragments/layout`) and is specifically part of the 'owners' section, providing a table-based overview of registered owners.\n\nThe main content is an HTML `table` with the ID `owners`, which presents each owner's `name` (first and last), `address`, `city`, `telephone`, and a comma-separated list of their `pets`. The owner's name is rendered as a clickable link, allowing users to navigate to a detailed view of that specific owner (`/owners/__${owner.id}__`).\n\nA significant feature of this template is its pagination support. It conditionally displays pagination controls if there is more than one page of owners. These controls include links to individual page numbers, as well as navigation buttons (first, previous, next, last) which are styled with Font Awesome icons (implied by `fa` classes). The pagination logic relies on `currentPage` and `totalPages` variables passed to the template. All user-facing text, including table headers and navigation labels, is internationalized using Thymeleaf's `#{...}` syntax, ensuring multi-language support.",
+  "attributes": [
+    {
+      "name": "listOwners",
+      "data_type": "List<Owner>",
+      "membership_type": "Model Attribute (passed from controller)"
+    },
+    {
+      "name": "totalPages",
+      "data_type": "Integer",
+      "membership_type": "Model Attribute (passed from controller)"
+    },
+    {
+      "name": "currentPage",
+      "data_type": "Integer",
+      "membership_type": "Model Attribute (passed from controller)"
+    }
+  ],
   "functions": []
 }
