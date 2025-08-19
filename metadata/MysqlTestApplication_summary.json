@@ -1,0 +1,29 @@
+{
+  "file_name": "MysqlTestApplication.java",
+  "file_path": "org/springframework/samples/petclinic/MysqlTestApplication.java",
+  "file_summary": "This Java class, `MysqlTestApplication`, is a Spring Boot configuration designed to facilitate testing of the PetClinic application against a MySQL database using Testcontainers. It defines a `@Bean` method, `container()`, which provisions a `MySQLContainer` instance from the `mysql:9.2` Docker image. This container is annotated with `@ServiceConnection` for automatic database connection configuration and is active only when the `mysql` Spring profile is enabled. The class also includes a `main` method, which serves as the application's entry point, launching the `PetClinicApplication` with the `mysql` profile active and explicitly disabling Spring Docker Compose, ensuring that the Testcontainers MySQL instance is used for integration tests or local development.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "container",
+      "return_type": "MySQLContainer<?>",
+      "membership_type": "static",
+      "access_modifier": "package-private",
+      "parameters": [],
+      "annotations": ["@ServiceConnection", "@Profile(\"mysql\")", "@Bean"]
+    },
+    {
+      "name": "main",
+      "return_type": "void",
+      "membership_type": "static",
+      "access_modifier": "public",
+      "parameters": [
+        {
+          "name": "args",
+          "type": "String[]"
+        }
+      ],
+      "annotations": []
+    }
+  ]
+}
