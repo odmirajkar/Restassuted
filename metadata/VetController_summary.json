@@ -1,63 +1,83 @@
 {
   "file_name": "VetController.java",
-  "file_path": "org/springframework/samples/petclinic/vet/VetController.java",
-  "file_summary": "The `VetController` class is a Spring Framework controller responsible for handling web requests related to veterinarians in the PetClinic application. It serves two primary purposes: displaying a paginated list of veterinarians on an HTML page and providing a RESTful endpoint to retrieve all veterinarians. It uses Spring's `@Controller` annotation to mark it as a web component and injects `VetRepository` to interact with the data layer. The `showVetList` method handles the HTML view, incorporating pagination logic to display a limited number of vets per page. Helper methods like `addPaginationModel` and `findPaginated` encapsulate the pagination details. The `showResourcesVetList` method provides a `/vets` endpoint that returns a list of vets suitable for JSON/XML mapping, typically consumed by client-side applications.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+  "file_summary": "This `VetController` class serves as a Spring MVC controller responsible for handling web requests related to veterinary professionals in the Spring PetClinic application. It is annotated with `@Controller`, indicating its role in the presentation layer. The controller injects `VetRepository` to interact with the data layer for retrieving vet information.\n\nIts primary functions include providing two distinct endpoints:\n1.  `/vets.html`: This endpoint renders a paginated list of vets to a web page (`vets/vetList`). It manages the pagination logic, allowing users to browse vets page by page, displaying details like current page, total pages, and total items.\n2.  `/vets`: This endpoint exposes a RESTful API, returning a `Vets` object (a wrapper for a list of `Vet` objects) as JSON or XML. This is designed for programmatic consumption, offering a complete list of all veterinarians.\n\nThe controller encapsulates the logic for fetching vet data, applying pagination where necessary, and preparing it for both human-readable web views and machine-readable API responses.",
   "attributes": [
     {
       "name": "vetRepository",
-      "type": "VetRepository",
+      "data_type": "VetRepository",
       "membership_type": "private final"
     }
   ],
   "functions": [
     {
       "name": "VetController",
-      "return_type": "void",
       "parameters": [
-        "VetRepository vetRepository"
+        {
+          "name": "vetRepository",
+          "data_type": "VetRepository"
+        }
       ],
-      "access_modifier": "public",
-      "type": "constructor"
+      "return_type": "void",
+      "visibility": "public",
+      "description": "Constructor for VetController, injecting the VetRepository dependency."
     },
     {
       "name": "showVetList",
-      "return_type": "String",
       "parameters": [
-        "int page",
-        "Model model"
+        {
+          "name": "page",
+          "data_type": "int",
+          "annotation": "@RequestParam(defaultValue = \"1\")"
+        },
+        {
+          "name": "model",
+          "data_type": "Model"
+        }
       ],
-      "access_modifier": "public",
-      "annotations": [
-        "@GetMapping(\"/vets.html\")"
-      ]
+      "return_type": "String",
+      "visibility": "public",
+      "description": "Handles GET requests to '/vets.html', displaying a paginated list of veterinarians to the web UI. It fetches a page of vets and adds pagination details to the model."
     },
     {
       "name": "addPaginationModel",
-      "return_type": "String",
       "parameters": [
-        "int page",
-        "Page<Vet> paginated",
-        "Model model"
+        {
+          "name": "page",
+          "data_type": "int"
+        },
+        {
+          "name": "paginated",
+          "data_type": "Page<Vet>"
+        },
+        {
+          "name": "model",
+          "data_type": "Model"
+        }
       ],
-      "access_modifier": "private"
+      "return_type": "String",
+      "visibility": "private",
+      "description": "Helper method to add pagination attributes (currentPage, totalPages, totalItems, listVets) to the Model for UI rendering."
     },
     {
       "name": "findPaginated",
-      "return_type": "Page<Vet>",
       "parameters": [
-        "int page"
+        {
+          "name": "page",
+          "data_type": "int"
+        }
       ],
-      "access_modifier": "private"
+      "return_type": "Page<Vet>",
+      "visibility": "private",
+      "description": "Helper method to retrieve a paginated list of vets from the VetRepository. Sets the page size to 5."
     },
     {
       "name": "showResourcesVetList",
-      "return_type": "Vets",
       "parameters": [],
-      "access_modifier": "public",
-      "annotations": [
-        "@GetMapping({\"/vets\"})",
-        "@ResponseBody"
-      ]
+      "return_type": "Vets",
+      "visibility": "public",
+      "annotation": "@ResponseBody",
+      "description": "Handles GET requests to '/vets', returning a list of all veterinarians as a RESTful resource (JSON/XML). This is suitable for client-side consumption."
     }
   ]
 }
