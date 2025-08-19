@@ -1,118 +1,93 @@
 {
-  "file_name": "mvnw.cmd",
-  "file_path": "N/A",
-  "file_summary": "This script is the Apache Maven Wrapper startup batch/PowerShell script for Windows, designed to automatically download, install, and execute a specific version of Apache Maven or Maven Daemon (mvnd) if it's not already present on the system. It first checks for an existing Maven installation based on the `distributionUrl` specified in `.mvn/wrapper/maven-wrapper.properties`. If not found, it proceeds to download the Maven or mvnd distribution from the calculated URL (potentially overridden by `MVNW_REPOURL`), validates its SHA-256 checksum (for Maven, not mvnd), extracts it, and sets up the local Maven environment. The script handles temporary file management and ensures the correct Maven executable (`mvn.cmd` or `mvnd.cmd`) is invoked. It supports optional environment variables like `MVNW_REPOURL`, `MVNW_USERNAME`, `MVNW_PASSWORD` for custom repository access, and `MVNW_VERBOSE` for detailed logging.",
+  "file_name": "mvnw",
+  "file_path": "mvnw",
+  "file_summary": "This is `mvnw`, a shell script for the Apache Maven Wrapper. Its primary role is to provide a consistent way to build projects using a specific Maven version, ensuring all developers use the same toolchain without requiring a global Maven installation. It reads configuration from `.mvn/wrapper/maven-wrapper.properties` to determine the exact Maven or Maven Daemon (`mvnd`) distribution to use, including its download URL and an optional SHA-256 checksum for integrity verification. The script first checks if the required Maven distribution is already downloaded and cached in the user's local Maven repository (`~/.m2/wrapper/dists`). If not found, it orchestrates the download process, prioritizing `wget` or `curl`, and falling back to a dynamically compiled Java class (`Downloader.java`) if external command-line tools are unavailable. It handles platform-specific paths and `mvnd` native distributions. After downloading, validating (if a checksum is provided), and extracting the distribution, it executes the downloaded Maven command, passing through any command-line arguments, effectively wrapping the Maven execution. The script supports verbose logging and various environment variables for customization, such as `JAVA_HOME`, proxy settings, and custom repository URLs.",
   "attributes": [
     {
-      "name": "__MVNW_ARG0_NAME__",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "__MVNW_CMD__",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "__MVNW_ERROR__",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "__MVNW_PSMODULEP_SAVE",
-      "type": "string",
-      "membership_type": "script-scoped variable"
+      "name": "JAVA_HOME",
+      "data_type": "String",
+      "membership_type": "Environment variable (optional)"
     },
     {
       "name": "MVNW_REPOURL",
-      "type": "string",
-      "membership_type": "environment variable (optional)"
+      "data_type": "String",
+      "membership_type": "Environment variable (optional)"
     },
     {
       "name": "MVNW_USERNAME",
-      "type": "string",
-      "membership_type": "environment variable (optional)"
+      "data_type": "String",
+      "membership_type": "Environment variable (optional)"
     },
     {
       "name": "MVNW_PASSWORD",
-      "type": "string",
-      "membership_type": "environment variable (optional)"
+      "data_type": "String",
+      "membership_type": "Environment variable (optional)"
     },
     {
       "name": "MVNW_VERBOSE",
-      "type": "string",
-      "membership_type": "environment variable (optional)"
+      "data_type": "String",
+      "membership_type": "Environment variable (optional)"
+    },
+    {
+      "name": "JAVACMD",
+      "data_type": "String",
+      "membership_type": "Script-defined (path to Java executable)"
+    },
+    {
+      "name": "JAVACCMD",
+      "data_type": "String",
+      "membership_type": "Script-defined (path to Javac executable)"
     },
     {
       "name": "distributionUrl",
-      "type": "string",
-      "membership_type": "script-scoped variable (derived from properties file)"
-    },
-    {
-      "name": "USE_MVND",
-      "type": "boolean",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "MVN_CMD",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "MVNW_REPO_PATTERN",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "distributionUrlName",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "distributionUrlNameMain",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "MAVEN_HOME_PARENT",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "MAVEN_USER_HOME",
-      "type": "string",
-      "membership_type": "environment variable (optional)"
-    },
-    {
-      "name": "MAVEN_HOME_NAME",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "MAVEN_HOME",
-      "type": "string",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "TMP_DOWNLOAD_DIR_HOLDER",
-      "type": "System.IO.FileInfo",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "TMP_DOWNLOAD_DIR",
-      "type": "System.IO.DirectoryInfo",
-      "membership_type": "script-scoped variable"
-    },
-    {
-      "name": "webclient",
-      "type": "System.Net.WebClient",
-      "membership_type": "script-scoped variable"
+      "data_type": "String",
+      "membership_type": "Script-defined (parsed from properties file)"
     },
     {
       "name": "distributionSha256Sum",
-      "type": "string",
-      "membership_type": "script-scoped variable (derived from properties file)"
+      "data_type": "String",
+      "membership_type": "Script-defined (parsed from properties file, optional)"
+    },
+    {
+      "name": "MVN_CMD",
+      "data_type": "String",
+      "membership_type": "Script-defined (command to execute, 'mvn' or 'mvnd.sh')"
+    },
+    {
+      "name": "MAVEN_USER_HOME",
+      "data_type": "String",
+      "membership_type": "Script-defined (user's Maven home, can be overridden by env var)"
+    },
+    {
+      "name": "MAVEN_HOME",
+      "data_type": "String",
+      "membership_type": "Script-defined (path to local Maven distribution)"
+    },
+    {
+      "name": "TMP_DOWNLOAD_DIR",
+      "data_type": "String",
+      "membership_type": "Script-defined (temporary directory for download)"
     }
   ],
-  "functions": []
+  "functions": [
+    "native_path()",
+    "set_java_home()",
+    "hash_string(str)",
+    "verbose(message)",
+    "die(message)",
+    "trim(string)",
+    "exec_maven(args...)",
+    "clean()"
+  ],
+  "dependent_class_list": [
+    "java (executable)",
+    "javac (executable)",
+    "wget (executable, optional)",
+    "curl (executable, optional)",
+    "unzip (executable, optional)",
+    "tar (executable, optional)",
+    "sha256sum (executable, optional)",
+    "shasum (executable, optional)",
+    "Downloader (Java class, dynamically generated by script)"
+  ]
 }
