@@ -1,7 +1,7 @@
 {
   "file_name": "PetValidator.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetValidator.java",
-  "file_summary": "The PetValidator class is a Spring Framework `Validator` implementation specifically designed to validate `Pet` objects within the PetClinic application. Its primary purpose is to ensure data integrity for `Pet` forms by checking essential attributes. It verifies that the pet's `name` is not empty, a `type` is selected when a new pet is being created, and a `birthDate` is provided. The class utilizes Spring's `Errors` object to register validation failures, marking fields as 'required' if they are missing. This validator provides a programmatic approach to validation, offering an alternative to annotation-based validation for specific rules. It supports validation only for instances of the `Pet` class.",
+  "file_summary": "This Java class, `PetValidator`, acts as a custom Spring `Validator` specifically designed for validating `Pet` objects within the PetClinic application. Its primary purpose is to ensure that essential fields of a `Pet` instance, such as its name, type (for new pets), and birth date, are present and valid before saving or processing. The class implements the `org.springframework.validation.Validator` interface, overriding its `validate` method to apply specific validation rules. It explicitly avoids using Bean Validation annotations, opting for programmatic validation logic written in Java. The `supports` method ensures that this validator is only applied to instances of the `Pet` class.",
   "attributes": [
     {
       "name": "REQUIRED",
@@ -12,22 +12,29 @@
   "functions": [
     {
       "name": "validate",
-      "signature": "public void validate(Object obj, Errors errors)",
-      "return_type": "void",
       "parameters": [
-        {"name": "obj", "type": "Object"},
-        {"name": "errors", "type": "Errors"}
+        {
+          "name": "obj",
+          "data_type": "Object"
+        },
+        {
+          "name": "errors",
+          "data_type": "Errors"
+        }
       ],
-      "access_modifier": "public"
+      "return_type": "void",
+      "visibility": "public"
     },
     {
       "name": "supports",
-      "signature": "public boolean supports(Class<?> clazz)",
-      "return_type": "boolean",
       "parameters": [
-        {"name": "clazz", "type": "Class<?>"}
+        {
+          "name": "clazz",
+          "data_type": "Class<?>"
+        }
       ],
-      "access_modifier": "public"
+      "return_type": "boolean",
+      "visibility": "public"
     }
   ]
 }
