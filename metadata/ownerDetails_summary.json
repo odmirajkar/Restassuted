@@ -1,7 +1,15 @@
 {
   "file_name": "ownerDetails.html",
-  "file_path": "N/A",
-  "file_summary": "This HTML file is a Thymeleaf template designed to display detailed information about a specific pet owner, their associated pets, and each pet's visits. It leverages Thymeleaf's server-side rendering capabilities to populate dynamic content from a 'owner' object. The page presents the owner's personal details (name, address, city, telephone) and dynamically renders success or error messages. A key feature is the display of all pets owned by the individual, showing each pet's name, birth date, and type. For every pet, a nested table lists their historical visits, including the date and description. The template provides action links and buttons, enabling users to edit owner details, add new pets, edit existing pet information, and add new visits for specific pets. It also includes a client-side JavaScript snippet to automatically hide success/error messages after a short delay, improving user experience.",
+  "file_path": "N/A (path not provided)",
+  "file summary": "This HTML document is a Thymeleaf template designed to display comprehensive details of a single owner and their associated pets and visits. It integrates with a common application layout (`fragments/layout`) to ensure consistent presentation and is specifically for the 'owners' section.\n\nThe page prominently features an 'Owner Information' section, presenting the owner's full name, address, city, and telephone number in a structured table. It also includes dynamic message display areas, showing `success` or `error` messages if they are passed to the template. These messages are automatically hidden after a few seconds by an embedded JavaScript function.\n\nKey navigation links are provided, allowing users to 'Edit Owner' details or 'Add New Pet' to the current owner. Following the owner's details, there's a dedicated 'Pets and Visits' section. This section iterates through each pet belonging to the owner, displaying their name, birth date, and type. For each pet, it further lists all recorded visits, showing the visit date and a description. Within this section, links are available to 'Edit Pet' details or 'Add Visit' for a specific pet. The template uses Thymeleaf's internationalization (`#{...}`) and date formatting capabilities (`#temporals.format`) for localized and properly formatted content.",
   "attributes": [],
-  "functions": []
+  "functions": [
+    {
+      "name": "hideMessages",
+      "type": "JavaScript Function",
+      "description": "Hides elements with the IDs 'success-message' and 'error-message' after a delay of 3000 milliseconds (3 seconds) by setting their display style to 'none'. This function is called automatically when the page loads.",
+      "parameters": [],
+      "return_type": "void"
+    }
+  ]
 }
