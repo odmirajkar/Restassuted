@@ -1,7 +1,7 @@
 {
-  "file_name": "addOrUpdateOwnerForm.html",
-  "file_path": "src/main/resources/templates/owners/addOrUpdateOwnerForm.html",
-  "file_summary": "This HTML file is a Thymeleaf template designed for creating or updating owner details within a web application. It extends a common layout fragment (`fragments/layout`) to maintain a consistent page structure. The page features a form (`id=\"add-owner-form\"`) that is bound to an `owner` object. It includes several input fields for owner information, such as first name, last name, address, city, and telephone, which are dynamically rendered using a reusable `fragments/inputField` template. The labels for these fields are internationalized using Thymeleaf's message expressions (e.g., `#{firstName}`). A submit button is provided, whose text dynamically changes to either 'Add Owner' or 'Update Owner' based on whether the current `owner` object is new or existing. This template serves as the user interface for managing owner data in the application.",
+  "file_name": "addOrUpdateOwner.html",
+  "file_path": "/src/main/resources/templates/owners/addOrUpdateOwner.html",
+  "file_summary": "This HTML file acts as a Thymeleaf template for a web form dedicated to adding or updating owner information within an application. It integrates with a common `fragments/layout` for consistent page structure and utilizes a `fragments/inputField` fragment for rendering various form inputs, including first name, last name, address, city, and telephone. The form dynamically changes its title and the submit button's text (e.g., 'Add Owner' or 'Update Owner') based on whether it's being used to create a new owner record or modify an existing one. It leverages Thymeleaf's internationalization features (`th:text`, `th:replace`) for labels and button texts, ensuring a consistent and localized user experience.",
   "attributes": [],
   "functions": []
 }
