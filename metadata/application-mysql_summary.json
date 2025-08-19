@@ -1,32 +1,37 @@
 {
   "file_name": "application.properties",
-  "file_path": "N/A",
-  "file_summary": "This properties file configures database connection settings for a Spring Boot application, likely 'petclinic'. It specifies MySQL as the database type and provides the JDBC URL, username, and password for connecting to the database. The values are designed to be environment variable driven (e.g., MYSQL_URL, MYSQL_USER, MYSQL_PASS) with fallback default values for local development. Additionally, it configures Spring's SQL initialization mode to always run, ensuring that SQL scripts are executed on application startup to set up or update the database schema, which is safe due to the idempotent nature of the SQL.",
+  "file_path": "Not specified",
+  "file_summary": "This configuration file is used to define database connection settings for a Spring Boot application. It explicitly sets the `database` type to `mysql`, indicating the application's preference or requirement to use MySQL. It configures the essential `spring.datasource` properties including the JDBC URL, username, and password. These values are designed to be flexible, allowing default fallbacks (e.g., `jdbc:mysql://localhost/petclinic` for URL, `petclinic` for username/password) while also supporting overrides via environment variables (`MYSQL_URL`, `MYSQL_USER`, `MYSQL_PASS`). This approach enhances portability and security by allowing credentials and connection details to be managed externally. Additionally, the file specifies `spring.sql.init.mode=always`, which instructs Spring to execute SQL initialization scripts every time the application starts. This is explicitly noted as safe due to the idempotent nature of the SQL scripts, ensuring that schema creation or data population can be run repeatedly without adverse effects. This setup is crucial for development, testing, and even production environments requiring consistent database schema or initial data loading.",
   "attributes": [
     {
       "name": "database",
       "data_type": "String",
-      "membership_type": "global"
+      "membership_type": "Configuration Property",
+      "description": "Specifies the primary database type to be used, set to MySQL."
     },
     {
       "name": "spring.datasource.url",
       "data_type": "String",
-      "membership_type": "global"
+      "membership_type": "Configuration Property",
+      "description": "The JDBC URL for connecting to the database. Defaults to a local MySQL instance but can be overridden by the MYSQL_URL environment variable."
     },
     {
       "name": "spring.datasource.username",
       "data_type": "String",
-      "membership_type": "global"
+      "membership_type": "Configuration Property",
+      "description": "The username for database authentication. Defaults to 'petclinic' but can be overridden by the MYSQL_USER environment variable."
     },
     {
       "name": "spring.datasource.password",
       "data_type": "String",
-      "membership_type": "global"
+      "membership_type": "Configuration Property",
+      "description": "The password for database authentication. Defaults to 'petclinic' but can be overridden by the MYSQL_PASS environment variable."
     },
     {
       "name": "spring.sql.init.mode",
       "data_type": "String",
-      "membership_type": "global"
+      "membership_type": "Configuration Property",
+      "description": "Defines when SQL initialization scripts should be executed. Set to 'always' indicating scripts run on every application startup, presumed safe due to idempotency."
     }
   ],
   "functions": []
