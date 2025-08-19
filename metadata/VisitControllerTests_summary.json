@@ -1,53 +1,33 @@
 {
   "file_name": "VisitControllerTests.java",
-  "file_path": "org/springframework/samples/petclinic/owner/VisitControllerTests.java",
-  "file_summary": "This Java class, `VisitControllerTests`, is responsible for testing the web layer functionalities of the `VisitController` within the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on MVC components, specifically `VisitController`, without loading the full application context. The tests leverage `MockMvc` to simulate HTTP requests and verify the controller's behavior, including status codes, view names, and model attributes. It also uses `@MockitoBean` to mock the `OwnerRepository` dependency, ensuring that the tests are isolated to the controller's logic. The class covers scenarios like initializing a new visit form, successfully submitting a new visit, and handling validation errors during visit submission. It's configured to be disabled in native image and AOT modes.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+  "file_summary": "This Java class, `VisitControllerTests`, provides integration tests for the `VisitController` in the Spring PetClinic application. It is configured with `@WebMvcTest` to focus on testing the web layer, allowing the simulation of HTTP requests to the controller without needing to start a full Spring application context. The tests utilize `MockMvc` to perform GET and POST requests to various endpoints related to pet visits. The `OwnerRepository` is mocked using `@MockitoBean` to control its behavior and isolate the controller logic from the database, ensuring predictable test outcomes. The `init()` method sets up a mock owner and pet for tests to use. This test suite covers the functionality of initializing the new visit form, successfully processing a new visit form submission (redirecting upon success), and handling form submissions that contain errors (staying on the form and displaying errors).",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "type": "int",
-      "membership": "private static final"
+      "data_type": "int",
+      "membership_type": "private static final"
     },
     {
       "name": "TEST_PET_ID",
-      "type": "int",
-      "membership": "private static final"
+      "data_type": "int",
+      "membership_type": "private static final"
     },
     {
       "name": "mockMvc",
-      "type": "org.springframework.test.web.servlet.MockMvc",
-      "membership": "private"
+      "data_type": "MockMvc",
+      "membership_type": "private @Autowired"
     },
     {
       "name": "owners",
-      "type": "org.springframework.samples.petclinic.owner.OwnerRepository",
-      "membership": "private"
+      "data_type": "OwnerRepository",
+      "membership_type": "private @MockitoBean"
     }
   ],
   "functions": [
-    {
-      "name": "init",
-      "return_type": "void",
-      "parameters": [],
-      "membership": "instance"
-    },
-    {
-      "name": "testInitNewVisitForm",
-      "return_type": "void",
-      "parameters": [],
-      "membership": "instance"
-    },
-    {
-      "name": "testProcessNewVisitFormSuccess",
-      "return_type": "void",
-      "parameters": [],
-      "membership": "instance"
-    },
-    {
-      "name": "testProcessNewVisitFormHasErrors",
-      "return_type": "void",
-      "parameters": [],
-      "membership": "instance"
-    }
+    "init()",
+    "testInitNewVisitForm()",
+    "testProcessNewVisitFormSuccess()",
+    "testProcessNewVisitFormHasErrors()"
   ]
 }
