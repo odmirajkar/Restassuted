@@ -1,7 +1,7 @@
 {
-  "file_name": "checkstyle-nohttp.xml",
-  "file_path": "config/checkstyle/checkstyle-nohttp.xml",
-  "file_summary": "This XML file serves as a configuration for Checkstyle, a static code analysis tool used in software development. Specifically, it enables the 'NoHttpCheck' module, which is designed to enforce a policy against the use of plain HTTP URLs in code, promoting the use of HTTPS for security reasons. It also configures a 'SuppressionFilter' module, which allows certain warnings or errors from the 'NoHttpCheck' to be ignored. The suppressions are defined in an external XML file specified by the 'file' property, typically 'nohttp-checkstyle-suppressions.xml'. This setup ensures that while HTTP usage is generally flagged, specific exceptions can be managed.",
+  "file_name": "checkstyle_config.xml",
+  "file_path": "N/A",
+  "file_summary": "This XML file is a Checkstyle configuration. It defines the rules and modules that Checkstyle will use to enforce coding standards. Specifically, it includes the 'NoHttpCheck' module from 'io.spring.nohttp.checkstyle.check', which is designed to prevent the use of 'http://' URLs (favoring 'https://' or relative paths) within code. It also configures a 'SuppressionFilter' module, which points to 'nohttp-checkstyle-suppressions.xml'. This suppression file is used to ignore or suppress NoHttpCheck warnings for specific lines or files, allowing exceptions to the rule without modifying the core Checkstyle configuration. The overall purpose is to integrate the NoHttp linting rule into a project's build process via Checkstyle.",
   "attributes": [],
   "functions": []
 }
