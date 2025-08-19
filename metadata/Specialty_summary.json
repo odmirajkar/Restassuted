@@ -1,7 +1,23 @@
 {
   "file_name": "Specialty.java",
-  "file_path": "org/springframework/samples/petclinic/vet/Specialty.java",
-  "file_summary": "This Java file defines the `Specialty` class, a core domain entity within the Spring PetClinic application. It models a specific area of expertise or qualification that a veterinarian might possess (e.g., dentistry, radiology). Annotated with `@Entity` and `@Table(name = \"specialties\")`, it represents a persistent entity mapped to the 'specialties' table in the database. The `Specialty` class extends `NamedEntity`, thereby inheriting common properties such as an `id` and a `name`, which are fundamental for identifying and describing the specialty. This design promotes reusability and a consistent data model for entities that are primarily identified by a name.",
-  "attributes": [],
-  "functions": []
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+  "file_summary": "This Java class, `Specialty`, models a specific area of expertise or discipline for veterinarians within the Spring PetClinic application. It extends `NamedEntity`, indicating that it possesses a 'name' property, which likely describes the specialty (e.g., \"dentistry\", \"radiology\"). The class is annotated with `@Entity` and `@Table(name = \"specialties\")`, marking it as a JPA entity that maps to the 'specialties' table in the database. Its primary purpose is to define and store the various specialties that can be associated with a `Vet` object, enabling the categorization and filtering of veterinary services.",
+  "attributes": [
+    {
+      "name": "id",
+      "data_type": "Integer",
+      "membership_type": "inherited from NamedEntity (typically protected or private with public getters)"
+    },
+    {
+      "name": "name",
+      "data_type": "String",
+      "membership_type": "inherited from NamedEntity (typically protected or private with public getters)"
+    }
+  ],
+  "functions": [],
+  "dependent_class_list": [
+    "org.springframework.samples.petclinic.model.NamedEntity",
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.Table"
+  ]
 }
