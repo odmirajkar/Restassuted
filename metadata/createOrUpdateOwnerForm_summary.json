@@ -1,0 +1,7 @@
+{
+  "file_name": "addOrUpdateOwnerForm.html",
+  "file_path": "src/main/resources/templates/owners/addOrUpdateOwnerForm.html",
+  "file_summary": "This HTML file is a Thymeleaf template designed for creating or updating owner details within a web application. It extends a common layout fragment (`fragments/layout`) to maintain a consistent page structure. The page features a form (`id=\"add-owner-form\"`) that is bound to an `owner` object. It includes several input fields for owner information, such as first name, last name, address, city, and telephone, which are dynamically rendered using a reusable `fragments/inputField` template. The labels for these fields are internationalized using Thymeleaf's message expressions (e.g., `#{firstName}`). A submit button is provided, whose text dynamically changes to either 'Add Owner' or 'Update Owner' based on whether the current `owner` object is new or existing. This template serves as the user interface for managing owner data in the application.",
+  "attributes": [],
+  "functions": []
+}
