@@ -1,0 +1,7 @@
+{
+  "file_name": "schema.sql",
+  "file_path": "database/schema.sql",
+  "file_summary": "This SQL DDL (Data Definition Language) script meticulously defines the relational database schema for a veterinary clinic management application, such as the well-known Spring PetClinic. It begins with a series of `DROP TABLE IF EXISTS` commands, ensuring that all existing tables are removed before recreation, which is crucial for maintaining a clean and consistent database state, especially during development, testing, or migration processes.\n\nThe script then proceeds to create seven distinct tables: `vets` to store veterinarian information, `specialties` for different medical areas, and `vet_specialties` as a many-to-many join table linking vets to their specialties. It defines `types` for various pet classifications, `owners` to manage client details, `pets` for animal information, and `visits` to record appointments and medical descriptions. Each table includes a primary key (`id`) and relevant attributes (columns) with specified data types. Furthermore, it establishes crucial foreign key constraints (e.g., `fk_vet_specialties_vets`, `fk_pets_owners`, `fk_visits_pets`) to enforce referential integrity and define relationships between tables. Indexes are also created on common lookup fields like last names, names, and pet IDs to optimize query performance. This schema provides the foundational data structure for a comprehensive pet clinic system.",
+  "attributes": [],
+  "functions": []
+}
