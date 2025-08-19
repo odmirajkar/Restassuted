@@ -1,17 +1,16 @@
 {
   "file_name": "PetTypeFormatterTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
-  "file_summary": "This Java file, `PetTypeFormatterTests`, is a JUnit 5 test class designed to validate the functionality of the `PetTypeFormatter` in the Spring PetClinic application. Located within the `org.springframework.samples.petclinic.owner` package, it ensures the formatter correctly converts between `PetType` objects and their string representations. The class utilizes Mockito to mock the `PetTypeRepository` dependency, providing controlled data for testing purposes. It includes setup methods to initialize the formatter before each test.\n\nKey tests cover both printing (`testPrint`) and parsing (`shouldParse`, `shouldThrowParseException`) operations. `testPrint` verifies that a `PetType` object is correctly converted into its name string. `shouldParse` confirms that a pet type name string can be successfully parsed back into a `PetType` object, leveraging mocked repository data. Crucially, `shouldThrowParseException` asserts that a `ParseException` is thrown when an invalid or unknown pet type name is provided during parsing, ensuring robust error handling. A private helper method, `makePetTypes`, generates sample `PetType` data for consistent testing. The class is also marked with `@DisabledInNativeImage`.",
+  "file_path": "org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
+  "file_summary": "This Java class, `PetTypeFormatterTests`, provides unit tests for the `PetTypeFormatter` class, which is responsible for converting between `PetType` objects and their string representations. It leverages Mockito for mocking the `PetTypeRepository` dependency, allowing the formatter to be tested in isolation. The test suite covers the `print` method, verifying that a `PetType` object is correctly converted into its name string. It also tests the `parse` method, ensuring that a valid pet type name string can be successfully parsed back into a `PetType` object. Furthermore, a specific test case validates that a `ParseException` is thrown when an unknown or invalid pet type name is provided for parsing, demonstrating the formatter's robust error handling. The class is set up with JUnit 5 and Mockito, and it is marked to be disabled during native image compilation.",
   "attributes": [
     {
       "name": "types",
-      "type": "PetTypeRepository",
-      "membership_type": "private",
-      "annotations": ["@Mock"]
+      "data_type": "PetTypeRepository",
+      "membership_type": "private"
     },
     {
       "name": "petTypeFormatter",
-      "type": "PetTypeFormatter",
+      "data_type": "PetTypeFormatter",
       "membership_type": "private"
     }
   ],
@@ -20,32 +19,31 @@
       "name": "setup",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@BeforeEach"]
+      "visibility": "package-private"
     },
     {
       "name": "testPrint",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@Test"]
+      "visibility": "package-private"
     },
     {
       "name": "shouldParse",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@Test"],
-      "throws": ["ParseException"]
+      "visibility": "package-private"
     },
     {
       "name": "shouldThrowParseException",
       "return_type": "void",
       "parameters": [],
-      "annotations": ["@Test"]
+      "visibility": "package-private"
     },
     {
       "name": "makePetTypes",
-      "return_type": "List<PetType>",
+      "return_type": "java.util.List<PetType>",
       "parameters": [],
-      "membership_type": "private"
+      "visibility": "private"
     }
   ]
 }
