@@ -1,52 +1,44 @@
 {
   "file_name": "vets.html",
-  "file_path": "",
-  "file_summary": "This Thymeleaf HTML template, likely named `vets.html`, serves as the front-end view for displaying a comprehensive list of veterinarians within an application, typically a pet clinic management system. It integrates with a common layout fragment (`fragments/layout :: layout`) for consistent page structure. The core of the page is a visually organized table that presents each veterinarian's full name, concatenating their first and last names. Crucially, it lists their associated medical specialties; if a veterinarian has no specialties assigned, the template gracefully indicates \"none\". Beyond static display, the page incorporates robust pagination functionality. This allows users to navigate efficiently through a potentially large dataset of veterinarians by providing direct links to specific pages and intuitive controls for moving to the first, previous, next, and last pages. The use of Thymeleaf's message expressions (`#{...}`) ensures that textual elements like headings, column names, and pagination labels are internationalized, supporting multiple languages. The template dynamically renders content based on model attributes passed from the server, making it a flexible and user-friendly interface for viewing veterinary staff information.",
+  "file_path": "Unknown",
+  "file_summary": "This HTML file, designed with Thymeleaf, serves as a template to display a paginated list of veterinarians. It renders a table showing each veterinarian's full name and their respective specialties. The template incorporates pagination controls, allowing users to navigate through multiple pages of veterinarian listings if the total number of records exceeds a single page. It also leverages Thymeleaf's internationalization features (`th:text`) to dynamically display labels such as 'Veterinarians', 'Name', 'Specialties', 'none', 'Pages', and various pagination link titles, making the page adaptable for different languages.",
   "attributes": [
     {
       "name": "listVets",
-      "data_type": "Collection<Vet>"
+      "type": "List<Vet>",
+      "membership_type": "Model Attribute (Iteration Source)"
     },
     {
       "name": "vet",
-      "data_type": "Vet"
-    },
-    {
-      "name": "vet.firstName",
-      "data_type": "String"
-    },
-    {
-      "name": "vet.lastName",
-      "data_type": "String"
-    },
-    {
-      "name": "vet.specialties",
-      "data_type": "Collection<Specialty>"
-    },
-    {
-      "name": "vet.nrOfSpecialties",
-      "data_type": "Integer"
+      "type": "Vet",
+      "membership_type": "Iteration Variable"
     },
     {
       "name": "specialty",
-      "data_type": "Specialty"
+      "type": "Specialty",
+      "membership_type": "Iteration Variable (nested)"
     },
     {
-      "name": "specialty.name",
-      "data_type": "String"
+      "name": "vet.nrOfSpecialties",
+      "type": "Integer",
+      "membership_type": "Property of Iteration Variable"
     },
     {
       "name": "totalPages",
-      "data_type": "Integer"
+      "type": "Integer",
+      "membership_type": "Model Attribute"
     },
     {
       "name": "currentPage",
-      "data_type": "Integer"
+      "type": "Integer",
+      "membership_type": "Model Attribute"
     },
     {
       "name": "i",
-      "data_type": "Integer"
+      "type": "Integer",
+      "membership_type": "Iteration Variable (for pagination)"
     }
   ],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
