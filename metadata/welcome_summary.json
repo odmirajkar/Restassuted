@@ -1,5 +1,7 @@
 {
-  "file_name": "welcome.html",
-  "file_path": "unknown",
-  "file_summary": "This HTML file is a Thymeleaf template, designed to serve as a welcome or home page for a web application. It integrates with a common layout ('fragments/layout') to maintain a consistent look and feel across the site. The page dynamically displays a localized welcome message, indicated by `th:text=\"#{welcome}\"`, and includes a responsive image (`pets.png`) sourced from the application's static resources. Its primary purpose is to provide a user-friendly landing page with a greeting and a visual element."
+  "file_name": "home.html",
+  "file_path": "src/main/resources/templates/home.html",
+  "file_summary": "This HTML file serves as the main home page for a web application, likely built with Spring Boot and Thymeleaf. It leverages a common layout fragment ('fragments/layout') to maintain a consistent look and feel across the site. The page's primary content includes a localized welcome message ('Welcome') and a responsive image (likely a 'pets.png' graphic), intended to greet the user upon arrival. It provides a simple, initial landing page experience, integrating with the application's templating system for dynamic content and layout management.",
+  "attributes": [],
+  "functions": []
 }
