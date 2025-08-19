@@ -1,7 +1,7 @@
 {
   "file_name": "PetClinicApplication.java",
   "file_path": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
-  "file_summary": "The `PetClinicApplication` class serves as the main entry point for the Spring PetClinic application. Annotated with `@SpringBootApplication`, it signifies a standard Spring Boot application, enabling auto-configuration, component scanning, and externalized configuration. Its primary purpose is to bootstrap and launch the PetClinic application using Spring Boot's conventional `SpringApplication.run()` method. This class is responsible for initializing the Spring application context, making it ready to serve web requests and manage the application's components. The presence of `@ImportRuntimeHints(PetClinicRuntimeHints.class)` indicates its preparedness for GraalVM native image compilation, ensuring that necessary runtime reflections and resources are included for optimal performance in a native executable environment. This setup exemplifies a typical Spring Boot web application structure.",
+  "file_summary": "The `PetClinicApplication` class serves as the primary entry point for the Spring PetClinic application, leveraging Spring Boot's conventions to simplify development and deployment. Annotated with `@SpringBootApplication`, it enables auto-configuration, component scanning, and embeddable web server capabilities. The `main` method within this class uses `SpringApplication.run` to bootstrap the entire Spring application context, making it runnable as a standalone JAR. Additionally, the `@ImportRuntimeHints(PetClinicRuntimeHints.class)` annotation signifies its use for Spring Native ahead-of-time (AOT) compilation, providing necessary runtime hints for reflection and other dynamic features to ensure the application works correctly when compiled into a native executable. This class is fundamental for starting the PetClinic web application.",
   "attributes": [],
   "functions": [
     {
@@ -15,8 +15,13 @@
           "name": "args",
           "type": "String[]"
         }
-      ],
-      "purpose": "The standard entry point for the Java application. It uses `SpringApplication.run()` to start the Spring Boot application, initializing the Spring context and preparing the application to run."
+      ]
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.boot.SpringApplication",
+    "org.springframework.boot.autoconfigure.SpringBootApplication",
+    "org.springframework.context.annotation.ImportRuntimeHints",
+    "org.springframework.samples.petclinic.PetClinicRuntimeHints"
   ]
 }
