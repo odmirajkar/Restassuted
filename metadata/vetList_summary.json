@@ -1,22 +1,57 @@
 {
   "file_name": "vets.html",
   "file_path": "src/main/resources/templates/vets.html",
-  "file_summary": "This HTML file, rendered using Thymeleaf, is responsible for displaying a list of veterinarians along with their specialties. It includes a table that iterates through a collection of 'Vet' objects, showing each veterinarian's full name and their associated specialties. If a vet has no specialties, it explicitly states 'none'. The file also implements basic pagination, allowing users to navigate through multiple pages of veterinarians if the total number of vets exceeds a single page. Navigation controls for first, previous, next, and last pages are provided, indicating the current page within the total available pages. The layout of this page is inherited from a common 'layout' fragment, ensuring a consistent user interface.",
+  "file_summary": "This `vets.html` file serves as a Thymeleaf template for a web page that displays a paginated list of veterinarians. It leverages a common `layout` fragment for consistent page structure and styling. The primary purpose is to present veterinarian data, including their full name and a list of their specialties, within a structured HTML table. The content is dynamically rendered using Thymeleaf expressions, iterating over a `listVets` object which is expected to be provided by the server-side model. For each veterinarian, their `firstName` and `lastName` are combined, and their `specialties` are displayed; if a vet has no specialties, a localized 'none' message appears. The template also implements pagination controls, showing the total number of pages (`totalPages`), the `currentPage`, and navigation links (first, previous, next, last page) to browse through the vet list. This design ensures user-friendly navigation for large datasets and supports internationalization through message externalization (`#{...}`) for elements like page titles, table headers, and navigation labels.",
   "attributes": [
     {
       "name": "listVets",
-      "data_type": "List<Vet>",
-      "membership_type": "Thymeleaf Model Attribute"
+      "data_type": "Collection<Vet>",
+      "membership_type": "Model Attribute"
+    },
+    {
+      "name": "vet",
+      "data_type": "Vet",
+      "membership_type": "Iteration Variable (from listVets)"
+    },
+    {
+      "name": "vet.firstName",
+      "data_type": "String",
+      "membership_type": "Property of Vet object"
+    },
+    {
+      "name": "vet.lastName",
+      "data_type": "String",
+      "membership_type": "Property of Vet object"
+    },
+    {
+      "name": "vet.specialties",
+      "data_type": "Collection<Specialty>",
+      "membership_type": "Property of Vet object"
+    },
+    {
+      "name": "specialty.name",
+      "data_type": "String",
+      "membership_type": "Property of Specialty object (from vet.specialties)"
+    },
+    {
+      "name": "vet.nrOfSpecialties",
+      "data_type": "Integer",
+      "membership_type": "Property of Vet object"
     },
     {
       "name": "totalPages",
-      "data_type": "int",
-      "membership_type": "Thymeleaf Model Attribute"
+      "data_type": "Integer",
+      "membership_type": "Model Attribute"
     },
     {
       "name": "currentPage",
-      "data_type": "int",
-      "membership_type": "Thymeleaf Model Attribute"
+      "data_type": "Integer",
+      "membership_type": "Model Attribute"
+    },
+    {
+      "name": "i",
+      "data_type": "Integer",
+      "membership_type": "Loop Variable (for pagination numbers)"
     }
   ],
   "functions": []
