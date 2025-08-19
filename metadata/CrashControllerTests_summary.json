@@ -1,21 +1,18 @@
 {
   "file_name": "CrashControllerTests.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashControllerTests.java",
-  "file_summary": "This Java file contains a JUnit 5 test class named `CrashControllerTests`, which is designed to test the functionality of the `CrashController`. The primary purpose of this test is to verify that the `triggerException()` method within the `CrashController` correctly throws a `RuntimeException`. It specifically asserts that the thrown exception's message contains a predefined string, ensuring that the controller behaves as expected when an exception is deliberately triggered to showcase error handling. This test uses AssertJ for fluent assertion syntax.",
+  "file_summary": "This Java file, `CrashControllerTests.java`, contains a simple unit test for the `CrashController` class in the Spring PetClinic application. Its primary purpose is to verify the behavior of the `triggerException()` method within `CrashController`. The test specifically asserts that calling `triggerException()` indeed throws a `RuntimeException` and that the exception's message contains the expected string, indicating that the controller is functioning as designed to showcase exception handling. This test ensures the basic functionality of the 'crash' endpoint without involving a full Spring Boot application context.",
   "attributes": [
     {
       "name": "testee",
-      "type": "CrashController",
-      "membership": "instance, final"
+      "data_type": "org.springframework.samples.petclinic.system.CrashController",
+      "membership_type": "final"
     }
   ],
   "functions": [
     {
       "name": "testTriggerException",
-      "return_type": "void",
-      "parameters": [],
-      "annotations": ["@Test"],
-      "purpose": "Tests that the `triggerException()` method of `CrashController` throws a `RuntimeException` with a specific message."
+      "description": "Tests the `triggerException()` method of the `CrashController` to ensure it throws a `RuntimeException` with a specific error message, confirming its intended behavior of showcasing exception scenarios."
     }
   ]
 }
