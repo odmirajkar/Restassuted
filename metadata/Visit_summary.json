@@ -1,0 +1,54 @@
+{
+  "file_name": "Visit.java",
+  "file_path": "org/springframework/samples/petclinic/owner/Visit.java",
+  "file_summary": "This Java class, `Visit`, is a simple JavaBean domain object within the Spring PetClinic application, designed to represent a visit record. It extends `BaseEntity`, inheriting common properties like an ID, and is mapped to the 'visits' table in the database using JPA's `@Entity` and `@Table` annotations. The class encapsulates essential details of a visit, specifically the `date` of the visit, which defaults to the current date upon object creation, and a textual `description` of the visit. The `date` field is formatted for display using `@DateTimeFormat`. It includes standard getter and setter methods for its properties, along with validation annotations like `@NotBlank` to ensure data integrity for the description. This class serves as a crucial data model for managing and persisting visit information for pets.",
+  "attributes": [
+    {
+      "name": "date",
+      "type": "LocalDate",
+      "membership": "private"
+    },
+    {
+      "name": "description",
+      "type": "String",
+      "membership": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "Visit",
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "name": "getDate",
+      "return_type": "LocalDate",
+      "parameters": []
+    },
+    {
+      "name": "setDate",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "date",
+          "type": "LocalDate"
+        }
+      ]
+    },
+    {
+      "name": "getDescription",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "setDescription",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "description",
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}
