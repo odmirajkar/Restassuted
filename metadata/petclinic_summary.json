@@ -1,40 +1,7 @@
 {
-  "file_name": "application.scss",
-  "file_path": "src/main/resources/static/css/application.scss",
-  "file_summary": "This SCSS (Sassy CSS) file is responsible for defining the core visual theme and styling of a web application, particularly by customizing the Bootstrap framework. It sets up a specific 'Spring' branded color palette with variables like $spring-green and $spring-brown, and then uses these colors to override Bootstrap's default styles for various UI components, including body background, text, links, and navigation bars. Beyond color customization, the file defines specific styling rules for tables, buttons, modals, form elements, and handling of Angular JS 'ng-cloak' directives. It also includes definitions for a spinner animation and general layout adjustments. The file imports other SCSS partials for typography, header, and responsive design, indicating a modular and organized approach to front-end development. Its main purpose is to establish a consistent and branded look and feel for the application.",
-  "attributes": [
-    "$icon-font-path: string",
-    "$spring-green: color",
-    "$spring-dark-green: color",
-    "$spring-brown: color",
-    "$spring-grey: color",
-    "$spring-light-grey: color",
-    "$body-bg: color reference",
-    "$text-color: color reference",
-    "$link-color: color reference",
-    "$link-hover-color: color reference",
-    "$navbar-default-link-color: color reference",
-    "$navbar-default-link-active-color: color reference",
-    "$navbar-default-link-hover-color: color reference",
-    "$navbar-default-link-hover-bg: color reference",
-    "$navbar-default-toggle-icon-bar-bg: color reference",
-    "$navbar-default-toggle-hover-bg: keyword",
-    "$navbar-default-link-active-bg: color reference",
-    "$border-radius-base: number",
-    "$border-radius-large: number",
-    "$border-radius-small: number",
-    "$nav-tabs-active-link-hover-color: color reference",
-    "$nav-tabs-active-link-hover-bg: color reference",
-    "$nav-tabs-active-link-hover-border-color: color reference",
-    "$nav-tabs-border-color: color reference",
-    "$pagination-active-bg: color reference",
-    "$pagination-active-border: color reference",
-    "$table-border-color: color reference"
-  ],
-  "functions": [
-    "import 'bootstrap'",
-    "import 'typography.scss'",
-    "import 'header.scss'",
-    "import 'responsive.scss'"
-  ]
+  "file_name": "petclinic-manifests.yaml",
+  "file_path": "",
+  "file_summary": "This Kubernetes YAML file defines the necessary infrastructure for deploying and exposing a 'petclinic' application. It consists of two main parts: a Kubernetes Service and a Kubernetes Deployment. The Service, named 'petclinic' and of type 'NodePort', exposes the application externally on port 80, routing traffic to the container's port 8080, making the application accessible from outside the cluster. The Deployment, also named 'petclinic', is responsible for managing a single replica of the `dsyer/petclinic` Docker image. It configures environment variables, notably `SPRING_PROFILES_ACTIVE` to 'postgres' for database connectivity and `SERVICE_BINDING_ROOT` for service binding. Health checks are implemented via HTTP liveness and readiness probes targeting `/livez` and `/readyz` endpoints. Crucially, the deployment mounts a projected volume from a Kubernetes secret named 'demo-db' into the container at `/bindings/secret`, which is typically used for securely injecting database credentials following the Service Binding Specification. This setup ensures the PetClinic application is deployed, properly configured to connect to its database, is discoverable, and its health is continuously monitored.",
+  "attributes": [],
+  "functions": []
 }
