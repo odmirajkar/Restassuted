@@ -1,52 +1,26 @@
 {
   "file_name": "PetTypeFormatter.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
-  "file_summary": "The `PetTypeFormatter` class is a Spring `@Component` that implements the `Formatter` interface for `PetType` objects. Its primary purpose is to instruct Spring MVC on how to convert `PetType` objects to and from their `String` representations, typically for form submission and display in web applications.\n\nIt relies on a `PetTypeRepository` dependency to look up `PetType` instances by their name. The `print` method converts a `PetType` object into its name string for display. The `parse` method takes a `String` (representing a pet type name) and attempts to find a matching `PetType` object from the available types in the repository. If a match is not found, it throws a `ParseException`. This formatter ensures proper data binding and validation for `PetType` selections in forms.",
+  "file_summary": "The `PetTypeFormatter` class is a Spring `Formatter` implementation designed to convert between `PetType` objects and their String representations. This is crucial for Spring MVC to properly bind and render `PetType` instances in web forms and views. Annotated with `@Component`, it is automatically detected and registered by Spring as a bean. The formatter relies on the `PetTypeRepository` to retrieve `PetType` objects by their name during the parsing process (String to `PetType`).\n\nIts `print` method takes a `PetType` object and returns its name as a String, which is useful for displaying the type in the UI. The `parse` method takes a String (typically from a form submission or URL parameter) and attempts to find a matching `PetType` from the repository based on its name. If no matching `PetType` is found, it throws a `ParseException`, indicating that the input string does not correspond to a valid pet type. This class ensures that `PetType` objects are seamlessly integrated into Spring's data binding and formatting infrastructure.",
   "attributes": [
     {
       "name": "types",
-      "type": "PetTypeRepository",
+      "data_type": "PetTypeRepository",
       "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "PetTypeFormatter",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "types",
-          "type": "PetTypeRepository"
-        }
-      ]
-    },
-    {
-      "name": "print",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "petType",
-          "type": "PetType"
-        },
-        {
-          "name": "locale",
-          "type": "Locale"
-        }
-      ]
-    },
-    {
-      "name": "parse",
-      "return_type": "PetType",
-      "parameters": [
-        {
-          "name": "text",
-          "type": "String"
-        },
-        {
-          "name": "locale",
-          "type": "Locale"
-        }
-      ]
-    }
+    "PetTypeFormatter(PetTypeRepository types)",
+    "print(PetType petType, Locale locale): String",
+    "parse(String text, Locale locale): PetType"
+  ],
+  "dependent_class_list": [
+    "org.springframework.format.Formatter",
+    "org.springframework.stereotype.Component",
+    "java.text.ParseException",
+    "java.util.Collection",
+    "java.util.Locale",
+    "PetType",
+    "PetTypeRepository"
   ]
 }
