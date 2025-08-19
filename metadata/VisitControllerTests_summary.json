@@ -1,0 +1,56 @@
+{
+  "file_name": "VisitControllerTests.java",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java",
+  "file_summary": "This Java file contains unit tests for the `VisitController` class within the Spring PetClinic application. It leverages Spring Boot's `@WebMvcTest` annotation to specifically test the web layer components, ensuring that the `VisitController` behaves as expected when handling HTTP requests related to pet visits. The tests cover scenarios such as initializing a new visit form, successfully processing a new visit submission, and handling validation errors during the submission process. It uses `MockMvc` to simulate web requests and `MockitoBean` to mock the `OwnerRepository` dependency, allowing for isolated testing of the controller's logic without needing a full database. The class is also annotated to be disabled in native image and AOT compilation environments.",
+  "attributes": [
+    {
+      "name": "TEST_OWNER_ID",
+      "type": "int",
+      "membership": "private static final"
+    },
+    {
+      "name": "TEST_PET_ID",
+      "type": "int",
+      "membership": "private static final"
+    },
+    {
+      "name": "mockMvc",
+      "type": "MockMvc",
+      "membership": "private"
+    },
+    {
+      "name": "owners",
+      "type": "OwnerRepository",
+      "membership": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "init",
+      "return_type": "void",
+      "parameters": [],
+      "annotations": ["@BeforeEach"]
+    },
+    {
+      "name": "testInitNewVisitForm",
+      "return_type": "void",
+      "parameters": [],
+      "throws": ["Exception"],
+      "annotations": ["@Test"]
+    },
+    {
+      "name": "testProcessNewVisitFormSuccess",
+      "return_type": "void",
+      "parameters": [],
+      "throws": ["Exception"],
+      "annotations": ["@Test"]
+    },
+    {
+      "name": "testProcessNewVisitFormHasErrors",
+      "return_type": "void",
+      "parameters": [],
+      "throws": ["Exception"],
+      "annotations": ["@Test"]
+    }
+  ]
+}
