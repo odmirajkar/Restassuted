@@ -1,133 +1,29 @@
 {
-  "file_name": "mvnw.cmd",
-  "file_path": "./mvnw.cmd",
-  "file_summary": "This file is a hybrid batch and PowerShell script designed to act as a wrapper for Apache Maven on Windows systems. Its primary purpose is to ensure that a project uses a specific version of Maven, downloading it if necessary, and then executing Maven commands. The script first uses a batch portion to execute a PowerShell script, which handles the core logic. This logic involves parsing `maven-wrapper.properties` to determine the required Maven distribution URL, checking for existing installations in the user's `.m2/wrapper/dists` directory, and if not found, downloading the specified Maven or MVND (Maven Daemon) distribution. It supports custom repository URLs and authentication. Before execution, it verifies the downloaded archive's SHA-256 checksum (for Maven distributions) and then extracts and places it in the correct location. Finally, it constructs and outputs the command to run Maven from the downloaded distribution.",
+  "file_name": "mvnw",
+  "file_path": "N/A",
+  "file_summary": "This shell script serves as the Apache Maven Wrapper startup script, designed to simplify the use of Maven within a project by automatically downloading and installing the specified Maven distribution if it's not already present. It reads the `distributionUrl` and optional `distributionSha256Sum` from the `.mvn/wrapper/maven-wrapper.properties` file to determine which Maven version to use. The script first attempts to locate the Maven distribution in a user's local cache (`~/.m2/wrapper/dists`). If not found, it downloads the distribution using `wget`, `curl`, or a Java-based fallback, extracting it to the cache. It includes logic for OS-specific path handling (Cygwin/MinGW), checksum validation, and support for both standard Maven and the Apache Maven Daemon (mvnd). Environment variables like `JAVA_HOME`, `MVNW_REPOURL`, `MVNW_USERNAME`, `MVNW_PASSWORD`, and `MVNW_VERBOSE` can be used to control its behavior. After successfully preparing the Maven environment, it executes the appropriate Maven command, passing all original arguments.",
   "attributes": [
-    {
-      "name": "__MVNW_ARG0_NAME__",
-      "type": "string",
-      "membership": "script variable"
-    },
-    {
-      "name": "__MVNW_CMD__",
-      "type": "string",
-      "membership": "script variable"
-    },
-    {
-      "name": "__MVNW_ERROR__",
-      "type": "string",
-      "membership": "script variable"
-    },
-    {
-      "name": "__MVNW_PSMODULEP_SAVE",
-      "type": "string",
-      "membership": "script variable"
-    },
-    {
-      "name": "MVNW_REPOURL",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "MVNW_USERNAME",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "MVNW_PASSWORD",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "MVNW_VERBOSE",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "PSModulePath",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "scriptDir",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "script",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "distributionUrl",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "USE_MVND",
-      "type": "boolean",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "MVN_CMD",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "MVNW_REPO_PATTERN",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "distributionUrlName",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "distributionUrlNameMain",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "MAVEN_HOME_PARENT",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "MAVEN_USER_HOME",
-      "type": "string",
-      "membership": "environment variable"
-    },
-    {
-      "name": "MAVEN_HOME_NAME",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "MAVEN_HOME",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "TMP_DOWNLOAD_DIR_HOLDER",
-      "type": "FileInfo",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "TMP_DOWNLOAD_DIR",
-      "type": "DirectoryInfo",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "distributionSha256Sum",
-      "type": "string",
-      "membership": "PowerShell variable"
-    },
-    {
-      "name": "webclient",
-      "type": "System.Net.WebClient",
-      "membership": "PowerShell variable"
-    }
+    "JAVA_HOME: string (Environment Variable, optional, specifies JDK home directory)",
+    "MVNW_REPOURL: string (Environment Variable, optional, custom repository URL for downloading Maven)",
+    "MVNW_USERNAME: string (Environment Variable, optional, username for repository authentication)",
+    "MVNW_PASSWORD: string (Environment Variable, optional, password for repository authentication)",
+    "MVNW_VERBOSE: string (Environment Variable, optional, 'true' for verbose output, 'debug' for script tracing)",
+    "MAVEN_USER_HOME: string (Script/Environment Variable, defaults to ~/.m2, user's Maven home directory)",
+    "MAVEN_HOME: string (Script Variable, calculated path to the specific Maven distribution)",
+    "distributionUrl: string (Script Variable, read from maven-wrapper.properties, URL of Maven distribution)",
+    "distributionSha256Sum: string (Script Variable, read from maven-wrapper.properties, SHA-256 checksum for validation)",
+    "MVN_CMD: string (Script Variable, the actual command to execute, either 'mvn' or 'mvnd.sh')",
+    "JAVACMD: string (Script Variable, path to the Java executable)",
+    "JAVACCMD: string (Script Variable, path to the Javac compiler executable)",
+    "TMP_DOWNLOAD_DIR: string (Script Variable, temporary directory for downloads)"
   ],
-  "functions": []
+  "functions": [
+    "native_path",
+    "set_java_home",
+    "hash_string",
+    "verbose",
+    "die",
+    "trim",
+    "exec_maven"
+  ]
 }
