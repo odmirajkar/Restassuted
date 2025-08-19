@@ -1,42 +1,142 @@
 {
   "file_name": "Owner.java",
   "file_path": "org/springframework/samples/petclinic/owner/Owner.java",
-  "file_summary": "The `Owner` class is a core domain object within the Spring PetClinic application, representing a pet owner. It extends the `Person` class, inheriting basic personal details like first and last name. This class is annotated as a JPA `@Entity` and mapped to the \"owners\" table in the database, facilitating persistence. It encapsulates essential contact information for an owner, including their address, city, and telephone number, all subject to validation constraints like `@NotBlank` and `@Pattern` for the phone number. Crucially, the `Owner` class maintains a one-to-many relationship with `Pet` objects, meaning each owner can have multiple pets. It provides methods to retrieve, add, and search for pets by name or ID. Additionally, it includes functionality to add a `Visit` to a specific pet owned by this owner, ensuring data integrity through assertions. The class also overrides the `toString()` method for comprehensive debugging information.",
+  "file_summary": "The `Owner` class is a core domain object within the Spring PetClinic application, representing a pet owner. It extends the `Person` class, inheriting basic personal details like first and last name, and adds specific attributes for an owner such as their address, city, and telephone number. This class is an Entity, mapped to the 'owners' table in the database, and uses JPA annotations for persistence. It includes validation constraints like `@NotBlank` for required fields and `@Pattern` for the telephone number format. Crucially, an `Owner` object maintains a one-to-many relationship with `Pet` objects, allowing it to manage a collection of pets associated with that owner. The class provides methods to access and modify owner details, add new pets, retrieve pets by name or ID, and facilitates the addition of vet visits to a specific pet belonging to the owner. This class encapsulates the business logic and data structure for an owner, making it central to managing pet and owner information.",
   "attributes": [
     {
       "name": "address",
       "type": "String",
-      "membership": "private"
+      "membership_type": "private instance"
     },
     {
       "name": "city",
       "type": "String",
-      "membership": "private"
+      "membership_type": "private instance"
     },
     {
       "name": "telephone",
       "type": "String",
-      "membership": "private"
+      "membership_type": "private instance"
     },
     {
       "name": "pets",
       "type": "List<Pet>",
-      "membership": "private final"
+      "membership_type": "private final instance"
     }
   ],
   "functions": [
-    "getAddress(): String",
-    "setAddress(String address): void",
-    "getCity(): String",
-    "setCity(String city): void",
-    "getTelephone(): String",
-    "setTelephone(String telephone): void",
-    "getPets(): List<Pet>",
-    "addPet(Pet pet): void",
-    "getPet(String name): Pet",
-    "getPet(Integer id): Pet",
-    "getPet(String name, boolean ignoreNew): Pet",
-    "toString(): String",
-    "addVisit(Integer petId, Visit visit): void"
+    {
+      "name": "getAddress",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "setAddress",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "address",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "getCity",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "setCity",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "city",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "getTelephone",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "setTelephone",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "telephone",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "getPets",
+      "return_type": "List<Pet>",
+      "parameters": []
+    },
+    {
+      "name": "addPet",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "pet",
+          "type": "Pet"
+        }
+      ]
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "Integer"
+        }
+      ]
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "ignoreNew",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "toString",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "addVisit",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "petId",
+          "type": "Integer"
+        },
+        {
+          "name": "visit",
+          "type": "Visit"
+        }
+      ]
+    }
   ]
 }
