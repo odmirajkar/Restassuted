@@ -1,38 +1,22 @@
 {
   "file_name": "PetValidator.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetValidator.java",
-  "file_summary": "The `PetValidator` class implements Spring's `org.springframework.validation.Validator` interface, providing custom validation logic for `Pet` objects within the PetClinic application. This validator is designed to enforce specific rules for pet data that are simpler to define in Java code rather than using standard Bean Validation annotations.\n\nIts `validate` method checks the following:\n1.  **Name:** Ensures that the pet's name is not empty or consists only of whitespace.\n2.  **Type:** For new pets (i.e., `pet.isNew()` is true), it verifies that a `PetType` has been assigned.\n3.  **Birth Date:** Confirms that a birth date has been provided for the pet.\n\nIf any of these conditions are not met, it registers errors using the provided `Errors` object, typically indicating a 'required' field. The `supports` method declares that this validator is specifically for `Pet` instances or subclasses thereof. This class plays a crucial role in ensuring data integrity for pet entries before they are persisted or updated.",
+  "file_summary": "The `PetValidator` class implements Spring's `org.springframework.validation.Validator` interface, providing custom validation logic for `Pet` objects within the PetClinic application. Unlike standard Bean Validation annotations, this class defines validation rules programmatically in Java, which is noted as being simpler for these specific rules. Its primary role is to ensure that essential fields of a `Pet` object, namely `name`, `type`, and `birthDate`, are not empty or null during data submission.\n\nThe `validate` method performs the actual checks: it verifies if the pet's name has text, if a new pet has a type assigned, and if a birth date is present. If any of these conditions are not met, it registers errors using the `Errors` object, typically flagging the field as 'required'. The `supports` method confirms that this validator is applicable only to `Pet` instances or their subclasses. This class plays a crucial role in maintaining data integrity for pet information before it is persisted or processed further in the application.",
   "attributes": [
     {
       "name": "REQUIRED",
-      "type": "String",
+      "data_type": "String",
       "membership_type": "private static final"
     }
   ],
   "functions": [
-    {
-      "name": "validate",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "obj",
-          "type": "Object"
-        },
-        {
-          "name": "errors",
-          "type": "Errors"
-        }
-      ]
-    },
-    {
-      "name": "supports",
-      "return_type": "boolean",
-      "parameters": [
-        {
-          "name": "clazz",
-          "type": "Class<?>"
-        }
-      ]
-    }
+    "validate(Object obj, Errors errors): void",
+    "supports(Class<?> clazz): boolean"
+  ],
+  "dependent_class_list": [
+    "org.springframework.util.StringUtils",
+    "org.springframework.validation.Errors",
+    "org.springframework.validation.Validator",
+    "Pet"
   ]
 }
