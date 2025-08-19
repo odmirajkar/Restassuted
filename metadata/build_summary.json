@@ -1,98 +1,52 @@
 {
   "file_name": "build.gradle",
   "file_path": "N/A",
-  "file_summary": "This `build.gradle` file is the primary build configuration script for a Spring Boot application using Gradle. It orchestrates the entire build process, from dependency management to code quality checks and task configurations. The file applies essential Gradle plugins such as 'java' for compilation, 'spring-boot' for Spring application features, 'checkstyle' for code style enforcement, and 'graalvm.buildtools.native' for native image compilation capabilities. It defines project metadata like 'group' and 'version', and specifies Java 17 as the language version. The script declares a comprehensive set of dependencies, including Spring Boot starters for web, data JPA, Thymeleaf, and validation, along with database connectors (H2, MySQL, PostgreSQL), caching libraries, and UI components via WebJars. Test-specific dependencies like Spring Boot Testcontainers are also configured. Furthermore, it sets up Checkstyle with custom configuration files for code quality and `nohttp` checks, and disables specific AOT-related formatting tasks. Finally, it ensures consistent builds by configuring the Gradle Wrapper's version.",
+  "file_summary": "This Gradle build script, typically named `build.gradle`, configures a Spring Boot application project. It applies essential Gradle plugins such as `java`, `checkstyle`, `org.springframework.boot`, `io.spring.dependency-management`, `org.graalvm.buildtools.native`, `org.cyclonedx.bom`, `io.spring.javaformat`, and `io.spring.nohttp`, establishing a comprehensive development environment. The project is set to use Java 17 and defines its group as `org.springframework.samples` with version `3.5.0`. Key dependencies are declared for various functionalities including data persistence (JPA), web development (Spring Web, Thymeleaf), caching (Caffeine), validation, and build-time tools. It supports multiple databases like H2, MySQL, and PostgreSQL. Furthermore, it incorporates extensive testing dependencies, including Spring Boot's test utilities and Testcontainers for integration testing. The script enforces code quality and style through Checkstyle, leveraging Spring JavaFormat and NoHTTP rules, with specific configurations for code formatting tasks and disabling certain AOT-related checks. Finally, it defines the Gradle Wrapper version to ensure consistent build environments.",
   "attributes": [
-    {
-      "name": "group",
-      "data_type": "String",
-      "membership_type": "Project Property"
-    },
-    {
-      "name": "version",
-      "data_type": "String",
-      "membership_type": "Project Property"
-    },
-    {
-      "name": "java.toolchain.languageVersion",
-      "data_type": "JavaLanguageVersion",
-      "membership_type": "Project Property"
-    },
-    {
-      "name": "checkstyleVersion",
-      "data_type": "String",
-      "membership_type": "Extension Property (ext)"
-    },
-    {
-      "name": "springJavaformatCheckstyleVersion",
-      "data_type": "String",
-      "membership_type": "Extension Property (ext)"
-    },
-    {
-      "name": "webjarsLocatorLiteVersion",
-      "data_type": "String",
-      "membership_type": "Extension Property (ext)"
-    },
-    {
-      "name": "webjarsFontawesomeVersion",
-      "data_type": "String",
-      "membership_type": "Extension Property (ext)"
-    },
-    {
-      "name": "webjarsBootstrapVersion",
-      "data_type": "String",
-      "membership_type": "Extension Property (ext)"
-    },
-    {
-      "name": "gradle.startParameter.excludedTaskNames",
-      "data_type": "List<String>",
-      "membership_type": "Gradle Runtime Parameter"
-    }
+    "group: String",
+    "version: String",
+    "java.toolchain.languageVersion: JavaLanguageVersion",
+    "ext.checkstyleVersion: String",
+    "ext.springJavaformatCheckstyleVersion: String",
+    "ext.webjarsLocatorLiteVersion: String",
+    "ext.webjarsFontawesomeVersion: String",
+    "ext.webjarsBootstrapVersion: String",
+    "checkstyleAot.enabled: boolean",
+    "checkstyleAotTest.enabled: boolean",
+    "checkFormatAot.enabled: boolean",
+    "checkFormatAotTest.enabled: boolean",
+    "formatAot.enabled: boolean",
+    "formatAotTest.enabled: boolean",
+    "wrapper.gradleVersion: String",
+    "wrapper.distributionType: Wrapper.DistributionType"
   ],
   "functions": [
-    {
-      "name": "plugins",
-      "description": "Applies various Gradle plugins for Java, Spring Boot, code quality, and native image generation."
-    },
-    {
-      "name": "java",
-      "description": "Configures Java-specific settings, including the language version for the toolchain."
-    },
-    {
-      "name": "repositories",
-      "description": "Defines the dependency repositories, primarily Maven Central."
-    },
-    {
-      "name": "dependencies",
-      "description": "Declares project dependencies categorized by scope (implementation, runtimeOnly, developmentOnly, testImplementation, checkstyle)."
-    },
-    {
-      "name": "tasks.named('test')",
-      "description": "Configures the 'test' task to use the JUnit Platform."
-    },
-    {
-      "name": "checkstyle",
-      "description": "Configures the main Checkstyle plugin, specifying configuration directory and file."
-    },
-    {
-      "name": "checkstyleNohttp",
-      "description": "Configures a specific Checkstyle instance for 'nohttp' checks, with its own configuration."
-    },
-    {
-      "name": "tasks.named('formatMain').configure",
-      "description": "Configures 'formatMain' task to depend on 'checkstyleMain' and 'checkstyleNohttp'."
-    },
-    {
-      "name": "tasks.named('formatTest').configure",
-      "description": "Configures 'formatTest' task to depend on 'checkstyleTest' and 'checkstyleNohttp'."
-    },
-    {
-      "name": "Task Disabling",
-      "description": "Disables specific AOT (Ahead-of-Time) related checkstyle and format tasks (e.g., checkstyleAot, formatAot)."
-    },
-    {
-      "name": "wrapper",
-      "description": "Configures the Gradle Wrapper's version and distribution type for consistent builds."
-    }
+    "plugins { ... } (Gradle plugin application)",
+    "gradle.startParameter.excludedTaskNames += ... (Gradle task exclusion)",
+    "java { ... } (Java toolchain configuration)",
+    "repositories { ... } (Dependency repositories configuration)",
+    "dependencies { ... } (Project dependency declaration)",
+    "tasks.named('test') { ... } (Test task configuration)",
+    "checkstyle { ... } (Checkstyle plugin configuration)",
+    "checkstyleNohttp { ... } (NoHttp Checkstyle task configuration)",
+    "tasks.named(\"formatMain\").configure { ... } (Format task dependency configuration)",
+    "tasks.named(\"formatTest\").configure { ... } (Format test task dependency configuration)",
+    "wrapper { ... } (Gradle Wrapper configuration)"
+  ],
+  "dependent_class_list": [
+    "org.springframework.boot (various starters like cache, data-jpa, thymeleaf, web, validation, actuator, test, testcontainers, docker-compose)",
+    "javax.cache:cache-api",
+    "jakarta.xml.bind:jakarta.xml.bind-api",
+    "com.github.ben-manes.caffeine:caffeine",
+    "com.h2database:h2",
+    "com.mysql:mysql-connector-j",
+    "org.postgresql:postgresql",
+    "org.webjars:webjars-locator-lite",
+    "org.webjars.npm:bootstrap",
+    "org.webjars.npm:font-awesome",
+    "org.testcontainers:junit-jupiter",
+    "org.testcontainers:mysql",
+    "io.spring.javaformat:spring-javaformat-checkstyle",
+    "com.puppycrawl.tools:checkstyle"
   ]
 }
