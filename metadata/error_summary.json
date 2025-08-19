@@ -1,7 +1,7 @@
 {
   "file_name": "error.html",
-  "file_path": "N/A (path not provided)",
-  "file_summary": "This HTML file serves as a Thymeleaf template specifically designed to display error messages to the user. It integrates with a common layout fragment, 'fragments/layout', and is configured to present an 'error' theme. The page includes an image (likely a 'pets.png' image) to enhance the visual appeal, followed by a prominent heading indicating that 'Something happened...'. Crucially, it dynamically displays an exception message passed to it, providing specific details about the error. This template ensures a consistent look and feel for error pages across the application, leveraging Thymeleaf's templating capabilities to inject dynamic content like messages and resource paths.",
+  "file_path": "src/main/resources/templates/error.html",
+  "file_summary": "This HTML file serves as a generic error page within a Spring Boot application using Thymeleaf. It extends a common layout fragment ('fragments/layout') and is designed to display an error message to the user. The page includes an image (presumably a pet-related graphic) and uses Thymeleaf expressions to dynamically display a localized heading ('Something happened...') and the specific exception message passed to it. It's a foundational template for user-friendly error handling, providing a consistent look and feel across the application's error displays.",
   "attributes": [],
   "functions": []
 }
