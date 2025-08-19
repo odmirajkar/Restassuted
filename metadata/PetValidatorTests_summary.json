@@ -1,67 +1,49 @@
 {
   "file_name": "PetValidatorTests.java",
-  "file_path": "org/springframework/samples/petclinic/owner/PetValidatorTests.java",
-  "file_summary": "This file contains the unit tests for the `PetValidator` class, which is responsible for validating `Pet` objects in the Spring PetClinic application. The tests ensure that the validation logic correctly identifies valid and invalid `Pet` instances based on their name, type, and birth date. It uses JUnit 5 for testing, MockitoExtension for Mockito integration, and Spring's `Errors` interface for capturing validation results. The `@BeforeEach` method sets up common test data such as `PetValidator`, `Pet`, `PetType`, and `Errors` objects. The `testValidate` method verifies that a well-formed pet passes validation without errors. The nested `ValidateHasErrors` class contains tests specifically for scenarios where validation errors are expected, covering cases like an empty pet name, a null pet type, and a null birth date, asserting that the appropriate field errors are reported. The class is also marked with `@DisabledInNativeImage`.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java",
+  "file_summary": "This Java class, `PetValidatorTests`, provides a comprehensive set of unit tests for the `PetValidator` within the Spring PetClinic application. The `PetValidator` is responsible for validating the data integrity of `Pet` objects, ensuring that fields like name, type, and birth date meet the required criteria before persistence or processing. The tests leverage JUnit 5 and MockitoExtension to manage test setup and execution. Each test case instantiates a `PetValidator`, a `Pet` object, a `PetType` object, and a `MapBindingResult` to capture validation errors. It covers both successful validation scenarios where a valid `Pet` object passes without errors, and various error scenarios, including invalid (blank) pet names, missing pet types, and null birth dates, asserting that the correct field errors are registered.",
   "attributes": [
     {
       "name": "petValidator",
       "data_type": "PetValidator",
-      "membership": "private"
+      "membership_type": "private"
     },
     {
       "name": "pet",
       "data_type": "Pet",
-      "membership": "private"
+      "membership_type": "private"
     },
     {
       "name": "petType",
       "data_type": "PetType",
-      "membership": "private"
+      "membership_type": "private"
     },
     {
       "name": "errors",
       "data_type": "Errors",
-      "membership": "private"
+      "membership_type": "private"
     },
     {
       "name": "petName",
       "data_type": "String",
-      "membership": "private static final"
+      "membership_type": "private static final"
     },
     {
       "name": "petTypeName",
       "data_type": "String",
-      "membership": "private static final"
+      "membership_type": "private static final"
     },
     {
       "name": "petBirthDate",
       "data_type": "LocalDate",
-      "membership": "private static final"
+      "membership_type": "private static final"
     }
   ],
   "functions": [
-    {
-      "name": "setUp",
-      "parameters": []
-    },
-    {
-      "name": "testValidate",
-      "parameters": []
-    },
-    {
-      "name": "testValidateWithInvalidPetName",
-      "parameters": [],
-      "class_membership": "nested class ValidateHasErrors"
-    },
-    {
-      "name": "testValidateWithInvalidPetType",
-      "parameters": [],
-      "class_membership": "nested class ValidateHasErrors"
-    },
-    {
-      "name": "testValidateWithInvalidBirthDate",
-      "parameters": [],
-      "class_membership": "nested class ValidateHasErrors"
-    }
+    "setUp()",
+    "testValidate()",
+    "testValidateWithInvalidPetName()",
+    "testValidateWithInvalidPetType()",
+    "testValidateWithInvalidBirthDate()"
   ]
 }
