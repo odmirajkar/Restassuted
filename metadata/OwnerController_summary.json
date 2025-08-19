@@ -1,168 +1,53 @@
 {
   "file_name": "OwnerController.java",
   "file_path": "org/springframework/samples/petclinic/owner/OwnerController.java",
-  "file_summary": "The `OwnerController` class is a Spring MVC controller responsible for handling web requests related to `Owner` entities in the PetClinic application. It manages the full lifecycle of owner data, including creation, retrieval, updating, and searching.\n\nKey functionalities include:\n- **Creating new owners**: Provides GET and POST endpoints (`/owners/new`) for displaying and processing the owner creation form.\n- **Finding owners**: Offers a search form (`/owners/find`) and processes search requests (`/owners`), supporting lookup by last name. It also implements pagination for search results, displaying lists of owners if multiple are found, or redirecting directly to an owner's details if only one matches.\n- **Updating owners**: Provides GET and POST endpoints (`/owners/{ownerId}/edit`) to retrieve an owner's data for editing and to save updated information.\n- **Displaying owner details**: Shows comprehensive details for a specific owner (`/owners/{ownerId}`).\n\nThe controller interacts with the `OwnerRepository` to perform database operations. It uses `@Valid` for data validation, `@ModelAttribute` to prepare form backing objects, and `RedirectAttributes` for flash messages upon form submissions. It also includes an `@InitBinder` to prevent binding of the 'id' field to ensure proper ID management during updates.",
+  "file_summary": "The `OwnerController` class is a Spring MVC controller responsible for handling web requests related to `Owner` entities in the PetClinic application. It serves as the bridge between user interface interactions and the backend data persistence layer, primarily through the `OwnerRepository`. This controller manages the full lifecycle of owner data, including creation, retrieval (finding by last name or ID), updating, and displaying detailed owner information. It defines various GET and POST endpoints to render forms, process submissions, and display results. Key features include form validation using JSR-303 annotations, data binding, pre-populating model attributes using `@ModelAttribute`, and implementing pagination for listing multiple owners. It also provides feedback to the user via `RedirectAttributes` for successful operations or errors, ensuring a robust user experience for managing pet owners.",
   "attributes": [
     {
       "name": "VIEWS_OWNER_CREATE_OR_UPDATE_FORM",
-      "type": "String",
+      "data_type": "String",
       "membership_type": "private static final"
     },
     {
       "name": "owners",
-      "type": "OwnerRepository",
+      "data_type": "OwnerRepository",
       "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "OwnerController",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "owners",
-          "type": "OwnerRepository"
-        }
-      ]
-    },
-    {
-      "name": "setAllowedFields",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "dataBinder",
-          "type": "WebDataBinder"
-        }
-      ]
-    },
-    {
-      "name": "findOwner",
-      "return_type": "Owner",
-      "parameters": [
-        {
-          "name": "ownerId",
-          "type": "Integer"
-        }
-      ]
-    },
-    {
-      "name": "initCreationForm",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "processCreationForm",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "owner",
-          "type": "Owner"
-        },
-        {
-          "name": "result",
-          "type": "BindingResult"
-        },
-        {
-          "name": "redirectAttributes",
-          "type": "RedirectAttributes"
-        }
-      ]
-    },
-    {
-      "name": "initFindForm",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "processFindForm",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        },
-        {
-          "name": "owner",
-          "type": "Owner"
-        },
-        {
-          "name": "result",
-          "type": "BindingResult"
-        },
-        {
-          "name": "model",
-          "type": "Model"
-        }
-      ]
-    },
-    {
-      "name": "addPaginationModel",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        },
-        {
-          "name": "model",
-          "type": "Model"
-        },
-        {
-          "name": "paginated",
-          "type": "Page<Owner>"
-        }
-      ]
-    },
-    {
-      "name": "findPaginatedForOwnersLastName",
-      "return_type": "Page<Owner>",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        },
-        {
-          "name": "lastname",
-          "type": "String"
-        }
-      ]
-    },
-    {
-      "name": "initUpdateOwnerForm",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "processUpdateOwnerForm",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "owner",
-          "type": "Owner"
-        },
-        {
-          "name": "result",
-          "type": "BindingResult"
-        },
-        {
-          "name": "ownerId",
-          "type": "int"
-        },
-        {
-          "name": "redirectAttributes",
-          "type": "RedirectAttributes"
-        }
-      ]
-    },
-    {
-      "name": "showOwner",
-      "return_type": "ModelAndView",
-      "parameters": [
-        {
-          "name": "ownerId",
-          "type": "int"
-        }
-      ]
-    }
+    "OwnerController(OwnerRepository owners)",
+    "setAllowedFields(WebDataBinder dataBinder): void",
+    "findOwner(Integer ownerId): Owner",
+    "initCreationForm(): String",
+    "processCreationForm(Owner owner, BindingResult result, RedirectAttributes redirectAttributes): String",
+    "initFindForm(): String",
+    "processFindForm(int page, Owner owner, BindingResult result, Model model): String",
+    "addPaginationModel(int page, Model model, Page<Owner> paginated): String",
+    "findPaginatedForOwnersLastName(int page, String lastname): Page<Owner>",
+    "initUpdateOwnerForm(): String",
+    "processUpdateOwnerForm(Owner owner, BindingResult result, int ownerId, RedirectAttributes redirectAttributes): String",
+    "showOwner(int ownerId): ModelAndView"
+  ],
+  "dependent_class_list": [
+    "java.util.List",
+    "java.util.Optional",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.PageRequest",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.stereotype.Controller",
+    "org.springframework.ui.Model",
+    "org.springframework.validation.BindingResult",
+    "org.springframework.web.bind.WebDataBinder",
+    "org.springframework.web.bind.annotation.GetMapping",
+    "org.springframework.web.bind.annotation.InitBinder",
+    "org.springframework.web.bind.annotation.ModelAttribute",
+    "org.springframework.web.bind.annotation.PathVariable",
+    "org.springframework.web.bind.annotation.PostMapping",
+    "org.springframework.web.bind.annotation.RequestParam",
+    "org.springframework.web.servlet.ModelAndView",
+    "jakarta.validation.Valid",
+    "org.springframework.web.servlet.mvc.support.RedirectAttributes",
+    "Owner",
+    "OwnerRepository"
   ]
 }
