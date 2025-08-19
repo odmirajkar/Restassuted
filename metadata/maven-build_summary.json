@@ -1,7 +1,8 @@
 {
-  "file_name": "java-ci-with-maven.yml",
-  "file_path": ".github/workflows/java-ci-with-maven.yml",
-  "file_summary": "This file defines a GitHub Actions workflow named 'Java CI with Maven'. Its primary objective is to automate the continuous integration process for a Java project that uses Maven as its build tool. The workflow is configured to trigger on every push and pull request to the 'main' branch, ensuring that all code changes are validated. It executes on an Ubuntu-latest runner and sets up Java Development Kit (JDK) version 17 using the 'adopt' distribution, with Maven dependency caching enabled to optimize build times. The core step involves running the Maven wrapper command (`./mvnw -B verify`) to build the project, execute tests, and perform other verification tasks. This automation helps maintain code quality and provides rapid feedback on changes.",
+  "file_name": "Java CI with Maven",
+  "file_path": "Not specified",
+  "file_summary": "This file defines a GitHub Actions workflow named \"Java CI with Maven\". Its primary purpose is to automate the building of a Java project using Maven. The workflow is configured to trigger on `push` and `pull_request` events targeting the `main` branch, ensuring that every code change to the main branch is automatically built and validated. The workflow consists of a single job named `build` which executes on `ubuntu-latest` and uses a strategy to build with specified Java versions (currently Java 17). The steps involved include checking out the repository, setting up the specified JDK (with Maven dependency caching for improved performance), and finally executing the `./mvnw -B verify` command to compile the project, run tests, and package the application. This workflow helps maintain code quality and ensures the project is always buildable.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
