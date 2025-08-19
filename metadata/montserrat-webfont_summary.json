@@ -1,9 +1,1 @@
-
-```json
-{
-  "file_name": "unknown",
-  "file_path": "unknown",
-  "file_summary": "The provided file content is empty. No summary, purpose, attributes, or functions can be extracted from an empty file.",
-  "attributes": [],
-  "functions": []
-}
+error in generating summary
