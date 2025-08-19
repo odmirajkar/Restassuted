@@ -1,68 +1,59 @@
 {
   "file_name": "application.properties",
-  "file_path": "Not specified",
-  "file_summary": "This configuration file primarily defines settings for a Spring Boot application, focusing on database initialization, web UI (Thymeleaf), JPA behavior, internationalization, actuator endpoints, logging, and static resource caching. It configures the application to use an H2 in-memory database and specifies the locations for SQL schema and data scripts to be dynamically loaded based on the selected database type. It disables automatic DDL generation by Hibernate and open-in-view for JPA. Furthermore, it exposes all Spring Boot Actuator endpoints for monitoring and management, sets up the base for internationalization messages, defines the default logging level for Spring components, and specifies a caching duration for static web resources. This file acts as a central hub for tailoring the application's runtime behavior across various layers.",
+  "file_path": "src/main/resources/application.properties",
+  "file_summary": "This configuration file, likely `application.properties`, sets up various core aspects of a Spring Boot application. It configures an H2 in-memory database, specifying the locations for schema and data initialization scripts. It also defines web-related settings, such as setting Thymeleaf's template mode to HTML. JPA (Java Persistence API) settings are configured to prevent automatic DDL generation by Hibernate and disable the 'open-in-view' pattern. Internationalization is enabled by setting the base name for message bundles. Furthermore, it exposes all Spring Boot Actuator web endpoints for monitoring and management, sets the default logging level for Spring components to INFO, and defines a maximum cache age of 12 hours for static web resources to optimize performance.",
   "attributes": [
     {
       "name": "database",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Specifies the primary database type to be used, set to H2 in-memory database."
+      "type": "String",
+      "value": "h2"
     },
     {
       "name": "spring.sql.init.schema-locations",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Defines the classpath location for SQL schema initialization scripts, dynamically using the 'database' property."
+      "type": "String",
+      "value": "classpath*:db/${database}/schema.sql"
     },
     {
       "name": "spring.sql.init.data-locations",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Defines the classpath location for SQL data initialization scripts, dynamically using the 'database' property."
+      "type": "String",
+      "value": "classpath*:db/${database}/data.sql"
     },
     {
       "name": "spring.thymeleaf.mode",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Sets the template mode for Thymeleaf, indicating it will process HTML templates."
+      "type": "String",
+      "value": "HTML"
     },
     {
       "name": "spring.jpa.hibernate.ddl-auto",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Controls Hibernate's DDL generation. Set to 'none' to prevent Hibernate from automatically creating or updating the database schema."
+      "type": "String",
+      "value": "none"
     },
     {
       "name": "spring.jpa.open-in-view",
-      "data_type": "Boolean",
-      "membership_type": "Configuration Property",
-      "description": "Controls whether the JPA EntityManager is kept open during the view phase. Set to 'false' to avoid potential performance issues or lazy-loading problems outside of a transaction."
+      "type": "Boolean",
+      "value": "false"
     },
     {
       "name": "spring.messages.basename",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Specifies the base name for the message bundles used for internationalization."
+      "type": "String",
+      "value": "messages/messages"
     },
     {
       "name": "management.endpoints.web.exposure.include",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Configures which Spring Boot Actuator web endpoints should be exposed. Set to '*' to expose all available endpoints."
+      "type": "String",
+      "value": "*"
     },
     {
       "name": "logging.level.org.springframework",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Sets the logging level for all Spring framework packages to INFO."
+      "type": "String",
+      "value": "INFO"
     },
     {
       "name": "spring.web.resources.cache.cachecontrol.max-age",
-      "data_type": "String",
-      "membership_type": "Configuration Property",
-      "description": "Defines the maximum age for static resources to be cached by the client or proxy, set to 12 hours."
+      "type": "String",
+      "value": "12h"
     }
   ],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
