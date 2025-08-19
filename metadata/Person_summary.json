@@ -1,0 +1,55 @@
+{
+  "file_name": "Person.java",
+  "file_path": "org/springframework/samples/petclinic/model/Person.java",
+  "file_summary": "This Java class, `Person`, is a core part of the Spring PetClinic sample application's `model` package. It extends `BaseEntity`, indicating it's a domain object that likely inherits an ID field. Marked with `@MappedSuperclass`, `Person` is not an entity itself, but its persistent properties and mapping annotations are inherited by its subclasses (e.g., `Owner`, `Vet`). It serves as a simple JavaBean to represent common person details. The class defines two essential attributes: `firstName` and `lastName`, both annotated with `@NotBlank` for validation to ensure they are not empty, and `@Column` to specify their corresponding database column names (`first_name` and `last_name`). It provides standard public getter and setter methods for these attributes, adhering to JavaBean conventions for encapsulation and property access.",
+  "attributes": [
+    {
+      "name": "firstName",
+      "type": "String",
+      "membership_type": "private",
+      "annotations": ["@Column(name = \"first_name\")", "@NotBlank"]
+    },
+    {
+      "name": "lastName",
+      "type": "String",
+      "membership_type": "private",
+      "annotations": ["@Column(name = \"last_name\")", "@NotBlank"]
+    }
+  ],
+  "functions": [
+    {
+      "name": "getFirstName",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "setFirstName",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "firstName",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getLastName",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "setLastName",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "lastName",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    }
+  ]
+}
