@@ -1,120 +1,180 @@
 {
   "file_name": "OwnerController.java",
   "file_path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
-  "file_summary": "This Java class, `OwnerController`, acts as a Spring MVC controller responsible for handling web requests related to owner management within the PetClinic application. It facilitates the creation, retrieval, updating, and display of owner information. The controller interacts with an `OwnerRepository` to perform data persistence operations. Key functionalities include displaying forms for creating and updating owners, processing form submissions with validation, searching for owners by last name (with pagination support), and displaying individual owner details. It leverages various Spring annotations like `@Controller`, `@GetMapping`, `@PostMapping`, `@InitBinder`, `@ModelAttribute`, `@RequestParam`, and `@PathVariable` to manage the request flow and data binding, ensuring a robust and user-friendly experience for managing pet owners.",
+  "file_summary": "The OwnerController class is a Spring MVC controller responsible for handling web requests related to 'Owner' entities in the PetClinic application. It manages the full lifecycle of owner data, including creating new owners, finding existing ones (with pagination capabilities), updating their details, and displaying individual owner profiles. The controller interacts with the OwnerRepository for data persistence operations. It leverages Spring's data binding and validation features, using `@InitBinder` to prevent binding certain fields and `@ModelAttribute` to pre-populate owner objects for requests. The class defines various GET and POST endpoints for form submissions, search functionality, and direct access to owner details, ensuring a user-friendly experience for managing pet owners.",
   "attributes": [
     {
       "name": "VIEWS_OWNER_CREATE_OR_UPDATE_FORM",
       "type": "String",
-      "membership": "private static final"
+      "membership_type": "private static final"
     },
     {
       "name": "owners",
       "type": "OwnerRepository",
-      "membership": "private final"
+      "membership_type": "private final"
     }
   ],
   "functions": [
     {
       "name": "OwnerController",
-      "return_type": "void",
       "parameters": [
-        { "name": "owners", "type": "OwnerRepository" }
+        {
+          "name": "owners",
+          "type": "OwnerRepository"
+        }
       ],
-      "visibility": "public"
+      "return_type": "void",
+      "membership_type": "public"
     },
     {
       "name": "setAllowedFields",
-      "return_type": "void",
       "parameters": [
-        { "name": "dataBinder", "type": "WebDataBinder" }
+        {
+          "name": "dataBinder",
+          "type": "WebDataBinder"
+        }
       ],
-      "visibility": "public"
+      "return_type": "void",
+      "membership_type": "public"
     },
     {
       "name": "findOwner",
-      "return_type": "Owner",
       "parameters": [
-        { "name": "ownerId", "type": "Integer", "annotations": ["@PathVariable"] }
+        {
+          "name": "ownerId",
+          "type": "Integer"
+        }
       ],
-      "visibility": "public"
+      "return_type": "Owner",
+      "membership_type": "public"
     },
     {
       "name": "initCreationForm",
-      "return_type": "String",
       "parameters": [],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "processCreationForm",
-      "return_type": "String",
       "parameters": [
-        { "name": "owner", "type": "Owner", "annotations": ["@Valid"] },
-        { "name": "result", "type": "BindingResult" },
-        { "name": "redirectAttributes", "type": "RedirectAttributes" }
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "result",
+          "type": "BindingResult"
+        },
+        {
+          "name": "redirectAttributes",
+          "type": "RedirectAttributes"
+        }
       ],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "initFindForm",
-      "return_type": "String",
       "parameters": [],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "processFindForm",
-      "return_type": "String",
       "parameters": [
-        { "name": "page", "type": "int", "annotations": ["@RequestParam"] },
-        { "name": "owner", "type": "Owner" },
-        { "name": "result", "type": "BindingResult" },
-        { "name": "model", "type": "Model" }
+        {
+          "name": "page",
+          "type": "int"
+        },
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "result",
+          "type": "BindingResult"
+        },
+        {
+          "name": "model",
+          "type": "Model"
+        }
       ],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "addPaginationModel",
-      "return_type": "String",
       "parameters": [
-        { "name": "page", "type": "int" },
-        { "name": "model", "type": "Model" },
-        { "name": "paginated", "type": "Page<Owner>" }
+        {
+          "name": "page",
+          "type": "int"
+        },
+        {
+          "name": "model",
+          "type": "Model"
+        },
+        {
+          "name": "paginated",
+          "type": "Page<Owner>"
+        }
       ],
-      "visibility": "private"
+      "return_type": "String",
+      "membership_type": "private"
     },
     {
       "name": "findPaginatedForOwnersLastName",
-      "return_type": "Page<Owner>",
       "parameters": [
-        { "name": "page", "type": "int" },
-        { "name": "lastname", "type": "String" }
+        {
+          "name": "page",
+          "type": "int"
+        },
+        {
+          "name": "lastname",
+          "type": "String"
+        }
       ],
-      "visibility": "private"
+      "return_type": "Page<Owner>",
+      "membership_type": "private"
     },
     {
       "name": "initUpdateOwnerForm",
-      "return_type": "String",
       "parameters": [],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "processUpdateOwnerForm",
-      "return_type": "String",
       "parameters": [
-        { "name": "owner", "type": "Owner", "annotations": ["@Valid"] },
-        { "name": "result", "type": "BindingResult" },
-        { "name": "ownerId", "type": "int", "annotations": ["@PathVariable"] },
-        { "name": "redirectAttributes", "type": "RedirectAttributes" }
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "result",
+          "type": "BindingResult"
+        },
+        {
+          "name": "ownerId",
+          "type": "int"
+        },
+        {
+          "name": "redirectAttributes",
+          "type": "RedirectAttributes"
+        }
       ],
-      "visibility": "public"
+      "return_type": "String",
+      "membership_type": "public"
     },
     {
       "name": "showOwner",
-      "return_type": "ModelAndView",
       "parameters": [
-        { "name": "ownerId", "type": "int", "annotations": ["@PathVariable"] }
+        {
+          "name": "ownerId",
+          "type": "int"
+        }
       ],
-      "visibility": "public"
+      "return_type": "ModelAndView",
+      "membership_type": "public"
     }
   ]
 }
