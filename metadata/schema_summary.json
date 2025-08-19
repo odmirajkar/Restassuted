@@ -1,5 +1,15 @@
 {
   "file_name": "schema.sql",
-  "file_path": "database/schema.sql",
-  "file_summary": "This SQL script defines the complete database schema for a pet clinic management system. It establishes seven core tables: `vets` for veterinarian details, `specialties` for medical specializations, and `vet_specialties` to link vets with their expertise. It also includes `types` for categorizing pets, `owners` to store client information, and `pets` to register animal patients, linking them to their owners and types. Finally, the `visits` table records all clinic appointments and their descriptions. The schema incorporates `PRIMARY KEY` constraints for unique identification, `FOREIGN KEY` relationships to maintain data integrity across tables (e.g., `pets` referencing `owners` and `types`, `visits` referencing `pets`, and `vet_specialties` referencing `vets` and `specialties`), and `UNIQUE` constraints where applicable. Additionally, various `CREATE INDEX` statements are included on key columns like last names, names, and IDs to optimize data retrieval performance. This DDL script forms the foundational data model for a comprehensive pet clinic application, enabling the storage and management of critical operational data."
+  "file_path": "/db/schema.sql",
+  "file_summary": "This SQL script defines the relational database schema for a pet clinic application. It begins by dropping all existing tables to ensure a clean slate, then proceeds to create seven distinct tables: `vets`, `specialties`, `vet_specialties`, `types`, `owners`, `pets`, and `visits`. The `vets` table stores information about veterinarians, while `specialties` lists their areas of expertise. `vet_specialties` acts as a many-to-many join table linking vets to their specialties. The `types` table categorizes different kinds of pets (e.g., cat, dog). `owners` holds details about pet owners, including their contact information. `pets` stores individual pet records, linking them to their owners and types. Finally, the `visits` table records each visit a pet makes, including the date and a description. The script establishes primary keys for each main entity table and defines foreign key constraints to enforce referential integrity between related tables (e.g., `pets` to `owners` and `types`, `visits` to `pets`, and `vet_specialties` to `vets` and `specialties`). Several indexes are also created on common lookup fields (like `last_name`, `name`, `pet_id`) to optimize query performance. This schema provides a foundational structure for managing data related to veterinary operations.",
+  "attributes": [
+    "Table: vets (id: INTEGER, first_name: VARCHAR(30), last_name: VARCHAR(30))",
+    "Table: specialties (id: INTEGER, name: VARCHAR(80))",
+    "Table: vet_specialties (vet_id: INTEGER, specialty_id: INTEGER)",
+    "Table: types (id: INTEGER, name: VARCHAR(80))",
+    "Table: owners (id: INTEGER, first_name: VARCHAR(30), last_name: VARCHAR_IGNORECASE(30), address: VARCHAR(255), city: VARCHAR(80), telephone: VARCHAR(20))",
+    "Table: pets (id: INTEGER, name: VARCHAR(30), birth_date: DATE, type_id: INTEGER, owner_id: INTEGER)",
+    "Table: visits (id: INTEGER, pet_id: INTEGER, visit_date: DATE, description: VARCHAR(255))"
+  ],
+  "functions": []
 }
