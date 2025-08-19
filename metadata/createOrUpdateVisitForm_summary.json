@@ -1,0 +1,7 @@
+{
+  "file_name": "visit.html",
+  "file_path": "unknown",
+  "file_summary": "This HTML page is a Thymeleaf template designed to manage pet visits within a web application. It serves two primary purposes: displaying detailed information about a specific pet and its existing visits, and providing a form to add new visits for that pet. The page first presents a table with the pet's name, birth date, type, and owner's name. Below this, a form allows users to input the date and a description for a new visit. Finally, it lists all previously recorded visits for the pet in a separate table, showing the date and description of each. The template utilizes Thymeleaf for dynamic content rendering, internationalization (e.g., `th:text="#{addVisit}`), and integration with other layout and input field fragments, making it a key component for managing pet health records.",
+  "attributes": [],
+  "functions": []
+}
