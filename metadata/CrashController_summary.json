@@ -1,17 +1,14 @@
 {
   "file_name": "CrashController.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashController.java",
-  "file_summary": "This Java file defines a Spring MVC controller named `CrashController`. Its primary purpose is to demonstrate Spring's exception handling capabilities within a web application. It exposes a single GET endpoint, `/oups`, which, when accessed, deliberately throws a `RuntimeException`. This allows developers to observe and test how the application (and Spring framework) handles unexpected errors, often redirecting to a generic error page (like \"error.html\" as mentioned in the comments). It's a simple example to showcase error flow and robust exception management in a Spring Boot or Spring MVC application.",
+  "file_summary": "This Java file defines the `CrashController` class, which is a Spring MVC controller. Its primary purpose is to demonstrate exception handling within a web application. It exposes a single endpoint `/oups` that, when accessed, intentionally throws a `RuntimeException`. This allows developers to observe and test how the application's error handling mechanisms (e.g., error pages, exception resolvers) respond to unexpected runtime errors. The controller is a simple example to showcase the error flow, as mentioned in its Javadoc.",
   "attributes": [],
   "functions": [
     {
       "name": "triggerException",
-      "visibility": "public",
       "return_type": "String",
       "parameters": [],
-      "annotations": [
-        "@GetMapping(\"/oups\")"
-      ]
+      "description": "Handles GET requests to '/oups' and intentionally throws a RuntimeException to showcase application's exception handling mechanism."
     }
   ]
 }
