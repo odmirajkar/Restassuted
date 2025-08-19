@@ -1,7 +1,7 @@
 {
   "file_name": "Vets.java",
-  "file_path": "org/springframework/samples/petclinic/vet/Vets.java",
-  "file_summary": "This Java file defines the `Vets` class, a simple domain object designed primarily to act as a container for a list of `Vet` objects. Its main purpose is to facilitate XML marshalling, specifically for use with Spring's `MarshallingView` or similar technologies that require a single root element for a collection of objects. By encapsulating a `List<Vet>`, it allows for a cleaner XML representation when exposing a list of veterinarians as part of a RESTful API or web service response. The class ensures that the internal list is initialized upon its first access.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+  "file_summary": "This Java class, `Vets`, serves as a simple domain object specifically designed to hold a collection or list of `Vet` objects. Its primary utility lies in facilitating data serialization, particularly for XML and JSON marshalling. Annotated with `@XmlRootElement`, it indicates that an instance of this class can be the root element when marshaling to XML. It provides a `getVetList()` method, marked with `@XmlElement`, which ensures that the list of veterinarians is initialized as an `ArrayList` if it's null, allowing for proper collection management and easy mapping to external data formats.",
   "attributes": [
     {
       "name": "vets",
@@ -10,11 +10,13 @@
     }
   ],
   "functions": [
-    {
-      "name": "getVetList",
-      "return_type": "List<Vet>",
-      "parameters": [],
-      "membership_type": "public"
-    }
+    "getVetList(): public List<Vet>"
+  ],
+  "dependent_class_list": [
+    "java.util.ArrayList",
+    "java.util.List",
+    "jakarta.xml.bind.annotation.XmlElement",
+    "jakarta.xml.bind.annotation.XmlRootElement",
+    "org.springframework.samples.petclinic.vet.Vet"
   ]
 }
