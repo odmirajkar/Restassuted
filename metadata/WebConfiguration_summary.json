@@ -1,23 +1,26 @@
 {
   "file_name": "WebConfiguration.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
-  "file_summary": "The `WebConfiguration` class is a core Spring `@Configuration` component within the PetClinic application, dedicated to setting up internationalization (i18n) support. By implementing `WebMvcConfigurer`, it customizes Spring MVC's behavior to handle multiple languages. Its primary purpose is to enable the application to display content in different locales and allow users to dynamically switch between them. It defines two crucial Spring beans: a `SessionLocaleResolver`, which remembers the user's preferred language by storing it in the HTTP session (defaulting to English), and a `LocaleChangeInterceptor`. This interceptor is configured to detect language change requests via a URL parameter named \"lang\" (e.g., `?lang=de`). Finally, the class registers this `LocaleChangeInterceptor` with Spring MVC's interceptor registry, ensuring that it processes every web request to facilitate language switching based on user input. This setup provides a robust and user-friendly mechanism for internationalizing the application.",
+  "file_path": "org/springframework/samples/petclinic/system/WebConfiguration.java",
+  "file_summary": "This Java class, `WebConfiguration`, serves as a Spring `@Configuration` component responsible for configuring internationalization (i18n) support within the PetClinic application. It implements `WebMvcConfigurer` to customize Spring MVC settings. The configuration includes defining a `LocaleResolver` bean, which uses `SessionLocaleResolver` to store the user's preferred language in the session, defaulting to English. Additionally, it defines a `LocaleChangeInterceptor` bean that allows users to change the application's language by including a `lang` parameter in the URL (e.g., `?lang=es`). Finally, this interceptor is registered with the `InterceptorRegistry` so it can process language changes on every web request, ensuring the application dynamically serves content in the user's chosen locale.",
   "attributes": [],
   "functions": [
     {
       "name": "localeResolver",
+      "visibility": "public",
       "return_type": "LocaleResolver",
       "parameters": [],
-      "membership": "public"
+      "purpose": "Creates a SessionLocaleResolver bean that remembers the user's language setting across requests using session storage, defaulting to English."
     },
     {
       "name": "localeChangeInterceptor",
+      "visibility": "public",
       "return_type": "LocaleChangeInterceptor",
       "parameters": [],
-      "membership": "public"
+      "purpose": "Creates a LocaleChangeInterceptor bean that allows changing the application's language via a 'lang' URL parameter."
     },
     {
       "name": "addInterceptors",
+      "visibility": "public",
       "return_type": "void",
       "parameters": [
         {
@@ -25,7 +28,7 @@
           "type": "InterceptorRegistry"
         }
       ],
-      "membership": "public"
+      "purpose": "Registers the localeChangeInterceptor with the Spring MVC interceptor registry, ensuring it runs on every web request."
     }
   ]
 }
