@@ -1,0 +1,7 @@
+{
+  "file_name": "selectFormFragment.html",
+  "file_path": "unknown",
+  "file_summary": "This HTML file is a Thymeleaf fragment designed to render a dynamic dropdown (HTML `<select>`) input field within a web form. The fragment, named `select`, takes `label`, `name`, and `items` as parameters. It generates a form group with a label, the select element, and integrates Bootstrap-like styling for form controls. A key feature is its built-in error handling mechanism, which conditionally displays validation errors and applies appropriate CSS classes (`has-error`) based on Spring/Thymeleaf field error status. Options for the dropdown are dynamically iterated over from the `items` collection provided to the fragment. It includes feedback icons (`fa fa-ok`, `fa fa-remove`) for valid/invalid states, indicating integration with a CSS icon library like Font Awesome. This fragment promotes reusability for select input fields across different forms in a Thymeleaf-based web application.",
+  "attributes": [],
+  "functions": []
+}
