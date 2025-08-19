@@ -1,28 +1,7 @@
 {
-  "file_name": "owners.html",
-  "file_path": "/src/main/resources/templates/owners.html",
-  "file_summary": "This HTML file, `owners.html`, serves as a Thymeleaf template responsible for displaying a paginated list of veterinary clinic owners. It integrates with a `fragments/layout.html` to maintain a consistent page layout. The main purpose of this page is to present essential information for each owner, including their name, address, city, telephone number, and a list of their pets, in a tabular format. It includes dynamic links to view individual owner details (`/owners/{id}`). Furthermore, the template incorporates pagination controls, allowing users to navigate through large datasets of owners by displaying the total number of pages and providing links to the first, previous, next, and last pages, based on the current page. The content is internationalized using Thymeleaf's message expressions (e.g., `#{owners}`, `#{name}`).",
-  "attributes": [
-    {
-      "name": "listOwners",
-      "type": "List<Owner>",
-      "description": "A list of owner objects to be displayed in the table. Each Owner object is expected to have properties like id, firstName, lastName, address, city, telephone, and pets."
-    },
-    {
-      "name": "totalPages",
-      "type": "Integer",
-      "description": "The total number of pages available for owner records, used for pagination controls."
-    },
-    {
-      "name": "currentPage",
-      "type": "Integer",
-      "description": "The current page number being viewed, used to highlight the current page and control pagination links."
-    }
-  ],
-  "functions": [
-    {
-      "name": "Thymeleaf Template Rendering Logic",
-      "description": "This is an HTML template and does not contain traditional programming functions. Instead, it uses Thymeleaf expressions for dynamic content rendering, iteration (`th:each`), conditional rendering (`th:if`, `th:unless`), data binding (`th:text`, `th:href`), and internationalization (`#{key}`). Specific logic includes iterating over `listOwners`, joining pet names using `#strings.listJoin`, and generating pagination links based on `currentPage` and `totalPages`."
-    }
-  ]
+  "file_name": "ownersList.html",
+  "file_path": "Not provided",
+  "file_summary": "This HTML file is a Thymeleaf template responsible for displaying a paginated list of pet owners. It utilizes a `fragments/layout` for consistent page structure and incorporates internationalization for text elements. The core of the page is an HTML table that lists owners with their names, addresses, cities, telephone numbers, and pets. Each owner's name is rendered as a hyperlink, leading to a detailed view for that specific owner. The template dynamically renders the list by iterating over a server-side `listOwners` collection. Crucially, the page includes comprehensive pagination controls, enabling users to navigate through pages of results. These controls display the current page number and provide links to the first, previous, next, and last pages, driven by `totalPages` and `currentPage` variables passed from the backend.",
+  "attributes": [],
+  "functions": []
 }
