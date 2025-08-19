@@ -1,20 +1,20 @@
 {
   "file_name": "WebConfiguration.java",
-  "file_path": "org/springframework/samples/petclinic/system/WebConfiguration.java",
-  "file_summary": "This Java class, `WebConfiguration`, configures internationalization (i18n) support for the Spring PetClinic application. It defines how the application determines and changes the user's language preference. Specifically, it configures a `SessionLocaleResolver` to store the user's chosen locale in their session, defaulting to English. It also sets up a `LocaleChangeInterceptor` which allows users to change the language by adding a `?lang=` parameter to the URL (e.g., `?lang=de` for German). This interceptor is then registered with the Spring MVC interceptor registry, ensuring it processes every incoming request to check for language changes. This setup provides a robust mechanism for multi-language support within the web application.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+  "file_summary": "The `WebConfiguration` class is a core Spring `@Configuration` component within the PetClinic application, dedicated to setting up internationalization (i18n) support. By implementing `WebMvcConfigurer`, it customizes Spring MVC's behavior to handle multiple languages. Its primary purpose is to enable the application to display content in different locales and allow users to dynamically switch between them. It defines two crucial Spring beans: a `SessionLocaleResolver`, which remembers the user's preferred language by storing it in the HTTP session (defaulting to English), and a `LocaleChangeInterceptor`. This interceptor is configured to detect language change requests via a URL parameter named \"lang\" (e.g., `?lang=de`). Finally, the class registers this `LocaleChangeInterceptor` with Spring MVC's interceptor registry, ensuring that it processes every web request to facilitate language switching based on user input. This setup provides a robust and user-friendly mechanism for internationalizing the application.",
   "attributes": [],
   "functions": [
     {
       "name": "localeResolver",
       "return_type": "LocaleResolver",
       "parameters": [],
-      "membership_type": "public"
+      "membership": "public"
     },
     {
       "name": "localeChangeInterceptor",
       "return_type": "LocaleChangeInterceptor",
       "parameters": [],
-      "membership_type": "public"
+      "membership": "public"
     },
     {
       "name": "addInterceptors",
@@ -25,7 +25,7 @@
           "type": "InterceptorRegistry"
         }
       ],
-      "membership_type": "public"
+      "membership": "public"
     }
   ]
 }
