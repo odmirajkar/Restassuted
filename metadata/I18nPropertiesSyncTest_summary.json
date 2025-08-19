@@ -1,0 +1,41 @@
+{
+  "file_name": "I18nPropertiesSyncTest.java",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
+  "file_summary": "This Java test class, `I18nPropertiesSyncTest`, is responsible for ensuring the proper implementation of internationalization (I18n) within the Spring PetClinic application. It contains two main test methods. The first, `checkNonInternationalizedStrings()`, scans all `.java` and `.html` files in the `src/main` directory (excluding test files) to detect any hard-coded text literals in HTML that are not marked for internationalization (i.e., not using Thymeleaf's `th:text` or Spring Expression Language `#{}`). The second test, `checkI18nPropertyFilesAreInSync()`, verifies that all internationalization property files (e.g., `messages_fr.properties`, `messages_de.properties`) contain all the keys present in the base `messages.properties` file, ensuring no partial translations across different locales. If any non-internationalized strings or missing translation keys are found, the tests will fail, promoting consistent and complete I18n support.",
+  "attributes": [
+    {
+      "name": "I18N_DIR",
+      "data_type": "String",
+      "membership_type": "private static final"
+    },
+    {
+      "name": "BASE_NAME",
+      "data_type": "String",
+      "membership_type": "private static final"
+    },
+    {
+      "name": "PROPERTIES",
+      "data_type": "String",
+      "membership_type": "public static final"
+    },
+    {
+      "name": "HTML_TEXT_LITERAL",
+      "data_type": "Pattern",
+      "membership_type": "private static final"
+    },
+    {
+      "name": "BRACKET_ONLY",
+      "data_type": "Pattern",
+      "membership_type": "private static final"
+    },
+    {
+      "name": "HAS_TH_TEXT_ATTRIBUTE",
+      "data_type": "Pattern",
+      "membership_type": "private static final"
+    }
+  ],
+  "functions": [
+    "checkNonInternationalizedStrings()",
+    "checkI18nPropertyFilesAreInSync()"
+  ]
+}
