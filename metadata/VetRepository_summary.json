@@ -1,21 +1,15 @@
 {
   "file_name": "VetRepository.java",
-  "file_path": "org/springframework/samples/petclinic/vet/VetRepository.java",
-  "file_summary": "This file defines the `VetRepository` interface, which acts as a data access layer for `Vet` domain objects within the Spring PetClinic application. It extends Spring Data's `Repository` interface, allowing for automatic query generation based on method names. The primary purpose of this repository is to retrieve veterinarian data. It includes two `findAll` methods: one that returns a `Collection` of all vets and another that returns a `Page` of vets, enabling paginated results. Both methods are marked as read-only transactions (`@Transactional(readOnly = true)`) and utilize Spring's caching mechanism (`@Cacheable(\"vets\")`) to improve performance by caching veterinarian data. This design adheres to Spring Data conventions for simplified data access.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java",
+  "file_summary": "This Java interface, `VetRepository`, serves as a Spring Data Repository for managing `Vet` domain objects within the PetClinic application. It extends Spring's `Repository` interface, leveraging its convention-over-configuration approach for data access. The primary purpose of this interface is to define methods for retrieving veterinarian data from the persistence layer. It provides two `findAll` methods: one that returns a `Collection` of all vets, and another that supports pagination by returning a `Page` of vets. Both methods are marked with `@Transactional(readOnly = true)` to ensure read-only database operations and `@Cacheable(\"vets\")` to enable caching of vet data, thereby enhancing application performance by reducing redundant database calls. This design adheres to Spring Data naming conventions, allowing Spring to automatically generate the necessary query implementations.",
   "attributes": [],
   "functions": [
     {
       "name": "findAll",
       "return_type": "Collection<Vet>",
       "parameters": [],
-      "annotations": [
-        "@Transactional(readOnly = true)",
-        "@Cacheable(\"vets\")"
-      ],
-      "throws": [
-        "DataAccessException"
-      ],
-      "access_modifier": "public"
+      "membership_type": "public abstract",
+      "exceptions": ["DataAccessException"]
     },
     {
       "name": "findAll",
@@ -26,14 +20,8 @@
           "type": "Pageable"
         }
       ],
-      "annotations": [
-        "@Transactional(readOnly = true)",
-        "@Cacheable(\"vets\")"
-      ],
-      "throws": [
-        "DataAccessException"
-      ],
-      "access_modifier": "public"
+      "membership_type": "public abstract",
+      "exceptions": ["DataAccessException"]
     }
   ]
 }
