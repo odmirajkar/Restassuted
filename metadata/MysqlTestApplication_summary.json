@@ -1,22 +1,20 @@
 {
   "file_name": "MysqlTestApplication.java",
-  "file_path": "org/springframework/samples/petclinic/MysqlTestApplication.java",
-  "file_summary": "This Java class, `MysqlTestApplication`, is a Spring Boot configuration designed to facilitate testing of the PetClinic application against a MySQL database using Testcontainers. It defines a `@Bean` method, `container()`, which provisions a `MySQLContainer` instance from the `mysql:9.2` Docker image. This container is annotated with `@ServiceConnection` for automatic database connection configuration and is active only when the `mysql` Spring profile is enabled. The class also includes a `main` method, which serves as the application's entry point, launching the `PetClinicApplication` with the `mysql` profile active and explicitly disabling Spring Docker Compose, ensuring that the Testcontainers MySQL instance is used for integration tests or local development.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/MysqlTestApplication.java",
+  "file_summary": "This Java class, `MysqlTestApplication`, serves as a configuration for the Spring PetClinic application, specifically designed for integration testing or local development with a MySQL database. It leverages Spring Boot's Testcontainers integration to automatically provision a `MySQLContainer` instance. The `container()` method, annotated with `@ServiceConnection` and `@Bean`, defines this Testcontainer setup, ensuring that the application can connect to a transient MySQL database when the 'mysql' Spring profile is active. The class also includes a `main` method, allowing it to bootstrap the `PetClinicApplication` directly, activating the 'mysql' profile and disabling Docker Compose integration, facilitating easy execution and testing of the PetClinic application against a Testcontainers-managed MySQL instance without requiring a pre-installed database server.",
   "attributes": [],
   "functions": [
     {
       "name": "container",
       "return_type": "MySQLContainer<?>",
-      "membership_type": "static",
-      "access_modifier": "package-private",
+      "visibility": "static",
       "parameters": [],
       "annotations": ["@ServiceConnection", "@Profile(\"mysql\")", "@Bean"]
     },
     {
       "name": "main",
       "return_type": "void",
-      "membership_type": "static",
-      "access_modifier": "public",
+      "visibility": "public static",
       "parameters": [
         {
           "name": "args",
