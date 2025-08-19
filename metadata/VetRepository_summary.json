@@ -1,25 +1,30 @@
 {
   "file_name": "VetRepository.java",
-  "file_path": "org/springframework/samples/petclinic/vet/VetRepository.java",
-  "file_summary": "This Java file defines the `VetRepository` interface, which serves as a Spring Data Repository for managing `Vet` domain objects in the PetClinic application. It extends Spring's `Repository` interface, leveraging Spring Data's powerful conventions for query method creation, eliminating the need for explicit implementation. The interface provides methods for retrieving all `Vet` entities, both as a `Collection` and as a paginated `Page`, allowing for efficient data access and handling of large datasets. Crucially, methods are annotated with `@Transactional(readOnly = true)` to ensure read-only database operations and `@Cacheable(\"vets\")` to enable caching of vet data, improving performance by reducing database hits.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java",
+  "file_summary": "This Java interface, `VetRepository`, serves as a data access layer for `Vet` domain objects within the Spring PetClinic application. It extends Spring Data's `Repository` interface, leveraging its conventions for query method generation. The primary purpose of this repository is to retrieve veterinarian data from the persistence layer. It defines two `findAll` methods: one to fetch all `Vet` entities as a `Collection`, and another to retrieve them in a paginated manner using `Pageable`. Both methods are marked as `@Transactional(readOnly = true)` to optimize database operations and are `@Cacheable(\"vets\")` to enable caching of veterinarian data, improving application performance by reducing redundant database calls.",
   "attributes": [],
   "functions": [
     {
-      "name": "findAll",
+      "name": "findAll()",
       "return_type": "Collection<Vet>",
       "parameters": [],
-      "membership_type": "public"
+      "annotations": ["@Transactional(readOnly = true)", "@Cacheable(\"vets\")"]
     },
     {
-      "name": "findAll",
+      "name": "findAll(Pageable pageable)",
       "return_type": "Page<Vet>",
-      "parameters": [
-        {
-          "name": "pageable",
-          "type": "Pageable"
-        }
-      ],
-      "membership_type": "public"
+      "parameters": ["Pageable pageable"],
+      "annotations": ["@Transactional(readOnly = true)", "@Cacheable(\"vets\")"]
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.cache.annotation.Cacheable",
+    "org.springframework.dao.DataAccessException",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.data.repository.Repository",
+    "org.springframework.transaction.annotation.Transactional",
+    "java.util.Collection",
+    "org.springframework.samples.petclinic.vet.Vet"
   ]
 }
