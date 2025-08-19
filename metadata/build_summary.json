@@ -1,0 +1,48 @@
+{
+  "file_name": "build.gradle",
+  "file_path": "",
+  "file_summary": "This `build.gradle` file orchestrates the build process for a Spring Boot application, defining its dependencies, plugins, and core configurations. It applies essential Gradle plugins such as 'java' for standard compilation, 'checkstyle' for code quality, 'org.springframework.boot' for Spring Boot specific features, and 'org.graalvm.buildtools.native' for generating native executables. The project is identified with a group 'org.springframework.samples' and version '3.5.0', and is configured to use Java 17. The file declares a comprehensive set of dependencies, including Spring Boot starters for data JPA, Thymeleaf, Web, and Validation, along with various database connectors (H2, MySQL, PostgreSQL), caching libraries (Caffeine), and webjar assets like Bootstrap. It also includes development tools and extensive testing dependencies utilizing Testcontainers. Code quality is maintained through Checkstyle, with specific configurations for Spring's formatting and 'nohttp' checks. Additionally, it manages the Gradle wrapper version and disables certain AOT-related tasks.",
+  "attributes": [
+    {
+      "name": "group",
+      "type": "String",
+      "membership": "Global Property"
+    },
+    {
+      "name": "version",
+      "type": "String",
+      "membership": "Global Property"
+    },
+    {
+      "name": "java.toolchain.languageVersion",
+      "type": "Integer (JavaLanguageVersion)",
+      "membership": "Configuration Property"
+    },
+    {
+      "name": "ext.checkstyleVersion",
+      "type": "String",
+      "membership": "Extension Property"
+    },
+    {
+      "name": "ext.springJavaformatCheckstyleVersion",
+      "type": "String",
+      "membership": "Extension Property"
+    },
+    {
+      "name": "ext.webjarsLocatorLiteVersion",
+      "type": "String",
+      "membership": "Extension Property"
+    },
+    {
+      "name": "ext.webjarsFontawesomeVersion",
+      "type": "String",
+      "membership": "Extension Property"
+    },
+    {
+      "name": "ext.webjarsBootstrapVersion",
+      "type": "String",
+      "membership": "Extension Property"
+    }
+  ],
+  "functions": []
+}
