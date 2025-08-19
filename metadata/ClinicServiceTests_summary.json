@@ -1,0 +1,39 @@
+{
+  "file_name": "ClinicServiceTests.java",
+  "file_path": "org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+  "file_summary": "This Java file, `ClinicServiceTests.java`, contains integration tests for the Spring PetClinic application's service and repository layers. It is designed to verify the correct interaction and persistence operations between the application's business logic and the underlying JPA repositories. The tests leverage the Spring TestContext Framework, benefiting from features like IoC container caching, dependency injection (e.g., `OwnerRepository`, `PetTypeRepository`, `VetRepository` are autowired), and automatic transaction management with default rollback after each test method. This setup ensures test isolation and prevents side effects on the database. Key functionalities tested include searching for owners by last name, fetching owner details with associated pets, performing CRUD operations (insert, update) on owners and pets, managing pet types, and verifying vet information. It also includes tests for adding and retrieving visits for pets, demonstrating comprehensive data access layer testing using real database interactions configured by `@DataJpaTest` and `@AutoConfigureTestDatabase(replace = Replace.NONE)`.",
+  "attributes": [
+    {
+      "name": "owners",
+      "data_type": "OwnerRepository",
+      "membership_type": "protected"
+    },
+    {
+      "name": "types",
+      "data_type": "PetTypeRepository",
+      "membership_type": "protected"
+    },
+    {
+      "name": "vets",
+      "data_type": "VetRepository",
+      "membership_type": "protected"
+    },
+    {
+      "name": "pageable",
+      "data_type": "Pageable",
+      "membership_type": "default"
+    }
+  ],
+  "functions": [
+    "shouldFindOwnersByLastName",
+    "shouldFindSingleOwnerWithPet",
+    "shouldInsertOwner",
+    "shouldUpdateOwner",
+    "shouldFindAllPetTypes",
+    "shouldInsertPetIntoDatabaseAndGenerateId",
+    "shouldUpdatePetName",
+    "shouldFindVets",
+    "shouldAddNewVisitForPet",
+    "shouldFindVisitsByPetId"
+  ]
+}
