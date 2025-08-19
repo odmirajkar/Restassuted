@@ -1,0 +1,49 @@
+{
+  "file_name": "VetControllerTests.java",
+  "file_path": "org/springframework/samples/petclinic/vet/VetControllerTests.java",
+  "file_summary": "This Java class, `VetControllerTests`, provides comprehensive unit tests for the `VetController` within the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus solely on the web layer, allowing isolated testing of the controller's behavior without loading the full application context. The class mocks the `VetRepository` using `@MockitoBean` to control data returned by the repository. It defines mock `Vet` objects (James and Helen) with associated specialties to simulate realistic data scenarios. The `@BeforeEach` method sets up the mock behavior for `findAll` methods of the `VetRepository`. The tests include `testShowVetListHtml` which verifies the HTML view and model attributes for the `/vets.html` endpoint, and `testShowResourcesVetList` which checks the JSON API endpoint `/vets` for correct status and content. Additionally, the tests are conditionally disabled in Native Image and AOT modes, indicating specific testing environment considerations.",
+  "attributes": [
+    {
+      "name": "mockMvc",
+      "type": "MockMvc",
+      "membership_type": "private"
+    },
+    {
+      "name": "vets",
+      "type": "VetRepository",
+      "membership_type": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "james",
+      "return_type": "Vet",
+      "parameters": [],
+      "membership_type": "private"
+    },
+    {
+      "name": "helen",
+      "return_type": "Vet",
+      "parameters": [],
+      "membership_type": "private"
+    },
+    {
+      "name": "setup",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "private"
+    },
+    {
+      "name": "testShowVetListHtml",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "private"
+    },
+    {
+      "name": "testShowResourcesVetList",
+      "return_type": "void",
+      "parameters": [],
+      "membership_type": "private"
+    }
+  ]
+}
