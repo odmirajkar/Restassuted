@@ -1,33 +1,7 @@
 {
-  "file_name": "devcontainer.json",
-  "file_path": "/devcontainer.json",
-  "file_summary": "This JSON file defines the configuration for a Dev Container, specifically tailored to provide a comprehensive Java development environment. It sets 'Java' as its name and uses `mcr.microsoft.com/devcontainers/base:ubuntu` as the base Docker image. The configuration integrates several key features: it installs Oracle JDK version 21 via `ghcr.io/devcontainers/features/java:1`, includes `ghcr.io/devcontainers/features/azure-cli:1` for Azure command-line tools, `ghcr.io/devcontainers/features/docker-in-docker:2` for nested Docker functionality, and `ghcr.io/devcontainers/features/github-cli:1` for GitHub CLI access. \n\nAdditionally, the file customizes the Visual Studio Code experience within the container by specifying essential extensions for Java development. These include \"redhat.vscode-xml\" for XML support, \"visualstudioexptteam.vscodeintellicode\" for AI-assisted coding, and \"vscjava.vscode-java-pack,\" which is a collection of popular Java extensions. The `remoteUser` is configured as \"vscode,\" indicating the user context within the container. This setup ensures a consistent, pre-configured, and fully-equipped environment for Java developers, minimizing setup time and ensuring project consistency.",
-  "attributes": [
-    {
-      "name": "name",
-      "type": "String",
-      "membership_type": "Top-level property"
-    },
-    {
-      "name": "image",
-      "type": "String",
-      "membership_type": "Top-level property"
-    },
-    {
-      "name": "features",
-      "type": "Object",
-      "membership_type": "Top-level property"
-    },
-    {
-      "name": "customizations",
-      "type": "Object",
-      "membership_type": "Top-level property"
-    },
-    {
-      "name": "remoteUser",
-      "type": "String",
-      "membership_type": "Top-level property"
-    }
-  ],
-  "functions": []
+"file_name":"devcontainer.json",
+"file_path":"N/A",
+"file summary":"This JSON file serves as a `devcontainer.json` configuration, defining a standardized and reproducible development environment for Java projects. It specifies `mcr.microsoft.com/devcontainers/base:ubuntu` as the base image. The configuration includes several key features essential for a modern development workflow: it installs Oracle JDK version 21, provides the Azure CLI for cloud interactions, integrates Docker-in-Docker capabilities, and includes the GitHub CLI for streamlined Git operations. Furthermore, the file customizes the VS Code experience within the container by recommending crucial extensions for Java development, such as 'redhat.vscode-xml' for XML support, 'visualstudioexptteam.vscodeintellicode' for AI-assisted coding, and the comprehensive 'vscjava.vscode-java-pack'. The `remoteUser` is set to 'vscode', ensuring consistency in user context within the container. This setup aims to provide developers with a complete, pre-configured environment, reducing setup time and ensuring all team members work with identical toolchains and dependencies.",
+"attributes":[],
+"functions":[]
 }
