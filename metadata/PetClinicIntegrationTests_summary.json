@@ -1,47 +1,51 @@
 {
   "file_name": "PetClinicIntegrationTests.java",
-  "file_path": "Not provided in the prompt, typically src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
-  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as an integration test suite for the Spring PetClinic application. It leverages Spring Boot's testing framework to launch the application on a random port, enabling comprehensive end-to-end testing. The primary purpose of this class is to verify the correct functioning of various application components, including data access and web-layer interactions. It includes a test method to ensure that the `VetRepository` can successfully retrieve all veterinarians, implicitly checking caching mechanisms. Another test method performs an HTTP GET request to the `/owners/1` endpoint, asserting that the web interface correctly returns an HTTP 200 OK status for owner details. The class utilizes annotations like `@SpringBootTest`, `@LocalServerPort`, and `@Autowired` to set up the test environment and inject necessary dependencies such as `VetRepository` and `RestTemplateBuilder`. It also contains a `main` method, which allows the application to be launched directly from this class, making it useful for local testing or demonstration.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java",
+  "file_summary": "This Java class, `PetClinicIntegrationTests`, serves as an integration test suite for the Spring PetClinic application. It leverages Spring Boot's testing capabilities by using `@SpringBootTest` to load the full application context on a random port, simulating a running application. The primary purpose is to verify the application's functionality from an end-to-end perspective. It contains tests that interact with the application's data layer, specifically testing the `VetRepository` for data retrieval and caching behavior. Additionally, it performs HTTP requests to verify the functionality of web endpoints, such as retrieving owner details, ensuring that the API returns the expected HTTP status. The class also includes a `main` method, which allows the PetClinic application to be launched directly from this test class for convenience, though typically integration tests don't include a main method for starting the application.",
   "attributes": [
     {
       "name": "port",
       "type": "int",
-      "membership": "instance (injected by @LocalServerPort)"
+      "membership": "instance",
+      "visibility": "private"
     },
     {
       "name": "vets",
-      "type": "VetRepository",
-      "membership": "private instance (injected by @Autowired)"
+      "type": "org.springframework.samples.petclinic.vet.VetRepository",
+      "membership": "instance",
+      "visibility": "private"
     },
     {
       "name": "builder",
-      "type": "RestTemplateBuilder",
-      "membership": "private instance (injected by @Autowired)"
+      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
+      "membership": "instance",
+      "visibility": "private"
     }
   ],
   "functions": [
     {
       "name": "testFindAll",
-      "parameters": [],
       "return_type": "void",
-      "membership": "instance (test method)"
+      "parameters": [],
+      "visibility": "default"
     },
     {
       "name": "testOwnerDetails",
-      "parameters": [],
       "return_type": "void",
-      "membership": "instance (test method)"
+      "parameters": [],
+      "visibility": "default"
     },
     {
       "name": "main",
+      "return_type": "void",
       "parameters": [
         {
           "name": "args",
-          "type": "String[]"
+          "type": "java.lang.String[]"
         }
       ],
-      "return_type": "void",
-      "membership": "public static"
+      "visibility": "public",
+      "modifier": "static"
     }
   ]
 }
