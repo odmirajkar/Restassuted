@@ -1,83 +1,37 @@
 {
   "file_name": "VisitController.java",
   "file_path": "org/springframework/samples/petclinic/owner/VisitController.java",
-  "file_summary": "The `VisitController` class is a Spring MVC `@Controller` responsible for handling web requests related to managing pet visits within the PetClinic application. It orchestrates the process of adding new visits to a pet associated with a specific owner.\n\nKey functionalities include:\n- **Data Binding Control**: It uses `@InitBinder` to prevent binding of the `id` field, enhancing security.\n- **Model Preparation**: The `@ModelAttribute(\"visit\") loadPetWithVisit` method is executed before relevant request handlers. It retrieves the `Owner` and `Pet` based on path variables (`ownerId` and `petId`), adds them to the model, and initializes a new `Visit` object, associating it with the pet. This ensures fresh data and proper `Pet` object context.\n- **Displaying Form**: The `initNewVisitForm` method handles GET requests to display the form for creating a new visit.\n- **Processing Form Submission**: The `processNewVisitForm` method handles POST requests, validates the submitted `Visit` data using `@Valid`. If validation passes, the new visit is added to the pet, and the `Owner` is saved through the `OwnerRepository`. If there are errors, the form is re-displayed. A success message is added as a flash attribute upon successful booking.\n\nThis controller ensures a smooth user experience for scheduling and recording pet visits.",
+  "file_summary": "The `VisitController` class acts as a Spring MVC controller responsible for handling web requests related to managing pet visits in the PetClinic application. It is annotated with `@Controller`, indicating its role in the presentation layer.\n\nThis controller relies on an `OwnerRepository` to interact with owner and pet data. It utilizes an `@InitBinder` to prevent binding the `id` field, enhancing security. A crucial aspect is the `@ModelAttribute(\"visit\")` method, `loadPetWithVisit`, which is executed before form-handling methods. This method fetches the `Owner` and `Pet` based on path variables, creates a new `Visit` object, associates it with the retrieved pet, and populates the Spring model with these objects, ensuring that fresh data and an initialized `Visit` are always available for the forms.\n\nIt defines a `@GetMapping` endpoint to display the form for creating a new visit and a `@PostMapping` endpoint to process the submission of this form. The `processNewVisitForm` method performs validation on the `Visit` object. If validation fails, it returns to the form; otherwise, it adds the visit to the owner's pet, saves the updated owner entity via the repository, and redirects to the owner's details page with a success message. This class orchestrates the user interface flow for recording pet visits.",
   "attributes": [
     {
       "name": "owners",
-      "type": "OwnerRepository",
+      "data_type": "OwnerRepository",
       "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "VisitController",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "owners",
-          "type": "OwnerRepository"
-        }
-      ]
-    },
-    {
-      "name": "setAllowedFields",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "dataBinder",
-          "type": "WebDataBinder"
-        }
-      ]
-    },
-    {
-      "name": "loadPetWithVisit",
-      "return_type": "Visit",
-      "parameters": [
-        {
-          "name": "ownerId",
-          "type": "int"
-        },
-        {
-          "name": "petId",
-          "type": "int"
-        },
-        {
-          "name": "model",
-          "type": "Map<String, Object>"
-        }
-      ]
-    },
-    {
-      "name": "initNewVisitForm",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "processNewVisitForm",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "owner",
-          "type": "Owner"
-        },
-        {
-          "name": "petId",
-          "type": "int"
-        },
-        {
-          "name": "visit",
-          "type": "Visit"
-        },
-        {
-          "name": "result",
-          "type": "BindingResult"
-        },
-        {
-          "name": "redirectAttributes",
-          "type": "RedirectAttributes"
-        }
-      ]
-    }
+    "VisitController(OwnerRepository owners)",
+    "setAllowedFields(WebDataBinder dataBinder): void",
+    "loadPetWithVisit(@PathVariable(\"ownerId\") int ownerId, @PathVariable(\"petId\") int petId, Map<String, Object> model): Visit",
+    "initNewVisitForm(): String",
+    "processNewVisitForm(@ModelAttribute Owner owner, @PathVariable int petId, @Valid Visit visit, BindingResult result, RedirectAttributes redirectAttributes): String"
+  ],
+  "dependent_class_list": [
+    "java.util.Map",
+    "java.util.Optional",
+    "org.springframework.stereotype.Controller",
+    "org.springframework.validation.BindingResult",
+    "org.springframework.web.bind.WebDataBinder",
+    "org.springframework.web.bind.annotation.GetMapping",
+    "org.springframework.web.bind.annotation.InitBinder",
+    "org.springframework.web.bind.annotation.ModelAttribute",
+    "org.springframework.web.bind.annotation.PathVariable",
+    "org.springframework.web.bind.annotation.PostMapping",
+    "jakarta.validation.Valid",
+    "org.springframework.web.servlet.mvc.support.RedirectAttributes",
+    "OwnerRepository",
+    "Owner",
+    "Pet",
+    "Visit"
   ]
 }
