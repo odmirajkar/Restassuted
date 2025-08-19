@@ -1,14 +1,18 @@
 {
   "file_name": "WelcomeController.java",
-  "file_path": "org/springframework/samples/petclinic/system/WelcomeController.java",
-  "file_summary": "This Java class, `WelcomeController`, is a core component of the Spring PetClinic sample application, specifically within the `system` package. It is annotated with `@Controller`, marking it as a Spring MVC controller responsible for handling web requests. Its primary purpose is to serve as the entry point for the application's home page. The class contains a single method, `welcome()`, which is mapped to the root URL path (`/`) using the `@GetMapping(\"/\")` annotation. When a user accesses the root URL, this method is invoked, and it returns the string \"welcome\". This string is then resolved by Spring's view resolver mechanisms to typically render a view template named \"welcome\" (e.g., `welcome.html` or `welcome.jsp`), thereby displaying the application's welcome page to the user. It provides a simple, direct way to navigate to the application's initial landing page.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+  "file_summary": "This Java file defines the `WelcomeController` class, which is a core component in the Spring PetClinic application's system module. Annotated with `@Controller`, it serves as a Spring MVC controller responsible for handling web requests. Its primary purpose is to manage the application's home or welcome page. Specifically, it contains a single method, `welcome()`, that is mapped to the root URL (\"/\") using the `@GetMapping` annotation. When a user accesses the application's base URL, this controller will return the logical view name \"welcome\", which typically resolves to a Thymeleaf or JSP template displaying the application's entry page. This controller exemplifies a simple, direct mapping for a landing page in a Spring Boot application.",
   "attributes": [],
   "functions": [
     {
       "name": "welcome",
-      "return_type": "String",
       "parameters": [],
-      "access_modifier": "public"
+      "return_type": "String",
+      "access_modifier": "public",
+      "annotations": [
+        "@GetMapping(\"/@\")"
+      ],
+      "purpose": "Handles GET requests to the root URL (/) and returns the logical view name 'welcome'."
     }
   ]
 }
