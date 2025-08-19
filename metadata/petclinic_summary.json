@@ -1,57 +1,143 @@
 {
-  "file_name": "petclinic.css",
-  "file_path": "N/A",
-  "file_summary": "This CSS file integrates and extends Bootstrap v5.3.6, serving as the core stylesheet for a web application, likely a 'petclinic' system based on the comments. It meticulously defines a comprehensive set of CSS custom properties for global styling, encompassing a broad color palette, typography settings, border styles, and shadow effects. The stylesheet supports both light and dark themes, dynamically adjusting color schemes based on the `data-bs-theme` attribute. Beyond these foundational variables, it provides extensive default and utility styles for standard HTML elements (body, headings, lists, tables, forms) and a wide array of Bootstrap components. This includes responsive grid layouts (containers, rows, columns), flexible box utilities, spacing, sizing, display, position, and visibility controls. Furthermore, it supplies styling for interactive UI elements such as buttons, various navigation types (tabs, pills, navbars), cards, alerts, progress bars, list groups, toasts, modals, tooltips, popovers, and carousels. The file also incorporates custom application-specific styles, overriding or complementing Bootstrap's defaults to achieve a unique visual identity, including specific adjustments for custom fonts, table headers, splash screens, and error pages, along with several defined animations.",
+  "file_name": "style.scss",
+  "file_path": "src/main/resources/static/css/style.scss",
+  "file_summary": "This SCSS (Sass Cascading Style Sheets) file defines the core visual styling for a web application, specifically customizing the Bootstrap framework to align with a 'Spring' themed aesthetic. It establishes a consistent color palette using predefined 'Spring' colors (greens, browns, greys) which are then applied across various UI components. The file overrides and extends Bootstrap's default variables for elements such as body background, text, links, navigation bars, border radii, tables, pagination, and primary buttons. Beyond variable customization, it includes custom CSS rules for general layout elements like containers, headings, error pages, and specific components like job parameter modals, spinner animations, and the display behavior of Angular's `ng-cloak` directive. The file also imports additional SCSS partials (`typography.scss`, `header.scss`, `responsive.scss`) to modularize and complete the application's overall styling, ensuring a cohesive and branded user experience.",
   "attributes": [
     {
-      "name": "Color System Variables",
-      "data_type": "Color/RGB Color",
-      "membership_type": "Global CSS variable, adjusted per theme",
-      "examples": ["--bs-blue", "--bs-primary", "--bs-primary-rgb", "--bs-primary-text-emphasis", "--bs-dark-bg-subtle"]
+      "name": "$icon-font-path",
+      "data_type": "String",
+      "membership_type": "Variable"
     },
     {
-      "name": "Typography Variables",
-      "data_type": "String/Length/Number/Color",
-      "membership_type": "Global CSS variable",
-      "examples": ["--bs-font-sans-serif", "--bs-body-font-size", "--bs-body-line-height", "--bs-heading-color", "--bs-link-hover-color"]
+      "name": "$spring-green",
+      "data_type": "Color (Hex Code)",
+      "membership_type": "Variable"
     },
     {
-      "name": "Border & Shadow Variables",
-      "data_type": "Length/String/Color/Shadow",
-      "membership_type": "Global CSS variable",
-      "examples": ["--bs-border-width", "--bs-border-color", "--bs-border-radius", "--bs-box-shadow-sm"]
+      "name": "$spring-dark-green",
+      "data_type": "Color (Hex Code)",
+      "membership_type": "Variable"
     },
     {
-      "name": "Component Styling Variables",
-      "data_type": "Varies (Length, Color, Image URL, Opacity, Transition, Shadow)",
-      "membership_type": "Scoped CSS variable for specific components",
-      "examples": ["--bs-btn-padding-x", "--bs-form-select-bg-img", "--bs-navbar-toggler-icon-bg", "--bs-card-spacer-y", "--bs-modal-width"]
+      "name": "$spring-brown",
+      "data_type": "Color (Hex Code)",
+      "membership_type": "Variable"
     },
     {
-      "name": "Layout & Responsive Variables",
-      "data_type": "Length",
-      "membership_type": "Global CSS variable",
-      "examples": ["--bs-breakpoint-sm", "--bs-gutter-x"]
+      "name": "$spring-grey",
+      "data_type": "Color (Hex Code)",
+      "membership_type": "Variable"
     },
     {
-      "name": "Utility & State Specific Variables",
-      "data_type": "Varies (Length, Color, Opacity, Percentage)",
-      "membership_type": "Global CSS variable",
-      "examples": ["--bs-focus-ring-color", "--bs-form-valid-color", "--bs-bg-opacity", "--bs-aspect-ratio"]
+      "name": "$spring-light-grey",
+      "data_type": "Color (Hex Code)",
+      "membership_type": "Variable"
     },
     {
-      "name": "Custom Font Definitions",
-      "data_type": "Font File (EOT, WOFF, TTF, SVG)",
-      "membership_type": "Defined via @font-face rule",
-      "examples": ["varela_roundregular", "montserratregular"]
+      "name": "$body-bg",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$text-color",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$link-color",
+      "data_type": "Color (References $spring-dark-green)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$link-hover-color",
+      "data_type": "Color (References $spring-dark-green)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-link-color",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-link-active-color",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-link-hover-color",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-link-hover-bg",
+      "data_type": "Color (References $spring-green)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-toggle-icon-bar-bg",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-toggle-hover-bg",
+      "data_type": "Color (Literal 'transparent')",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$navbar-default-link-active-bg",
+      "data_type": "Color (References $spring-green)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$border-radius-base",
+      "data_type": "Integer",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$border-radius-large",
+      "data_type": "Integer",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$border-radius-small",
+      "data_type": "Integer",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$nav-tabs-active-link-hover-color",
+      "data_type": "Color (References $spring-light-grey)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$nav-tabs-active-link-hover-bg",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$nav-tabs-active-link-hover-border-color",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$nav-tabs-border-color",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$pagination-active-bg",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$pagination-active-border",
+      "data_type": "Color (References $spring-green)",
+      "membership_type": "Variable"
+    },
+    {
+      "name": "$table-border-color",
+      "data_type": "Color (References $spring-brown)",
+      "membership_type": "Variable"
     }
   ],
-  "functions": [
-    "progress-bar-stripes (CSS @keyframes rule)",
-    "spinner-border (CSS @keyframes rule)",
-    "spinner-grow (CSS @keyframes rule)",
-    "placeholder-glow (CSS @keyframes rule)",
-    "placeholder-wave (CSS @keyframes rule)",
-    "spinner (Custom CSS @keyframes rule)"
-  ]
+  "functions": []
 }
