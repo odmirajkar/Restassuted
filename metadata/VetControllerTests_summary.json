@@ -1,49 +1,52 @@
 {
   "file_name": "VetControllerTests.java",
-  "file_path": "org/springframework/samples/petclinic/vet/VetControllerTests.java",
-  "file_summary": "This Java class, `VetControllerTests`, is a unit test for the `VetController` in the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer, specifically the MVC endpoints handled by `VetController`. The class mocks the `VetRepository` using `@MockitoBean` to control its behavior during tests. It sets up mock data for veterinarians (James and Helen) and configures the `VetRepository` mock to return this data when `findAll()` methods are called. The tests verify two main functionalities: displaying the list of vets in an HTML view (checked via `/vets.html?page=1` endpoint) and providing the list of vets as a JSON REST endpoint (checked via `/vets` endpoint with `application/json` acceptance). It ensures correct HTTP status, model attributes, view names, and JSON content.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java",
+  "file_summary": "This Java file contains unit tests for the `VetController` within the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` to focus on testing the web layer, specifically the HTTP endpoints related to veterinarians. The class uses `MockMvc` to simulate HTTP requests and `MockitoBean` to mock the `VetRepository`, ensuring that the tests isolate the controller's behavior without requiring a full database. It includes setup methods to define mock data and expected repository behavior, and test methods to verify the correct handling of requests for displaying vet lists, both in HTML and JSON formats, asserting HTTP status, model attributes, view names, and JSON content.",
   "attributes": [
     {
       "name": "mockMvc",
       "data_type": "MockMvc",
-      "membership_type": "private"
+      "membership_type": "private @Autowired"
     },
     {
       "name": "vets",
       "data_type": "VetRepository",
-      "membership_type": "private"
+      "membership_type": "private @MockitoBean"
     }
   ],
   "functions": [
-    {
-      "name": "james",
-      "return_type": "Vet",
-      "parameters": [],
-      "membership_type": "private"
-    },
-    {
-      "name": "helen",
-      "return_type": "Vet",
-      "parameters": [],
-      "membership_type": "private"
-    },
-    {
-      "name": "setup",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "private"
-    },
-    {
-      "name": "testShowVetListHtml",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "private"
-    },
-    {
-      "name": "testShowResourcesVetList",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "private"
-    }
+    "james()",
+    "helen()",
+    "setup()",
+    "testShowVetListHtml()",
+    "testShowResourcesVetList()"
+  ],
+  "dependent_class_list": [
+    "org.springframework.samples.petclinic.vet.VetController",
+    "org.springframework.samples.petclinic.vet.VetRepository",
+    "org.springframework.samples.petclinic.vet.Vet",
+    "org.springframework.samples.petclinic.vet.Specialty",
+    "org.assertj.core.util.Lists",
+    "org.junit.jupiter.api.BeforeEach",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest",
+    "org.springframework.data.domain.PageImpl",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.http.MediaType",
+    "org.springframework.test.context.aot.DisabledInAotMode",
+    "org.springframework.test.context.bean.override.mockito.MockitoBean",
+    "org.springframework.test.web.servlet.MockMvc",
+    "org.springframework.test.web.servlet.ResultActions",
+    "org.springframework.test.web.servlet.request.MockMvcRequestBuilders",
+    "org.mockito.ArgumentMatchers",
+    "org.mockito.BDDMockito",
+    "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers.status",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers.model",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers.view",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers.content",
+    "org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath"
   ]
 }
