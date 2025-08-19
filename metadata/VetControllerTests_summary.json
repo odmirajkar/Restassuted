@@ -1,49 +1,49 @@
 {
   "file_name": "VetControllerTests.java",
   "file_path": "org/springframework/samples/petclinic/vet/VetControllerTests.java",
-  "file_summary": "This Java class, `VetControllerTests`, provides comprehensive unit tests for the `VetController` within the Spring PetClinic application. It utilizes Spring Boot's `@WebMvcTest` annotation to focus solely on the web layer, allowing isolated testing of the controller's behavior without loading the full application context. The class mocks the `VetRepository` using `@MockitoBean` to control data returned by the repository. It defines mock `Vet` objects (James and Helen) with associated specialties to simulate realistic data scenarios. The `@BeforeEach` method sets up the mock behavior for `findAll` methods of the `VetRepository`. The tests include `testShowVetListHtml` which verifies the HTML view and model attributes for the `/vets.html` endpoint, and `testShowResourcesVetList` which checks the JSON API endpoint `/vets` for correct status and content. Additionally, the tests are conditionally disabled in Native Image and AOT modes, indicating specific testing environment considerations.",
+  "file_summary": "This Java class, `VetControllerTests`, serves as a comprehensive integration test for the `VetController` within the Spring PetClinic application. It leverages Spring Boot's `@WebMvcTest` to provide a focused slice of the application context, specifically for testing the web layer without loading the entire application. The tests utilize `MockMvc` to simulate HTTP requests to the `VetController` and assert the expected outcomes, including HTTP status, view names, model attributes, and JSON content. The `VetRepository` dependency of the controller is mocked using `@MockitoBean`, allowing for controlled data provisioning and verification of repository interactions. Helper methods are provided to create sample `Vet` objects, and a `@BeforeEach` setup method configures the mock `VetRepository` to return predefined data. The class contains test cases for both HTML-based vet list display and JSON-based REST API responses, ensuring the controller handles different request formats correctly.",
   "attributes": [
     {
       "name": "mockMvc",
       "type": "MockMvc",
-      "membership_type": "private"
+      "membership_type": "private @Autowired"
     },
     {
       "name": "vets",
       "type": "VetRepository",
-      "membership_type": "private"
+      "membership_type": "private @MockitoBean"
     }
   ],
   "functions": [
     {
       "name": "james",
       "return_type": "Vet",
-      "parameters": [],
-      "membership_type": "private"
+      "parameters": []
     },
     {
       "name": "helen",
       "return_type": "Vet",
-      "parameters": [],
-      "membership_type": "private"
+      "parameters": []
     },
     {
       "name": "setup",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "private"
+      "annotations": ["@BeforeEach"]
     },
     {
       "name": "testShowVetListHtml",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "private"
+      "throws": ["Exception"],
+      "annotations": ["@Test"]
     },
     {
       "name": "testShowResourcesVetList",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "private"
+      "throws": ["Exception"],
+      "annotations": ["@Test"]
     }
   ]
 }
