@@ -1,20 +1,23 @@
 {
   "file_name": "ValidatorTests.java",
   "file_path": "org/springframework/samples/petclinic/model/ValidatorTests.java",
-  "file_summary": "This Java file contains unit tests for verifying the functionality of Bean Validation in the Spring PetClinic application, specifically for the `Person` model. The main purpose is to ensure that validation rules are correctly applied and errors are captured when data does not meet the specified constraints. It uses JUnit 5 for testing and Hibernate Validator as the Bean Validation implementation. The test demonstrates how to set up a `Validator` and asserts that a `Person` object with an empty first name fails validation as expected, checking both the property path and the error message.",
+  "file_summary": "This Java file, `ValidatorTests.java`, is a unit test class designed to verify the proper functioning of Bean Validation for the `Person` model within the Spring PetClinic sample application. Its main goal is to ensure that validation constraints are correctly applied and enforced, especially useful when upgrading underlying validation libraries like Hibernate Validator. The class uses JUnit 5 for testing and leverages Spring's `LocalValidatorFactoryBean` to obtain a `jakarta.validation.Validator` instance. It contains a specific test case, `shouldNotValidateWhenFirstNameEmpty`, which asserts that a `Person` object with an empty first name correctly triggers a `ConstraintViolation` on the `firstName` property, confirming the 'must not be blank' validation rule is active and working as expected.",
   "attributes": [],
   "functions": [
     {
       "name": "createValidator",
       "return_type": "jakarta.validation.Validator",
-      "membership_type": "private",
-      "parameters": []
+      "visibility": "private",
+      "parameters": [],
+      "description": "Initializes and returns a `LocalValidatorFactoryBean`, configured as a `Validator` instance for performing bean validation."
     },
     {
       "name": "shouldNotValidateWhenFirstNameEmpty",
       "return_type": "void",
-      "membership_type": "public",
-      "parameters": []
+      "visibility": "package-private",
+      "parameters": [],
+      "annotations": ["@Test"],
+      "description": "Tests the validation mechanism to ensure that a `Person` object with an empty first name fails validation, specifically checking for a constraint violation on the 'firstName' property with the expected error message."
     }
   ]
 }
