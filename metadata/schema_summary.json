@@ -1,5 +1,7 @@
 {
   "file_name": "schema.sql",
-  "file_path": "src/main/resources/db/hsqldb/schema.sql",
-  "file_summary": "This SQL script defines the database schema for a Pet Clinic application, likely intended for an HSQLDB database given the 'IDENTITY' keyword for primary keys. It starts by dropping all existing tables to ensure a clean slate, then proceeds to create seven core tables: 'vets', 'specialties', 'vet_specialties', 'types', 'owners', 'pets', and 'visits'.\n\nEach table is designed with appropriate columns and data types to store information relevant to a veterinary practice, such as vet details, their specializations, pet types, owner information, pet details (including birth dates and relationships to owners and types), and records of visits (including visit dates and descriptions). The script also includes the creation of indexes on key columns (like last names, names, and pet IDs) to optimize query performance and establishes foreign key constraints to enforce referential integrity between related tables, ensuring data consistency across the database. This schema forms the foundational data model for managing pet clinic operations."
+  "file_path": "N/A",
+  "file_summary": "This SQL script defines the database schema for a pet clinic application. It creates seven tables with appropriate columns, primary keys, and foreign key relationships to manage data related to veterinarians, their specialties, pet owners, pets, pet types, and pet visits. The schema ensures data integrity and establishes clear relationships between different entities, such as linking pets to their owners and types, and visits to specific pets. Indexes are also defined on relevant columns to improve query performance. This script is typically used to initialize or reset the database structure for the application.",
+  "attributes": [],
+  "functions": []
 }
