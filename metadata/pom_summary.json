@@ -1,118 +1,20 @@
 {
   "file_name": "pom.xml",
-  "file_path": "pom.xml",
-  "file summary": "This `pom.xml` file serves as the central configuration for the `spring-petclinic` Maven project, a Spring Boot application. It inherits from `spring-boot-starter-parent` version 3.5.0, establishing a baseline for consistent dependency management and build configurations. The file defines essential project metadata such as `groupId` (`org.springframework.samples`), `artifactId` (`spring-petclinic`), and `version` (`3.5.0-SNAPSHOT`). It specifies project properties including the target Java version (17), encoding, and versions for various development tools and libraries like WebJars, Checkstyle, and JaCoCo. The POM declares a comprehensive set of dependencies crucial for a modern Spring Boot application, including starters for Actuator, Cache, JPA, Web, Validation, and Thymeleaf, along with test dependencies. It supports multiple databases (H2, MySQL, PostgreSQL) and caching with Caffeine. Furthermore, the build section outlines various Maven plugins that enforce code quality, formatting, and orchestrate build processes, such as `maven-enforcer-plugin` (Java version enforcement), `spring-javaformat-maven-plugin` (code formatting), `maven-checkstyle-plugin` (code style checks), `jacoco-maven-plugin` (code coverage), and `spring-boot-maven-plugin` (for building runnable JARs and generating build info). It also includes plugins for GraalVM native image compilation, Git commit ID integration, and Software Bill of Materials (SBOM) generation. The file defines `css` and `m2e` profiles for specific build tasks (SCSS compilation) and IDE integration respectively, and configures Spring snapshot/milestone repositories.",
+  "file_path": "",
+  "file_summary": "This is a Maven Project Object Model (POM) file for the 'spring-petclinic' Spring Boot application. It inherits configurations from the 'spring-boot-starter-parent' and defines crucial project metadata such as its groupId ('org.springframework.samples'), artifactId ('spring-petclinic'), and version ('3.5.0-SNAPSHOT'). The file specifies various project properties, including the required Java version (17), character encoding, and versions for third-party libraries and build tools. It meticulously lists all project dependencies, categorizing them into Spring Boot starters (e.g., web, data-jpa, validation, thymeleaf, actuator, cache), database connectors (H2, MySQL, PostgreSQL), caching libraries (Caffeine), and webjars (Bootstrap, Font Awesome). The build section is comprehensive, configuring a suite of Maven plugins essential for code quality, compilation, testing, and packaging. These plugins include `maven-enforcer-plugin` (for Java version enforcement), `spring-javaformat-maven-plugin` (for code formatting), `maven-checkstyle-plugin` (for static code analysis), `jacoco-maven-plugin` (for code coverage), and `spring-boot-maven-plugin` (for creating executable JARs and build info). Additionally, it defines Maven repositories, plugin repositories, and two build profiles: 'css' for compiling SCSS assets and 'm2e' for specific Eclipse (m2e) integration settings. Overall, this POM orchestrates the entire build lifecycle, dependency management, and quality assurance for the 'spring-petclinic' application.",
   "attributes": [
-    {
-      "name": "modelVersion",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "parent.groupId",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "parent.artifactId",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "parent.version",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "groupId",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "artifactId",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "version",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "name",
-      "data_type": "String",
-      "membership_type": "Project Metadata"
-    },
-    {
-      "name": "java.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "project.build.sourceEncoding",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "project.reporting.outputEncoding",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "project.build.outputTimestamp",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "webjars-locator.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "webjars-bootstrap.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "webjars-font-awesome.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "checkstyle.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "jacoco.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "libsass.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "lifecycle-mapping",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "maven-checkstyle.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "nohttp-checkstyle.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    },
-    {
-      "name": "spring-format.version",
-      "data_type": "String",
-      "membership_type": "Project Configuration Property"
-    }
-  ],
-  "functions": []
+    "modelVersion: String",
+    "parent: Object (groupId, artifactId, version, relativePath)",
+    "groupId: String",
+    "artifactId: String",
+    "version: String",
+    "name: String",
+    "properties: Object (key-value pairs for various versions, encoding, etc.)",
+    "dependencies: Array of Objects (each defining a groupId, artifactId, version, scope for libraries)",
+    "build: Object (plugins, pluginManagement, resources)",
+    "licenses: Array of Objects (name, url)",
+    "repositories: Array of Objects (id, name, url, snapshots enabled status)",
+    "pluginRepositories: Array of Objects (id, name, url, snapshots enabled status)",
+    "profiles: Array of Objects (id, activation, build configurations)"
+  ]
 }
