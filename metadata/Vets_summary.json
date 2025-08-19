@@ -1,0 +1,20 @@
+{
+  "file_name": "Vets.java",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+  "file_summary": "This Java class, `Vets`, serves as a simple domain object designed to encapsulate a collection of `Vet` objects. Its primary purpose is to facilitate XML marshalling, particularly for use with Spring's `MarshallingView`. By being annotated with `@XmlRootElement`, instances of this class can be easily converted into XML. The `getVetList()` method, annotated with `@XmlElement`, ensures that the list of veterinarians is properly exposed as an XML element when marshalled. This design pattern allows for a straightforward way to represent and serialize a group of veterinarians into an XML format, making it suitable for RESTful endpoints returning XML.",
+  "attributes": [
+    {
+      "name": "vets",
+      "data_type": "List<Vet>",
+      "membership_type": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "getVetList",
+      "return_type": "List<Vet>",
+      "membership_type": "public",
+      "parameters": []
+    }
+  ]
+}
