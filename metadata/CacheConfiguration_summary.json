@@ -1,0 +1,20 @@
+{
+  "file_name": "CacheConfiguration.java",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+  "file_summary": "This Java class, `CacheConfiguration`, is a Spring `@Configuration` component designed to set up and manage caching within the PetClinic application, specifically utilizing the JCache API. Its primary purpose is to define and configure application-wide caches. It enables caching functionalities through the `@EnableCaching` annotation and provides a customizer bean (`petclinicCacheConfigurationCustomizer`) that creates a cache named \"vets\". This configuration also ensures that statistics are enabled for the cache, making performance metrics accessible, for example, via JMX. It highlights that while basic statistics can be configured programmatically, more advanced options like size limits depend on the specific JCache implementation.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "petclinicCacheConfigurationCustomizer",
+      "return_type": "org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer",
+      "parameters": [],
+      "visibility": "public"
+    },
+    {
+      "name": "cacheConfiguration",
+      "return_type": "javax.cache.configuration.Configuration<Object, Object>",
+      "parameters": [],
+      "visibility": "private"
+    }
+  ]
+}
