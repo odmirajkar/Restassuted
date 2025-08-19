@@ -1,79 +1,165 @@
 {
   "file_name": "PetController.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetController.java",
-  "file_summary": "This Java class, `PetController`, is a Spring MVC `@Controller` responsible for managing pet-related operations within the PetClinic application, specifically for existing owners. It handles the creation and updating of pet information. The controller uses `@ModelAttribute` methods to pre-populate form data, such as a list of pet types, and to retrieve `Owner` and `Pet` objects based on URL path variables (`ownerId`, `petId`). It includes `@InitBinder` methods for customizing data binding, disallowing the 'id' field for owners, and registering a `PetValidator` for pet objects. The class defines GET and POST mappings for displaying and processing pet creation and update forms. It performs server-side validation, including checking for duplicate pet names per owner and ensuring birth dates are not in the future. Upon successful form submission, it saves the changes via `OwnerRepository` and redirects the user, providing feedback through flash attributes.",
+  "file_summary": "The `PetController` class is a Spring MVC controller responsible for handling web requests related to `Pet` entities, specifically within the context of a particular `Owner`. It is mapped to paths under `/owners/{ownerId}`, indicating that all pet operations are associated with a specific owner.\n\nThis controller facilitates the creation and updating of pet information. It uses `@ModelAttribute` to pre-populate form data for `PetType`s, `Owner`s, and `Pet`s themselves, retrieving existing entities or initializing new ones based on path variables. It includes `@InitBinder` methods to configure data binding for `Owner` (disallowing 'id' field) and to apply a custom `PetValidator` for `Pet` objects.\n\nThe class provides GET and POST endpoints for both creating new pets (`/pets/new`) and editing existing ones (`/pets/{petId}/edit`). The `processCreationForm` and `processUpdateForm` methods handle form submissions, performing validation (including checks for duplicate pet names for an owner and future birth dates) and persisting changes via the `OwnerRepository`. Upon successful operations, it redirects to the owner's details page. A private helper method `updatePetDetails` is used to manage the persistence of pet information, either updating an existing pet or adding a new one to the owner's collection.",
   "attributes": [
     {
       "name": "VIEWS_PETS_CREATE_OR_UPDATE_FORM",
-      "data_type": "String",
+      "type": "String",
       "membership_type": "private static final"
     },
     {
       "name": "owners",
-      "data_type": "OwnerRepository",
+      "type": "OwnerRepository",
       "membership_type": "private final"
     },
     {
       "name": "types",
-      "data_type": "PetTypeRepository",
+      "type": "PetTypeRepository",
       "membership_type": "private final"
     }
   ],
   "functions": [
     {
       "name": "PetController",
-      "parameters": "OwnerRepository owners, PetTypeRepository types",
-      "type": "constructor"
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "owners",
+          "type": "OwnerRepository"
+        },
+        {
+          "name": "types",
+          "type": "PetTypeRepository"
+        }
+      ]
     },
     {
       "name": "populatePetTypes",
-      "parameters": "",
-      "type": "public Collection<PetType>"
+      "return_type": "Collection<PetType>",
+      "parameters": []
     },
     {
       "name": "findOwner",
-      "parameters": "int ownerId",
-      "type": "public Owner"
+      "return_type": "Owner",
+      "parameters": [
+        {
+          "name": "ownerId",
+          "type": "int"
+        }
+      ]
     },
     {
       "name": "findPet",
-      "parameters": "int ownerId, Integer petId",
-      "type": "public Pet"
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "ownerId",
+          "type": "int"
+        },
+        {
+          "name": "petId",
+          "type": "Integer"
+        }
+      ]
     },
     {
       "name": "initOwnerBinder",
-      "parameters": "WebDataBinder dataBinder",
-      "type": "public void"
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "dataBinder",
+          "type": "WebDataBinder"
+        }
+      ]
     },
     {
       "name": "initPetBinder",
-      "parameters": "WebDataBinder dataBinder",
-      "type": "public void"
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "dataBinder",
+          "type": "WebDataBinder"
+        }
+      ]
     },
     {
       "name": "initCreationForm",
-      "parameters": "Owner owner, ModelMap model",
-      "type": "public String"
+      "return_type": "String",
+      "parameters": [
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "model",
+          "type": "ModelMap"
+        }
+      ]
     },
     {
       "name": "processCreationForm",
-      "parameters": "Owner owner, @Valid Pet pet, BindingResult result, RedirectAttributes redirectAttributes",
-      "type": "public String"
+      "return_type": "String",
+      "parameters": [
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "pet",
+          "type": "Pet"
+        },
+        {
+          "name": "result",
+          "type": "BindingResult"
+        },
+        {
+          "name": "redirectAttributes",
+          "type": "RedirectAttributes"
+        }
+      ]
     },
     {
       "name": "initUpdateForm",
-      "parameters": "",
-      "type": "public String"
+      "return_type": "String",
+      "parameters": []
     },
     {
       "name": "processUpdateForm",
-      "parameters": "Owner owner, @Valid Pet pet, BindingResult result, RedirectAttributes redirectAttributes",
-      "type": "public String"
+      "return_type": "String",
+      "parameters": [
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "pet",
+          "type": "Pet"
+        },
+        {
+          "name": "result",
+          "type": "BindingResult"
+        },
+        {
+          "name": "redirectAttributes",
+          "type": "RedirectAttributes"
+        }
+      ]
     },
     {
       "name": "updatePetDetails",
-      "parameters": "Owner owner, Pet pet",
-      "type": "private void"
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "owner",
+          "type": "Owner"
+        },
+        {
+          "name": "pet",
+          "type": "Pet"
+        }
+      ],
+      "membership_type": "private"
     }
   ]
 }
