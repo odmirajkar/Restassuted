@@ -1,29 +1,27 @@
 {
   "file_name": "CrashControllerIntegrationTests.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
-  "file_summary": "This file contains an integration test suite for the `CrashController` within the Spring PetClinic application. The primary purpose of these tests is to verify how the application handles exceptions thrown by a controller, specifically focusing on the `/oups` endpoint. It uses Spring Boot's `@SpringBootTest` to run the tests against a random port, excluding database-related auto-configurations to isolate the error handling logic.\n\nThe `testTriggerExceptionJson` method asserts that when the `/oups` endpoint is accessed, a `500 Internal Server Error` is returned with a JSON payload containing specific error details like timestamp, status, error message, and path. This confirms the API's error response structure.\n\nThe `testTriggerExceptionHtml` method, on the other hand, verifies the HTML error page behavior. It checks if requesting the `/oups` endpoint with an `Accept: text/html` header also results in a `500 Internal Server Error`, but with a custom HTML response that includes a meaningful error message, rather than Spring Boot's default 'Whitelabel Error Page'. These tests collectively ensure robust and user-friendly error handling for both API and web-based interactions.",
+  "file_summary": "This Java file, `CrashControllerIntegrationTests.java`, is an integration test suite for the `CrashController` within the Spring PetClinic application. Its primary purpose is to verify how the application handles and presents error responses when an unexpected exception occurs. Specifically, it tests the `/oups` endpoint, which is designed to intentionally throw an exception. The tests are configured using `@SpringBootTest` with a random port and disabled database-related auto-configurations to focus purely on error handling. It includes two main test methods: one to check the JSON error response for correctness (ensuring it contains expected fields like timestamp, status, and error message) and another to verify the HTML error page (checking for specific content and confirming it's not the generic Spring Boot whitelabel error page). This class ensures robust error reporting for different client `Accept` types.",
   "attributes": [
     {
       "name": "port",
       "data_type": "int",
-      "membership_type": "instance"
+      "membership_type": "private"
     },
     {
       "name": "rest",
-      "data_type": "TestRestTemplate",
-      "membership_type": "instance"
+      "data_type": "org.springframework.boot.test.web.client.TestRestTemplate",
+      "membership_type": "private"
     }
   ],
   "functions": [
     {
       "name": "testTriggerExceptionJson",
-      "return_type": "void",
-      "parameters": []
+      "description": "Tests the `/oups` endpoint to ensure that when an exception is triggered, the application returns an HTTP 500 Internal Server Error status with a well-formed JSON body containing expected error details like timestamp, status, error type, message, and path."
     },
     {
       "name": "testTriggerExceptionHtml",
-      "return_type": "void",
-      "parameters": []
+      "description": "Tests the `/oups` endpoint with an `Accept: text/html` header to verify that the application returns an HTTP 500 Internal Server Error status with a custom HTML error page, containing specific error messages and not the default Spring Boot whitelabel error page."
     }
   ]
 }
