@@ -1,7 +1,7 @@
 {
   "file_name": "PetTypeFormatter.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
-  "file_summary": "This Java class, `PetTypeFormatter`, is a Spring `@Component` that implements the `org.springframework.format.Formatter` interface for the `PetType` object. Its primary purpose is to instruct Spring MVC on how to convert a `PetType` object to its String representation (for display) and, more importantly, how to parse a String back into a `PetType` object (for data binding in forms or request parameters). It leverages the `PetTypeRepository` to fetch `PetType` instances based on their name when parsing. This class simplifies data handling for `PetType` in Spring-based web applications, ensuring correct type conversion and validation.",
+  "file_summary": "The `PetTypeFormatter` class is a Spring `@Component` that implements the `Formatter` interface for `PetType` objects. Its primary purpose is to instruct Spring MVC on how to convert `PetType` objects to and from their `String` representations, typically for form submission and display in web applications.\n\nIt relies on a `PetTypeRepository` dependency to look up `PetType` instances by their name. The `print` method converts a `PetType` object into its name string for display. The `parse` method takes a `String` (representing a pet type name) and attempts to find a matching `PetType` object from the available types in the repository. If a match is not found, it throws a `ParseException`. This formatter ensures proper data binding and validation for `PetType` selections in forms.",
   "attributes": [
     {
       "name": "types",
@@ -12,16 +12,17 @@
   "functions": [
     {
       "name": "PetTypeFormatter",
+      "return_type": "void",
       "parameters": [
         {
           "name": "types",
           "type": "PetTypeRepository"
         }
-      ],
-      "return_type": "constructor"
+      ]
     },
     {
       "name": "print",
+      "return_type": "String",
       "parameters": [
         {
           "name": "petType",
@@ -31,11 +32,11 @@
           "name": "locale",
           "type": "Locale"
         }
-      ],
-      "return_type": "String"
+      ]
     },
     {
       "name": "parse",
+      "return_type": "PetType",
       "parameters": [
         {
           "name": "text",
@@ -45,9 +46,7 @@
           "name": "locale",
           "type": "Locale"
         }
-      ],
-      "return_type": "PetType",
-      "throws": ["ParseException"]
+      ]
     }
   ]
 }
