@@ -1,0 +1,5 @@
+{
+  "file_name": "ownerDetails.html",
+  "file_path": "src/main/resources/templates/owners/ownerDetails.html",
+  "file_summary": "This HTML file is a Thymeleaf template responsible for displaying comprehensive details about a specific pet owner and their animals. It dynamically renders the owner's personal information, such as name, address, city, and telephone, sourced from an 'owner' object. The template also features sections for displaying temporary success or error messages. Following the owner's data, it lists all associated pets, showing their names, birth dates, and types. For each pet, a detailed table of visits, including dates and descriptions, is presented. The page includes interactive links allowing users to edit owner details, add new pets, modify existing pet information, or schedule new visits for their pets. A simple embedded JavaScript function ensures that any transient success or error notifications automatically disappear after three seconds, enhancing the user interface."
+}
