@@ -1,7 +1,33 @@
 {
   "file_name": "application.properties",
   "file_path": "src/main/resources/application.properties",
-  "file_summary": "This configuration file, likely named `application.properties`, is used to set up the data source for a Spring Boot application, specifically targeting a PostgreSQL database. It explicitly defines the database type as 'postgres'. The file configures the `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` properties, which specify how the application connects to the PostgreSQL instance. These properties are designed to be flexible, allowing their values to be overridden by environment variables (e.g., `POSTGRES_URL`, `POSTGRES_USER`, `POSTGRES_PASS`). If environment variables are not set, the configuration falls back to default local values such as `jdbc:postgresql://localhost/petclinic`, `petclinic`, and `petclinic` respectively. Additionally, the `spring.sql.init.mode` property is set to `always`, ensuring that any SQL scripts intended for database schema initialization are executed every time the application starts. The comment notes that the SQL is expected to be idempotent, making this 'always' execution safe.",
-  "attributes": [],
+  "file_summary": "This `application.properties` file configures the database connection settings for a Spring Boot application. It explicitly sets `postgres` as the database type. The core properties for database connectivity, `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password`, are configured to connect to a PostgreSQL instance. A key feature is the use of Spring Boot's externalized configuration, allowing these sensitive properties to be overridden by environment variables (e.g., `POSTGRES_URL`, `POSTGRES_USER`, `POSTGRES_PASS`) while providing default fallback values for local development. Furthermore, `spring.sql.init.mode` is set to `always`, indicating that SQL scripts for schema initialization or data population will be executed on every application startup, with an explicit note that the SQL is designed to be idempotent for safe repeated execution.",
+  "attributes": [
+    {
+      "name": "database",
+      "type": "String",
+      "value": "postgres"
+    },
+    {
+      "name": "spring.datasource.url",
+      "type": "String",
+      "value": "${POSTGRES_URL:jdbc:postgresql://localhost/petclinic}"
+    },
+    {
+      "name": "spring.datasource.username",
+      "type": "String",
+      "value": "${POSTGRES_USER:petclinic}"
+    },
+    {
+      "name": "spring.datasource.password",
+      "type": "String",
+      "value": "${POSTGRES_PASS:petclinic}"
+    },
+    {
+      "name": "spring.sql.init.mode",
+      "type": "String",
+      "value": "always"
+    }
+  ],
   "functions": []
 }
