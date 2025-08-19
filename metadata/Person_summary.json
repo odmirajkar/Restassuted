@@ -1,7 +1,7 @@
 {
   "file_name": "Person.java",
   "file_path": "org/springframework/samples/petclinic/model/Person.java",
-  "file_summary": "The `Person` class serves as a fundamental abstract base class within the Spring Framework PetClinic application, representing a generic person. It extends `BaseEntity`, inheriting the `id` property, and introduces two additional properties: `firstName` and `lastName`. Annotated with `@MappedSuperclass`, this class indicates that its properties are mapped to database columns of its subclasses, but `Person` itself does not correspond to a direct table in the database. Both `firstName` and `lastName` are mapped to respective database columns (`first_name` and `last_name`) and are constrained with `@NotBlank` to ensure they are not empty or null. The class provides standard public getter and setter methods for accessing and modifying these name properties, facilitating common handling of personal details across various entities like Owners or Vets in the application.",
+  "file_summary": "The `Person` class is a foundational component in the Spring PetClinic application's domain model, designed to represent a generic individual. It extends the `BaseEntity` class, thereby inheriting the `id` property, which serves as a unique identifier for persistence. The class itself is annotated with `@MappedSuperclass`, indicating that it is not directly mapped to a database table. Instead, its attributes, including its inherited `id` and its own `firstName` and `lastName` properties, are intended to be inherited by its concrete subclasses that will be mapped to tables. The `firstName` and `lastName` fields are both `String` types, mapped to database columns named \"first_name\" and \"last_name\" respectively using `@Column`. Both fields are also subject to `@NotBlank` validation, ensuring that these essential personal details are not empty. The class provides standard public getter and setter methods for both `firstName` and `lastName`, allowing for controlled access and modification of these properties.",
   "attributes": [
     {
       "name": "firstName",
@@ -49,5 +49,11 @@
       ],
       "membership_type": "public"
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.samples.petclinic.model.BaseEntity",
+    "jakarta.persistence.Column",
+    "jakarta.persistence.MappedSuperclass",
+    "jakarta.validation.constraints.NotBlank"
   ]
 }
