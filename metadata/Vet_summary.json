@@ -1,0 +1,43 @@
+{
+  "file_name": "Vet.java",
+  "file_path": "org/springframework/samples/petclinic/vet/Vet.java",
+  "file_summary": "This file defines the `Vet` class, a core domain object in the Spring PetClinic application representing a veterinarian. It extends the `Person` class, inheriting basic personal attributes, and is marked as a JPA `@Entity` mapped to the \"vets\" database table. The `Vet` class establishes a many-to-many relationship with `Specialty` objects, indicating the areas of expertise a veterinarian possesses. It includes functionality to manage these specialties, such as retrieving them (sorted alphabetically), counting the number of specialties, and adding new ones. The class demonstrates JPA annotations for entity mapping and relationship configuration, including eager fetching for specialties, and JAXB annotation for XML marshalling.",
+  "attributes": [
+    {
+      "name": "specialties",
+      "data_type": "Set<Specialty>",
+      "membership_type": "private instance variable"
+    }
+  ],
+  "functions": [
+    {
+      "name": "getSpecialtiesInternal",
+      "return_type": "Set<Specialty>",
+      "parameters": [],
+      "membership_type": "protected"
+    },
+    {
+      "name": "getSpecialties",
+      "return_type": "List<Specialty>",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "getNrOfSpecialties",
+      "return_type": "int",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "addSpecialty",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "specialty",
+          "type": "Specialty"
+        }
+      ],
+      "membership_type": "public"
+    }
+  ]
+}
