@@ -1,7 +1,19 @@
 {
-  "file_name": "Apache_License_2.0.txt",
-  "file_path": "N/A",
-  "file_summary": "This document contains the complete text of the Apache License, Version 2.0, issued in January 2004. It is a permissive free software license designed by the Apache Software Foundation (ASF) to govern the use, reproduction, modification, and distribution of software and other works. The license begins with a definitions section, clarifying terms such as 'License,' 'Licensor,' 'Work,' and 'Derivative Works.' It grants users (You) a perpetual, worldwide, non-exclusive, no-charge, royalty-free, and irrevocable copyright and patent license to use and distribute the Work and its Derivative Works. Key conditions for redistribution include providing a copy of the license, prominently marking modified files, and retaining original copyright and attribution notices. The license explicitly disclaims all warranties, providing the Work on an 'AS IS' basis, and limits the liability of contributors. It also covers submission of contributions, trademark usage, and provides an appendix explaining how to apply the license to new projects. This license is commonly used in the open-source community, balancing freedom of use with clear terms for attribution and legal protection.",
-  "attributes": [],
-  "functions": []
+  "file_name": "ApacheLicense.txt",
+  "file_path": "/path/to/repository/ApacheLicense.txt",
+  "file_summary": "This document contains the full text of the Apache License, Version 2.0, released in January 2004. It is a permissive free software license that allows users to freely use, modify, and distribute software under its terms, even for commercial purposes. The license defines key terms like 'Work', 'Derivative Works', 'Contributor', and 'License', and outlines the conditions for redistribution, including requirements to retain copyright notices and provide a copy of the license. It explicitly grants both copyright and patent licenses, disclaims warranties on an 'AS IS' basis, and limits liability. The appendix also provides instructions on how to apply this license to one's own work.",
+  "attributes": [
+    "License: string",
+    "Licensor: string",
+    "Legal Entity: string",
+    "You (Your): string",
+    "Source: string",
+    "Object: string",
+    "Work: string",
+    "Derivative Works: string",
+    "Contribution: string",
+    "Contributor: string"
+  ],
+  "functions": [],
+  "dependent_class_list": []
 }
