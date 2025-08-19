@@ -1,7 +1,8 @@
 {
   "file_name": "layout.html",
-  "file_path": "src/main/resources/templates/layout/layout.html",
-  "file_summary": "This HTML file defines a core Thymeleaf layout fragment named 'layout', serving as the primary template for the web application's pages. Its purpose is to establish a consistent user interface, including a shared header, a dynamic navigation bar, and a footer section. The layout accepts 'template' and 'menu' parameters, allowing it to insert specific page content (`template`) and highlight the currently active navigation item (`menu`). It integrates external resources like Bootstrap for responsive design, Font Awesome for icons, and a custom `petclinic.css` for styling. The navigation bar features pre-defined links for key application sections (Home, Find Owners, Veterinarians, Error), utilizing a nested `menuItem` fragment for dynamic generation and active state highlighting. This modular approach ensures design consistency, minimizes code duplication, and simplifies UI maintenance across the application.",
+  "file_path": "path/to/file/in/repository (not provided)",
+  "file_summary": "This HTML file defines a Thymeleaf layout fragment named 'layout', serving as a base template for a web application, likely a Spring PetClinic application given the title. It includes common HTML head elements such as meta tags for character set, compatibility, and viewport, a favicon, and a dynamic title. It links to external resources like Font Awesome CSS and a custom petclinic.css. The body contains a responsive navigation bar using Bootstrap 5, featuring dynamically generated menu items (Home, Find Owners, Veterinarians, Error) using another internal Thymeleaf fragment 'menuItem'. This layout also includes a placeholder (`th:insert=\"${template}\"`) where specific page content can be injected, and a footer displaying a Spring logo. Finally, it imports the Bootstrap JavaScript bundle for interactive elements. This file is crucial for maintaining a consistent look and feel across multiple pages in the application.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
