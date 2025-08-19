@@ -1,0 +1,5 @@
+{
+  "file_name": "messages_es.properties",
+  "file_path": "src/main/resources/messages_es.properties",
+  "file_summary": "This file serves as a localization resource bundle for the Spanish language within a Java application, likely the Spring PetClinic demonstration. It contains key-value pairs where keys are identifiers used in the application's code (e.g., 'welcome', 'firstName', 'error') and values are their corresponding human-readable Spanish translations (e.g., 'Bienvenido', 'Nombre', 'Error'). The file defines a wide range of messages, including labels for user interface elements (like 'Propietario', 'Mascota', 'Veterinarios', 'Inicio'), common validation messages ('Es requerido', 'Fecha invalida', 'No se permite el envío de formularios duplicados'), and various other application-specific messages and titles such as 'PetClinic :: una demostración de Spring Framework'. Its primary purpose is to enable the application to display text in Spanish, supporting internationalization."
+}
