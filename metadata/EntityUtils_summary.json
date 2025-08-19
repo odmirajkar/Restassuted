@@ -1,21 +1,19 @@
 {
   "file_name": "EntityUtils.java",
   "file_path": "src/main/java/org/springframework/samples/petclinic/service/EntityUtils.java",
-  "file_summary": "The `EntityUtils` class is an abstract utility class designed to provide helpful methods for managing and retrieving `BaseEntity` objects within a collection. Its primary purpose is to simplify common tasks like looking up an entity by its ID and class type. It is specifically separated from the `BaseEntity` class due to its dependency on `ObjectRetrievalFailureException`, an ORM-specific exception from Spring's ORM module. This class centralizes entity lookup logic, ensuring consistency and handling cases where an entity is not found by throwing an `ObjectRetrievalFailureException`.",
+  "file_summary": "This file defines the `EntityUtils` abstract class, which serves as a utility class providing helper methods for working with entities that extend `BaseEntity`. Its primary purpose is to offer a static method `getById` that can look up a specific entity within a given collection based on its ID and class type. This utility is crucial for retrieving specific objects from collections, especially in contexts where entities are managed by an ORM. If an entity with the specified ID and class is not found in the collection, the method throws an `ObjectRetrievalFailureException`, indicating that the requested entity could not be located. The class is kept separate from `BaseEntity` specifically because of its dependency on this ORM-related exception.",
   "attributes": [],
   "functions": [
     {
       "name": "getById",
-      "return_type": "T",
+      "description": "Looks up an entity of a given class with a specific ID within a collection. It iterates through the collection, checking each entity's ID and class type. Throws ObjectRetrievalFailureException if the entity is not found.",
       "parameters": [
         {"name": "entities", "type": "Collection<T>"},
         {"name": "entityClass", "type": "Class<T>"},
         {"name": "entityId", "type": "int"}
       ],
-      "access_modifier": "public",
-      "modifier": "static",
-      "exceptions_thrown": ["ObjectRetrievalFailureException"],
-      "description": "Looks up an entity of the given class with the specified ID within the provided collection. Throws `ObjectRetrievalFailureException` if the entity is not found."
+      "return_type": "T",
+      "throws": ["ObjectRetrievalFailureException"]
     }
   ]
 }
