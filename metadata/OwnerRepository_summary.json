@@ -1,32 +1,20 @@
 {
   "file_name": "OwnerRepository.java",
   "file_path": "org/springframework/samples/petclinic/owner/OwnerRepository.java",
-  "file_summary": "The `OwnerRepository` interface serves as a data access layer for `Owner` domain objects within the Spring PetClinic application. It extends Spring Data JPA's `JpaRepository`, automatically providing standard CRUD (Create, Read, Update, Delete) operations for `Owner` entities, identified by their `Integer` ID.\n\nIn addition to the inherited methods, this interface defines custom query methods that adhere to Spring Data naming conventions for easy query creation:\n- `findByLastNameStartingWith`: Allows searching for owners whose last names begin with a specified string, supporting pagination through the `Pageable` parameter.\n- `findById`: Overrides the default `findById` to explicitly return an `Optional<Owner>`, promoting safer handling of potentially non-existent entities. This repository acts as the bridge between the application's service layer and the underlying database, abstracting away the complexities of data persistence for `Owner` objects.",
+  "file_summary": "The `OwnerRepository` interface serves as the data access layer for `Owner` domain objects within the Spring PetClinic application. It leverages Spring Data JPA, extending `JpaRepository` to inherit standard CRUD (Create, Read, Update, Delete) functionalities for `Owner` entities, with their primary key being an `Integer`. This interface defines custom query methods following Spring Data's naming conventions. Specifically, it provides `findByLastNameStartingWith` to retrieve a paginated list of `Owner`s whose last name starts with a given string, and an overridden `findById` method that returns an `Optional<Owner>`, ensuring robust handling of cases where an owner might not be found. This design abstracts the underlying database interactions, allowing the application to work with `Owner` objects without directly dealing with SQL or JDBC.",
   "attributes": [],
   "functions": [
-    {
-      "name": "findByLastNameStartingWith",
-      "return_type": "Page<Owner>",
-      "parameters": [
-        {
-          "name": "lastName",
-          "type": "String"
-        },
-        {
-          "name": "pageable",
-          "type": "Pageable"
-        }
-      ]
-    },
-    {
-      "name": "findById",
-      "return_type": "Optional<Owner>",
-      "parameters": [
-        {
-          "name": "id",
-          "type": "Integer"
-        }
-      ]
-    }
+    "findByLastNameStartingWith(String lastName, Pageable pageable): Page<Owner>",
+    "findById(@Nonnull Integer id): Optional<Owner>"
+  ],
+  "dependent_class_list": [
+    "java.util.List",
+    "java.util.Optional",
+    "jakarta.annotation.Nonnull",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.data.jpa.repository.JpaRepository",
+    "org.springframework.data.jpa.repository.Query",
+    "Owner"
   ]
 }
