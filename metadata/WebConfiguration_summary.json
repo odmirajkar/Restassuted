@@ -1,0 +1,31 @@
+{
+  "file_name": "WebConfiguration.java",
+  "file_path": "org/springframework/samples/petclinic/system/WebConfiguration.java",
+  "file_summary": "This Java class, `WebConfiguration`, configures internationalization (i18n) support for the Spring PetClinic application. It defines how the application determines and changes the user's language preference. Specifically, it configures a `SessionLocaleResolver` to store the user's chosen locale in their session, defaulting to English. It also sets up a `LocaleChangeInterceptor` which allows users to change the language by adding a `?lang=` parameter to the URL (e.g., `?lang=de` for German). This interceptor is then registered with the Spring MVC interceptor registry, ensuring it processes every incoming request to check for language changes. This setup provides a robust mechanism for multi-language support within the web application.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "localeResolver",
+      "return_type": "LocaleResolver",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "localeChangeInterceptor",
+      "return_type": "LocaleChangeInterceptor",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "addInterceptors",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "registry",
+          "type": "InterceptorRegistry"
+        }
+      ],
+      "membership_type": "public"
+    }
+  ]
+}
