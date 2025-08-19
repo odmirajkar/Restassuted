@@ -1,7 +1,7 @@
 {
-  "file_name": "data_initialization.sql",
-  "file_path": "N/A",
-  "file_summary": "This SQL script is designed to populate a database with initial data for a pet clinic application. It contains a series of INSERT INTO statements that add records to several tables. Specifically, it populates the 'vets' table with veterinarian details, 'specialties' with various medical specialties, and 'vet_specialties' to link vets with their specializations. It also adds different 'types' of pets, 'owners' with their contact information, 'pets' belonging to these owners, and 'visits' details including dates and descriptions of services rendered. This script is crucial for setting up a functional dataset, enabling testing and initial operation of the application by providing foundational reference data across multiple interconnected entities.",
+  "file_name": "data.sql",
+  "file_path": "/path/to/repository/data.sql",
+  "file_summary": "This file is an SQL script primarily used for populating a relational database schema, likely for a 'pet clinic' or similar application. It contains a series of `INSERT IGNORE INTO` statements, designed to add initial data into several tables. The tables being populated include `vets` (veterinarian details), `specialties` (medical specializations for vets), `vet_specialties` (a join table linking vets to their specialties), `types` (categories of pets like 'cat', 'dog'), `owners` (details of pet owners), `pets` (information about the pets themselves, including their type and owner), and `visits` (records of pet visits to the clinic, including dates and descriptions). The `IGNORE` clause ensures that if a row with the same primary key already exists, the insertion is skipped without error, making the script idempotent and safe to run multiple times.",
   "attributes": [],
   "functions": [],
   "dependent_class_list": []
