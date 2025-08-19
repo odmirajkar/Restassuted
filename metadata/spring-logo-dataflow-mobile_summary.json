@@ -1,9 +1,13 @@
 
+To get a summary, you *must* provide the content of the file as **plain text**. For example, if it's a Java file, copy and paste the Java code directly.
+
+Since I cannot process the image as a file, here's the same basic JSON indicating the issue:
+
 ```json
 {
-  "file_name": "image_file",
-  "file_path": "N/A (Input was image data)",
-  "file_summary": "This content is an image showing two logos on a white background. The left logo is a green leaf, commonly associated with Spring Framework. The right logo is a green, somewhat abstract, circular design, possibly representing a cloud or a related concept. The file does not contain any code or text content that can be processed for a code summary.",
+  "file_name": "unknown_file",
+  "file_path": "unknown_path",
+  "file_summary": "The provided content was an image, not a text-based file. I need the actual text content of the file (e.g., Java code, configuration file, etc.) to generate a summary. Please paste the file contents as text.",
   "attributes": [],
   "functions": []
 }
