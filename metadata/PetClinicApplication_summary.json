@@ -1,19 +1,21 @@
 {
   "file_name": "PetClinicApplication.java",
-  "file_path": "org/springframework/samples/petclinic/PetClinicApplication.java",
-  "file_summary": "This Java class serves as the main entry point for the PetClinic Spring Boot application. Annotated with `@SpringBootApplication`, it enables various Spring Boot features like auto-configuration, component scanning, and externalized configuration. Its primary purpose is to bootstrap and launch the entire application using the `SpringApplication.run()` method within its `main` function. Additionally, it includes `@ImportRuntimeHints(PetClinicRuntimeHints.class)`, indicating its preparation for GraalVM native image compilation by providing necessary runtime hints. This setup allows the PetClinic application to be packaged and run efficiently as a standalone executable.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+  "file_summary": "This file serves as the main entry point for the PetClinic Spring Boot application. It is annotated with `@SpringBootApplication`, which combines `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan` to provide a complete Spring Boot setup. This enables automatic configuration based on classpath dependencies, component scanning for beans, and marks the class as a source of bean definitions. Additionally, it uses `@ImportRuntimeHints(PetClinicRuntimeHints.class)`, suggesting an optimization for Ahead-Of-Time (AOT) compilation or native image generation by registering runtime hints. The `main` method within this class is the standard Java entry point, responsible for bootstrapping and running the Spring application using `SpringApplication.run()`, making it the starting point for the entire PetClinic service.",
   "attributes": [],
   "functions": [
     {
       "name": "main",
+      "signature": "public static void main(String[] args)",
+      "return_type": "void",
       "parameters": [
         {
           "name": "args",
           "type": "String[]"
         }
       ],
-      "return_type": "void",
-      "visibility": "public static"
+      "access_modifier": "public",
+      "membership_type": "static"
     }
   ]
 }
