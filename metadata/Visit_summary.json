@@ -1,24 +1,54 @@
 {
   "file_name": "Visit.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
-  "file_summary": "The `Visit` class is a core domain object within the Spring PetClinic application, designed to represent a single visit by a pet. Extending `BaseEntity`, it inherits basic entity properties like an ID, making it suitable for persistence. Annotated with `@Entity` and `@Table(name = \"visits\")`, it serves as a JPA entity, mapping directly to the 'visits' table in the underlying database. Key attributes include `date`, a `LocalDate` object capturing when the visit occurred (defaulting to the current date upon creation), and `description`, a `String` providing details about the visit, which is marked as mandatory with `@NotBlank`. The `date` field is also formatted using `@DateTimeFormat` for proper display and input handling. This class provides standard getter and setter methods for its properties, facilitating data access and manipulation within the application's service layer and user interface. Its primary purpose is to model and manage pet visit records.",
+  "file_path": "org/springframework/samples/petclinic/owner/Visit.java",
+  "file_summary": "The `Visit` class is a core domain object in the Spring PetClinic application, representing a veterinary visit made by a pet. It is a JPA `@Entity` mapped to the `visits` table in the database and extends `BaseEntity`, inheriting an `id` property. This class captures essential details about a visit, specifically the date of the visit and a textual description of the visit.\n\nThe `date` attribute is a `LocalDate` and is formatted for display and parsing using `yyyy-MM-dd` pattern via `@DateTimeFormat`. The `description` attribute is a `String` that is marked with `@NotBlank`, indicating it cannot be empty or null. The class includes a default constructor that initializes the `date` to the current system date, simplifying the creation of new visit records. It also provides standard getter and setter methods for its properties, enabling data manipulation and retrieval.",
   "attributes": [
     {
       "name": "date",
       "type": "LocalDate",
-      "membership": "private"
+      "membership_type": "private"
     },
     {
       "name": "description",
       "type": "String",
-      "membership": "private"
+      "membership_type": "private"
     }
   ],
   "functions": [
-    "Visit()",
-    "getDate()",
-    "setDate(LocalDate date)",
-    "getDescription()",
-    "setDescription(String description)"
+    {
+      "name": "Visit",
+      "return_type": "void",
+      "parameters": []
+    },
+    {
+      "name": "getDate",
+      "return_type": "LocalDate",
+      "parameters": []
+    },
+    {
+      "name": "setDate",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "date",
+          "type": "LocalDate"
+        }
+      ]
+    },
+    {
+      "name": "getDescription",
+      "return_type": "String",
+      "parameters": []
+    },
+    {
+      "name": "setDescription",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "description",
+          "type": "String"
+        }
+      ]
+    }
   ]
 }
