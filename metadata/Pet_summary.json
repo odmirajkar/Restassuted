@@ -1,0 +1,66 @@
+{
+  "file_name": "Pet.java",
+  "file_path": "org/springframework/samples/petclinic/owner/Pet.java",
+  "file_summary": "The `Pet` class is a core business object within the Spring PetClinic application, extending `NamedEntity` to inherit a 'name' property. It represents an animal owned by a client, encapsulating essential details such as its birth date, its specific type (e.g., dog, cat, reptile), and a collection of associated veterinary visits. The class is annotated with JPA (`@Entity`, `@Table`, `@Column`, `@ManyToOne`, `@OneToMany`) to define its mapping to the 'pets' table in the database and establish relationships with `PetType` and `Visit` entities. It supports cascading operations for visits and fetches them eagerly, ordering them by date. This class provides standard getters and setters for its properties and a method to add new visits, playing a central role in managing pet-specific information.",
+  "attributes": [
+    {
+      "name": "birthDate",
+      "type": "LocalDate",
+      "membership_type": "private"
+    },
+    {
+      "name": "type",
+      "type": "PetType",
+      "membership_type": "private"
+    },
+    {
+      "name": "visits",
+      "type": "Set<Visit>",
+      "membership_type": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "setBirthDate",
+      "return_type": "void",
+      "parameters": [
+        "LocalDate birthDate"
+      ],
+      "visibility": "public"
+    },
+    {
+      "name": "getBirthDate",
+      "return_type": "LocalDate",
+      "parameters": [],
+      "visibility": "public"
+    },
+    {
+      "name": "getType",
+      "return_type": "PetType",
+      "parameters": [],
+      "visibility": "public"
+    },
+    {
+      "name": "setType",
+      "return_type": "void",
+      "parameters": [
+        "PetType type"
+      ],
+      "visibility": "public"
+    },
+    {
+      "name": "getVisits",
+      "return_type": "Collection<Visit>",
+      "parameters": [],
+      "visibility": "public"
+    },
+    {
+      "name": "addVisit",
+      "return_type": "void",
+      "parameters": [
+        "Visit visit"
+      ],
+      "visibility": "public"
+    }
+  ]
+}
