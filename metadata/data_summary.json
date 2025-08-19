@@ -1,7 +1,7 @@
 {
-  "file_name": "data.sql",
+  "file_name": "insert_data.sql",
   "file_path": "N/A",
-  "file_summary": "This file contains a series of SQL INSERT statements designed to populate a database schema commonly found in a 'pet clinic' or 'veterinary' application. It inserts sample data into several tables, including 'vets' (veterinarian details), 'specialties' (medical specializations), 'vet_specialties' (linking vets to their specialties), 'types' (different animal types like cat, dog, etc.), 'owners' (pet owner information), 'pets' (details about pets, including their type and owner), and 'visits' (records of pet visits to the clinic, including date and description). This script is essential for setting up an initial dataset for testing or demonstrating the application's functionality.",
+  "file_summary": "This SQL script is designed to populate a database with initial sample data for a pet clinic application. It contains a series of `INSERT IGNORE INTO` statements, ensuring that the data is added only if it does not already exist, preventing duplicate entries upon re-execution. The script inserts records into several tables, including:\n- `vets`: Details of veterinarians (ID, first name, last name).\n- `specialties`: Types of medical specialties (ID, name).\n- `vet_specialties`: A linking table establishing many-to-many relationships between vets and their specialties.\n- `types`: Categories of pets (ID, name).\n- `owners`: Information about pet owners (ID, first name, last name, address, city, telephone).\n- `pets`: Details of pets, linking them to their types and owners (ID, name, birth date, type ID, owner ID).\n- `visits`: Records of visits made by pets, including visit date and description (ID, pet ID, visit date, description).\n\nOverall, this script provides a foundational dataset for testing or demonstrating the functionality of a pet clinic management system.",
   "attributes": [],
   "functions": []
 }
