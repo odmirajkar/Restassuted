@@ -1,7 +1,7 @@
 {
   "file_name": "NamedEntity.java",
   "file_path": "org/springframework/samples/petclinic/model/NamedEntity.java",
-  "file_summary": "The `NamedEntity` class extends `BaseEntity`, serving as an abstract base class for domain objects within the Spring Framework PetClinic application that require a common `name` property in addition to the `id`. This class is annotated with `@MappedSuperclass`, indicating that its properties are mapped to the database columns of its subclasses, but it does not represent a standalone database table itself. It introduces a `private String name` attribute, which is mapped to a database column named 'name' and is constrained by `@NotBlank` to ensure it's not null or empty. The class provides standard getter and setter methods for the `name` property and overrides the `toString()` method to return the entity's name, which is useful for debugging and display purposes. This design promotes reusability and consistency for entities that are identified by both an ID and a name.",
+  "file_summary": "The `NamedEntity` class is a core component within the Spring PetClinic application's domain model, extending the `BaseEntity` to incorporate a common `name` property. Its primary purpose is to serve as a base class for other domain objects that require both an ID (inherited from `BaseEntity`) and a name. By being annotated with `@MappedSuperclass`, `NamedEntity` itself is not directly mapped to a database table; instead, its persistence attributes (including the `id` from `BaseEntity` and its own `name` field) are inherited by its subclasses that are actual JPA entities. The `name` field is a `String` type, mapped to a database column named \"name\" via `@Column`, and is enforced to be non-blank using the `@NotBlank` validation annotation. The class provides standard getter (`getName()`) and setter (`setName(String name)`) methods for the `name` property. Additionally, it overrides the `toString()` method to return the entity's `name`, which is useful for debugging and displaying meaningful object representations.",
   "attributes": [
     {
       "name": "name",
@@ -33,5 +33,11 @@
       "parameters": [],
       "membership_type": "public"
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.samples.petclinic.model.BaseEntity",
+    "jakarta.persistence.Column",
+    "jakarta.persistence.MappedSuperclass",
+    "jakarta.validation.constraints.NotBlank"
   ]
 }
