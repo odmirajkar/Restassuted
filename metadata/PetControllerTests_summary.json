@@ -1,7 +1,7 @@
 {
   "file_name": "PetControllerTests.java",
   "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
-  "file_summary": "This Java class, `PetControllerTests`, is a comprehensive unit test suite for the `PetController` in the Spring PetClinic application. It utilizes Spring's `@WebMvcTest` to focus on the web layer, isolating the controller logic from the full application context. The tests simulate HTTP requests using `MockMvc` to verify the `PetController`'s behavior for creating and updating pet records. Key dependencies like `OwnerRepository` and `PetTypeRepository` are mocked using `MockitoBean` to control their responses. The test cases cover various scenarios, including successful form submissions, as well as handling validation errors such as blank names, duplicate pet names, missing pet types, and invalid birth dates. It ensures that the controller correctly renders views, manages model attributes, and redirects upon successful operations, adhering to the application's business rules and user interface expectations.",
+  "file_summary": "This Java class, `PetControllerTests`, serves as the integration test suite for the `PetController` in the Spring PetClinic application. It leverages Spring Boot's `@WebMvcTest` to test the web layer, ensuring that the controller handles HTTP requests correctly for pet-related operations. The tests use `MockMvc` to simulate user interactions, verify HTTP responses (status, view names, and model attributes), and check for form validation errors. Key components like `OwnerRepository` and `PetTypeRepository` are mocked using `@MockitoBean` to isolate the `PetController` for focused testing without depending on a real database. The class includes setup logic to pre-populate mock data for owner and pet types. It covers a comprehensive set of scenarios for adding and updating pets, including successful operations and various error cases such as blank names, duplicate names, missing pet types, and invalid birth dates, using `@Nested` classes for better organization of error tests.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
@@ -16,30 +16,30 @@
     {
       "name": "mockMvc",
       "data_type": "MockMvc",
-      "membership_type": "private (Autowired)"
+      "membership_type": "private @Autowired"
     },
     {
       "name": "owners",
       "data_type": "OwnerRepository",
-      "membership_type": "private (MockitoBean)"
+      "membership_type": "private @MockitoBean"
     },
     {
       "name": "types",
       "data_type": "PetTypeRepository",
-      "membership_type": "private (MockitoBean)"
+      "membership_type": "private @MockitoBean"
     }
   ],
   "functions": [
-    "setup",
-    "testInitCreationForm",
-    "testProcessCreationFormSuccess",
-    "testProcessCreationFormWithBlankName",
-    "testProcessCreationFormWithDuplicateName",
-    "testProcessCreationFormWithMissingPetType",
-    "testProcessCreationFormWithInvalidBirthDate",
-    "testInitUpdateForm",
-    "testProcessUpdateFormSuccess",
-    "testProcessUpdateFormWithInvalidBirthDate",
-    "testProcessUpdateFormWithBlankName"
+    "setup()",
+    "testInitCreationForm()",
+    "testProcessCreationFormSuccess()",
+    "testProcessCreationFormWithBlankName()",
+    "testProcessCreationFormWithDuplicateName()",
+    "testProcessCreationFormWithMissingPetType()",
+    "testProcessCreationFormWithInvalidBirthDate()",
+    "testInitUpdateForm()",
+    "testProcessUpdateFormSuccess()",
+    "testProcessUpdateFormWithInvalidBirthDate()",
+    "testProcessUpdateFormWithBlankName()"
   ]
 }
