@@ -1,7 +1,7 @@
 {
   "file_name": "Pet.java",
   "file_path": "org/springframework/samples/petclinic/owner/Pet.java",
-  "file_summary": "The `Pet` class is a core business object within the Spring PetClinic application, extending `NamedEntity` to inherit a 'name' property. It represents an animal owned by a client, encapsulating essential details such as its birth date, its specific type (e.g., dog, cat, reptile), and a collection of associated veterinary visits. The class is annotated with JPA (`@Entity`, `@Table`, `@Column`, `@ManyToOne`, `@OneToMany`) to define its mapping to the 'pets' table in the database and establish relationships with `PetType` and `Visit` entities. It supports cascading operations for visits and fetches them eagerly, ordering them by date. This class provides standard getters and setters for its properties and a method to add new visits, playing a central role in managing pet-specific information.",
+  "file_summary": "The `Pet` class is a core business object in the Spring PetClinic application, representing an animal owned by a client. It extends `NamedEntity` to inherit a 'name' property. This class captures essential information about a pet, including its birth date, its specific type (e.g., dog, cat), and a collection of associated `Visit` records. As a JPA `@Entity`, it is mapped to the 'pets' table in the database. It utilizes annotations like `@Column`, `@ManyToOne`, and `@OneToMany` to define its persistence mapping and relationships with `PetType` and `Visit` entities, supporting operations such as retrieving and adding visits to a pet's history.",
   "attributes": [
     {
       "name": "birthDate",
@@ -24,43 +24,46 @@
       "name": "setBirthDate",
       "return_type": "void",
       "parameters": [
-        "LocalDate birthDate"
-      ],
-      "visibility": "public"
+        {
+          "name": "birthDate",
+          "type": "LocalDate"
+        }
+      ]
     },
     {
       "name": "getBirthDate",
       "return_type": "LocalDate",
-      "parameters": [],
-      "visibility": "public"
+      "parameters": []
     },
     {
       "name": "getType",
       "return_type": "PetType",
-      "parameters": [],
-      "visibility": "public"
+      "parameters": []
     },
     {
       "name": "setType",
       "return_type": "void",
       "parameters": [
-        "PetType type"
-      ],
-      "visibility": "public"
+        {
+          "name": "type",
+          "type": "PetType"
+        }
+      ]
     },
     {
       "name": "getVisits",
       "return_type": "Collection<Visit>",
-      "parameters": [],
-      "visibility": "public"
+      "parameters": []
     },
     {
       "name": "addVisit",
       "return_type": "void",
       "parameters": [
-        "Visit visit"
-      ],
-      "visibility": "public"
+        {
+          "name": "visit",
+          "type": "Visit"
+        }
+      ]
     }
   ]
 }
