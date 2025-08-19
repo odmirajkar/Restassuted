@@ -1,0 +1,7 @@
+{
+  "file_name": "navbar.css",
+  "file_path": "unknown",
+  "file_summary": "This CSS file is responsible for defining the visual presentation and layout of a navigation bar component, commonly found in web applications. It specifies styles for the main `.navbar` container, including its top border, background color, and margins. A significant portion of the file is dedicated to styling the brand link (`.navbar a.navbar-brand`), setting its background image to a Spring Data Flow logo and implementing an interactive hover effect using opacity and transitions for a secondary logo state. Furthermore, it defines the appearance of individual navigation links (`.navbar li > a`) and text elements (`.navbar-text`), applying specific font families, text shadow, font sizes, padding, and hover states that change text and background colors. The file also includes styling for the responsive `navbar-toggle` button, detailing the width, height, and spacing of its `icon-bar` elements. The overall purpose is to create a visually appealing, branded, and interactive navigation menu.",
+  "attributes": [],
+  "functions": []
+}
