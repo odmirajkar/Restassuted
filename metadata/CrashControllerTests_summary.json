@@ -1,18 +1,24 @@
 {
   "file_name": "CrashControllerTests.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashControllerTests.java",
-  "file_summary": "This Java file, `CrashControllerTests.java`, contains a simple unit test for the `CrashController` class in the Spring PetClinic application. Its primary purpose is to verify the behavior of the `triggerException()` method within `CrashController`. The test specifically asserts that calling `triggerException()` indeed throws a `RuntimeException` and that the exception's message contains the expected string, indicating that the controller is functioning as designed to showcase exception handling. This test ensures the basic functionality of the 'crash' endpoint without involving a full Spring Boot application context.",
+  "file_summary": "This Java file, `CrashControllerTests.java`, contains a unit test for the `CrashController` class within the Spring PetClinic application. Unlike integration tests, this is a plain unit test designed to test the `CrashController` in isolation, without needing a full Spring Boot application context. Its sole purpose is to verify the behavior of the `triggerException()` method in `CrashController`. The test ensures that when `triggerException()` is invoked, it correctly throws a `RuntimeException` and that the exception's message matches the expected string, indicating its role in showcasing exception handling. This helps confirm the controller's intended error-throwing functionality at a granular level.",
   "attributes": [
     {
       "name": "testee",
-      "data_type": "org.springframework.samples.petclinic.system.CrashController",
-      "membership_type": "final"
+      "type": "org.springframework.samples.petclinic.system.CrashController",
+      "membership_type": "instance"
     }
   ],
   "functions": [
     {
       "name": "testTriggerException",
-      "description": "Tests the `triggerException()` method of the `CrashController` to ensure it throws a `RuntimeException` with a specific error message, confirming its intended behavior of showcasing exception scenarios."
+      "return_type": "void",
+      "parameters": []
     }
+  ],
+  "dependent_class_list": [
+    "org.junit.jupiter.api.Test",
+    "org.assertj.core.api.Assertions",
+    "org.springframework.samples.petclinic.system.CrashController"
   ]
 }
