@@ -1,0 +1,7 @@
+{
+  "file_name": "petclinic.css",
+  "file_path": "src/main/resources/static/petclinic.css",
+  "file_summary": "This CSS file contains styling rules for a web application, likely a 'PetClinic' front-end, leveraging Bootstrap 5.3.6. It defines a comprehensive set of CSS custom properties (variables) for colors, typography, spacing, borders, shadows, and more, supporting both light and dark themes. Beyond Bootstrap's default styles, it includes custom rules for specific elements like tables, navigation bars, buttons, form elements, and layout containers, overriding or extending Bootstrap's appearance to match the application's design. It also defines font faces and specific styles for error pages, splash screens, and application-specific components, such as `.xd-container` and `.cluster-view`, aiming for a consistent visual identity.",
+  "attributes": [],
+  "functions": []
+}
