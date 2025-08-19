@@ -1,0 +1,63 @@
+{
+  "file_name": "VetController.java",
+  "file_path": "org/springframework/samples/petclinic/vet/VetController.java",
+  "file_summary": "The `VetController` class is a Spring Framework controller responsible for handling web requests related to veterinarians in the PetClinic application. It serves two primary purposes: displaying a paginated list of veterinarians on an HTML page and providing a RESTful endpoint to retrieve all veterinarians. It uses Spring's `@Controller` annotation to mark it as a web component and injects `VetRepository` to interact with the data layer. The `showVetList` method handles the HTML view, incorporating pagination logic to display a limited number of vets per page. Helper methods like `addPaginationModel` and `findPaginated` encapsulate the pagination details. The `showResourcesVetList` method provides a `/vets` endpoint that returns a list of vets suitable for JSON/XML mapping, typically consumed by client-side applications.",
+  "attributes": [
+    {
+      "name": "vetRepository",
+      "type": "VetRepository",
+      "membership_type": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "VetController",
+      "return_type": "void",
+      "parameters": [
+        "VetRepository vetRepository"
+      ],
+      "access_modifier": "public",
+      "type": "constructor"
+    },
+    {
+      "name": "showVetList",
+      "return_type": "String",
+      "parameters": [
+        "int page",
+        "Model model"
+      ],
+      "access_modifier": "public",
+      "annotations": [
+        "@GetMapping(\"/vets.html\")"
+      ]
+    },
+    {
+      "name": "addPaginationModel",
+      "return_type": "String",
+      "parameters": [
+        "int page",
+        "Page<Vet> paginated",
+        "Model model"
+      ],
+      "access_modifier": "private"
+    },
+    {
+      "name": "findPaginated",
+      "return_type": "Page<Vet>",
+      "parameters": [
+        "int page"
+      ],
+      "access_modifier": "private"
+    },
+    {
+      "name": "showResourcesVetList",
+      "return_type": "Vets",
+      "parameters": [],
+      "access_modifier": "public",
+      "annotations": [
+        "@GetMapping({\"/vets\"})",
+        "@ResponseBody"
+      ]
+    }
+  ]
+}
