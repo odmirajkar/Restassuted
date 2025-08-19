@@ -1,7 +1,7 @@
 {
   "file_name": "OwnerController.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
-  "file_summary": "The OwnerController class is a Spring MVC controller responsible for handling web requests related to 'Owner' entities in the PetClinic application. It manages the full lifecycle of owner data, including creating new owners, finding existing ones (with pagination capabilities), updating their details, and displaying individual owner profiles. The controller interacts with the OwnerRepository for data persistence operations. It leverages Spring's data binding and validation features, using `@InitBinder` to prevent binding certain fields and `@ModelAttribute` to pre-populate owner objects for requests. The class defines various GET and POST endpoints for form submissions, search functionality, and direct access to owner details, ensuring a user-friendly experience for managing pet owners.",
+  "file_path": "org/springframework/samples/petclinic/owner/OwnerController.java",
+  "file_summary": "The `OwnerController` class is a Spring MVC controller responsible for handling web requests related to `Owner` entities in the PetClinic application. It manages the full lifecycle of owner data, including creation, retrieval, updating, and searching.\n\nKey functionalities include:\n- **Creating new owners**: Provides GET and POST endpoints (`/owners/new`) for displaying and processing the owner creation form.\n- **Finding owners**: Offers a search form (`/owners/find`) and processes search requests (`/owners`), supporting lookup by last name. It also implements pagination for search results, displaying lists of owners if multiple are found, or redirecting directly to an owner's details if only one matches.\n- **Updating owners**: Provides GET and POST endpoints (`/owners/{ownerId}/edit`) to retrieve an owner's data for editing and to save updated information.\n- **Displaying owner details**: Shows comprehensive details for a specific owner (`/owners/{ownerId}`).\n\nThe controller interacts with the `OwnerRepository` to perform database operations. It uses `@Valid` for data validation, `@ModelAttribute` to prepare form backing objects, and `RedirectAttributes` for flash messages upon form submissions. It also includes an `@InitBinder` to prevent binding of the 'id' field to ensure proper ID management during updates.",
   "attributes": [
     {
       "name": "VIEWS_OWNER_CREATE_OR_UPDATE_FORM",
@@ -17,45 +17,42 @@
   "functions": [
     {
       "name": "OwnerController",
+      "return_type": "void",
       "parameters": [
         {
           "name": "owners",
           "type": "OwnerRepository"
         }
-      ],
-      "return_type": "void",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "setAllowedFields",
+      "return_type": "void",
       "parameters": [
         {
           "name": "dataBinder",
           "type": "WebDataBinder"
         }
-      ],
-      "return_type": "void",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "findOwner",
+      "return_type": "Owner",
       "parameters": [
         {
           "name": "ownerId",
           "type": "Integer"
         }
-      ],
-      "return_type": "Owner",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "initCreationForm",
-      "parameters": [],
       "return_type": "String",
-      "membership_type": "public"
+      "parameters": []
     },
     {
       "name": "processCreationForm",
+      "return_type": "String",
       "parameters": [
         {
           "name": "owner",
@@ -69,18 +66,16 @@
           "name": "redirectAttributes",
           "type": "RedirectAttributes"
         }
-      ],
-      "return_type": "String",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "initFindForm",
-      "parameters": [],
       "return_type": "String",
-      "membership_type": "public"
+      "parameters": []
     },
     {
       "name": "processFindForm",
+      "return_type": "String",
       "parameters": [
         {
           "name": "page",
@@ -98,12 +93,11 @@
           "name": "model",
           "type": "Model"
         }
-      ],
-      "return_type": "String",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "addPaginationModel",
+      "return_type": "String",
       "parameters": [
         {
           "name": "page",
@@ -117,12 +111,11 @@
           "name": "paginated",
           "type": "Page<Owner>"
         }
-      ],
-      "return_type": "String",
-      "membership_type": "private"
+      ]
     },
     {
       "name": "findPaginatedForOwnersLastName",
+      "return_type": "Page<Owner>",
       "parameters": [
         {
           "name": "page",
@@ -132,18 +125,16 @@
           "name": "lastname",
           "type": "String"
         }
-      ],
-      "return_type": "Page<Owner>",
-      "membership_type": "private"
+      ]
     },
     {
       "name": "initUpdateOwnerForm",
-      "parameters": [],
       "return_type": "String",
-      "membership_type": "public"
+      "parameters": []
     },
     {
       "name": "processUpdateOwnerForm",
+      "return_type": "String",
       "parameters": [
         {
           "name": "owner",
@@ -161,20 +152,17 @@
           "name": "redirectAttributes",
           "type": "RedirectAttributes"
         }
-      ],
-      "return_type": "String",
-      "membership_type": "public"
+      ]
     },
     {
       "name": "showOwner",
+      "return_type": "ModelAndView",
       "parameters": [
         {
           "name": "ownerId",
           "type": "int"
         }
-      ],
-      "return_type": "ModelAndView",
-      "membership_type": "public"
+      ]
     }
   ]
 }
