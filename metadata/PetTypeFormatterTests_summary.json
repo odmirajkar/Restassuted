@@ -1,24 +1,43 @@
 {
   "file_name": "PetTypeFormatterTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
-  "file_summary": "This Java class, `PetTypeFormatterTests`, is responsible for thoroughly testing the `PetTypeFormatter`. The `PetTypeFormatter` is a Spring Formatter that converts between `PetType` objects and their String representations, crucial for data binding in web forms. This test class uses Mockito to mock the `PetTypeRepository`, allowing it to control the list of available pet types during testing. It verifies two main functionalities: `testPrint` ensures that a `PetType` object is correctly converted to its name (String). `shouldParse` checks if a valid pet type name String can be correctly parsed back into a `PetType` object. Furthermore, `shouldThrowParseException` confirms that the formatter correctly throws a `ParseException` when an unknown or invalid pet type name is provided during parsing, demonstrating robust error handling for input validation.",
+  "file_path": "org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java",
+  "file_summary": "This file, `PetTypeFormatterTests`, provides unit tests for the `PetTypeFormatter` class within the Spring PetClinic application. The primary purpose of this formatter is to convert between `PetType` objects and their string representations, which is crucial for data binding in web forms. The tests leverage Mockito to mock the `PetTypeRepository`, allowing for isolated and controlled testing of the formatter's behavior without actual database interaction. The test class includes methods to verify that the `print` method correctly converts a `PetType` object to its name string, and that the `parse` method successfully converts a string name back into a `PetType` object, provided it exists in the mocked repository. It also asserts that a `ParseException` is thrown when an attempt is made to parse a pet type name that is not found in the available types, ensuring robust error handling for invalid inputs. A helper method `makePetTypes` is used to provide sample data for the mocked repository.",
   "attributes": [
     {
       "name": "types",
-      "data_type": "PetTypeRepository",
-      "membership_type": "private @Mock"
+      "type": "PetTypeRepository",
+      "membership": "private"
     },
     {
       "name": "petTypeFormatter",
-      "data_type": "PetTypeFormatter",
-      "membership_type": "private"
+      "type": "PetTypeFormatter",
+      "membership": "private"
     }
   ],
   "functions": [
-    "setup()",
-    "testPrint()",
-    "shouldParse()",
-    "shouldThrowParseException()",
-    "makePetTypes()"
+    "setup",
+    "testPrint",
+    "shouldParse",
+    "shouldThrowParseException",
+    "makePetTypes"
+  ],
+  "dependent_class_list": [
+    "org.assertj.core.api.Assertions",
+    "org.mockito.BDDMockito",
+    "java.text.ParseException",
+    "java.util.ArrayList",
+    "java.util.Collection",
+    "java.util.List",
+    "java.util.Locale",
+    "org.junit.jupiter.api.Assertions",
+    "org.junit.jupiter.api.BeforeEach",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.junit.jupiter.api.extension.ExtendWith",
+    "org.mockito.Mock",
+    "org.mockito.junit.jupiter.MockitoExtension",
+    "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+    "org.springframework.samples.petclinic.owner.PetTypeRepository",
+    "org.springframework.samples.petclinic.owner.PetType"
   ]
 }
