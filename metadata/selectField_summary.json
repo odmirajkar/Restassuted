@@ -1,7 +1,8 @@
 {
-  "file_name": "selectFormFragment.html",
-  "file_path": "src/main/resources/templates/fragments/selectFormFragment.html",
-  "file_summary": "This HTML file defines a reusable Thymeleaf fragment named 'select', intended for generating a dynamic dropdown (select) input field within web forms. The fragment takes three parameters: `label` for the visible label of the select box, `name` to bind the select field to a property in the backend model using `th:field`, and `items` which is a collection used to populate the options of the dropdown list.\n\nThe fragment is designed to integrate with Spring's form validation, dynamically adding `has-error` CSS classes to the surrounding `div` if validation errors exist for the bound field. It also conditionally displays visual feedback (success or error icons) and renders validation error messages using `th:errors`. This makes it a highly flexible and consistent component for building form select elements in a Thymeleaf-based Spring Boot application.",
+  "file_name": "select_form_fragment.html",
+  "file_path": "path/to/file/in/repository (not provided)",
+  "file_summary": "This HTML file defines a reusable Thymeleaf fragment named 'select', designed to generate dynamic HTML `<select>` (dropdown) form elements. The fragment accepts three parameters: `label` for the field's label, `name` to bind the select element to a model attribute using `th:field`, and `items` which is a collection used to populate the dropdown options via `th:each`. It incorporates Bootstrap 3 styling for form groups (`form-group`, `col-sm-2`, `col-sm-10`, `control-label`) and provides visual feedback for validation. If the field is valid, a green checkmark (`fa-ok`) is displayed; otherwise, a red cross (`fa-remove`) appears along with a dynamic error message from Thymeleaf's `th:errors`. This fragment promotes consistency and reduces boilerplate code for forms requiring dropdown selections.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
