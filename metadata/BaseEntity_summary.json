@@ -1,0 +1,34 @@
+{
+  "file_name": "BaseEntity.java",
+  "file_path": "org/springframework/samples/petclinic/model/BaseEntity.java",
+  "file_summary": "The `BaseEntity` class serves as an abstract base class for other domain objects within the Spring PetClinic application. Its primary purpose is to provide a common identifier (`id`) property for entities, simplifying persistence operations. Annotated with `@MappedSuperclass`, it indicates that its properties should be inherited by concrete entity classes without `BaseEntity` itself being a persistent entity. The `id` field is configured as the primary key using `@Id` and is set to be automatically generated using `GenerationType.IDENTITY`. The class also includes standard getter and setter methods for the `id` and a utility method `isNew()` to determine if an entity instance has not yet been persisted (i.e., its `id` is null). It implements `Serializable` for potential serialization needs.",
+  "attributes": [
+    {
+      "name": "id",
+      "data_type": "Integer",
+      "membership_type": "private"
+    }
+  ],
+  "functions": [
+    {
+      "name": "getId",
+      "return_type": "Integer",
+      "parameters": []
+    },
+    {
+      "name": "setId",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "id",
+          "data_type": "Integer"
+        }
+      ]
+    },
+    {
+      "name": "isNew",
+      "return_type": "boolean",
+      "parameters": []
+    }
+  ]
+}
