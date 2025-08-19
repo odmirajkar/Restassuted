@@ -1,0 +1,14 @@
+{
+  "file_name": "PetTypeRepository.java",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeRepository.java",
+  "file_summary": "This Java interface, `PetTypeRepository`, serves as a Spring Data JPA repository for managing `PetType` domain objects within the PetClinic application. It extends Spring's `JpaRepository`, inheriting standard CRUD (Create, Read, Update, Delete) operations and pagination capabilities for `PetType` entities, identified by an `Integer` ID. The primary purpose of this repository is to abstract the data access layer for pet types. In addition to the inherited functionalities, it provides a custom query method, `findPetTypes()`, which specifically retrieves all `PetType` entities from the data store, ordered alphabetically by their names. This ensures that pet types are consistently presented in a sorted manner across the application.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "findPetTypes",
+      "return_type": "java.util.List<org.springframework.samples.petclinic.owner.PetType>",
+      "parameters": [],
+      "visibility": "public"
+    }
+  ]
+}
