@@ -1,0 +1,55 @@
+{
+  "file_name": "PetTypeFormatter.java",
+  "file_path": "org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+  "file_summary": "This Java class, `PetTypeFormatter`, acts as a Spring Formatter responsible for converting `PetType` objects to and from their `String` representations. Annotated with `@Component`, it is a Spring-managed bean intended for use in Spring MVC to handle data binding for pet types. It injects a `PetTypeRepository` to facilitate the lookup of `PetType` instances when parsing a string. The `print` method converts a `PetType` object into its name (a String), while the `parse` method takes a string representing a pet type's name and attempts to find the corresponding `PetType` object from the repository. If no matching type is found during parsing, it throws a `ParseException`. This formatter provides a modern alternative to legacy `PropertyEditors` for type conversion in Spring applications.",
+  "attributes": [
+    {
+      "name": "types",
+      "type": "PetTypeRepository",
+      "membership_type": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "PetTypeFormatter",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "types",
+          "type": "PetTypeRepository"
+        }
+      ]
+    },
+    {
+      "name": "print",
+      "return_type": "String",
+      "parameters": [
+        {
+          "name": "petType",
+          "type": "PetType"
+        },
+        {
+          "name": "locale",
+          "type": "Locale"
+        }
+      ]
+    },
+    {
+      "name": "parse",
+      "return_type": "PetType",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "String"
+        },
+        {
+          "name": "locale",
+          "type": "Locale"
+        }
+      ],
+      "throws": [
+        "ParseException"
+      ]
+    }
+  ]
+}
