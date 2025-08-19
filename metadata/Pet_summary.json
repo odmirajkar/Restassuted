@@ -1,22 +1,22 @@
 {
   "file_name": "Pet.java",
   "file_path": "org/springframework/samples/petclinic/owner/Pet.java",
-  "file_summary": "The `Pet` class is a core business object in the Spring PetClinic application, representing an animal owned by a client. It extends `NamedEntity` to inherit a 'name' property. This class captures essential information about a pet, including its birth date, its specific type (e.g., dog, cat), and a collection of associated `Visit` records. As a JPA `@Entity`, it is mapped to the 'pets' table in the database. It utilizes annotations like `@Column`, `@ManyToOne`, and `@OneToMany` to define its persistence mapping and relationships with `PetType` and `Visit` entities, supporting operations such as retrieving and adding visits to a pet's history.",
+  "file_summary": "The `Pet` class is a core business object within the Spring PetClinic application, representing an animal owned by an `Owner`. It extends `NamedEntity`, inheriting a `name` property. This class is annotated as a JPA `@Entity` and mapped to the `pets` table in the database.\n\nIt encapsulates key characteristics of a pet, including its `birthDate` (formatted as 'yyyy-MM-dd'), its `type` (a `PetType` representing a many-to-one relationship), and a collection of `visits` (a one-to-many relationship with `Visit` entities, ordered by date). The `visits` collection is eagerly fetched and cascading operations are enabled for it. The class provides standard getter and setter methods for its attributes and includes a specific method, `addVisit`, to associate new visits with the pet. This class is fundamental for managing individual pet records, their types, and their medical history within the application.",
   "attributes": [
     {
       "name": "birthDate",
       "type": "LocalDate",
-      "membership_type": "private"
+      "membership_type": "private instance"
     },
     {
       "name": "type",
       "type": "PetType",
-      "membership_type": "private"
+      "membership_type": "private instance"
     },
     {
       "name": "visits",
       "type": "Set<Visit>",
-      "membership_type": "private final"
+      "membership_type": "private final instance"
     }
   ],
   "functions": [
