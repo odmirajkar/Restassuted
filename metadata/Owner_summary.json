@@ -1,0 +1,155 @@
+{
+  "file_name": "Owner.java",
+  "file_path": "org/springframework/samples/petclinic/owner/Owner.java",
+  "file_summary": "The `Owner.java` file defines the `Owner` class, a core domain object in the Spring PetClinic application. Extending `Person`, this class represents an animal owner and inherits basic personal information like first and last names. It's annotated as a JPA `@Entity` and mapped to the `owners` table in the database, facilitating persistence. The class includes specific attributes for an owner, such as `address`, `city`, and `telephone`, all validated with `@NotBlank` and `@Pattern` annotations to ensure data quality. Crucially, it manages a one-to-many relationship with `Pet` objects, meaning an owner can have multiple pets. This relationship is eagerly fetched and supports cascading operations. The `Owner` class provides methods for accessing and modifying its properties, along with utility methods for adding and retrieving associated pets by name or ID. It also includes an `addVisit` method, allowing visits to be recorded for specific pets belonging to this owner, ensuring data integrity through assertions.",
+  "attributes": [
+    {
+      "name": "address",
+      "type": "String",
+      "membership_type": "private"
+    },
+    {
+      "name": "city",
+      "type": "String",
+      "membership_type": "private"
+    },
+    {
+      "name": "telephone",
+      "type": "String",
+      "membership_type": "private"
+    },
+    {
+      "name": "pets",
+      "type": "List<Pet>",
+      "membership_type": "private final"
+    }
+  ],
+  "functions": [
+    {
+      "name": "getAddress",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "setAddress",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "address",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getCity",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "setCity",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "city",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getTelephone",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "setTelephone",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "telephone",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getPets",
+      "return_type": "List<Pet>",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "addPet",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "pet",
+          "type": "Pet"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "Integer"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "getPet",
+      "return_type": "Pet",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "ignoreNew",
+          "type": "boolean"
+        }
+      ],
+      "membership_type": "public"
+    },
+    {
+      "name": "toString",
+      "return_type": "String",
+      "parameters": [],
+      "membership_type": "public"
+    },
+    {
+      "name": "addVisit",
+      "return_type": "void",
+      "parameters": [
+        {
+          "name": "petId",
+          "type": "Integer"
+        },
+        {
+          "name": "visit",
+          "type": "Visit"
+        }
+      ],
+      "membership_type": "public"
+    }
+  ]
+}
