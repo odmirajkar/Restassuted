@@ -1,76 +1,33 @@
 {
   "file_name": "VetController.java",
-  "file_path": "org/springframework/samples/petclinic/vet/VetController.java",
-  "file_summary": "This Java file defines the `VetController` class, a Spring MVC `@Controller` responsible for handling web requests related to veterinarians in the PetClinic application. It interacts with the `VetRepository` to retrieve and manage vet data. The controller provides two main endpoints: one (`/vets.html`) for displaying a paginated list of vets on an HTML page, leveraging Spring Data's `Page` and `Pageable` for efficient data retrieval and pagination. The other endpoint (`/vets`) serves as a RESTful API, returning a JSON/XML representation of all veterinarians, suitable for consumption by client-side applications. It encapsulates the logic for fetching vet data and preparing it for both web view rendering and API responses.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+  "file_summary": "This Java class, `VetController`, acts as a Spring MVC controller responsible for handling web requests related to veterinarians within the Spring PetClinic application. It uses `VetRepository` to interact with the data layer. The controller provides two main functionalities: one for rendering an HTML page displaying a paginated list of vets (`/vets.html`), and another for exposing a RESTful endpoint (`/vets`) that returns a JSON representation of all vets. The HTML view includes pagination logic to display a manageable number of vets per page. The REST endpoint simplifies data mapping for client-side consumption. This controller effectively bridges the presentation layer with the business logic for managing veterinarian data.",
   "attributes": [
     {
       "name": "vetRepository",
       "data_type": "VetRepository",
-      "membership_type": "private"
+      "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "VetController",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "vetRepository",
-          "type": "VetRepository"
-        }
-      ],
-      "membership_type": "public"
-    },
-    {
-      "name": "showVetList",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        },
-        {
-          "name": "model",
-          "type": "Model"
-        }
-      ],
-      "membership_type": "public"
-    },
-    {
-      "name": "addPaginationModel",
-      "return_type": "String",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        },
-        {
-          "name": "paginated",
-          "type": "Page<Vet>"
-        },
-        {
-          "name": "model",
-          "type": "Model"
-        }
-      ],
-      "membership_type": "private"
-    },
-    {
-      "name": "findPaginated",
-      "return_type": "Page<Vet>",
-      "parameters": [
-        {
-          "name": "page",
-          "type": "int"
-        }
-      ],
-      "membership_type": "private"
-    },
-    {
-      "name": "showResourcesVetList",
-      "return_type": "Vets",
-      "parameters": [],
-      "membership_type": "public"
-    }
+    "VetController(VetRepository vetRepository): public constructor",
+    "showVetList(@RequestParam(defaultValue = \"1\") int page, Model model): public String",
+    "addPaginationModel(int page, Page<Vet> paginated, Model model): private String",
+    "findPaginated(int page): private Page<Vet>",
+    "showResourcesVetList(): public Vets"
+  ],
+  "dependent_class_list": [
+    "java.util.List",
+    "org.springframework.data.domain.Page",
+    "org.springframework.data.domain.PageRequest",
+    "org.springframework.data.domain.Pageable",
+    "org.springframework.stereotype.Controller",
+    "org.springframework.ui.Model",
+    "org.springframework.web.bind.annotation.GetMapping",
+    "org.springframework.web.bind.annotation.RequestParam",
+    "org.springframework.web.bind.annotation.ResponseBody",
+    "org.springframework.samples.petclinic.vet.VetRepository",
+    "org.springframework.samples.petclinic.vet.Vets",
+    "org.springframework.samples.petclinic.vet.Vet"
   ]
 }
