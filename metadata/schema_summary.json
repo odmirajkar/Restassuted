@@ -1,7 +1,7 @@
 {
-  "file_name": "petclinic_schema.sql",
-  "file_path": "database/schema/petclinic_schema.sql",
-  "file_summary": "This SQL DDL script defines the relational database schema for a pet clinic management system. It establishes seven core tables: `vets` to store veterinarian information, `specialties` for different medical areas, and a `vet_specialties` join table to link vets to their specializations. `types` enumerates various pet kinds, while `owners` records owner details. The `pets` table holds individual pet information, referencing both pet `types` and their `owners`. Finally, `visits` logs each pet's medical appointments. The script includes primary keys, foreign key constraints to maintain referential integrity, and several `CREATE INDEX` statements to optimize query performance on frequently accessed columns like last names, names, and foreign keys, ensuring efficient data retrieval and management within the application.",
+  "file_name": "schema.sql",
+  "file_path": "src/main/resources/schema.sql",
+  "file_summary": "This SQL script defines the database schema for a pet clinic application. It begins by dropping existing tables if they exist, ensuring a clean slate for database creation. Subsequently, it proceeds to create several tables: `vets` to store veterinarian information, `specialties` for medical specializations, and `vet_specialties` to establish a many-to-many relationship between vets and specialties. It also defines `types` for different animal species, `owners` for pet owners' details, `pets` to store pet information (including links to their type and owner), and `visits` to record appointments, linking them to pets. Each table includes primary keys and appropriate data types for its columns. Foreign key constraints are defined to enforce referential integrity between related tables, such as pets linked to owners and types, and visits linked to pets. Additionally, indexes are created on relevant columns (e.g., last names, pet names) to optimize query performance. This script is essential for setting up the foundational database structure required by the application.",
   "attributes": [],
   "functions": []
 }
