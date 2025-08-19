@@ -1,8 +1,23 @@
 {
   "file_name": "Vet.java",
-  "file_path": "org/springframework/samples/petclinic/vet/Vet.java",
-  "file_summary": "This Java file defines the `Vet` class, which represents a veterinarian in the Spring PetClinic application. It extends the `Person` class, inheriting common properties like first name and last name. The `Vet` class is an `@Entity` mapped to the 'vets' table in the database. A key feature is its `@ManyToMany` relationship with `Specialty` entities, allowing a vet to have multiple specialties. This relationship is managed via a join table named 'vet_specialties'. The class provides methods to access and manage the vet's specialties, including retrieving them as a sorted list and adding new specialties.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+  "file_summary": "This Java class, `Vet`, represents a veterinarian within the Spring PetClinic application. It extends the `Person` class, inheriting common attributes like first name and last name. The class is annotated as a JPA `@Entity` and mapped to the \"vets\" table in the database. Its core functionality involves managing the specialties a veterinarian possesses. It includes a `@ManyToMany` relationship with `Specialty` entities, stored in a `Set`, which is eagerly fetched. The class provides methods to access and manage these specialties, including retrieving them as a sorted list, counting their number, and adding new specialties. This design enables the system to store and display detailed information about each veterinarian, including their professional areas of expertise.",
   "attributes": [
+    {
+      "name": "firstName",
+      "data_type": "String",
+      "membership_type": "inherited from Person"
+    },
+    {
+      "name": "lastName",
+      "data_type": "String",
+      "membership_type": "inherited from Person"
+    },
+    {
+      "name": "id",
+      "data_type": "Integer",
+      "membership_type": "inherited from Person"
+    },
     {
       "name": "specialties",
       "data_type": "Set<Specialty>",
@@ -10,34 +25,26 @@
     }
   ],
   "functions": [
-    {
-      "name": "getSpecialtiesInternal",
-      "return_type": "Set<Specialty>",
-      "parameters": [],
-      "membership_type": "protected"
-    },
-    {
-      "name": "getSpecialties",
-      "return_type": "List<Specialty>",
-      "parameters": [],
-      "membership_type": "public"
-    },
-    {
-      "name": "getNrOfSpecialties",
-      "return_type": "int",
-      "parameters": [],
-      "membership_type": "public"
-    },
-    {
-      "name": "addSpecialty",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "specialty",
-          "type": "Specialty"
-        }
-      ],
-      "membership_type": "public"
-    }
+    "getSpecialtiesInternal(): protected Set<Specialty>",
+    "getSpecialties(): public List<Specialty>",
+    "getNrOfSpecialties(): public int",
+    "addSpecialty(Specialty specialty): public void"
+  ],
+  "dependent_class_list": [
+    "java.util.Comparator",
+    "java.util.HashSet",
+    "java.util.List",
+    "java.util.Set",
+    "java.util.stream.Collectors",
+    "org.springframework.samples.petclinic.model.NamedEntity",
+    "org.springframework.samples.petclinic.model.Person",
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.FetchType",
+    "jakarta.persistence.JoinColumn",
+    "jakarta.persistence.JoinTable",
+    "jakarta.persistence.ManyToMany",
+    "jakarta.persistence.Table",
+    "jakarta.xml.bind.annotation.XmlElement",
+    "org.springframework.samples.petclinic.vet.Specialty"
   ]
 }
