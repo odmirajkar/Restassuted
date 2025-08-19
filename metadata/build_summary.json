@@ -1,48 +1,98 @@
 {
   "file_name": "build.gradle",
-  "file_path": "",
-  "file_summary": "This `build.gradle` file orchestrates the build process for a Spring Boot application, defining its dependencies, plugins, and core configurations. It applies essential Gradle plugins such as 'java' for standard compilation, 'checkstyle' for code quality, 'org.springframework.boot' for Spring Boot specific features, and 'org.graalvm.buildtools.native' for generating native executables. The project is identified with a group 'org.springframework.samples' and version '3.5.0', and is configured to use Java 17. The file declares a comprehensive set of dependencies, including Spring Boot starters for data JPA, Thymeleaf, Web, and Validation, along with various database connectors (H2, MySQL, PostgreSQL), caching libraries (Caffeine), and webjar assets like Bootstrap. It also includes development tools and extensive testing dependencies utilizing Testcontainers. Code quality is maintained through Checkstyle, with specific configurations for Spring's formatting and 'nohttp' checks. Additionally, it manages the Gradle wrapper version and disables certain AOT-related tasks.",
+  "file_path": "N/A",
+  "file_summary": "This `build.gradle` file is the primary build configuration script for a Spring Boot application using Gradle. It orchestrates the entire build process, from dependency management to code quality checks and task configurations. The file applies essential Gradle plugins such as 'java' for compilation, 'spring-boot' for Spring application features, 'checkstyle' for code style enforcement, and 'graalvm.buildtools.native' for native image compilation capabilities. It defines project metadata like 'group' and 'version', and specifies Java 17 as the language version. The script declares a comprehensive set of dependencies, including Spring Boot starters for web, data JPA, Thymeleaf, and validation, along with database connectors (H2, MySQL, PostgreSQL), caching libraries, and UI components via WebJars. Test-specific dependencies like Spring Boot Testcontainers are also configured. Furthermore, it sets up Checkstyle with custom configuration files for code quality and `nohttp` checks, and disables specific AOT-related formatting tasks. Finally, it ensures consistent builds by configuring the Gradle Wrapper's version.",
   "attributes": [
     {
       "name": "group",
-      "type": "String",
-      "membership": "Global Property"
+      "data_type": "String",
+      "membership_type": "Project Property"
     },
     {
       "name": "version",
-      "type": "String",
-      "membership": "Global Property"
+      "data_type": "String",
+      "membership_type": "Project Property"
     },
     {
       "name": "java.toolchain.languageVersion",
-      "type": "Integer (JavaLanguageVersion)",
-      "membership": "Configuration Property"
+      "data_type": "JavaLanguageVersion",
+      "membership_type": "Project Property"
     },
     {
-      "name": "ext.checkstyleVersion",
-      "type": "String",
-      "membership": "Extension Property"
+      "name": "checkstyleVersion",
+      "data_type": "String",
+      "membership_type": "Extension Property (ext)"
     },
     {
-      "name": "ext.springJavaformatCheckstyleVersion",
-      "type": "String",
-      "membership": "Extension Property"
+      "name": "springJavaformatCheckstyleVersion",
+      "data_type": "String",
+      "membership_type": "Extension Property (ext)"
     },
     {
-      "name": "ext.webjarsLocatorLiteVersion",
-      "type": "String",
-      "membership": "Extension Property"
+      "name": "webjarsLocatorLiteVersion",
+      "data_type": "String",
+      "membership_type": "Extension Property (ext)"
     },
     {
-      "name": "ext.webjarsFontawesomeVersion",
-      "type": "String",
-      "membership": "Extension Property"
+      "name": "webjarsFontawesomeVersion",
+      "data_type": "String",
+      "membership_type": "Extension Property (ext)"
     },
     {
-      "name": "ext.webjarsBootstrapVersion",
-      "type": "String",
-      "membership": "Extension Property"
+      "name": "webjarsBootstrapVersion",
+      "data_type": "String",
+      "membership_type": "Extension Property (ext)"
+    },
+    {
+      "name": "gradle.startParameter.excludedTaskNames",
+      "data_type": "List<String>",
+      "membership_type": "Gradle Runtime Parameter"
     }
   ],
-  "functions": []
+  "functions": [
+    {
+      "name": "plugins",
+      "description": "Applies various Gradle plugins for Java, Spring Boot, code quality, and native image generation."
+    },
+    {
+      "name": "java",
+      "description": "Configures Java-specific settings, including the language version for the toolchain."
+    },
+    {
+      "name": "repositories",
+      "description": "Defines the dependency repositories, primarily Maven Central."
+    },
+    {
+      "name": "dependencies",
+      "description": "Declares project dependencies categorized by scope (implementation, runtimeOnly, developmentOnly, testImplementation, checkstyle)."
+    },
+    {
+      "name": "tasks.named('test')",
+      "description": "Configures the 'test' task to use the JUnit Platform."
+    },
+    {
+      "name": "checkstyle",
+      "description": "Configures the main Checkstyle plugin, specifying configuration directory and file."
+    },
+    {
+      "name": "checkstyleNohttp",
+      "description": "Configures a specific Checkstyle instance for 'nohttp' checks, with its own configuration."
+    },
+    {
+      "name": "tasks.named('formatMain').configure",
+      "description": "Configures 'formatMain' task to depend on 'checkstyleMain' and 'checkstyleNohttp'."
+    },
+    {
+      "name": "tasks.named('formatTest').configure",
+      "description": "Configures 'formatTest' task to depend on 'checkstyleTest' and 'checkstyleNohttp'."
+    },
+    {
+      "name": "Task Disabling",
+      "description": "Disables specific AOT (Ahead-of-Time) related checkstyle and format tasks (e.g., checkstyleAot, formatAot)."
+    },
+    {
+      "name": "wrapper",
+      "description": "Configures the Gradle Wrapper's version and distribution type for consistent builds."
+    }
+  ]
 }
