@@ -1,45 +1,65 @@
 {
   "file_name": "PetControllerTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java",
-  "file_summary": "This Java class, `PetControllerTests`, serves as the integration test suite for the `PetController` in the Spring PetClinic application. It leverages Spring Boot's `@WebMvcTest` to test the web layer, ensuring that the controller handles HTTP requests correctly for pet-related operations. The tests use `MockMvc` to simulate user interactions, verify HTTP responses (status, view names, and model attributes), and check for form validation errors. Key components like `OwnerRepository` and `PetTypeRepository` are mocked using `@MockitoBean` to isolate the `PetController` for focused testing without depending on a real database. The class includes setup logic to pre-populate mock data for owner and pet types. It covers a comprehensive set of scenarios for adding and updating pets, including successful operations and various error cases such as blank names, duplicate names, missing pet types, and invalid birth dates, using `@Nested` classes for better organization of error tests.",
+  "file_path": "org/springframework/samples/petclinic/owner/PetControllerTests.java",
+  "file_summary": "This file, `PetControllerTests`, provides comprehensive unit and integration tests for the `PetController` within the Spring PetClinic application. It uses Spring Boot's `@WebMvcTest` annotation to focus solely on the web layer, ensuring efficient testing by loading only the necessary components, including the `PetTypeFormatter` via a `ComponentScan` filter. The tests effectively mock the `OwnerRepository` and `PetTypeRepository` using `@MockitoBean` to control data and behavior, making tests predictable and isolated. The test suite covers various scenarios for pet management, including initializing forms for creating and updating pets, successfully submitting these forms, and handling various validation errors such as blank names, duplicate pet names for an owner, missing pet types, and invalid birth dates. The use of `@Nested` classes helps organize related error test cases logically, enhancing readability and maintainability. Each test verifies HTTP status codes, model attributes, and view names, ensuring the `PetController` functions as expected under different inputs.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "data_type": "int",
-      "membership_type": "private static final"
+      "type": "int",
+      "membership": "private static final"
     },
     {
       "name": "TEST_PET_ID",
-      "data_type": "int",
-      "membership_type": "private static final"
+      "type": "int",
+      "membership": "private static final"
     },
     {
       "name": "mockMvc",
-      "data_type": "MockMvc",
-      "membership_type": "private @Autowired"
+      "type": "MockMvc",
+      "membership": "private"
     },
     {
       "name": "owners",
-      "data_type": "OwnerRepository",
-      "membership_type": "private @MockitoBean"
+      "type": "OwnerRepository",
+      "membership": "private"
     },
     {
       "name": "types",
-      "data_type": "PetTypeRepository",
-      "membership_type": "private @MockitoBean"
+      "type": "PetTypeRepository",
+      "membership": "private"
     }
   ],
   "functions": [
-    "setup()",
-    "testInitCreationForm()",
-    "testProcessCreationFormSuccess()",
-    "testProcessCreationFormWithBlankName()",
-    "testProcessCreationFormWithDuplicateName()",
-    "testProcessCreationFormWithMissingPetType()",
-    "testProcessCreationFormWithInvalidBirthDate()",
-    "testInitUpdateForm()",
-    "testProcessUpdateFormSuccess()",
-    "testProcessUpdateFormWithInvalidBirthDate()",
-    "testProcessUpdateFormWithBlankName()"
+    "setup",
+    "testInitCreationForm",
+    "testProcessCreationFormSuccess",
+    "testProcessCreationFormWithBlankName",
+    "testProcessCreationFormWithDuplicateName",
+    "testProcessCreationFormWithMissingPetType",
+    "testProcessCreationFormWithInvalidBirthDate",
+    "testInitUpdateForm",
+    "testProcessUpdateFormSuccess",
+    "testProcessUpdateFormWithInvalidBirthDate",
+    "testProcessUpdateFormWithBlankName"
+  ],
+  "dependent_class_list": [
+    "org.junit.jupiter.api.BeforeEach",
+    "org.junit.jupiter.api.Nested",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest",
+    "org.springframework.context.annotation.ComponentScan",
+    "org.springframework.context.annotation.FilterType",
+    "org.springframework.samples.petclinic.owner.PetTypeRepository",
+    "org.springframework.samples.petclinic.owner.OwnerRepository",
+    "org.springframework.samples.petclinic.owner.PetController",
+    "org.springframework.samples.petclinic.owner.PetTypeFormatter",
+    "org.springframework.samples.petclinic.owner.Owner",
+    "org.springframework.samples.petclinic.owner.Pet",
+    "org.springframework.samples.petclinic.owner.PetType",
+    "org.springframework.test.context.aot.DisabledInAotMode",
+    "org.springframework.test.context.bean.override.mockito.MockitoBean",
+    "org.springframework.test.web.servlet.MockMvc"
   ]
 }
