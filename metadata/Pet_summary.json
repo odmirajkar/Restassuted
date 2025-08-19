@@ -1,69 +1,49 @@
 {
   "file_name": "Pet.java",
   "file_path": "org/springframework/samples/petclinic/owner/Pet.java",
-  "file_summary": "The `Pet` class is a core business object within the Spring PetClinic application, representing an animal owned by an `Owner`. It extends `NamedEntity`, inheriting a `name` property. This class is annotated as a JPA `@Entity` and mapped to the `pets` table in the database.\n\nIt encapsulates key characteristics of a pet, including its `birthDate` (formatted as 'yyyy-MM-dd'), its `type` (a `PetType` representing a many-to-one relationship), and a collection of `visits` (a one-to-many relationship with `Visit` entities, ordered by date). The `visits` collection is eagerly fetched and cascading operations are enabled for it. The class provides standard getter and setter methods for its attributes and includes a specific method, `addVisit`, to associate new visits with the pet. This class is fundamental for managing individual pet records, their types, and their medical history within the application.",
+  "file_summary": "The `Pet` class is a core domain object in the Spring PetClinic application, representing an individual animal owned by an `Owner`. It extends `NamedEntity`, inheriting basic naming capabilities. Annotated as a JPA `@Entity` and mapped to the `pets` database table, it defines attributes such as `birthDate` (a `LocalDate` with specific formatting) and establishes relationships with other entities. Specifically, it has a `@ManyToOne` relationship with `PetType`, indicating the type of animal (e.g., dog, cat), and a `@OneToMany` relationship with `Visit` objects, maintaining a collection of all visits associated with this pet. This class provides standard getter and setter methods for its properties, along with a method to add new visits, ensuring that all visits for a pet are managed within the pet's object structure.",
   "attributes": [
     {
       "name": "birthDate",
-      "type": "LocalDate",
-      "membership_type": "private instance"
+      "data_type": "LocalDate",
+      "membership_type": "private"
     },
     {
       "name": "type",
-      "type": "PetType",
-      "membership_type": "private instance"
+      "data_type": "PetType",
+      "membership_type": "private"
     },
     {
       "name": "visits",
-      "type": "Set<Visit>",
-      "membership_type": "private final instance"
+      "data_type": "Set<Visit>",
+      "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "setBirthDate",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "birthDate",
-          "type": "LocalDate"
-        }
-      ]
-    },
-    {
-      "name": "getBirthDate",
-      "return_type": "LocalDate",
-      "parameters": []
-    },
-    {
-      "name": "getType",
-      "return_type": "PetType",
-      "parameters": []
-    },
-    {
-      "name": "setType",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "type",
-          "type": "PetType"
-        }
-      ]
-    },
-    {
-      "name": "getVisits",
-      "return_type": "Collection<Visit>",
-      "parameters": []
-    },
-    {
-      "name": "addVisit",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "visit",
-          "type": "Visit"
-        }
-      ]
-    }
+    "setBirthDate(LocalDate birthDate): void",
+    "getBirthDate(): LocalDate",
+    "getType(): PetType",
+    "setType(PetType type): void",
+    "getVisits(): Collection<Visit>",
+    "addVisit(Visit visit): void"
+  ],
+  "dependent_class_list": [
+    "java.time.LocalDate",
+    "java.util.Collection",
+    "java.util.LinkedHashSet",
+    "java.util.Set",
+    "org.springframework.format.annotation.DateTimeFormat",
+    "org.springframework.samples.petclinic.model.NamedEntity",
+    "jakarta.persistence.CascadeType",
+    "jakarta.persistence.Column",
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.FetchType",
+    "jakarta.persistence.JoinColumn",
+    "jakarta.persistence.ManyToOne",
+    "jakarta.persistence.OneToMany",
+    "jakarta.persistence.OrderBy",
+    "jakarta.persistence.Table",
+    "PetType",
+    "Visit"
   ]
 }
