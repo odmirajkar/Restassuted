@@ -1,7 +1,9 @@
+
+```json
 {
   "file_name": "unknown",
   "file_path": "unknown",
-  "file_summary": "No file content was provided for summarization. Please provide the Java code to generate a detailed summary.",
+  "file_summary": "The provided file content is empty. No summary, purpose, attributes, or functions can be extracted from an empty file.",
   "attributes": [],
   "functions": []
 }
