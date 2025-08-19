@@ -1,14 +1,52 @@
 {
-  "file_name": "Jenkinsfile_Snippet",
-  "file_path": "N/A (Typically part of a Jenkinsfile at the root of a Git repository)",
-  "file_summary": "This Jenkins Pipeline script snippet defines a single stage named 'git checkout', which focuses on source code management and Docker operations. The pipeline begins by echoing a message \"RESt Assured testing\" and listing directory contents. It then performs a `checkout scm` operation, pulling the source code from the configured SCM (Source Code Management) system. Following the checkout, it lists the directory contents again and displays existing Docker images. The core logic involves building a new Docker image tagged `restassured-demo` with the current Jenkins `BUILD_ID`. It then runs a container from this newly built image. Subsequently, it captures the Container ID of the launched `restassured-demo` container by parsing `docker ps -a` output and saves it to a file, then reads and echoes this ID. The snippet concludes by listing Docker images once more and printing \"pull req test\", indicating a possible focus on pull request testing workflows.",
-  "attributes": [],
+  "file_name": "Jenkinsfile",
+  "file_path": "/",
+  "file_summary": "This Jenkinsfile defines a declarative pipeline with a single stage named 'git checkout'. The primary purpose of this pipeline is to automate the building and initial execution of a Docker image for a REST Assured testing application. It starts by echoing messages and listing directory contents, then performs a Source Code Management (SCM) checkout to retrieve the project's code. Subsequently, it builds a Docker image tagged as 'restassured-demo' using the current Jenkins BUILD_ID. After successful image creation, the pipeline attempts to run the newly built Docker container. It then captures the container ID of the running 'restassured-demo' instance by parsing the `docker ps -a` output, storing it in a file, and reading it into a variable. Finally, it echoes the captured container ID and lists all Docker images, serving as a verification step for the Docker environment and the application's deployment readiness.",
+  "attributes": [
+    {
+      "name": "customImage",
+      "type": "Object",
+      "membership_type": "local"
+    },
+    {
+      "name": "containerID",
+      "type": "String",
+      "membership_type": "local"
+    },
+    {
+      "name": "env.BUILD_ID",
+      "type": "String",
+      "membership_type": "global/environment"
+    }
+  ],
   "functions": [
     {
-      "name": "git checkout",
-      "return_type": "void",
-      "parameters": [],
-      "membership_type": "stage"
+      "name": "node {}",
+      "description": "Defines the execution environment for the entire pipeline, typically running on an available agent."
+    },
+    {
+      "name": "stage('') {}",
+      "description": "Organizes the pipeline into distinct, logical sections with a specified name."
+    },
+    {
+      "name": "echo('')",
+      "description": "Prints a message to the console output of the Jenkins build."
+    },
+    {
+      "name": "sh('')",
+      "description": "Executes a shell command on the agent where the pipeline is running."
+    },
+    {
+      "name": "checkout scm",
+      "description": "Checks out source code from the repository configured for the Jenkins job."
+    },
+    {
+      "name": "docker.build('')",
+      "description": "Builds a Docker image based on a Dockerfile, tagging it with a specified name."
+    },
+    {
+      "name": "readFile('')",
+      "description": "Reads the content of a specified file from the workspace into a variable."
     }
   ]
 }
