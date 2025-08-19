@@ -1,7 +1,7 @@
 {
-  "file_name": "select_fragment.html",
-  "file_path": "N/A (provided as content, not a specific path)",
-  "file_summary": "This file is an HTML snippet utilizing Thymeleaf, designed to provide a reusable form component for a select dropdown menu. It defines a Thymeleaf fragment named 'select' which takes 'label', 'name', and 'items' as parameters. The fragment renders a div containing a label and a select input field. It iterates over the 'items' to populate the dropdown options. The component also includes basic form validation feedback, displaying success or error states based on field validation status using Thymeleaf's error handling capabilities. It's intended to be included and reused within other Thymeleaf templates to generate consistent select input fields.",
+  "file_name": "selectFormFragment.html",
+  "file_path": "src/main/resources/templates/fragments/selectFormFragment.html",
+  "file_summary": "This HTML file defines a reusable Thymeleaf fragment named 'select', intended for generating a dynamic dropdown (select) input field within web forms. The fragment takes three parameters: `label` for the visible label of the select box, `name` to bind the select field to a property in the backend model using `th:field`, and `items` which is a collection used to populate the options of the dropdown list.\n\nThe fragment is designed to integrate with Spring's form validation, dynamically adding `has-error` CSS classes to the surrounding `div` if validation errors exist for the bound field. It also conditionally displays visual feedback (success or error icons) and renders validation error messages using `th:errors`. This makes it a highly flexible and consistent component for building form select elements in a Thymeleaf-based Spring Boot application.",
   "attributes": [],
   "functions": []
 }
