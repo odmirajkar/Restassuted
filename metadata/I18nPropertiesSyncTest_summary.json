@@ -1,41 +1,51 @@
 {
   "file_name": "I18nPropertiesSyncTest.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
-  "file_summary": "This Java test class, `I18nPropertiesSyncTest`, is responsible for ensuring the proper implementation of internationalization (I18n) within the Spring PetClinic application. It contains two main test methods. The first, `checkNonInternationalizedStrings()`, scans all `.java` and `.html` files in the `src/main` directory (excluding test files) to detect any hard-coded text literals in HTML that are not marked for internationalization (i.e., not using Thymeleaf's `th:text` or Spring Expression Language `#{}`). The second test, `checkI18nPropertyFilesAreInSync()`, verifies that all internationalization property files (e.g., `messages_fr.properties`, `messages_de.properties`) contain all the keys present in the base `messages.properties` file, ensuring no partial translations across different locales. If any non-internationalized strings or missing translation keys are found, the tests will fail, promoting consistent and complete I18n support.",
+  "file_path": "org/springframework/samples/petclinic/system/I18nPropertiesSyncTest.java",
+  "file_summary": "This test class, `I18nPropertiesSyncTest`, is designed to enforce internationalization (I18n) best practices within the Spring PetClinic application. Its primary purpose is to identify and prevent two common I18n issues: the presence of hard-coded, non-internationalized strings in source files and discrepancies in translation property files. It includes a test to scan Java and HTML files for any literal text that should be externalized for translation, ensuring developers use proper I18n mechanisms like Thymeleaf's `th:text` or Spring's message resolution. Additionally, it verifies that all locale-specific `messages_XX.properties` files are in sync with the base `messages.properties` file. This ensures that every key present in the base file has a corresponding entry in all other language-specific property files, preventing partial or missing translations across different languages. This class contributes to maintaining a high standard of maintainability and localization support for the application.",
   "attributes": [
     {
       "name": "I18N_DIR",
-      "data_type": "String",
-      "membership_type": "private static final"
+      "type": "String",
+      "membership": "private static final"
     },
     {
       "name": "BASE_NAME",
-      "data_type": "String",
-      "membership_type": "private static final"
+      "type": "String",
+      "membership": "private static final"
     },
     {
       "name": "PROPERTIES",
-      "data_type": "String",
-      "membership_type": "public static final"
+      "type": "String",
+      "membership": "public static final"
     },
     {
       "name": "HTML_TEXT_LITERAL",
-      "data_type": "Pattern",
-      "membership_type": "private static final"
+      "type": "Pattern",
+      "membership": "private static final"
     },
     {
       "name": "BRACKET_ONLY",
-      "data_type": "Pattern",
-      "membership_type": "private static final"
+      "type": "Pattern",
+      "membership": "private static final"
     },
     {
       "name": "HAS_TH_TEXT_ATTRIBUTE",
-      "data_type": "Pattern",
-      "membership_type": "private static final"
+      "type": "Pattern",
+      "membership": "private static final"
     }
   ],
   "functions": [
-    "checkNonInternationalizedStrings()",
-    "checkI18nPropertyFilesAreInSync()"
+    {
+      "name": "checkNonInternationalizedStrings",
+      "return_type": "void",
+      "parameters": [],
+      "throws": ["IOException"]
+    },
+    {
+      "name": "checkI18nPropertyFilesAreInSync",
+      "return_type": "void",
+      "parameters": [],
+      "throws": ["IOException"]
+    }
   ]
 }
