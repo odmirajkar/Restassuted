@@ -1,14 +1,13 @@
 {
   "file_name": "PetTypeRepository.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeRepository.java",
-  "file_summary": "This Java interface, `PetTypeRepository`, serves as a Spring Data JPA repository for managing `PetType` domain objects within the PetClinic application. It extends Spring's `JpaRepository`, inheriting standard CRUD (Create, Read, Update, Delete) operations and pagination capabilities for `PetType` entities, identified by an `Integer` ID. The primary purpose of this repository is to abstract the data access layer for pet types. In addition to the inherited functionalities, it provides a custom query method, `findPetTypes()`, which specifically retrieves all `PetType` entities from the data store, ordered alphabetically by their names. This ensures that pet types are consistently presented in a sorted manner across the application.",
+  "file_path": "org/springframework/samples/petclinic/owner/PetTypeRepository.java",
+  "file_summary": "This Java interface, `PetTypeRepository`, serves as a Spring Data JPA repository designed for managing `PetType` entities within the PetClinic application. It extends `JpaRepository<PetType, Integer>`, which automatically provides a comprehensive set of standard CRUD (Create, Read, Update, Delete) operations, along with functionalities for pagination and sorting for `PetType` objects, identified by their `Integer` primary key. Its primary purpose is to facilitate seamless interaction with the underlying data store for retrieving, persisting, and querying pet type information. The repository also defines a custom query method, `findPetTypes()`, which specifically retrieves all `PetType` instances from the database, ordered alphabetically by their name, thus offering tailored data retrieval logic beyond the generic capabilities inherited from `JpaRepository`. This makes it a central component for data access related to pet types.",
   "attributes": [],
   "functions": [
-    {
-      "name": "findPetTypes",
-      "return_type": "java.util.List<org.springframework.samples.petclinic.owner.PetType>",
-      "parameters": [],
-      "visibility": "public"
-    }
+    "findPetTypes(): List<PetType> - Retrieves all PetType objects from the data store, ordered by name.",
+    "save(PetType entity): <S extends PetType> S - Saves a given entity.",
+    "findById(Integer id): Optional<PetType> - Retrieves an entity by its ID.",
+    "findAll(): List<PetType> - Returns all instances of the type.",
+    "delete(PetType entity): void - Deletes a given entity."
   ]
 }
