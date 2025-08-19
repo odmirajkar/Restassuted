@@ -1,0 +1,19 @@
+{
+  "file_name": "EntityUtils.java",
+  "file_path": "org/springframework/samples/petclinic/service/EntityUtils.java",
+  "file_summary": "The `EntityUtils` class provides utility methods for convenient handling and retrieval of entities, specifically within the Spring PetClinic application. Its primary purpose is to offer a static helper method that simplifies searching for an entity by its ID within a given collection of entities. This class is designed to be abstract and contains only static methods, meaning it cannot be instantiated. It is particularly useful for operations where an entity needs to be looked up by its unique identifier from an in-memory collection. A key design choice highlighted in its documentation is its separation from the `BaseEntity` class due to its dependency on `ObjectRetrievalFailureException`, which is typically associated with Object-Relational Mapping (ORM) frameworks like Spring's `org.springframework.orm` package. This ensures that entity-related utility functions, especially those tied to persistence exceptions, are encapsulated in a dedicated service layer utility.",
+  "attributes": [],
+  "functions": [
+    {
+      "name": "getById",
+      "visibility": "public static",
+      "return_type": "T extends BaseEntity",
+      "parameters": [
+        {"name": "entities", "type": "Collection<T>"},
+        {"name": "entityClass", "type": "Class<T>"},
+        {"name": "entityId", "type": "int"}
+      ],
+      "throws": ["ObjectRetrievalFailureException"]
+    }
+  ]
+}
