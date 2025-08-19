@@ -1,7 +1,8 @@
 {
-  "file_name": "petForm.html",
-  "file_path": "N/A",
-  "file_summary": "This HTML file is a Thymeleaf template (`petForm.html`) designed for a web application, likely a Spring-based project, to facilitate the creation or updating of pet information. It extends a common layout (`fragments/layout`) ensuring consistent page structure. The page presents a form that allows users to input essential details for a pet, including its name, birth date, and type. It dynamically displays the owner's full name, indicating the pet's association. The form's title and the submit button's text (`Add Pet` or `Update Pet`) adapt based on whether the `pet` object is new or existing. The template leverages Thymeleaf's `th:object` for form binding and utilizes reusable fragments like `inputField` and `selectField` for common form elements, promoting modularity and reducing code duplication. This page serves as a user interface for managing pet entities within the application's data.",
+  "file_name": "petUpsertForm.html",
+  "file_path": "unknown",
+  "file_summary": "This HTML file, designed with Thymeleaf, provides a user interface for creating and updating pet information. It integrates with a common layout fragment (`fragments/layout`) and is specifically associated with the 'owners' section of the application. The form allows users to input the pet's name and birth date, and select its type from a dropdown list populated dynamically. It displays the associated owner's first and last name, though this field is not editable within the form. A hidden input field manages the pet's ID, crucial for distinguishing between new pet creation and updating an existing one. The form's heading and the submit button text (`'Add Pet'` or `'Update Pet'`) dynamically change based on whether a new pet object is being created or an existing one modified, driven by a `pet['new']` flag. The file makes use of reusable Thymeleaf fragments such as `inputField` and `selectField` for consistent form element rendering. Data submitted from this form is intended to be processed via a POST request, typically handled by a server-side controller.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
