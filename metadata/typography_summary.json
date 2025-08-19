@@ -1,7 +1,8 @@
 {
-  "file_name": "typography.css",
-  "file_path": "/css/typography.css",
-  "file_summary": "This CSS file is primarily responsible for defining and applying custom typography styles across a web application. It starts by importing two custom fonts, 'varela_roundregular' and 'montserratregular', ensuring cross-browser compatibility by providing multiple font formats (EOT, WOFF, TTF, SVG). After defining the `@font-face` rules, it sets the base font styles for common HTML elements such as `body`, `h1`, `h2`, `h3`, `p`, and `input`. The file assigns 'varela_roundregular' as the default font for most text and inputs, while using 'montserratregular' for headings (`h1`, `h2`) and strong text, giving the site a distinct typographic hierarchy. It also specifies default font weights, sizes, line heights, and a dark text color (`#34302d`) for these elements, establishing a consistent visual presentation for text content.",
+  "file_name": "typography_styles.css",
+  "file_path": "N/A",
+  "file_summary": "This CSS file is dedicated to defining the typography and font styles for a web application. Its primary function is to embed two custom fonts, 'varela_roundregular' and 'montserratregular', by specifying their source URLs for various browser formats (EOT, WOFF, TTF, SVG). After defining these custom fonts, the file applies a base font family of 'varela_roundregular' along with a default font weight and color to common HTML elements such as `body`, `h1`, `h2`, `h3`, `p`, and `input`. More specifically, it assigns 'montserratregular' to `h1`, `h2`, and `strong` elements, while also setting distinct font sizes, line heights, and font weights for different heading levels. The `p` (paragraph) element's font size and line height are commented out, suggesting they might inherit values or be defined elsewhere. Overall, this file ensures a consistent and branded typographic appearance across the application.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
