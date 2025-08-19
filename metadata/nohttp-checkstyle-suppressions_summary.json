@@ -1,7 +1,7 @@
 {
-  "file_name": "suppressions.xml",
-  "file_path": "Not provided",
-  "file_summary": "This XML file is a Checkstyle suppression configuration, designed to manage and ignore certain code quality violations during the Checkstyle analysis process. Its main purpose is to prevent Checkstyle from flagging issues in specific directories or file types where warnings are either irrelevant or expected. The configuration suppresses all Checkstyle checks for files located within standard build and dependency directories like `node_modules`, `node`, `build`, and `target`. Furthermore, it specifically disables the `NoHttp` check for a variety of binary and resource files, including `.jar`, `.git`, image files (`.ico`, `.gif`, `.jpg`, `.svg`), key store files (`.p12`, `.jks`), and log files, avoiding false positives on non-source code content.",
+  "file_name": "checkstyle-suppressions.xml",
+  "file_path": "N/A",
+  "file_summary": "This XML file is a configuration for Checkstyle's `SuppressionFilter`. Its main purpose is to define rules for ignoring specific files or types of violations during a Checkstyle analysis. It instructs Checkstyle to completely skip all checks for files located within the `node_modules`, `node`, `build`, and `target` directories. These directories typically contain third-party dependencies, build artifacts, or generated code that should not be subject to standard code style checks. Furthermore, the configuration includes a rule to suppress the `NoHttp` check for various common binary and resource file extensions such as `.jar`, `.git`, `.ico`, `.p12`, `.gif`, `.jks`, `.jpg`, `.svg`, and `.log`. This helps in preventing irrelevant warnings on non-source code files, allowing Checkstyle to focus its analysis on the relevant application source code.",
   "attributes": [],
   "functions": []
 }
