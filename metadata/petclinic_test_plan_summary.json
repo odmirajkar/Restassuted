@@ -1,85 +1,61 @@
 {
   "file_name": "petclinic_load_test.jmx",
   "file_path": "N/A",
-  "file_summary": "This XML file represents a JMeter test plan designed for performance testing a 'PetClinic' web application. It simulates user load by defining a Test Plan with user-defined variables for the application's host, port, and web context. A Thread Group is configured to simulate 500 concurrent users, each performing 10 iterations of a series of actions with a 10-second ramp-up time and a 300ms constant timer delay between requests. The test plan includes HTTP requests for various application pages such as the home page, CSS, JavaScript files, vets list, find owner page, viewing/editing owner details, adding new pets, and adding new visits. It utilizes counters ('count' and 'petCount') to dynamically generate unique owner and pet IDs for requests. The plan also includes HTTP cookie management, default HTTP request configurations, and result collectors (Aggregated report enabled, View Results Tree disabled) to gather performance metrics.",
+  "file_summary": "This XML file represents a JMeter Test Plan designed for performance testing a 'PetClinic' web application. It simulates a load of 500 concurrent users, ramping up over 10 seconds, with each user performing 10 iterations of a predefined set of actions. The test plan includes user-defined variables for configuring the target application's host and port. It defines a series of HTTP requests covering common user flows such as accessing the home page, loading static resources (CSS, JS), viewing veterinarians, finding owners (including searching with an empty last name), viewing and editing existing owner details, and adding new pets and visits. The plan also incorporates a constant timer for pacing requests and counters to generate dynamic owner and pet IDs for specific test scenarios. It includes setup for HTTP defaults and cookie management, and configured listeners for viewing and aggregating test results.",
   "attributes": [
     {
       "name": "PETCLINIC_HOST",
       "type": "String",
-      "membership_type": "User-defined Variable",
-      "value": "localhost"
+      "membership_type": "User Defined Variable",
+      "description": "The hostname of the PetClinic application (default: localhost)."
     },
     {
       "name": "PETCLINIC_PORT",
       "type": "String",
-      "membership_type": "User-defined Variable",
-      "value": "8080"
+      "membership_type": "User Defined Variable",
+      "description": "The port number of the PetClinic application (default: 8080)."
     },
     {
       "name": "CONTEXT_WEB",
       "type": "String",
-      "membership_type": "User-defined Variable",
-      "value": ""
+      "membership_type": "User Defined Variable",
+      "description": "The web context path for the application (default: empty string)."
     },
     {
       "name": "ThreadGroup.num_threads",
       "type": "String",
       "membership_type": "Thread Group Property",
-      "value": "500"
+      "description": "Number of concurrent users for the load test (default: 500)."
     },
     {
       "name": "ThreadGroup.ramp_time",
       "type": "String",
       "membership_type": "Thread Group Property",
-      "value": "10"
+      "description": "Time in seconds to ramp up all users (default: 10)."
     },
     {
       "name": "LoopController.loops",
       "type": "String",
       "membership_type": "Loop Controller Property",
-      "value": "10"
+      "description": "Number of iterations each user will perform (default: 10)."
     },
     {
       "name": "ConstantTimer.delay",
       "type": "String",
-      "membership_type": "Constant Timer Property",
-      "value": "300"
+      "membership_type": "Timer Property",
+      "description": "Fixed delay in milliseconds between requests (default: 300)."
     },
     {
-      "name": "CounterConfig.start (User Count)",
+      "name": "count",
       "type": "String",
       "membership_type": "Counter Configuration",
-      "value": "1"
+      "description": "An incremental counter used for owner IDs (starts at 1, ends at 3, increments by 1)."
     },
     {
-      "name": "CounterConfig.end (User Count)",
+      "name": "petCount",
       "type": "String",
       "membership_type": "Counter Configuration",
-      "value": "3"
-    },
-    {
-      "name": "CounterConfig.name (User Count)",
-      "type": "String",
-      "membership_type": "Counter Configuration",
-      "value": "count"
-    },
-    {
-      "name": "CounterConfig.start (Pet Count)",
-      "type": "String",
-      "membership_type": "Counter Configuration",
-      "value": "1"
-    },
-    {
-      "name": "CounterConfig.end (Pet Count)",
-      "type": "String",
-      "membership_type": "Counter Configuration",
-      "value": "3"
-    },
-    {
-      "name": "CounterConfig.name (Pet Count)",
-      "type": "String",
-      "membership_type": "Counter Configuration",
-      "value": "petCount"
+      "description": "An incremental counter used for pet IDs (starts at 1, ends at 3, increments by 1)."
     }
   ],
   "functions": []
