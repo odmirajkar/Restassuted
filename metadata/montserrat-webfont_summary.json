@@ -1,7 +1,3 @@
 {
-  "file_name": "No content provided",
-  "file_path": "N/A",
-  "file_summary": "No file content was provided to summarize. Please provide the content of a file (e.g., Java source code, text file) for analysis.",
-  "attributes": [],
-  "functions": []
+  "error": "No file content provided. Please provide the file content to be summarized."
 }
