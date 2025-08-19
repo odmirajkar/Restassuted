@@ -1,0 +1,15 @@
+{
+  "file_name": "docker-compose.yml",
+  "file_path": "./docker-compose.yml",
+  "file_summary": "This `docker-compose.yml` file defines and configures two database services, MySQL and PostgreSQL, intended for local development environments, likely for an application like Spring PetClinic given the database names. The MySQL service uses `mysql:9.2`, maps port 3306, sets up an empty root password, and defines `petclinic` as the user, password, and database. It also mounts a `conf.d` directory for custom MySQL configurations. The PostgreSQL service uses `postgres:17.5`, maps port 5432, and similarly defines `petclinic` as the user, password, and database. This setup allows developers to easily spin up required database instances without manual installation, facilitating consistent development environments.",
+  "attributes": [
+    "services: object (top-level definition for all services)",
+    "mysql: service configuration (under services)",
+    "postgres: service configuration (under services)",
+    "image: string (Docker image name for a service)",
+    "ports: array (port mappings for a service)",
+    "environment: map (environment variables for a service)",
+    "volumes: array (volume mounts for a service)"
+  ],
+  "functions": []
+}
