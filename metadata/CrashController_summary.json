@@ -1,15 +1,18 @@
 {
   "file_name": "CrashController.java",
-  "file_path": "org/springframework/samples/petclinic/system/CrashController.java",
-  "file_summary": "This Java class, `CrashController`, is a Spring `@Controller` component within the PetClinic application. Its primary purpose is to demonstrate the application's exception handling mechanism. It exposes a single GET endpoint `/oups`. When this endpoint is accessed, the `triggerException()` method is invoked, which intentionally throws a `RuntimeException`. This simulates an unexpected error condition, allowing developers to observe how the application's configured error pages and exception handlers respond. The accompanying documentation also hints at an 'error.html' view, suggesting a standard error page is in place to gracefully handle such unhandled exceptions, providing a better user experience even during system failures.",
+  "file_path": "src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+  "file_summary": "This Java class, `CrashController`, is a Spring MVC controller within the PetClinic application, specifically designed to demonstrate how the application handles runtime exceptions. Annotated with `@Controller`, it exposes a single endpoint `/oups` via an HTTP GET request.\n\nThe `triggerException()` method, mapped to this endpoint, is intentionally implemented to throw a `RuntimeException` when invoked. This setup serves as a testing mechanism or a showcase to illustrate the application's error handling capabilities, including how it might display a custom error page (e.g., `error.html`) when an unhandled exception occurs. It provides a straightforward way for developers to observe and verify the application's global exception handling mechanisms.",
   "attributes": [],
   "functions": [
     {
       "name": "triggerException",
-      "visibility": "public",
       "return_type": "String",
       "parameters": [],
-      "purpose": "Handles GET requests to `/oups` and intentionally throws a RuntimeException to demonstrate the application's exception handling capabilities."
+      "membership_type": "public"
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.stereotype.Controller",
+    "org.springframework.web.bind.annotation.GetMapping"
   ]
 }
