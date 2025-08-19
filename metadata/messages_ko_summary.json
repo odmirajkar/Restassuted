@@ -1,0 +1,5 @@
+{
+  "file_name": "messages.properties",
+  "file_path": "unknown/messages.properties",
+  "file_summary": "This file serves as a localization resource, likely a `.properties` file, for an application, specifically inferred to be a PetClinic application given the context. It contains a collection of key-value pairs, where keys are typically identifiers and values are their corresponding Korean translations. The primary purpose of this file is to provide internationalization (i18n) support, enabling the application's user interface to display text in Korean. It encompasses a wide range of labels for common entities such as 'owner', 'pet', and 'vet', as well as specific form fields like 'firstName', 'lastName', 'address', 'telephone', and 'birthDate'. The file also defines various error messages for validation failures (e.g., 'required', 'notFound', 'duplicate', 'typeMismatch.date'), navigation elements ('home', 'next', 'previous'), and general user interface messages ('welcome', 'somethingHappened', 'layoutTitle'). This centralized approach to storing Korean text content simplifies the management and updating of all translated strings within the application."
+}
