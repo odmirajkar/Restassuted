@@ -1,7 +1,7 @@
 {
-  "file_name": "form-input-fragment.html",
-  "file_path": "Not specified",
-  "file_summary": "This HTML file defines a reusable Thymeleaf fragment named 'input'. This fragment is designed to render a standardized form input field (either text or date type) along with its corresponding label and dynamic validation feedback. It intelligently applies CSS classes, such as 'form-group' and 'has-error', based on whether the input field has validation errors. The fragment also includes visual cues like Font Awesome icons (fa-ok for success, fa-remove for errors) and displays error messages using Thymeleaf's error handling capabilities. By accepting 'label', 'name', and 'type' as parameters, it allows for flexible and consistent creation of form elements throughout an application, simplifying form development and ensuring uniform validation presentation.",
+  "file_name": "inputFormFragment.html",
+  "file_path": "src/main/resources/templates/fragments/inputFormFragment.html",
+  "file_summary": "This HTML file contains a reusable Thymeleaf fragment named 'input'. It is designed to render a generic form input field, dynamically adapting its appearance based on validation status. The fragment accepts three parameters: `label` for the input's label, `name` to bind the input to a model field using `th:field`, and `type` to specify the input type (currently supports 'text' and 'date').\n\nThe component dynamically applies CSS classes ('form-group', 'has-error') based on whether the bound field has validation errors, providing visual feedback to the user. It also includes conditional rendering of success/error icons and displays validation error messages using `th:errors` if the field is invalid. This makes it a highly modular and efficient way to create consistent form input elements across a Spring Boot application using Thymeleaf.",
   "attributes": [],
   "functions": []
 }
