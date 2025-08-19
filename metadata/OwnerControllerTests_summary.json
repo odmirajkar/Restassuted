@@ -1,114 +1,99 @@
 {
   "file_name": "OwnerControllerTests.java",
-  "file_path": "org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
-  "file_summary": "This Java file contains unit tests for the `OwnerController` class within the Spring PetClinic application. It uses Spring Boot's `@WebMvcTest` annotation to focus on testing the web layer without instantiating the full application context. `MockMvc` is employed to simulate HTTP requests and verify controller responses, while `Mockito` is used to mock the `OwnerRepository` dependency, ensuring that database interactions are controlled and predictable during tests. The tests cover various scenarios, including initializing and processing owner creation forms, finding owners by last name, handling cases where no owners are found, initializing and processing owner update forms, and displaying owner details. It also includes specific tests for form validation errors and redirection behaviors, ensuring the controller handles valid and invalid input correctly.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java",
+  "file_summary": "This Java file, `OwnerControllerTests.java`, contains unit tests for the `OwnerController` class within the Spring PetClinic application. Utilizing Spring Boot's `@WebMvcTest` annotation, it focuses on testing the web layer, specifically the interactions with the `OwnerController`. The `OwnerRepository` dependency is mocked using `@MockitoBean` to isolate the web layer's behavior from actual database operations. The tests cover a comprehensive range of scenarios, including the initialization and processing of forms for creating and updating owner information, searching for owners by last name (both successful searches and cases where no owners are found), and displaying detailed owner profiles. A `setup` method ensures a consistent test environment by preparing mock data, such as a sample `Owner` object (\"George Franklin\") with an associated pet and visit. Each test method simulates HTTP requests using `MockMvc` and asserts on the expected HTTP status, model attributes, and view names to ensure the controller behaves as designed under various conditions, including form validation errors and ID mismatches during updates.",
   "attributes": [
     {
       "name": "TEST_OWNER_ID",
-      "type": "int",
+      "data_type": "int",
       "membership_type": "private static final"
     },
     {
       "name": "mockMvc",
-      "type": "MockMvc",
-      "membership_type": "private @Autowired"
+      "data_type": "MockMvc",
+      "membership_type": "private"
     },
     {
       "name": "owners",
-      "type": "OwnerRepository",
-      "membership_type": "private @MockitoBean"
+      "data_type": "OwnerRepository",
+      "membership_type": "private"
     }
   ],
   "functions": [
     {
       "name": "george",
       "return_type": "Owner",
-      "parameters": [],
-      "membership_type": "private"
+      "parameters": []
     },
     {
       "name": "setup",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testInitCreationForm",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessCreationFormSuccess",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessCreationFormHasErrors",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testInitFindForm",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessFindFormSuccess",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessFindFormByLastName",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessFindFormNoOwnersFound",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testInitUpdateOwnerForm",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessUpdateOwnerFormSuccess",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessUpdateOwnerFormUnchangedSuccess",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessUpdateOwnerFormHasErrors",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testShowOwner",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "void"
+      "parameters": []
     },
     {
       "name": "testProcessUpdateOwnerFormWithIdMismatch",
       "return_type": "void",
-      "parameters": [],
-      "membership_type": "public"
+      "parameters": []
     }
   ]
 }
