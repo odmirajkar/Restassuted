@@ -1,32 +1,32 @@
 {
   "file_name": "application.properties",
-  "file_path": "src/main/resources/application.properties",
-  "file_summary": "This configuration file is used by a Spring Boot application, likely a 'PetClinic' example, to set up its database connection. It specifies that MySQL is the chosen database. The file defines the JDBC URL, username, and password for connecting to the database, utilizing environment variables (MYSQL_URL, MYSQL_USER, MYSQL_PASS) for sensitive credentials with fallback default values (e.g., jdbc:mysql://localhost/petclinic, petclinic, petclinic respectively). Additionally, it configures `spring.sql.init.mode` to `always`, ensuring that SQL initialization scripts are run every time the application starts, which is noted as safe due to the scripts being idempotent.",
+  "file_path": "N/A",
+  "file_summary": "This properties file configures database connection settings for a Spring Boot application, likely 'petclinic'. It specifies MySQL as the database type and provides the JDBC URL, username, and password for connecting to the database. The values are designed to be environment variable driven (e.g., MYSQL_URL, MYSQL_USER, MYSQL_PASS) with fallback default values for local development. Additionally, it configures Spring's SQL initialization mode to always run, ensuring that SQL scripts are executed on application startup to set up or update the database schema, which is safe due to the idempotent nature of the SQL.",
   "attributes": [
     {
       "name": "database",
       "data_type": "String",
-      "value": "mysql"
+      "membership_type": "global"
     },
     {
       "name": "spring.datasource.url",
       "data_type": "String",
-      "value": "${MYSQL_URL:jdbc:mysql://localhost/petclinic}"
+      "membership_type": "global"
     },
     {
       "name": "spring.datasource.username",
       "data_type": "String",
-      "value": "${MYSQL_USER:petclinic}"
+      "membership_type": "global"
     },
     {
       "name": "spring.datasource.password",
       "data_type": "String",
-      "value": "${MYSQL_PASS:petclinic}"
+      "membership_type": "global"
     },
     {
       "name": "spring.sql.init.mode",
       "data_type": "String",
-      "value": "always"
+      "membership_type": "global"
     }
   ],
   "functions": []
