@@ -1,93 +1,76 @@
 {
-  "file_name": "mvnw",
-  "file_path": "mvnw",
-  "file_summary": "This is `mvnw`, a shell script for the Apache Maven Wrapper. Its primary role is to provide a consistent way to build projects using a specific Maven version, ensuring all developers use the same toolchain without requiring a global Maven installation. It reads configuration from `.mvn/wrapper/maven-wrapper.properties` to determine the exact Maven or Maven Daemon (`mvnd`) distribution to use, including its download URL and an optional SHA-256 checksum for integrity verification. The script first checks if the required Maven distribution is already downloaded and cached in the user's local Maven repository (`~/.m2/wrapper/dists`). If not found, it orchestrates the download process, prioritizing `wget` or `curl`, and falling back to a dynamically compiled Java class (`Downloader.java`) if external command-line tools are unavailable. It handles platform-specific paths and `mvnd` native distributions. After downloading, validating (if a checksum is provided), and extracting the distribution, it executes the downloaded Maven command, passing through any command-line arguments, effectively wrapping the Maven execution. The script supports verbose logging and various environment variables for customization, such as `JAVA_HOME`, proxy settings, and custom repository URLs.",
+  "file_name": "mvnw.cmd",
+  "file_path": "./mvnw.cmd",
+  "file_summary": "This file is a hybrid batch and PowerShell script designed as the Apache Maven Wrapper for Windows environments. Its primary purpose is to ensure that the correct Apache Maven (or Maven Daemon 'mvnd') distribution is available and used for a project, automatically downloading and installing it if necessary. The script first runs a batch portion to execute the PowerShell script. The PowerShell section reads configuration from `.mvn/wrapper/maven-wrapper.properties` to determine the `distributionUrl` and an optional `distributionSha256Sum`. It calculates the local installation path for Maven, downloads the distribution if it's not already present, validates its integrity using SHA-256 (if configured), unzips it, and places it in the `~/.m2/wrapper/dists` directory (or a custom `MAVEN_USER_HOME` location). It supports custom repository URLs via `MVNW_REPOURL` and authentication via `MVNW_USERNAME`/`MVNW_PASSWORD`. Finally, it outputs the path to the Maven executable, which the batch script then uses to run Maven with the provided arguments. The script includes robust error handling and cleanup for temporary files.",
   "attributes": [
     {
-      "name": "JAVA_HOME",
-      "data_type": "String",
-      "membership_type": "Environment variable (optional)"
-    },
-    {
       "name": "MVNW_REPOURL",
-      "data_type": "String",
-      "membership_type": "Environment variable (optional)"
+      "type": "String",
+      "membership_type": "Optional Environment Variable"
     },
     {
       "name": "MVNW_USERNAME",
-      "data_type": "String",
-      "membership_type": "Environment variable (optional)"
+      "type": "String",
+      "membership_type": "Optional Environment Variable"
     },
     {
       "name": "MVNW_PASSWORD",
-      "data_type": "String",
-      "membership_type": "Environment variable (optional)"
+      "type": "String",
+      "membership_type": "Optional Environment Variable"
     },
     {
       "name": "MVNW_VERBOSE",
-      "data_type": "String",
-      "membership_type": "Environment variable (optional)"
-    },
-    {
-      "name": "JAVACMD",
-      "data_type": "String",
-      "membership_type": "Script-defined (path to Java executable)"
-    },
-    {
-      "name": "JAVACCMD",
-      "data_type": "String",
-      "membership_type": "Script-defined (path to Javac executable)"
-    },
-    {
-      "name": "distributionUrl",
-      "data_type": "String",
-      "membership_type": "Script-defined (parsed from properties file)"
-    },
-    {
-      "name": "distributionSha256Sum",
-      "data_type": "String",
-      "membership_type": "Script-defined (parsed from properties file, optional)"
-    },
-    {
-      "name": "MVN_CMD",
-      "data_type": "String",
-      "membership_type": "Script-defined (command to execute, 'mvn' or 'mvnd.sh')"
+      "type": "String",
+      "membership_type": "Optional Environment Variable (boolean 'true')"
     },
     {
       "name": "MAVEN_USER_HOME",
-      "data_type": "String",
-      "membership_type": "Script-defined (user's Maven home, can be overridden by env var)"
+      "type": "String",
+      "membership_type": "Optional Environment Variable"
+    },
+    {
+      "name": "distributionUrl",
+      "type": "String",
+      "membership_type": "Derived from .mvn/wrapper/maven-wrapper.properties"
+    },
+    {
+      "name": "distributionSha256Sum",
+      "type": "String",
+      "membership_type": "Optional, Derived from .mvn/wrapper/maven-wrapper.properties"
     },
     {
       "name": "MAVEN_HOME",
-      "data_type": "String",
-      "membership_type": "Script-defined (path to local Maven distribution)"
+      "type": "String",
+      "membership_type": "Calculated local installation path"
+    },
+    {
+      "name": "MVN_CMD",
+      "type": "String",
+      "membership_type": "Final command string to execute Maven/mvnd"
+    },
+    {
+      "name": "USE_MVND",
+      "type": "Boolean",
+      "membership_type": "Internal script variable, indicates if mvnd is being used"
     },
     {
       "name": "TMP_DOWNLOAD_DIR",
-      "data_type": "String",
-      "membership_type": "Script-defined (temporary directory for download)"
+      "type": "String",
+      "membership_type": "Temporary directory for download and extraction"
     }
   ],
   "functions": [
-    "native_path()",
-    "set_java_home()",
-    "hash_string(str)",
-    "verbose(message)",
-    "die(message)",
-    "trim(string)",
-    "exec_maven(args...)",
-    "clean()"
+    "Initializes script variables and manages PowerShell module paths.",
+    "Reads configuration properties (distributionUrl, distributionSha256Sum) from '.mvn/wrapper/maven-wrapper.properties'.",
+    "Determines the type of distribution (Maven or MVND) based on the distribution URL.",
+    "Calculates the target local installation directory (MAVEN_HOME) for the distribution.",
+    "Checks for the existence of the Maven/MVND distribution in the calculated MAVEN_HOME.",
+    "Conditionally downloads the distribution if not found locally, supporting custom repository URLs and credentials.",
+    "Validates the SHA-256 checksum of the downloaded distribution against the configured value (if provided).",
+    "Extracts the downloaded archive to a temporary location.",
+    "Moves the extracted distribution to its final MAVEN_HOME location.",
+    "Cleans up temporary files and directories created during the download and extraction process.",
+    "Outputs the final command string (MVN_CMD) required to execute Maven or mvnd."
   ],
-  "dependent_class_list": [
-    "java (executable)",
-    "javac (executable)",
-    "wget (executable, optional)",
-    "curl (executable, optional)",
-    "unzip (executable, optional)",
-    "tar (executable, optional)",
-    "sha256sum (executable, optional)",
-    "shasum (executable, optional)",
-    "Downloader (Java class, dynamically generated by script)"
-  ]
+  "dependent_class_list": []
 }
