@@ -1,0 +1,7 @@
+{
+  "file_name": "form_input_fragment.html",
+  "file_path": "N/A",
+  "file_summary": "This HTML file contains a Thymeleaf fragment designed to create reusable form input fields. The fragment, named 'input', takes 'label', 'name', and 'type' as parameters. It dynamically renders different input types (currently 'text' and 'date') and applies Bootstrap-like styling for form groups. A key feature is its built-in validation feedback, utilizing Thymeleaf's '#fields' utility to check for errors and display appropriate visual cues (e.g., success/error icons) and error messages. This fragment helps streamline form development by providing a consistent and robust way to render input fields with integrated error handling.",
+  "attributes": [],
+  "functions": []
+}
