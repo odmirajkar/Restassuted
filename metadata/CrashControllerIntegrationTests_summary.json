@@ -1,27 +1,52 @@
 {
   "file_name": "CrashControllerIntegrationTests.java",
   "file_path": "org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java",
-  "file_summary": "This Java file, `CrashControllerIntegrationTests.java`, is an integration test suite for the `CrashController` within the Spring PetClinic application. Its primary purpose is to verify how the application handles and presents error responses when an unexpected exception occurs. Specifically, it tests the `/oups` endpoint, which is designed to intentionally throw an exception. The tests are configured using `@SpringBootTest` with a random port and disabled database-related auto-configurations to focus purely on error handling. It includes two main test methods: one to check the JSON error response for correctness (ensuring it contains expected fields like timestamp, status, and error message) and another to verify the HTML error page (checking for specific content and confirming it's not the generic Spring Boot whitelabel error page). This class ensures robust error reporting for different client `Accept` types.",
+  "file_summary": "This Java file, `CrashControllerIntegrationTests.java`, contains integration tests for the `CrashController` within the Spring PetClinic application. Its primary purpose is to verify that the `/oups` endpoint, designed to simulate an exception, correctly handles errors and returns appropriate responses. The tests leverage Spring Boot's `@SpringBootTest` with a random port, ensuring the application is fully started in a test environment without database auto-configuration. It specifically checks for `INTERNAL_SERVER_ERROR` (500) status and verifies the content of the error response, both in JSON and HTML formats. The JSON test asserts the presence of timestamp, status, error, message, and path fields, while the HTML test confirms the presence of specific HTML elements and message content, ensuring it's not the default Spring Boot Whitelabel Error Page. This class helps ensure robust error handling in the application.",
   "attributes": [
     {
       "name": "port",
-      "data_type": "int",
-      "membership_type": "private"
+      "type": "int",
+      "membership_type": "instance"
     },
     {
       "name": "rest",
-      "data_type": "org.springframework.boot.test.web.client.TestRestTemplate",
-      "membership_type": "private"
+      "type": "org.springframework.boot.test.web.client.TestRestTemplate",
+      "membership_type": "instance"
     }
   ],
   "functions": [
     {
       "name": "testTriggerExceptionJson",
-      "description": "Tests the `/oups` endpoint to ensure that when an exception is triggered, the application returns an HTTP 500 Internal Server Error status with a well-formed JSON body containing expected error details like timestamp, status, error type, message, and path."
+      "return_type": "void",
+      "parameters": []
     },
     {
       "name": "testTriggerExceptionHtml",
-      "description": "Tests the `/oups` endpoint with an `Accept: text/html` header to verify that the application returns an HTTP 500 Internal Server Error status with a custom HTML error page, containing specific error messages and not the default Spring Boot whitelabel error page."
+      "return_type": "void",
+      "parameters": []
     }
+  ],
+  "dependent_class_list": [
+    "org.springframework.samples.petclinic.system.CrashController",
+    "org.assertj.core.api.Assertions",
+    "org.springframework.boot.test.context.SpringBootTest",
+    "java.util.List",
+    "java.util.Map",
+    "org.junit.jupiter.api.Test",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.beans.factory.annotation.Value",
+    "org.springframework.boot.autoconfigure.SpringBootApplication",
+    "org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration",
+    "org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration",
+    "org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration",
+    "org.springframework.boot.test.web.client.TestRestTemplate",
+    "org.springframework.core.ParameterizedTypeReference",
+    "org.springframework.http.HttpEntity",
+    "org.springframework.http.HttpHeaders",
+    "org.springframework.http.HttpMethod",
+    "org.springframework.http.HttpStatus",
+    "org.springframework.http.MediaType",
+    "org.springframework.http.RequestEntity",
+    "org.springframework.http.ResponseEntity"
   ]
 }
