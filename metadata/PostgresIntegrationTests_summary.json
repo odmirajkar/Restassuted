@@ -1,0 +1,46 @@
+{
+  "file_name": "PostgresIntegrationTests.java",
+  "file_path": "Not specified",
+  "file_summary": "This Java class, `PostgresIntegrationTests`, serves as an integration test suite for the Spring Boot PetClinic application. It's configured to run with a full Spring application context, leveraging a random port for HTTP testing. A core feature is its deep integration with Docker Compose to manage a PostgreSQL database, explicitly starting the 'postgres' service for testing. It activates the 'postgres' Spring profile and ensures Docker is available before test execution.\n\nThe class includes functional tests such as `testFindAll`, which verifies data access through the `VetRepository`, and `testOwnerDetails`, which performs an HTTP request to the running application to confirm web endpoint accessibility. Additionally, it provides a `main` method to demonstrate standalone execution with the 'postgres' profile. An embedded `PropertiesLogger` class captures and prints all active environment properties during application startup, aiding in configuration verification. The tests are designed to be excluded from native image builds.",
+  "attributes": [
+    {
+      "name": "port",
+      "type": "int",
+      "membership_type": "instance (annotated with @LocalServerPort)"
+    },
+    {
+      "name": "vets",
+      "type": "VetRepository",
+      "membership_type": "private instance (autowired)"
+    },
+    {
+      "name": "builder",
+      "type": "RestTemplateBuilder",
+      "membership_type": "private instance (autowired)"
+    },
+    {
+      "name": "log",
+      "type": "Log",
+      "membership_type": "private static final (inside PropertiesLogger)"
+    },
+    {
+      "name": "environment",
+      "type": "ConfigurableEnvironment",
+      "membership_type": "private instance (inside PropertiesLogger)"
+    },
+    {
+      "name": "isFirstRun",
+      "type": "boolean",
+      "membership_type": "private instance (inside PropertiesLogger)"
+    }
+  ],
+  "functions": [
+    "available",
+    "main",
+    "testFindAll",
+    "testOwnerDetails",
+    "onApplicationEvent",
+    "printProperties",
+    "findPropertiesPropertySources"
+  ]
+}
