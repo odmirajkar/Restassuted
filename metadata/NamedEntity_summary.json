@@ -1,11 +1,11 @@
 {
   "file_name": "NamedEntity.java",
   "file_path": "org/springframework/samples/petclinic/model/NamedEntity.java",
-  "file_summary": "This Java class, `NamedEntity`, serves as a simple JavaBean domain object within the Spring PetClinic application. It extends `BaseEntity` and introduces a common 'name' property, making it a foundational class for other entities that require a name field. Annotated with `@MappedSuperclass`, it signifies that its mapping information applies to entities that inherit from it, but it's not an entity itself. The `name` attribute is mapped to a database column and enforced with a `@NotBlank` validation constraint, ensuring it cannot be empty. The class provides standard getter and setter methods for the 'name' property and overrides the `toString()` method to return the entity's name, facilitating easier debugging and representation.",
+  "file_summary": "The `NamedEntity` class is a core part of the Spring PetClinic application's data model, extending the `BaseEntity`. Its primary purpose is to serve as a base class for other domain objects that require a 'name' property in addition to the 'id' provided by `BaseEntity`. Annotated with `@MappedSuperclass`, it signifies that its fields should be mapped by JPA to tables of its subclasses, but it does not represent an entity itself. The class encapsulates a single private string attribute, `name`, which is mapped to a database column named 'name' and is constrained to be non-blank using `@NotBlank` for validation. It provides standard getter and setter methods for the `name` property and overrides the `toString()` method to return the entity's name, making it convenient for logging and display purposes. This design promotes reusability and consistency across entities that require a common naming convention.",
   "attributes": [
     {
       "name": "name",
-      "type": "String",
+      "data_type": "String",
       "membership_type": "private"
     }
   ],
