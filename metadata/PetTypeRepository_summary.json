@@ -1,13 +1,13 @@
 {
   "file_name": "PetTypeRepository.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetTypeRepository.java",
-  "file_summary": "This Java interface, `PetTypeRepository`, serves as a Spring Data JPA repository designed for managing `PetType` entities within the PetClinic application. It extends `JpaRepository<PetType, Integer>`, which automatically provides a comprehensive set of standard CRUD (Create, Read, Update, Delete) operations, along with functionalities for pagination and sorting for `PetType` objects, identified by their `Integer` primary key. Its primary purpose is to facilitate seamless interaction with the underlying data store for retrieving, persisting, and querying pet type information. The repository also defines a custom query method, `findPetTypes()`, which specifically retrieves all `PetType` instances from the database, ordered alphabetically by their name, thus offering tailored data retrieval logic beyond the generic capabilities inherited from `JpaRepository`. This makes it a central component for data access related to pet types.",
+  "file_summary": "The `PetTypeRepository` interface serves as the data access layer for `PetType` domain objects within the Spring PetClinic application. It extends Spring Data JPA's `JpaRepository`, automatically providing standard CRUD (Create, Read, Update, Delete) operations for `PetType` entities, which are identified by their `Integer` ID.\n\nIn addition to the methods inherited from `JpaRepository`, this interface defines one custom query method:\n- `findPetTypes()`: This method is annotated with a JPA `@Query` to retrieve all `PetType` entities from the data store, ordered alphabetically by their `name`. This ensures that pet types are consistently presented in a sorted manner. This repository effectively abstracts the database interactions required to manage and retrieve different categories of pets.",
   "attributes": [],
   "functions": [
-    "findPetTypes(): List<PetType> - Retrieves all PetType objects from the data store, ordered by name.",
-    "save(PetType entity): <S extends PetType> S - Saves a given entity.",
-    "findById(Integer id): Optional<PetType> - Retrieves an entity by its ID.",
-    "findAll(): List<PetType> - Returns all instances of the type.",
-    "delete(PetType entity): void - Deletes a given entity."
+    {
+      "name": "findPetTypes",
+      "return_type": "List<PetType>",
+      "parameters": []
+    }
   ]
 }
