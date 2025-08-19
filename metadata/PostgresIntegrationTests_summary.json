@@ -1,78 +1,60 @@
 {
   "file_name": "PostgresIntegrationTests.java",
-  "file_path": "src/test/java/org/springframework/samples/petclinic/PostgresIntegrationTests.java",
-  "file_summary": "This Java class, `PostgresIntegrationTests`, is an integration test suite for the Spring PetClinic application, specifically designed to verify its functionality with a PostgreSQL database. It utilizes Spring Boot's `@SpringBootTest` to launch the application on a random port and the 'postgres' active profile. The class configures Spring Docker Compose to manage a PostgreSQL container for the tests, ensuring a clean and isolated environment. It includes a `@BeforeAll` check to ensure Docker is available before running tests. The tests themselves cover data access via the `VetRepository` (`testFindAll()`, which also implicitly tests caching) and web endpoint interaction via `RestTemplate` (`testOwnerDetails()` for `/owners/1`). Additionally, it provides a `main` method to run the `PetClinicApplication` directly with the PostgreSQL profile and integrates a nested `PropertiesLogger` class, an `ApplicationListener` that logs all active environment properties during application startup, which is useful for debugging property resolution in complex environments.",
+  "file_path": "org/springframework/samples/petclinic/PostgresIntegrationTests.java",
+  "file_summary": "This Java class, `PostgresIntegrationTests`, is an integration test for the Spring PetClinic application, specifically designed to verify its functionality when using a PostgreSQL database managed by Docker Compose. The class uses `@SpringBootTest` to launch the full application context on a random port and is configured to activate the 'postgres' Spring profile. It ensures Docker is available via `@BeforeAll` and then runs tests that interact with the application. Key tests include `testFindAll()`, which verifies data retrieval using `VetRepository`, and `testOwnerDetails()`, which makes an HTTP request to a web endpoint (`/owners/1`) to confirm web layer functionality and database interaction. The class includes a `main` method to allow standalone execution, setting up the PetClinic with PostgreSQL via Docker Compose. Additionally, it contains a nested static class, `PropertiesLogger`, which listens to application events to print resolved Spring environment properties, useful for debugging configuration loading.",
   "attributes": [
     {
       "name": "port",
       "type": "int",
-      "membership": "instance public"
+      "membership_type": "instance"
     },
     {
       "name": "vets",
-      "type": "VetRepository",
-      "membership": "instance private"
+      "type": "org.springframework.samples.petclinic.vet.VetRepository",
+      "membership_type": "instance"
     },
     {
       "name": "builder",
-      "type": "RestTemplateBuilder",
-      "membership": "instance private"
-    },
-    {
-      "name": "PropertiesLogger.log",
-      "type": "Log",
-      "membership": "static private"
-    },
-    {
-      "name": "PropertiesLogger.environment",
-      "type": "ConfigurableEnvironment",
-      "membership": "instance private"
-    },
-    {
-      "name": "PropertiesLogger.isFirstRun",
-      "type": "boolean",
-      "membership": "instance private"
+      "type": "org.springframework.boot.web.client.RestTemplateBuilder",
+      "membership_type": "instance"
     }
   ],
   "functions": [
-    {
-      "name": "available",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "main",
-      "return_type": "void",
-      "parameters": [
-        "String[] args"
-      ]
-    },
-    {
-      "name": "testFindAll",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "testOwnerDetails",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "PropertiesLogger.onApplicationEvent",
-      "return_type": "void",
-      "parameters": [
-        "ApplicationPreparedEvent event"
-      ]
-    },
-    {
-      "name": "PropertiesLogger.printProperties",
-      "return_type": "void",
-      "parameters": []
-    },
-    {
-      "name": "PropertiesLogger.findPropertiesPropertySources",
-      "return_type": "List<EnumerablePropertySource<?>>",
-      "parameters": []
-    }
+    "available()",
+    "main(String[] args)",
+    "testFindAll()",
+    "testOwnerDetails()"
+  ],
+  "dependent_class_list": [
+    "org.assertj.core.api.Assertions",
+    "org.junit.jupiter.api.Assertions",
+    "org.junit.jupiter.api.Assumptions",
+    "java.util.Arrays",
+    "java.util.LinkedList",
+    "java.util.List",
+    "org.apache.commons.logging.Log",
+    "org.apache.commons.logging.LogFactory",
+    "org.junit.jupiter.api.BeforeAll",
+    "org.junit.jupiter.api.Test",
+    "org.junit.jupiter.api.condition.DisabledInNativeImage",
+    "org.springframework.beans.factory.annotation.Autowired",
+    "org.springframework.boot.builder.SpringApplicationBuilder",
+    "org.springframework.boot.context.event.ApplicationPreparedEvent",
+    "org.springframework.boot.test.context.SpringBootTest",
+    "org.springframework.boot.test.context.SpringBootTest.WebEnvironment",
+    "org.springframework.boot.test.web.server.LocalServerPort",
+    "org.springframework.boot.web.client.RestTemplateBuilder",
+    "org.springframework.context.ApplicationListener",
+    "org.springframework.core.env.ConfigurableEnvironment",
+    "org.springframework.core.env.EnumerablePropertySource",
+    "org.springframework.core.env.PropertySource",
+    "org.springframework.http.HttpStatus",
+    "org.springframework.http.RequestEntity",
+    "org.springframework.http.ResponseEntity",
+    "org.springframework.samples.petclinic.vet.VetRepository",
+    "org.springframework.test.context.ActiveProfiles",
+    "org.springframework.web.client.RestTemplate",
+    "org.testcontainers.DockerClientFactory",
+    "org.springframework.samples.petclinic.PetClinicApplication"
   ]
 }
