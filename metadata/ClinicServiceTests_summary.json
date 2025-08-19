@@ -1,39 +1,69 @@
 {
   "file_name": "ClinicServiceTests.java",
-  "file_path": "org/springframework/samples/petclinic/service/ClinicServiceTests.java",
-  "file_summary": "This file contains integration tests for the service and repository layers of the Spring PetClinic application. It utilizes Spring's TestContext Framework to provide benefits like IoC container caching, dependency injection (for repositories), and automatic transaction management with rollback for each test method. The tests primarily focus on verifying the functionality of `OwnerRepository`, `PetTypeRepository`, and `VetRepository`. It includes tests for finding, inserting, and updating owner data, managing pets and their types, adding visits, and retrieving vet information, ensuring the persistence layer interacts correctly with the application's domain model.",
+  "file_path": "src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java",
+  "file_summary": "This file contains integration tests for the PetClinic application's service and repository layers, specifically focusing on data persistence and retrieval operations using Spring Data JPA. The `ClinicServiceTests` class leverages Spring's TestContext Framework to provide services like IoC container caching, dependency injection, and automatic transaction management with rollback for each test method. This ensures a clean test environment without the need for explicit teardown. The tests cover a wide range of functionalities including finding, inserting, and updating owners; managing pets (insertion, update, and associating with owners); retrieving pet types; finding veterinary professionals; and adding/retrieving visits for pets. It uses `@DataJpaTest` to configure only the JPA components, and `@AutoConfigureTestDatabase(replace = Replace.NONE)` to ensure tests can run against a real database if configured, rather than an in-memory one, demonstrating the integration with the persistence layer.",
   "attributes": [
     {
       "name": "owners",
-      "data_type": "OwnerRepository",
-      "membership_type": "protected"
+      "type": "OwnerRepository",
+      "membership": "protected"
     },
     {
       "name": "types",
-      "data_type": "PetTypeRepository",
-      "membership_type": "protected"
+      "type": "PetTypeRepository",
+      "membership": "protected"
     },
     {
       "name": "vets",
-      "data_type": "VetRepository",
-      "membership_type": "protected"
+      "type": "VetRepository",
+      "membership": "protected"
     },
     {
       "name": "pageable",
-      "data_type": "Pageable",
-      "membership_type": "default"
+      "type": "Pageable",
+      "membership": "default"
     }
   ],
   "functions": [
-    "shouldFindOwnersByLastName()",
-    "shouldFindSingleOwnerWithPet()",
-    "shouldInsertOwner()",
-    "shouldUpdateOwner()",
-    "shouldFindAllPetTypes()",
-    "shouldInsertPetIntoDatabaseAndGenerateId()",
-    "shouldUpdatePetName()",
-    "shouldFindVets()",
-    "shouldAddNewVisitForPet()",
-    "shouldFindVisitsByPetId()"
+    {
+      "name": "shouldFindOwnersByLastName",
+      "description": "Tests finding owners by a partial last name and asserts the correct number of results are returned."
+    },
+    {
+      "name": "shouldFindSingleOwnerWithPet",
+      "description": "Tests retrieving a specific owner by ID and verifies associated pet details, including pet type."
+    },
+    {
+      "name": "shouldInsertOwner",
+      "description": "Tests the insertion of a new owner into the database, verifying that an ID is generated and the total count of owners increases."
+    },
+    {
+      "name": "shouldUpdateOwner",
+      "description": "Tests updating an existing owner's last name and verifies the change is persisted and retrieved correctly."
+    },
+    {
+      "name": "shouldFindAllPetTypes",
+      "description": "Tests retrieving all available pet types and verifies their names."
+    },
+    {
+      "name": "shouldInsertPetIntoDatabaseAndGenerateId",
+      "description": "Tests adding a new pet to an existing owner, verifying the pet count increases and a unique ID is generated for the new pet."
+    },
+    {
+      "name": "shouldUpdatePetName",
+      "description": "Tests updating the name of an existing pet associated with an owner and verifies the change is persisted."
+    },
+    {
+      "name": "shouldFindVets",
+      "description": "Tests retrieving all veterinary professionals and verifies their details, including specialties."
+    },
+    {
+      "name": "shouldAddNewVisitForPet",
+      "description": "Tests adding a new visit record for a specific pet, verifying the visit is associated and has an ID generated."
+    },
+    {
+      "name": "shouldFindVisitsByPetId",
+      "description": "Tests retrieving all visits associated with a specific pet and verifies the number and presence of visit dates."
+    }
   ]
 }
