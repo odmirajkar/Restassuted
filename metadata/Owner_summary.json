@@ -1,142 +1,61 @@
 {
   "file_name": "Owner.java",
   "file_path": "org/springframework/samples/petclinic/owner/Owner.java",
-  "file_summary": "The `Owner` class is a core domain object within the Spring PetClinic application, representing a pet owner. It extends the `Person` class, inheriting basic personal details like first and last name, and adds specific attributes for an owner such as their address, city, and telephone number. This class is an Entity, mapped to the 'owners' table in the database, and uses JPA annotations for persistence. It includes validation constraints like `@NotBlank` for required fields and `@Pattern` for the telephone number format. Crucially, an `Owner` object maintains a one-to-many relationship with `Pet` objects, allowing it to manage a collection of pets associated with that owner. The class provides methods to access and modify owner details, add new pets, retrieve pets by name or ID, and facilitates the addition of vet visits to a specific pet belonging to the owner. This class encapsulates the business logic and data structure for an owner, making it central to managing pet and owner information.",
+  "file_summary": "The `Owner` class is a core domain object within the Spring PetClinic application, representing a pet owner. It extends the `Person` class, inheriting basic personal information, and adds specific attributes like `address`, `city`, and `telephone` number. This class is annotated with JPA annotations (`@Entity`, `@Table`, `@Column`, `@OneToMany`) to enable object-relational mapping, persisting owner data to a database table named 'owners'. It also incorporates JSR-303 validation annotations (`@NotBlank`, `@Pattern`) to ensure data integrity for its attributes. Crucially, the `Owner` class maintains a one-to-many relationship with `Pet` objects, allowing an owner to have multiple pets. It provides methods for managing these pets, including adding new pets, retrieving them by name or ID, and facilitating the addition of visits to a specific pet. The class overrides the `toString()` method for a more descriptive string representation, aiding in debugging and logging.",
   "attributes": [
     {
       "name": "address",
-      "type": "String",
-      "membership_type": "private instance"
+      "data_type": "String",
+      "membership_type": "private"
     },
     {
       "name": "city",
-      "type": "String",
-      "membership_type": "private instance"
+      "data_type": "String",
+      "membership_type": "private"
     },
     {
       "name": "telephone",
-      "type": "String",
-      "membership_type": "private instance"
+      "data_type": "String",
+      "membership_type": "private"
     },
     {
       "name": "pets",
-      "type": "List<Pet>",
-      "membership_type": "private final instance"
+      "data_type": "List<Pet>",
+      "membership_type": "private final"
     }
   ],
   "functions": [
-    {
-      "name": "getAddress",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "setAddress",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "address",
-          "type": "String"
-        }
-      ]
-    },
-    {
-      "name": "getCity",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "setCity",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "city",
-          "type": "String"
-        }
-      ]
-    },
-    {
-      "name": "getTelephone",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "setTelephone",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "telephone",
-          "type": "String"
-        }
-      ]
-    },
-    {
-      "name": "getPets",
-      "return_type": "List<Pet>",
-      "parameters": []
-    },
-    {
-      "name": "addPet",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "pet",
-          "type": "Pet"
-        }
-      ]
-    },
-    {
-      "name": "getPet",
-      "return_type": "Pet",
-      "parameters": [
-        {
-          "name": "name",
-          "type": "String"
-        }
-      ]
-    },
-    {
-      "name": "getPet",
-      "return_type": "Pet",
-      "parameters": [
-        {
-          "name": "id",
-          "type": "Integer"
-        }
-      ]
-    },
-    {
-      "name": "getPet",
-      "return_type": "Pet",
-      "parameters": [
-        {
-          "name": "name",
-          "type": "String"
-        },
-        {
-          "name": "ignoreNew",
-          "type": "boolean"
-        }
-      ]
-    },
-    {
-      "name": "toString",
-      "return_type": "String",
-      "parameters": []
-    },
-    {
-      "name": "addVisit",
-      "return_type": "void",
-      "parameters": [
-        {
-          "name": "petId",
-          "type": "Integer"
-        },
-        {
-          "name": "visit",
-          "type": "Visit"
-        }
-      ]
-    }
+    "getAddress(): String",
+    "setAddress(String address): void",
+    "getCity(): String",
+    "setCity(String city): void",
+    "getTelephone(): String",
+    "setTelephone(String telephone): void",
+    "getPets(): List<Pet>",
+    "addPet(Pet pet): void",
+    "getPet(String name): Pet",
+    "getPet(Integer id): Pet",
+    "getPet(String name, boolean ignoreNew): Pet",
+    "toString(): String",
+    "addVisit(Integer petId, Visit visit): void"
+  ],
+  "dependent_class_list": [
+    "java.util.ArrayList",
+    "java.util.List",
+    "org.springframework.core.style.ToStringCreator",
+    "org.springframework.samples.petclinic.model.Person",
+    "org.springframework.util.Assert",
+    "jakarta.persistence.CascadeType",
+    "jakarta.persistence.Column",
+    "jakarta.persistence.Entity",
+    "jakarta.persistence.FetchType",
+    "jakarta.persistence.JoinColumn",
+    "jakarta.persistence.OneToMany",
+    "jakarta.persistence.OrderBy",
+    "jakarta.persistence.Table",
+    "jakarta.validation.constraints.Pattern",
+    "jakarta.validation.constraints.NotBlank",
+    "Pet",
+    "Visit"
   ]
 }
