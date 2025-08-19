@@ -1,11 +1,12 @@
 {
   "file_name": "OwnerRepository.java",
   "file_path": "org/springframework/samples/petclinic/owner/OwnerRepository.java",
-  "file_summary": "This file defines the `OwnerRepository` interface, which is a Spring Data JPA repository responsible for managing `Owner` domain objects. It extends `JpaRepository<Owner, Integer>`, providing standard CRUD (Create, Read, Update, Delete) operations for `Owner` entities, using `Integer` as the primary key type. The interface includes custom query methods beyond the basic CRUD operations. Specifically, it allows retrieving owners whose last name starts with a given string, supporting pagination, and provides a method to find an owner by their ID, returning an `Optional<Owner>` for robust null handling. This repository abstracts the data access layer for owners within the Pet Clinic application, adhering to Spring Data naming conventions for easy extension and integration.",
+  "file_summary": "The `OwnerRepository` interface serves as a data access layer for `Owner` domain objects within the Spring PetClinic application. It extends Spring Data JPA's `JpaRepository`, automatically providing standard CRUD (Create, Read, Update, Delete) operations for `Owner` entities, identified by their `Integer` ID.\n\nIn addition to the inherited methods, this interface defines custom query methods that adhere to Spring Data naming conventions for easy query creation:\n- `findByLastNameStartingWith`: Allows searching for owners whose last names begin with a specified string, supporting pagination through the `Pageable` parameter.\n- `findById`: Overrides the default `findById` to explicitly return an `Optional<Owner>`, promoting safer handling of potentially non-existent entities. This repository acts as the bridge between the application's service layer and the underlying database, abstracting away the complexities of data persistence for `Owner` objects.",
   "attributes": [],
   "functions": [
     {
       "name": "findByLastNameStartingWith",
+      "return_type": "Page<Owner>",
       "parameters": [
         {
           "name": "lastName",
@@ -15,20 +16,17 @@
           "name": "pageable",
           "type": "Pageable"
         }
-      ],
-      "return_type": "Page<Owner>",
-      "membership": "public"
+      ]
     },
     {
       "name": "findById",
+      "return_type": "Optional<Owner>",
       "parameters": [
         {
           "name": "id",
-          "type": "@Nonnull Integer"
+          "type": "Integer"
         }
-      ],
-      "return_type": "Optional<Owner>",
-      "membership": "public"
+      ]
     }
   ]
 }
