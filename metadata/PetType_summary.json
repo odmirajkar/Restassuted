@@ -1,9 +1,7 @@
 {
   "file_name": "PetType.java",
   "file_path": "org/springframework/samples/petclinic/owner/PetType.java",
-  "file_summary": "This Java class, `PetType.java`, located in the `org.springframework.samples.petclinic.owner` package, is a fundamental JPA entity within the Spring PetClinic application. Its primary purpose is to represent and categorize different types of pets, such as \"Cat\", \"Dog\", or \"Hamster\". Annotated with `@Entity` and `@Table(name = \"types\")`, it maps directly to the `types` table in the database. `PetType` extends `NamedEntity`, a base class from the `org.springframework.samples.petclinic.model` package that provides a common `name` property. This design allows `PetType` instances to store a descriptive name for each pet type without needing to declare additional fields. As a simple data carrier, it facilitates the organization and management of pet-related information by enabling clear classification based on species or breed type.",
-  "attributes": [
-    "name: String (inherited from org.springframework.samples.petclinic.model.NamedEntity)"
-  ],
+  "file_summary": "The `PetType` class is a simple JavaBean domain object within the Spring PetClinic application, representing a type of pet (e.g., Cat, Dog, Hamster). It extends the `NamedEntity` class, inheriting properties such as an `id` and a `name`. This class is annotated as a JPA `@Entity` and is mapped to the `types` table in the database. Its primary purpose is to categorize pets, providing a common lookup for the type of animal. As a `NamedEntity` subclass, it primarily relies on the inherited `name` property to define the pet type. This class acts as a reference data entity, allowing for predefined and managed pet types in the application, rather than free-text input.",
+  "attributes": [],
   "functions": []
 }
