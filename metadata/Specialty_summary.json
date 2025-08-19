@@ -1,18 +1,7 @@
 {
   "file_name": "Specialty.java",
   "file_path": "org/springframework/samples/petclinic/vet/Specialty.java",
-  "file_summary": "This Java class, `Specialty`, is a core component of the Spring PetClinic application, designed to represent specific areas of expertise for veterinarians, such as 'dentistry' or 'radiology'. It extends the `NamedEntity` class, inheriting common properties like an `id` and a `name`, which holds the description of the specialty. Annotated with `@Entity` and `@Table(name = \"specialties\")`, it signifies its role as a persistent entity in the database, mapping directly to a `specialties` table. Its primary purpose is to categorize and define the distinct services or focuses a `Vet` can have, enabling the system to manage and display veterinarian specializations effectively within the application.",
-  "attributes": [
-    {
-      "name": "id",
-      "type": "Integer",
-      "membership_type": "inherited (from BaseEntity via NamedEntity)"
-    },
-    {
-      "name": "name",
-      "type": "String",
-      "membership_type": "inherited (from NamedEntity)"
-    }
-  ],
+  "file_summary": "This Java file defines the `Specialty` class, a core domain entity within the Spring PetClinic application. It models a specific area of expertise or qualification that a veterinarian might possess (e.g., dentistry, radiology). Annotated with `@Entity` and `@Table(name = \"specialties\")`, it represents a persistent entity mapped to the 'specialties' table in the database. The `Specialty` class extends `NamedEntity`, thereby inheriting common properties such as an `id` and a `name`, which are fundamental for identifying and describing the specialty. This design promotes reusability and a consistent data model for entities that are primarily identified by a name.",
+  "attributes": [],
   "functions": []
 }
