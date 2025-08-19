@@ -1,7 +1,8 @@
 {
-  "file_name": "visitForm.html",
-  "file_path": "N/A",
-  "file_summary": "This HTML file is a Thymeleaf template (`visitForm.html`) designed for a web application, likely a Spring-based project, specifically to manage veterinary visits for pets. It extends a common layout (`fragments/layout`) for consistent styling and structure. The page serves two main purposes: displaying details of the current pet (name, birth date, type, and owner) and providing a form to add new visits or update existing visit information. The form allows users to input the visit's date and a description. Below the form, it also lists all previous visits for the displayed pet, showing their date and description. The dynamic title and button text depend on whether a new visit is being created. It leverages Thymeleaf for data binding (`th:object`, `th:value`, `th:text`) and includes reusable input field fragments, promoting a modular and maintainable front-end.",
+  "file_name": "visitUpsertForm.html",
+  "file_path": "unknown",
+  "file_summary": "This HTML file, built with Thymeleaf, serves as a user interface for managing pet visits. Its primary purpose is to allow users to add new visits for a specific pet and to display a list of that pet's previous visits. The page integrates with a common layout (`fragments/layout`) and is part of the 'owners' section of the application. It displays read-only details of the pet (name, birth date, type, and owner) for which the visit is being recorded. The form for adding a new visit includes fields for 'Date' and 'Description', utilizing reusable Thymeleaf input fragments. A hidden input field passes the `pet.id` to the server upon form submission. The 'Add Visit' button dynamically displays text based on a `visit['new']` flag. Below the visit creation form, a table lists all previous visits for the pet, displaying their date and description, with dates formatted for readability.",
   "attributes": [],
-  "functions": []
+  "functions": [],
+  "dependent_class_list": []
 }
