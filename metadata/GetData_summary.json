@@ -1,26 +1,26 @@
 {
   "file_name": "GetData.java",
   "file_path": "src/test/java/getRequest/GetData.java",
-  "file_summary": "This `GetData` Java class serves as an API testing suite, leveraging TestNG and RestAssured to interact with the Ergast Formula 1 API. Its primary purpose is to demonstrate various aspects of making HTTP GET requests, validating responses, and performing data-driven assertions. The class includes tests to verify the API's operational status by checking the HTTP status code (e.g., 200 OK). It also showcases a more advanced scenario where data, such as a 'circuitId', is extracted from one API response and subsequently used as a path parameter in another request to retrieve more specific information. Furthermore, the class illustrates how to parameterize API tests using variables for elements like the 'season' and assert response body properties like the size of a list of circuits. Overall, `GetData` provides practical examples for performing robust and flexible API automation testing.",
+  "file_summary": "This Java class, `GetData`, is designed for testing the Ergast F1 API using Rest-Assured and TestNG. It contains several test methods to validate different aspects of the API responses. The `testResponseergast` method checks if the API returns a successful HTTP status code (200). The `test_ScenarioRetrieveFirstCircuitFor2017SeasonAndGetCountry_ShouldBeAustralia` method demonstrates how to extract data (like `circuitId`) from one API response and use it in a subsequent API call to verify specific details, such as the country of a circuit. Finally, the `test_NumberOfCircuits_ShouldBe20_Parameterized` method illustrates parameterized testing by verifying the number of circuits for a given season using path parameters, ensuring the API returns the expected count.",
   "attributes": [],
   "functions": [
     {
       "name": "testResponseergast",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "instance"
+      "description": "Checks the HTTP status code of the Ergast F1 API for circuits in 2017, asserting that it is 200 (OK)."
     },
     {
       "name": "test_ScenarioRetrieveFirstCircuitFor2017SeasonAndGetCountry_ShouldBeAustralia",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "instance"
+      "description": "Retrieves the circuit ID of the first circuit for the 2017 season, then uses that ID to query details about the circuit and verifies that its country is 'Australia'."
     },
     {
       "name": "test_NumberOfCircuits_ShouldBe20_Parameterized",
       "return_type": "void",
       "parameters": [],
-      "membership_type": "instance"
+      "description": "Tests the number of circuits for a specified season (2017) using a parameterized path, asserting that the API returns exactly 20 circuits."
     }
   ]
 }
