@@ -1,19 +1,17 @@
 {
   "file_name": "Person.java",
-  "file_path": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
-  "file_summary": "The `Person` class is a simple JavaBean domain object within the Spring PetClinic application's `model` package. It serves as an abstract base class (due to `@MappedSuperclass`) for other entities that represent individuals, such as Owners or Vets. This class extends `BaseEntity`, inheriting its ID property. Its primary purpose is to encapsulate common properties like first name and last name, ensuring data integrity through validation constraints (e.g., `@NotBlank`). By using `@MappedSuperclass`, its fields are mapped directly into the tables of its subclasses, promoting code reusability and a cleaner database schema. It provides standard getter and setter methods for accessing and modifying these core personal details.",
+  "file_path": "org/springframework/samples/petclinic/model/Person.java",
+  "file_summary": "The `Person` class serves as a fundamental abstract base class within the Spring Framework PetClinic application, representing a generic person. It extends `BaseEntity`, inheriting the `id` property, and introduces two additional properties: `firstName` and `lastName`. Annotated with `@MappedSuperclass`, this class indicates that its properties are mapped to database columns of its subclasses, but `Person` itself does not correspond to a direct table in the database. Both `firstName` and `lastName` are mapped to respective database columns (`first_name` and `last_name`) and are constrained with `@NotBlank` to ensure they are not empty or null. The class provides standard public getter and setter methods for accessing and modifying these name properties, facilitating common handling of personal details across various entities like Owners or Vets in the application.",
   "attributes": [
     {
       "name": "firstName",
       "data_type": "String",
-      "membership_type": "private",
-      "annotations": ["@Column(name = \"first_name\")", "@NotBlank"]
+      "membership_type": "private"
     },
     {
       "name": "lastName",
       "data_type": "String",
-      "membership_type": "private",
-      "annotations": ["@Column(name = \"last_name\")", "@NotBlank"]
+      "membership_type": "private"
     }
   ],
   "functions": [
