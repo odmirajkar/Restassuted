@@ -1,0 +1,56 @@
+{
+  "file_name": "JMeterTestPlan.jmx",
+  "file_path": "N/A",
+  "file_summary": "This XML file represents an Apache JMeter version 5.5 test plan designed for performance and load testing of a web application, specifically targeting a 'PetClinic' type application. It outlines a comprehensive test scenario simulating user interactions. The plan configures a thread group to simulate 500 concurrent users, each performing 10 iterations of a predefined sequence of actions, with a ramp-up period of 10 seconds. It defines global variables for the application's host, port, and context path, and includes configuration elements such as a constant timer, HTTP defaults, and a cookie manager. The core of the test plan consists of a series of HTTP requests simulating various user flows: browsing the home page, loading static resources (CSS, JS), visiting the vets page, searching for owners, viewing and editing owner details, and adding new pets and visits. The plan also incorporates counters to dynamically generate owner and pet IDs for requests. Finally, it includes result collectors, with an 'Aggregated report' enabled for performance metrics collection.",
+  "attributes": [
+    {
+      "name": "PETCLINIC_HOST",
+      "data_type": "String",
+      "membership_type": "User-defined variable (TestPlan scope)"
+    },
+    {
+      "name": "PETCLINIC_PORT",
+      "data_type": "String",
+      "membership_type": "User-defined variable (TestPlan scope)"
+    },
+    {
+      "name": "CONTEXT_WEB",
+      "data_type": "String",
+      "membership_type": "User-defined variable (TestPlan scope)"
+    },
+    {
+      "name": "count",
+      "data_type": "Integer",
+      "membership_type": "Counter variable"
+    },
+    {
+      "name": "petCount",
+      "data_type": "Integer",
+      "membership_type": "Counter variable"
+    }
+  ],
+  "functions": [
+    "TestPlan",
+    "ThreadGroup: User threads",
+    "ConstantTimer: Fixed time counter",
+    "ConfigTestElement: Default HTTP parameters",
+    "CookieManager: HTTP cookie manager",
+    "CounterConfig: User Count",
+    "CounterConfig: Pet Count",
+    "HTTPSamplerProxy: Home page",
+    "HTTPSamplerProxy: CSS",
+    "HTTPSamplerProxy: JS",
+    "HTTPSamplerProxy: Vets",
+    "HTTPSamplerProxy: Find owner",
+    "HTTPSamplerProxy: Find owner with lastname=\"\"",
+    "HTTPSamplerProxy: Owner",
+    "HTTPSamplerProxy: Edit Owner",
+    "HTTPSamplerProxy: POST Edit Owner",
+    "HTTPSamplerProxy: New Pet",
+    "HTTPSamplerProxy: POST new pet",
+    "HTTPSamplerProxy: New visit",
+    "HTTPSamplerProxy: POST new visit",
+    "ResultCollector: Results (disabled)",
+    "ResultCollector: Aggregated report (enabled)"
+  ]
+}
